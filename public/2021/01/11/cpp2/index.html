@@ -1,0 +1,1557 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="c++语言程序设计（6-12章）, Ep4l的小博客">
+    <meta name="description" content="重新开始">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>c++语言程序设计（6-12章） | Ep4l的小博客</title>
+    <link rel="icon" type="image/png" href="/medias/logo.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <link rel="stylesheet" type="text/css" href="/libs/shaky/shaky.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
+
+
+
+
+<!--浏览器搞笑标题-->
+<script type="text/javascript" src="\js\FunnyTitle.js"></script>
+<script type="text/javascript">
+//只在桌面版网页启用特效
+var windowWidth = $(window).width();
+if (windowWidth > 768) {
+    document.write('<script type="text/javascript" src="/js/sakura.js"><\/script>');
+}
+</script>
+<script async src="\js\lihua.js"></script>
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Ep4l的小博客</span>
+                </a>
+<span class="shaky">冬天好冷o((>﹏<))o</span>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Ep4l的小博客</div>
+        <div class="logo-desc">
+            
+            重新开始
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/images/cpp/cpp.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">c++语言程序设计（6-12章）</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/C/">
+                                <span class="chip bg-color">C++</span>
+                            </a>
+                        
+                            <a href="/tags/C-%E8%AF%AD%E8%A8%80%E8%AE%BE%E8%AE%A1%E6%8C%87%E5%8D%97%EF%BC%88%E7%AC%AC4%E7%89%88%EF%BC%89/">
+                                <span class="chip bg-color">C++语言设计指南（第4版）</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/C/" class="post-category">
+                                C++
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2021-01-11
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2021-01-15
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    8.5k
+                </div>
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <center><span style="color:blue;font-size:15px">2021/1/10</span></center>
+
+<h2 id="第6章-数组、指针与字符串"><a href="#第6章-数组、指针与字符串" class="headerlink" title="第6章 数组、指针与字符串"></a>第6章 数组、指针与字符串</h2><h3 id="6-1-数组"><a href="#6-1-数组" class="headerlink" title="6.1 数组"></a>6.1 数组</h3><h4 id="6-1-2-数组的存储与初始化"><a href="#6-1-2-数组的存储与初始化" class="headerlink" title="6.1.2 数组的存储与初始化"></a>6.1.2 数组的存储与初始化</h4><p><strong>1.数组的存储</strong><br>数组元素在内存中是顺序、连续存储的。数组元素在内存中占据一组连续的存储单元，逻辑上相邻的元素在物理地址上也是相邻的。 </p>
+<p><strong>2.数组的初始化</strong><br>数组的初始化就是在声明数组时给部分或全部元素赋值。<br>声明数组时如果列成全部元素的初值，可以不用说明元素个数：<br><em>int a[]={1,1,1};</em><br>当然，也可以只对元素中的部分元素进行初始化，这种初始化只能针对前若干元素：<br><em>float fa[5]={1.0, 2.0, 3.0};</em></p>
+<p><strong>细节：</strong>当指定的初值个数小于数组大小时， 剩下的数组元素会被赋予0值。若定义数组时没有指定任何一个元素的初值，对于静态生存期的数组，每个元素仍然会被赋予0值；但对于动态生存期的数组，每个元素的初值都是不确定的。</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">//动态生存期</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">int</span> a<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">3</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+		cout <span class="token operator">&lt;&lt;</span> a<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&lt;&lt;</span> <span class="token string">' '</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="/images/cpp2/image-20210110111504396.png" alt="动态生存期"></p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">//静态生存期</span>
+<span class="token keyword">int</span> a<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">3</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+		cout <span class="token operator">&lt;&lt;</span> a<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&lt;&lt;</span> <span class="token string">' '</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="/images/cpp2/image-20210110111610294.png" alt="静态生存期"></p>
+<center><span style="color:blue;font-size:15px">2021/1/11</span></center>
+
+<h4 id="6-1-3-数组作为函数参数"><a href="#6-1-3-数组作为函数参数" class="headerlink" title="6.1.3 数组作为函数参数"></a>6.1.3 数组作为函数参数</h4><p>使用数组名传递数据时，传递的是地址。<br><strong>细节：</strong>把数组作为参数时，一般不指定数组第一维的大小，即使指定，也会被忽略。</p>
+<h4 id="6-1-4-对象数组"><a href="#6-1-4-对象数组" class="headerlink" title="6.1.4 对象数组"></a><strong>6.1.4 对象数组</strong></h4><p>数组的元素不仅可以是基本数据类型，也可以是自定义类型。</p>
+<h4 id="6-1-5-程序实例"><a href="#6-1-5-程序实例" class="headerlink" title="6.1.5 程序实例"></a>6.1.5 程序实例</h4><p>例6-4 利用Point类进行点的线性拟合。</p>
+<p>考虑一个用n个数据点拟合成直线的问题，直线模型为</p>
+<script type="math/tex; mode=display">y(x)=ax+b</script><p>这个问题称为线性回归。设变量y随自变量x变化，给定n组观测数据（$x_i,y_i$)，用直线来拟合这些点，其中a，b是直线的斜率和截距，称为回归系数。</p>
+<p>为确定回归系数，通常采用最小二乘法，即要使下式达到最小。</p>
+<script type="math/tex; mode=display">Q=\sum_{i=0}^{n-1}{[y_i-(ax_i+b)]^2}</script><p>根据极值定理，a和b满足下列方程：</p>
+<script type="math/tex; mode=display">\frac{\partial Q}{\partial a}=2\sum_{i=0}^{n-1}{[y_i-(ax_i+b)](-x_i)}=0</script><script type="math/tex; mode=display">\frac{\partial Q}{\partial b}=2\sum_{i=0}^{n-1}{[y_i-(ax_i+b)](-1)}=0</script><p>解得：</p>
+<script type="math/tex; mode=display">a=\frac{L_{xy}}{L_{xx}}=\frac{\sum_{i=0}^{n-1}{(x_i-\overline{x})(y_i-\overline{y})}}{\sum_{i=0}^{n-1}{(x_i-\overline{x})^2}}</script><script type="math/tex; mode=display">b=\overline{y}-a\overline{x}</script><p>相关系数r可以判断一组数据线性相关的密切程度，定义为：</p>
+<script type="math/tex; mode=display">r=\frac{L_{xy}}{\sqrt{L_{xx}L_{yy}}}</script><script type="math/tex; mode=display">L_{yy}=\sum_{i=0}^{n-1}{(y_i-\overline{y})^2}</script><p>r的绝对值越接近1，表示数据的线性关系越好</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">//Point.h</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">ifndef</span> <span class="token expression">_POINT_H</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token expression">_POINT_H</span></span>
+
+<span class="token keyword">class</span> <span class="token class-name">Point</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+	<span class="token function">Point</span><span class="token punctuation">(</span><span class="token keyword">float</span> x <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token keyword">float</span> y <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">:</span><span class="token function">x</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">y</span><span class="token punctuation">(</span>y<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+	<span class="token keyword">float</span> <span class="token function">getX</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> x<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+	<span class="token keyword">float</span> <span class="token function">getY</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> y<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+<span class="token keyword">private</span><span class="token operator">:</span>
+	<span class="token keyword">float</span> x<span class="token punctuation">,</span> y<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">endif</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">//6_4.cpp 最小二乘法做线性拟合</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">"Point.h"</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;cmath&gt;</span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token comment">//直线线性担合,pointe为各点nPoint为点数</span>
+<span class="token keyword">float</span> <span class="token function">lineFit</span><span class="token punctuation">(</span><span class="token keyword">const</span> Point points<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token keyword">int</span> nPoint<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">float</span> avgX <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> avgY <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+	<span class="token keyword">float</span> lxx <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> lyy <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> lxy <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+	<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> nPoint<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		avgX <span class="token operator">+=</span> points<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">getX</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">/</span> nPoint<span class="token punctuation">;</span>
+		avgY <span class="token operator">+=</span> points<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">getY</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">/</span> nPoint<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> nPoint<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		lxx <span class="token operator">+=</span> <span class="token punctuation">(</span>points<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">getX</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> avgX<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token punctuation">(</span>points<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">getX</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> avgX<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		lyy <span class="token operator">+=</span> <span class="token punctuation">(</span>points<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">getY</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> avgY<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token punctuation">(</span>points<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">getY</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> avgY<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		lxy <span class="token operator">+=</span> <span class="token punctuation">(</span>points<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">getX</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> avgX<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token punctuation">(</span>points<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">getY</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> avgY<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	cout<span class="token operator">&lt;&lt;</span> <span class="token string">"This line can be fitted by y=ax+b."</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+	cout <span class="token operator">&lt;&lt;</span> <span class="token string">"a="</span> <span class="token operator">&lt;&lt;</span> lxy <span class="token operator">/</span> lxx <span class="token operator">&lt;&lt;</span> <span class="token string">" "</span><span class="token punctuation">;</span>										<span class="token comment">//输出回归系数a</span>
+	cout <span class="token operator">&lt;&lt;</span> <span class="token string">"b="</span> <span class="token operator">&lt;&lt;</span> avgY <span class="token operator">-</span> avgX <span class="token operator">*</span> lxy <span class="token operator">/</span> lxx <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>						<span class="token comment">//输出回归系数b</span>
+	<span class="token keyword">return</span> <span class="token keyword">static_cast</span><span class="token operator">&lt;</span><span class="token keyword">float</span><span class="token operator">&gt;</span><span class="token punctuation">(</span>lxy <span class="token operator">/</span> <span class="token function">sqrt</span><span class="token punctuation">(</span>lxx <span class="token operator">*</span> lyy<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>						<span class="token comment">//返回相关系数r</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	Point p<span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token function">Point</span><span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token function">Point</span><span class="token punctuation">(</span><span class="token number">14</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token function">Point</span><span class="token punctuation">(</span><span class="token number">26</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token function">Point</span><span class="token punctuation">(</span><span class="token number">33</span><span class="token punctuation">,</span> <span class="token number">40</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token function">Point</span><span class="token punctuation">(</span><span class="token number">46</span><span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token function">Point</span><span class="token punctuation">(</span><span class="token number">54</span><span class="token punctuation">,</span> <span class="token number">60</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token function">Point</span><span class="token punctuation">(</span><span class="token number">67</span><span class="token punctuation">,</span> <span class="token number">70</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token function">Point</span><span class="token punctuation">(</span><span class="token number">75</span><span class="token punctuation">,</span> <span class="token number">80</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token function">Point</span><span class="token punctuation">(</span><span class="token number">84</span><span class="token punctuation">,</span> <span class="token number">90</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token function">Point</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+	<span class="token keyword">float</span> r <span class="token operator">=</span> <span class="token function">lineFit</span><span class="token punctuation">(</span>p<span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Line coefficient r="</span> <span class="token operator">&lt;&lt;</span> r <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="/images/cpp2/image-20210111162503679.png" alt="结果"></p>
+<p>这个程序的缺点是可以处理的数据点数是固定的，由Point类对象数组的大小决定，这在实际使用中是一个很大的遗憾，在后面的章节中，会对本程序进行改造，以适应任意多个数据的处理。</p>
+<h3 id="6-2-指针"><a href="#6-2-指针" class="headerlink" title="6.2 指针"></a>6.2 指针</h3><h4 id="6-2-1-内存空间的访问方式"><a href="#6-2-1-内存空间的访问方式" class="headerlink" title="6.2.1 内存空间的访问方式"></a>6.2.1 内存空间的访问方式</h4><p>每个字节是一个基本内存单元，有一个地址。<br>在C++中有专门用来存放内存单元地址的变量类型，这就是指针类型。</p>
+<h4 id="6-2-2-指针变量的声明"><a href="#6-2-2-指针变量的声明" class="headerlink" title="6.2.2 指针变量的声明"></a>6.2.2 指针变量的声明</h4><p><strong>疑问：</strong>为什么在声明指针变量时要指出它所指的对象是什么类型呢？<br>限定对变量可以进行的运算及其运算规则。</p>
+<h4 id="6-2-3-与地址相关的运算”-”和“-amp-”"><a href="#6-2-3-与地址相关的运算”-”和“-amp-”" class="headerlink" title="6.2.3 与地址相关的运算”*”和“&amp;”"></a>6.2.3 与地址相关的运算”*”和“&amp;”</h4><p>“*”称为指针运算符，也称解析（dereference），表示获取指针所指向的变量的值。<br>“&amp;”称为取地址运算符，用来得到一个对象的地址。<br>必须注意，“*”和“&amp;”在声明语句中和执行语句中其含义是不同的，它们作为一元运算符和作为二元运算符时含义也是不同的。</p>
+<h4 id="6-2-4-指针的赋值"><a href="#6-2-4-指针的赋值" class="headerlink" title="6.2.4 指针的赋值"></a>6.2.4 指针的赋值</h4><p>可以使用一个已经赋值的指针去初始化另一个指针，这就是说，可以使多个指针指向同一个变量。<br>数组名称实际上就是一个不能被赋值的指针，即指针常量。</p>
+<p>关于指针的类型，还应该注意以下几点。<br>（1）可以声明<strong>指向常量的指针</strong>，此时不能通过指针来改变所指对象的值，但指针本身可以改变，可以指向另外的对象。例如:</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">int</span> a<span class="token punctuation">;</span>
+<span class="token keyword">const</span> <span class="token keyword">int</span> <span class="token operator">*</span>pl<span class="token operator">=</span><span class="token operator">&amp;</span>a<span class="token punctuation">;</span>				<span class="token comment">//pl是指向常量的指针</span>
+<span class="token keyword">int</span> b<span class="token punctuation">;</span>
+pl<span class="token operator">=</span><span class="token operator">&amp;</span>b<span class="token punctuation">;</span>							<span class="token comment">//正确，pl本身的值可以改变</span>
+<span class="token operator">*</span>pl<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>							<span class="token comment">//编译时出错，不能通过pl改变所指的对象</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>（2）可以声明<strong>指针类型的常量</strong>，这时指针本身的值不能被改变。例如:</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">int</span> <span class="token operator">*</span><span class="token keyword">const</span> p2<span class="token operator">=</span><span class="token operator">&amp;</span>a<span class="token punctuation">;</span>
+p2<span class="token operator">=</span><span class="token operator">&amp;</span>b<span class="token punctuation">;</span>							<span class="token comment">//错误，p2是指针常量，值不能改变</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>（3）一般情况下，指针的值只能赋给相同类型的指针。但是有一种特殊的 <strong>void类型指针</strong>，可以存储任何类型的对象地址，就是说任何类型的指针都可以赋值给void类型的指针变量。经过使用类型显式转换，通过void类型的指针便可以访问任何类型的数据。<br><strong>提示：</strong>void 指针一般只在指针所指向的数据类型不确定时使用。</p>
+<h4 id="6-2-5-指针运算"><a href="#6-2-5-指针运算" class="headerlink" title="6.2.5 指针运算"></a>6.2.5 指针运算</h4><p>*(pl + nl)表示pI当前所指位置后方第nl个数的内容，它也可以写作pI[nl],这与*(pl + nl)的写法是完全等价的，同样，*(pl - nl)也可以写作pI[-nl]。</p>
+<p><img src="/images/cpp2/image-20210111181928035.png" alt="指针的算术运算"></p>
+<p><strong>提示：</strong>指针算术运算的不慎使用会导致指针指向无法预期的地址，从而造成不确定的结果，因此指针的算术运算一定要慎用。</p>
+<p>指针变量的关系运算指的是指向相同类型数据的指针之间进行的关系运算。如果两个相同类型的指针相等，就表示这两个指针是指向同一个地址。不同类型的指针之间或指针与非0整数之间的关系运算是毫无意义的。但是指针变量可以和整数0进行比较，0专用于表示空指针，也就是一个不指向任何有效地址的指针。</p>
+<p><strong>细节：</strong>空指针也可以用NULL来表示，NULL是一个在很多头文件中都有定义的宏，被定义为0。</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">int</span> <span class="token operator">*</span>p<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token operator">*</span>p<span class="token operator">=</span><span class="token constant">NULL</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p><strong>习惯：</strong>如果不便于用一个有效地址给一个指针变量赋初值，那么应当用0作为它的初值，从而避免指向不确定地址的指针出现。</p>
+<h4 id="6-2-6-用指针处理数组元素"><a href="#6-2-6-用指针处理数组元素" class="headerlink" title="6.2.6 用指针处理数组元素"></a>6.2.6 用指针处理数组元素</h4><p><strong>细节：</strong>把数组作为函数的形参，等价于把指向数组元素类型的指针作为形参。例如，下面3个写法，出现在形参列表中都是等价的。</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">void</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token keyword">int</span> p<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">void</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token keyword">int</span> p<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">void</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token keyword">int</span> <span class="token operator">*</span>p<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h4 id="6-2-7-指针数组"><a href="#6-2-7-指针数组" class="headerlink" title="6.2.7 指针数组"></a>6.2.7 指针数组</h4><p>如果一个数组的每个元素都是指针变量，这个数组就是指针数组。指针数组的每个元素都必须是同类型的指针。例如 int *pa[3];声明了一个int类型的指针数组pa，其中有3个元素，每个元素都是一个指向int类型数<br>据的指针。由于指针数组的每个元素都是一个指针，必须先赋值后引用，因此，声明数组之后，对指针元素赋初值是必不可少的。</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">//6_8.cpp 利用指针数组输出单位矩阵</span>
+<span class="token macro property"><span class="token directive-hash">#</span> <span class="token directive keyword">include</span> <span class="token string">&lt;iostream&gt;</span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">int</span> line1<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+	<span class="token keyword">int</span> line2<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+	<span class="token keyword">int</span> line3<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+	<span class="token comment">//定义整型指针数组并初始化</span>
+	<span class="token keyword">int</span><span class="token operator">*</span> pLine<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span> line1<span class="token punctuation">,</span>line2<span class="token punctuation">,</span> line3 <span class="token punctuation">}</span><span class="token punctuation">;</span>
+	cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Matrix test:"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+	<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">3</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> <span class="token number">3</span><span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span>
+			cout <span class="token operator">&lt;&lt;</span> pLine<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">&lt;&lt;</span> <span class="token string">" "</span><span class="token punctuation">;</span>
+		cout <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="/images/cpp2/image-20210111235748905.png" alt="指针数组与二维数组的区别"></p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">//6_9.cpp 二维数组举例</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream&gt;</span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">int</span> array2<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token punctuation">{</span><span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">,</span> <span class="token number">13</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token number">21</span><span class="token punctuation">,</span> <span class="token number">22</span><span class="token punctuation">,</span> <span class="token number">23</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token number">31</span><span class="token punctuation">,</span> <span class="token number">32</span><span class="token punctuation">,</span> <span class="token number">33</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+	<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">3</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> <span class="token number">3</span><span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span>
+			cout <span class="token operator">&lt;&lt;</span> <span class="token operator">*</span><span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">(</span>array2 <span class="token operator">+</span> i<span class="token punctuation">)</span> <span class="token operator">+</span> j<span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> <span class="token string">" "</span><span class="token punctuation">;</span>
+		cout <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<center><span style="color:blue;font-size:15px">2021/1/12</span></center>
+
+<h4 id="6-2-8-用指针作为函数参数"><a href="#6-2-8-用指针作为函数参数" class="headerlink" title="6.2.8 用指针作为函数参数"></a>6.2.8 用指针作为函数参数</h4><p>例6-10：读入3个浮点数，将整数部分和小数部分分别输出。<br>程序由主函数和一个进行浮点数分解的子函数组成，浮点数在子函数中分解之后，将整数部分和小数部分传递回主函数中输出。可以想象，如果直接使用整型和浮点型变量，形参在子函数中的变化根本就无法传递到主函数，因此采用指针作为函数的参数。源代码如下:</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">//6 10.cpp 用指针作为函数参数</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream&gt;</span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token comment">//将实数x分成整数部分和小数部分，形参intPart、 fracPart是指针</span>
+<span class="token keyword">void</span> <span class="token function">splitFloat</span><span class="token punctuation">(</span><span class="token keyword">float</span> x<span class="token punctuation">,</span> <span class="token keyword">int</span><span class="token operator">*</span> intPart<span class="token punctuation">,</span> <span class="token keyword">float</span><span class="token operator">*</span> fracPart<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token operator">*</span>intPart <span class="token operator">=</span> <span class="token keyword">static_cast</span><span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">&gt;</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>						<span class="token comment">//取x的整数部分</span>
+	<span class="token operator">*</span>fracPart <span class="token operator">=</span> x <span class="token operator">-</span> <span class="token operator">*</span>intPart<span class="token punctuation">;</span>							<span class="token comment">//取x的小数部分</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Enter 3 float point numbers:"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+	<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">3</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">float</span> x<span class="token punctuation">,</span>f<span class="token punctuation">;</span>
+		<span class="token keyword">int</span> n<span class="token punctuation">;</span>
+		cin <span class="token operator">&gt;&gt;</span> x<span class="token punctuation">;</span>
+		<span class="token function">splitFloat</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> <span class="token operator">&amp;</span>n<span class="token punctuation">,</span> <span class="token operator">&amp;</span>f<span class="token punctuation">)</span><span class="token punctuation">;</span>							<span class="token comment">//变量地址作为实参</span>
+		cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Integer Part="</span><span class="token operator">&lt;&lt;</span>n<span class="token operator">&lt;&lt;</span><span class="token string">" Fraction Part="</span><span class="token operator">&lt;&lt;</span> f<span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>在这个程序中，使用引用作为形参也可以达到同样目的。</p>
+<h4 id="6-2-9-指针型函数"><a href="#6-2-9-指针型函数" class="headerlink" title="6.2.9 指针型函数"></a>6.2.9 指针型函数</h4><p>除了void 类型的函数之外，函数在调用结束之后都要有返回值，指针也可以是函数的返回值。当一个函数的返回值是指针类型时，这个函数就是指针型函数。使用指针型函数的最主要目的就是要在函数结束时把大量的数据从被调函数返回到主调函数中，而通常非指针型函数调用结束后，只能返回一个变量或者对象。</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">int</span> <span class="token operator">*</span><span class="token function">funcion</span><span class="token punctuation">(</span><span class="token keyword">int</span> a<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    函数体
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h4 id="6-2-10-指向函数的指针"><a href="#6-2-10-指向函数的指针" class="headerlink" title="6.2.10 指向函数的指针"></a>6.2.10 指向函数的指针</h4><p>在程序运行时，不仅数据要占据内存空间，执行程序的代码也被调入内存并占据一定的空间。每一个函数都有函数名，实际上这个函数名就表示函数的代码在内存中的起始地址。由此看来，调用函数的通常形式“函数名(参数表)”的实质就是“函数代码首地址(参数表)”。</p>
+<p>函数指针就是专门用来存放函数代码首地址的变量。在程序中可以像使用函数名一样使用指向函数的指针来调用函数。也就是说一旦函数指针指向了某个函数，它与函数名便具有同样的作用。函数名在表示函数代码起始地址的同时，也包括函数的返回值类型和参数的个数、类型、排列次序等信息。因此在通过函数名调用函数时，编译系统能够自动检查实参与形参是否相符，用函数的返回值参与其他运算时，能自动进行类型一致性检查。</p>
+<p>声明一个函数指针时，也需要说明函数的返回值、形式参数列表,其一般语法如下:<br>数据类型(*函数指针名) (形参表)</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">//6_11.cpp	函数指针实例</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream&gt;</span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token keyword">void</span> <span class="token function">printStuff</span><span class="token punctuation">(</span><span class="token keyword">float</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	cout <span class="token operator">&lt;&lt;</span> <span class="token string">"This is the print stuff function."</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">void</span> <span class="token function">printMessage</span><span class="token punctuation">(</span><span class="token keyword">float</span> data<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	cout <span class="token operator">&lt;&lt;</span> <span class="token string">"The data to be listed is "</span> <span class="token operator">&lt;&lt;</span> data <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>		
+<span class="token keyword">void</span> <span class="token function">printFloat</span><span class="token punctuation">(</span><span class="token keyword">float</span> data<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	cout <span class="token operator">&lt;&lt;</span> <span class="token string">"The data to be printed is "</span> <span class="token operator">&lt;&lt;</span> data <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">const</span> <span class="token keyword">float</span> PI <span class="token operator">=</span> <span class="token number">3.14159f</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> <span class="token keyword">float</span> TWO_PI <span class="token operator">=</span> PI <span class="token operator">*</span> <span class="token number">2.0f</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">void</span> <span class="token punctuation">(</span><span class="token operator">*</span>functionPointer<span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token keyword">float</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">printStuff</span><span class="token punctuation">(</span>PI<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	functionPointer <span class="token operator">=</span> printStuff<span class="token punctuation">;</span>
+	<span class="token function">functionPointer</span><span class="token punctuation">(</span>PI<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	functionPointer <span class="token operator">=</span> printMessage<span class="token punctuation">;</span>
+	<span class="token function">functionPointer</span><span class="token punctuation">(</span>TWO_PI<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">functionPointer</span><span class="token punctuation">(</span><span class="token number">13.0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	functionPointer <span class="token operator">=</span> printFloat<span class="token punctuation">;</span>
+	<span class="token function">functionPointer</span><span class="token punctuation">(</span>PI<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">printFloat</span><span class="token punctuation">(</span>PI<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="6-2-11-对象指针"><a href="#6-2-11-对象指针" class="headerlink" title="6.2.11 对象指针"></a>6.2.11 对象指针</h4><h5 id="1-对象指针的一般概念"><a href="#1-对象指针的一般概念" class="headerlink" title="1.对象指针的一般概念"></a>1.对象指针的一般概念</h5><p>和基本类型的变量一样，每一个对象在初始化之后都会在内存中占有一定的空间。因此，既可以通过对象名，也可以通过对象地址来访问一个对象。虽然对象同时包含了数虽然对象同时包含了数据和函数两种成员，但与一般变量略有不同，对象所占据的内存空间只是用于存放数据成员的，函数成员不在每一个对象中存储副本。对象指针就是用于存放对象地址的变量。</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">对象指针名<span class="token operator">-&gt;</span>成员名
+<span class="token punctuation">(</span><span class="token operator">*</span>对象指针名<span class="token punctuation">)</span><span class="token punctuation">.</span>成员名<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>这两种访问形式是等价的。</p>
+<h5 id="2-this指针"><a href="#2-this指针" class="headerlink" title="2.this指针"></a>2.this指针</h5><p>this指针是一个隐含于每个类的非静态成员函数中的特殊指针(包括构造函数和析构函数)，它用于指向正在被成员函数操作的对象。</p>
+<p><strong>细节：</strong>this指针实际上是类成员函数的一个隐含参数。 在调用类的成员函数时，目的对象的地址会自动作为该参数的值，传递给被调用的成员函数，这样被调函数就能够通过this指针来访问目的对象的数据成员。对于常成员函数来说，这个隐含的参数是常指针类型的。</p>
+<p>this是一个指针常量，对于常成员函数，this同时又是一个指向常量的指针。在成员函数中， 可以使用*this来标识正在调用该函数的对象。</p>
+<p><strong>提示：</strong>当局部作用域中声明了与类成员同名的标识符时，对该标识符的直接引用代表的是局部作用城中所声明的标识符，这时为了访问该类成员，可以通过this指针。</p>
+<h5 id="3-指向类的非静态成员的指针"><a href="#3-指向类的非静态成员的指针" class="headerlink" title="3.指向类的非静态成员的指针"></a>3.指向类的非静态成员的指针</h5><p>类的成员自身也是一些变量、函数或者对象等，因此也可以直接将它们的地址存放到一个指针变量中，这样，就可以使指针直接指向对象的成员 ，进而可以通过这些指针访问对象的成员。</p>
+<p>声明指针语句的一般形式为：</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">类型说明符 类名<span class="token operator">::</span><span class="token operator">*</span>指针名<span class="token punctuation">;</span>						  <span class="token comment">//声明指向数据成员的指针</span>
+类型说明符 <span class="token punctuation">(</span>类名<span class="token operator">::</span> <span class="token operator">*</span>指针名<span class="token punctuation">)</span><span class="token punctuation">(</span>参数表<span class="token punctuation">)</span><span class="token punctuation">;</span>				<span class="token comment">//声明指向函数成员的指针</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>对成员指针赋值的一般语法形式为：</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">指针名<span class="token operator">=</span><span class="token operator">&amp;</span>类名<span class="token operator">::</span>数据成员名<span class="token punctuation">;</span> 					  <span class="token comment">//对数据成员指针赋值</span>
+指针名<span class="token operator">=</span><span class="token operator">&amp;</span>类名<span class="token operator">::</span>函数成员名<span class="token punctuation">;</span>						  <span class="token comment">//对函数成员赋值</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p><strong>注意：</strong>对类成员取地址时，也要遵守访问权限的约定，也就是说，在一个类的作用域之外不能够对它的私有成员取地址。</p>
+<p><strong>注意：</strong>常成员函数与普通成员函数具有不同的类型，因此能够被常成员函数赋值的指针，需要在声明时明确写出const关键字。</p>
+<p>类是通过对象而实例化的，在声明类的对象时才会为具体的对象分配内存空间，这时只要将对象在内存中的起始地址与成员指针中存放的相对偏移结合起来就可以访问到对象的数据成员了。访问数据成员时，这种结合可通过以下两种语法形式实现：</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">对象名<span class="token punctuation">.</span><span class="token operator">*</span>类成员指针名
+对象指针名<span class="token operator">-&gt;</span><span class="token operator">*</span>类成员指针名<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>一个普通函数的函数名就表示它的起始地址，将起始地址赋给指针，就可以通过指针调用函数。类的成员函数虽然并不在每个对象中复制一份副本，但是由于需要确定this指针，因而必须通过对象来调用非静态成员函数。因此经过上述对成员函数指针赋值以后，也还不能用指针直接调用成员函数，而是需要首先声明类的对象，然后用以下形式的语句利用指针调用成员函数：</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token punctuation">(</span>对象名<span class="token punctuation">.</span><span class="token operator">*</span>类成员指针名<span class="token punctuation">)</span><span class="token punctuation">(</span>参数表<span class="token punctuation">)</span>
+<span class="token punctuation">(</span>对象指针名<span class="token operator">-&gt;</span><span class="token operator">*</span>类成员指针名<span class="token punctuation">)</span><span class="token punctuation">(</span>参数表<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">//6_13.cpp 指向类的非静态成员的指针 &amp; 访问对象的共有函数的不同方法</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;iostream&gt;</span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token keyword">class</span> <span class="token class-name">Point</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+	<span class="token function">Point</span><span class="token punctuation">(</span><span class="token keyword">int</span> x <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token keyword">int</span> y <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token operator">:</span><span class="token function">x</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token function">y</span><span class="token punctuation">(</span>y<span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+	<span class="token keyword">int</span> <span class="token function">getX</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> x<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+	<span class="token keyword">int</span> <span class="token function">getY</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> y<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+<span class="token keyword">private</span><span class="token operator">:</span>
+	<span class="token keyword">int</span> x<span class="token punctuation">,</span> y<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	Point <span class="token function">a</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	Point<span class="token operator">*</span> p1 <span class="token operator">=</span> <span class="token operator">&amp;</span>a<span class="token punctuation">;</span>
+	<span class="token keyword">int</span> <span class="token punctuation">(</span>Point<span class="token operator">::</span> <span class="token operator">*</span> funcPtr<span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span> <span class="token operator">=</span> <span class="token operator">&amp;</span>Point<span class="token operator">::</span>getX<span class="token punctuation">;</span>	<span class="token comment">//定义成员函数指针并初始化</span>
+	cout <span class="token operator">&lt;&lt;</span> <span class="token punctuation">(</span>a<span class="token punctuation">.</span><span class="token operator">*</span>funcPtr<span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>					<span class="token comment">//(1)使用成员函数指针和对象名访问成员函数</span>
+	cout <span class="token operator">&lt;&lt;</span> <span class="token punctuation">(</span>p1<span class="token operator">-&gt;</span><span class="token operator">*</span>funcPtr<span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>					<span class="token comment">//(2)使用成员函数指针和对象指针访问成员函数</span>
+	cout <span class="token operator">&lt;&lt;</span> a<span class="token punctuation">.</span><span class="token function">getX</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>							<span class="token comment">//(3)使用对象名访问成员函数</span>
+	cout <span class="token operator">&lt;&lt;</span> p1<span class="token operator">-&gt;</span><span class="token function">getX</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>							<span class="token comment">//(4)使用对象指针访问成员函数</span>
+	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="4-指向类的静态成员的指针"><a href="#4-指向类的静态成员的指针" class="headerlink" title="4.指向类的静态成员的指针"></a>4.指向类的静态成员的指针</h5><p>对类的静态成员的访问是不依赖于对象的，因此可以用普通的指针来指向和访问静态成员。</p>
+<center><span style="color:blue;font-size:15px">2021/1/13</span></center>
+
+<h3 id="6-3-动态内存分配"><a href="#6-3-动态内存分配" class="headerlink" title="6.3 动态内存分配"></a>6.3 动态内存分配</h3><p>在C++中，动态内存分配技术可以保证程序在运行过程中按照实际需要申请适量的内存，使用结束后还可以释放，这种在程序运行过程中申请和释放的存储单元也称为堆对象，申请和释放过程一般称为建立和删除。<br>在C++程序中建立和删除堆对象使用两个运算符: new和delete。<br>运算符new的功能是动态分配内存，或者称为动态创建堆对象,语法形式为:<br>new 数据类型(初始化参数列表);<br>该语句在程序运行过程中申请分配用于存放指定类型数据的内存空间，并根据初始化参数列表中给出的值进行初始化。如果内存申请成功，new运算便返回一个指向新分配内存首地址的类型的指针，可以通过这个指针对堆对象进行访问；如果申请失败，会抛出异常(有关异常,将在第12章介绍)。</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">int</span><span class="token operator">*</span> point<span class="token punctuation">;</span>
+point<span class="token operator">=</span><span class="token keyword">new</span> <span class="token keyword">int</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p><strong>细节：</strong>在用new 建立一个类的对象时，如果该类存在用户定义的默认构造函数，则“new T”和“new T()”这两种写法的效果是相同的，都会调用这个默认构造函数。但若用户未定义默认构造函数,使用“new T”创建对象时，会调用系统生成的隐含的默认构造函数;使用“new T()”创建对象时，系统除了执行默认构造函数会执行的那些操作外，还会为基本数据类型和指针类型的成员用0赋初值，而且这一过程是递归的。 也就是说，如果该对象的某个成员对象也没有用户定义的默认构造函数，那么对该成员对象的基本数据类型和指针类型的成员，同样会被以0赋初值。(基本数据类型和数组也一样)</p>
+<p>运算符delete用来删除由new建立的对象，释放指针所指向的内存空间。格式为:</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">delete</span> 指针名<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><strong>注意：</strong>用new分配的内存，必须用delete 加以释放，否则会导致动态分配的内存无法回收，使得程序占据的内存越来越大，这叫做“内存泄漏”。</p>
+<p>使用运算符new也可以创建<strong>数组类型</strong>的对象，创建一维数组的语法形式为：</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">new</span> 类型名 <span class="token punctuation">[</span>数组长度<span class="token punctuation">]</span>；<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>如果是用new建立的数组,用delete删除时在指针名前面要加“[]”,格式如下:</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">delete</span><span class="token punctuation">[</span><span class="token punctuation">]</span> 指针名<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<center><span style="color:blue;font-size:15px">2021/1/14</span></center>
+
+<p>在动态数组类中，通过类的成员函数访问数组元素，可以在每次访问之前检查一下下标是否越界，使得使得数组下标越界的错误能够及早被发现<strong><span style="color:green;font-size:15px">(实际应用可直接使用vector)</span></strong> 。这种检查，可以通过C++的assert来进行。assert 只在调试模式下生效，一般用assert 只是检查程序本身的逻辑错误，而用户的不当输入造成的错误，则应当用其他方式加以处理。</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">//6_18.cpp 动态数组类   将动态数组封装成一个类</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;iostream&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;cassert&gt;</span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token keyword">class</span> <span class="token class-name">Point</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+	<span class="token function">Point</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">:</span><span class="token function">x</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">y</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Default Constructor called."</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	<span class="token function">Point</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">,</span> <span class="token keyword">int</span> y<span class="token punctuation">)</span> <span class="token operator">:</span><span class="token function">x</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">y</span><span class="token punctuation">(</span>y<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Constructor called."</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	<span class="token operator">~</span><span class="token function">Point</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Destructor called."</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+	<span class="token keyword">int</span> <span class="token function">getX</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> x<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+	<span class="token keyword">int</span> <span class="token function">getY</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> y<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+	<span class="token keyword">void</span> <span class="token function">move</span><span class="token punctuation">(</span><span class="token keyword">int</span> newX<span class="token punctuation">,</span> <span class="token keyword">int</span> newY<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		x <span class="token operator">=</span> newX<span class="token punctuation">;</span>
+		y <span class="token operator">=</span> newY<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+<span class="token keyword">private</span><span class="token operator">:</span>
+	<span class="token keyword">int</span> x<span class="token punctuation">,</span> y<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">class</span> <span class="token class-name">ArrayOfPoints</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+	<span class="token function">ArrayOfPoints</span><span class="token punctuation">(</span><span class="token keyword">int</span> size<span class="token punctuation">)</span> <span class="token operator">:</span><span class="token function">size</span><span class="token punctuation">(</span>size<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		points <span class="token operator">=</span> <span class="token keyword">new</span> Point<span class="token punctuation">[</span>size<span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	<span class="token operator">~</span><span class="token function">ArrayOfPoints</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Deleting..."</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+		<span class="token keyword">delete</span><span class="token punctuation">[</span><span class="token punctuation">]</span> points<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	Point <span class="token operator">&amp;</span><span class="token function">element</span><span class="token punctuation">(</span><span class="token keyword">int</span> index<span class="token punctuation">)</span> <span class="token punctuation">{</span>								<span class="token comment">//返回一个对象的引用，确保正确更改</span>
+		<span class="token function">assert</span><span class="token punctuation">(</span>index <span class="token operator">&gt;=</span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> index <span class="token operator">&lt;</span> size<span class="token punctuation">)</span><span class="token punctuation">;</span>					<span class="token comment">//如果数组下标越界，程序终止</span>
+		<span class="token keyword">return</span> points<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+<span class="token keyword">private</span><span class="token operator">:</span>
+	Point<span class="token operator">*</span> points<span class="token punctuation">;</span>
+	<span class="token keyword">int</span> size<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">int</span> count<span class="token punctuation">;</span>
+	cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Please enter the count of points: "</span><span class="token punctuation">;</span>
+	cin <span class="token operator">&gt;&gt;</span> count<span class="token punctuation">;</span>
+	ArrayOfPoints <span class="token function">points</span><span class="token punctuation">(</span>count<span class="token punctuation">)</span><span class="token punctuation">;</span>							<span class="token comment">//创建对象数组</span>
+	points<span class="token punctuation">.</span><span class="token function">element</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">move</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>							<span class="token comment">//访问数组元索的成员</span>
+	points<span class="token punctuation">.</span><span class="token function">element</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">move</span><span class="token punctuation">(</span><span class="token number">15</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">;</span>							<span class="token comment">//访问数组元素的成员</span>
+	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="/images/cpp2/image-20210114012043817.png" alt="运行结果"></p>
+<p>创建和删除对象数组的过程都由ArrayOfPoints类的构造函数和析构函数完成。这虽然使main()函数更为简洁，但是对数组元素的访问形式“points.element(0)”却显得啰嗦。如果希望像使用普通数组样,通过下标操作符“[ ]”来访问数组元素，就需要对下标操作符进行重载，这将在第9章详细介绍。</p>
+<p>用new操作也可以创建多维数组，其中第1维长度可以是任何结果为正整数的表达式，而其他各维数组长度必须是结果为正整数的常量表达式。如果内存申请成功.new运算返回一个指向新分配内存的首地址的指针。例如，下列语句</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">float</span><span class="token operator">*</span> fp<span class="token punctuation">;</span>
+fp <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">float</span><span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">25</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>会产生错误，正确的写法应该是：</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">float</span><span class="token punctuation">(</span><span class="token operator">*</span>cp<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">25</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+cp <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">float</span><span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">25</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>如此得到的指针cp，既可以作为指针使用，也可以像一个三维数组名一样使用。</p>
+<h3 id="6-4-用vector创建数组对象"><a href="#6-4-用vector创建数组对象" class="headerlink" title="6.4 用vector创建数组对象"></a>6.4 用vector创建数组对象</h3><p>无论是静态数组，还是用new动态创建的数组，都难以检测下标越界的错误，在实际应用中常常造成困扰。例6-18 提供了一个很好的例子，它通过将动态数组封装成-一个类，允许在调试状态下访问数组元素时检查下标越界的错误。然而，它只能表示Point类型的动态数组，若要处理其他类型的动态数组，还需创建新的动态数组类，这是很烦琐的重复性工作，事实上,C++标准库也提供了被封装的动态数组一vector，而且这种被封装的数组可以具有各种类型，这就使我们免去了那些重复性工作。vector不是一个类，而是个类模板。模板的概念将在第9章详细介绍，读者通过本章的学习，只需在形式上记住vector的使用方式。</p>
+<p>向量 <strong>vector</strong> 是一种对象实体, 能够容纳许多其他类型相同的元素, 因此又被称为容器。 与string相同，vector 同属于STL(Standard Template Library，标准模板库)中的一种自定义的数据类型，可以广义上认为是数组的增强版。用vector定义动态数组的形式为:</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">vector<span class="token operator">&lt;</span>元素类型<span class="token operator">&gt;</span>数组对象名<span class="token punctuation">(</span>数组长度，元素初值<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><strong>细节：</strong>与普通数组不同的是，用vector定义的数组对象的所有元素都会被初始化。如果数组的元素类型为基本数据类型，则所有元素都会被以0初始化；如果数组元素为类类型，则会调用类的默认构造函数初始化。因此如果以此形式定义的vector动态数组，需要保证作为数组元素的类具有默认构造函数。另外,初值也可以自己指定，但只能为所有元素指定相同初值。</p>
+<p>对vector数组对象元素的访问方式，与普通数组具有相同的形式：</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">数组对象名<span class="token punctuation">[</span>下标表达式<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>但是vector数组对象的名字表示的就是一个数组对象，而非数组的首地址，因为数组对象不是数组，而是封装了数组的对象。vector定义的数组对象具有个重要的成员函数size()，它会返回数组的大小。</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">//6_20.cpp vector应用举例</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;iostream&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;vector&gt;</span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token comment">//计算数组arr中元素的平均值</span>
+<span class="token keyword">double</span> <span class="token function">average</span><span class="token punctuation">(</span><span class="token keyword">const</span> vector<span class="token operator">&lt;</span><span class="token keyword">double</span><span class="token operator">&gt;</span><span class="token operator">&amp;</span>arr<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">double</span> sum <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+	<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">unsigned</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> arr<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+		sum <span class="token operator">+=</span> arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<span class="token keyword">return</span> sum <span class="token operator">/</span> arr<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">unsigned</span> n<span class="token punctuation">;</span>
+	cout <span class="token operator">&lt;&lt;</span> <span class="token string">"n= "</span><span class="token punctuation">;</span>
+	cin <span class="token operator">&gt;&gt;</span> n<span class="token punctuation">;</span>
+	vector<span class="token operator">&lt;</span><span class="token keyword">double</span><span class="token operator">&gt;</span><span class="token function">arr</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Please input "</span> <span class="token operator">&lt;&lt;</span> n <span class="token operator">&lt;&lt;</span> <span class="token string">" real numbers:"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+	<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">unsigned</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+		cin <span class="token operator">&gt;&gt;</span> arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+	cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Average="</span> <span class="token operator">&lt;&lt;</span> <span class="token function">average</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>vector还具有很多其他强大的功能，例如它的大小可以扩展，这些特性都将在第10章详细介绍。</p>
+<center><span style="color:blue;font-size:15px">2021/1/15</span></center>
+
+<h3 id="6-5-深复制和浅复制"><a href="#6-5-深复制和浅复制" class="headerlink" title="6.5 深复制和浅复制"></a>6.5 深复制和浅复制</h3><p>虽然第4章已经介绍过复制构造函数，但是在此前大多数简单例题中都不需要特别编写复制构造函数，隐含的复制构造函数足以实现对象间数据元素的一一对应复制。因此，读者对于编写复制构造函数的必要性，可能一直存在疑问。其实隐含的复制构造的数并不总是适用的，因为它完成的只是浅复制。</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">//6_21.cpp 对象的浅复制</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;cassert&gt;</span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token keyword">class</span> <span class="token class-name">Point</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+	<span class="token function">Point</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">:</span><span class="token function">x</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">y</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Default Constructor called."</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	<span class="token function">Point</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">,</span> <span class="token keyword">int</span> y<span class="token punctuation">)</span> <span class="token operator">:</span><span class="token function">x</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">y</span><span class="token punctuation">(</span>y<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Constructor called."</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	<span class="token operator">~</span><span class="token function">Point</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Destructor called."</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+	<span class="token keyword">int</span> <span class="token function">getX</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> x<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+	<span class="token keyword">int</span> <span class="token function">getY</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> y<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+	<span class="token keyword">void</span> <span class="token function">move</span><span class="token punctuation">(</span><span class="token keyword">int</span> newX<span class="token punctuation">,</span> <span class="token keyword">int</span> newY<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		x <span class="token operator">=</span> newX<span class="token punctuation">;</span>
+		y <span class="token operator">=</span> newY<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+<span class="token keyword">private</span><span class="token operator">:</span>
+	<span class="token keyword">int</span> x<span class="token punctuation">,</span> y<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">class</span> <span class="token class-name">ArrayOfPoints</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+	<span class="token function">ArrayOfPoints</span><span class="token punctuation">(</span><span class="token keyword">int</span> size<span class="token punctuation">)</span> <span class="token operator">:</span><span class="token function">size</span><span class="token punctuation">(</span>size<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		points <span class="token operator">=</span> <span class="token keyword">new</span> Point<span class="token punctuation">[</span>size<span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	<span class="token operator">~</span><span class="token function">ArrayOfPoints</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Deleting..."</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+		<span class="token keyword">delete</span><span class="token punctuation">[</span><span class="token punctuation">]</span> points<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	Point<span class="token operator">&amp;</span> <span class="token function">element</span><span class="token punctuation">(</span><span class="token keyword">int</span> index<span class="token punctuation">)</span> <span class="token punctuation">{</span>								<span class="token comment">//返回一个对象的引用，确保正确更改</span>
+		<span class="token function">assert</span><span class="token punctuation">(</span>index <span class="token operator">&gt;=</span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> index <span class="token operator">&lt;</span> size<span class="token punctuation">)</span><span class="token punctuation">;</span>					<span class="token comment">//如果数组下标越界，程序终止</span>
+		<span class="token keyword">return</span> points<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+<span class="token keyword">private</span><span class="token operator">:</span>
+	Point<span class="token operator">*</span> points<span class="token punctuation">;</span>
+	<span class="token keyword">int</span> size<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">int</span> count<span class="token punctuation">;</span>
+	cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Please enter the count of points:"</span><span class="token punctuation">;</span>
+	cin <span class="token operator">&gt;&gt;</span> count<span class="token punctuation">;</span>
+	ArrayOfPoints <span class="token function">pointsArray1</span><span class="token punctuation">(</span>count<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token comment">//创建对象数组</span>
+	pointsArray1<span class="token punctuation">.</span><span class="token function">element</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">move</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	pointsArray1<span class="token punctuation">.</span><span class="token function">element</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">move</span><span class="token punctuation">(</span><span class="token number">15</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	ArrayOfPoints pointsArray2 <span class="token operator">=</span> pointsArray1<span class="token punctuation">;</span>
+	<span class="token comment">//创建对象数组副本</span>
+	cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Copy of pointsArrayl:"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+	cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Point 0 of array2: "</span> <span class="token operator">&lt;&lt;</span> pointsArray2<span class="token punctuation">.</span><span class="token function">element</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getX</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> <span class="token string">", "</span><span class="token operator">&lt;&lt;</span> pointsArray2<span class="token punctuation">.</span><span class="token function">element</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getY</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+	cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Point 1 of array2: "</span> <span class="token operator">&lt;&lt;</span> pointsArray2<span class="token punctuation">.</span><span class="token function">element</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getX</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> <span class="token string">", "</span><span class="token operator">&lt;&lt;</span> pointsArray2<span class="token punctuation">.</span><span class="token function">element</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getY</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+	pointsArray1<span class="token punctuation">.</span><span class="token function">element</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">move</span><span class="token punctuation">(</span><span class="token number">25</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	pointsArray1<span class="token punctuation">.</span><span class="token function">element</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">move</span><span class="token punctuation">(</span><span class="token number">35</span><span class="token punctuation">,</span> <span class="token number">40</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	cout <span class="token operator">&lt;&lt;</span> <span class="token string">"After the moving of pointsArrayl:"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+	cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Point 0 of array2: "</span> <span class="token operator">&lt;&lt;</span> pointsArray2<span class="token punctuation">.</span><span class="token function">element</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getX</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> <span class="token string">", "</span><span class="token operator">&lt;&lt;</span> pointsArray2<span class="token punctuation">.</span><span class="token function">element</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getY</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+	cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Point 1 of array2: "</span> <span class="token operator">&lt;&lt;</span> pointsArray2<span class="token punctuation">.</span><span class="token function">element</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getX</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> <span class="token string">", "</span><span class="token operator">&lt;&lt;</span> pointsArray2<span class="token punctuation">.</span><span class="token function">element</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getY</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这个程序会出现异常，也就是运行错误。</p>
+<p><img src="/images/cpp2/image-20210115130448555.png" alt="6_21"></p>
+<p>这里建立对象pointsArray2时调用的是默认的复制构造函数，实现对应数据项的直接复制。默认的复制构造函数将两个对象的对应数据项简单复制后，pointsArray1的成员points和pointsArray2的成员points 具有相同的值，也就是说两个指针指向的是同一内存地址，表面上好像完成了复制，但是并没有形成真正的副本。因此当程序中移动pointsArray1中的点时，也影响到了pointsArray2。 这种效果就是“浅复制”。<br>浅复制还有更大的弊病，在程序结束之前pointsArray1和pointsArray2 的析构函数会自动被调用，动态分配的内存空间会被释放。由于两个对象共用了同一块内存空间，因此该空间被两次释放，于是导致运行错误。解决这一问题的方法是编写复制构造函数，实现“深复制”。</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">//6_22.cpp  对象的深复制</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;cassert&gt;</span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token keyword">class</span> <span class="token class-name">Point</span> <span class="token punctuation">{</span>
+	<span class="token comment">//类的定义同6_21</span>
+	<span class="token comment">//...</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">class</span> <span class="token class-name">ArrayOfPoints</span><span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+	<span class="token function">ArrayOfPoints</span><span class="token punctuation">(</span><span class="token keyword">const</span> ArrayOfPoints<span class="token operator">&amp;</span> v<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token comment">//其他成员同6_21</span>
+<span class="token punctuation">}</span>
+<span class="token class-name">ArrayOfPoints</span><span class="token operator">::</span><span class="token function">ArrayOfPoints</span><span class="token punctuation">(</span><span class="token keyword">const</span> ArrayOfPoints<span class="token operator">&amp;</span> v<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	size<span class="token operator">=</span>v<span class="token punctuation">.</span>size<span class="token punctuation">;</span>
+	points <span class="token operator">=</span> <span class="token keyword">new</span> Point<span class="token punctuation">[</span>size<span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> size<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+		points<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> v<span class="token punctuation">.</span>points<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token comment">//同6_21</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="/images/cpp2/image-20210115131228658.png" alt="6_22"></p>
+<p>从这次的运行结果可以看出，程序实现的是深复制：移动pointsArray1中的点不再影响pointsArray2中的点，而且程序结束前分别释放pointsArray1和pointsArray2中的内存空间，也不再引起错误。</p>
+<h3 id="6-6-字符串"><a href="#6-6-字符串" class="headerlink" title="6.6 字符串"></a>6.6 字符串</h3><p>与C语言一样，在C++的基本数据类型变量中没有字符串变量。在C语言中是使用字符型数组来存放字符串的，C++程序中也仍然可以沿用这种办法。不仅如此，标准 C++库中还预定义了string 类。本节就来介绍这两种方法。</p>
+<h4 id="6-6-1-用字符数组存储和处理字符串"><a href="#6-6-1-用字符数组存储和处理字符串" class="headerlink" title="6.6.1 用字符数组存储和处理字符串"></a>6.6.1 用字符数组存储和处理字符串</h4><p>第2章中介绍过，字符串常量是用一对双引号括起来的字符序列。它在内存中的存放形式是，按串中字符的<br>排列次序顺序存放，每个字符占一个字节，并在末尾添加\0作为结尾标记。这实际上是一个隐含创建的类型为char的数组，一个字符串常量就表示这样一个数组的首地址，因此，可以把字符串常量赋给字符串针，由于常量值是不能改的，应将字符串常量赋给指向常量的指针，例如:</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">const</span> <span class="token keyword">char</span><span class="token operator">*</span> STRING1 <span class="token operator">=</span> <span class="token string">"This is a string."</span><span class="token punctuation">;</span>
+cout<span class="token operator">&lt;&lt;</span> STRING1<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>字符变量也可以用类似方式来表示。 如果创建一个char数组，每个元素存放字符串的一个字符，在末尾放置一个\0，便构成了C++字符串。它的存储方式与字符串常量无异，但由于它是程序员创建的数组，因此可以改写其内容，因而这就是字符串变量而非常量了。这时要注意，用于存放字符串的数组其元素个数应该不小于字符串的长度(字符个数)加1。对字符数组进行初始化赋值时，初值的形式可以是以逗号分隔的ASCII码或字符常量，也可以是整体的字符串常量(这时末尾的\0是隐含的)。 下面列出的语句都可以创建一个初为”program” 的字符串变量，3种写法是等价的。</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">char</span> str<span class="token punctuation">[</span><span class="token number">8</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token punctuation">(</span><span class="token string">'p'</span><span class="token punctuation">,</span><span class="token string">'r'</span><span class="token punctuation">,</span><span class="token string">'o'</span><span class="token punctuation">,</span><span class="token string">'g'</span><span class="token punctuation">,</span><span class="token string">'r'</span><span class="token punctuation">,</span><span class="token string">'a'</span><span class="token punctuation">,</span><span class="token string">'m'</span>，<span class="token string">'\0'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">char</span> str<span class="token punctuation">[</span><span class="token number">8</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token string">"program"</span><span class="token punctuation">;</span>
+<span class="token keyword">char</span> str<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token string">"program"</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>尽管对用字符数组表示的字符串进行初始化还比较容易、直观，但进行许多其他字符串操作时却比较麻烦。执行很多字符串操作需要借助cstring头文件中的字符串处理函数。例如将一个字符串的内容复制到另一个字符串需要用strcpy函数，按辞典顺序比较两个的大小需要用strcmp函数，将两个字符串连接起来需要用strcat函数。另外，当字符串长度很不确定时，需要用new来动态创建字符数组。最后还要用delete释放，这些都相当烦琐。C++对这些烦琐的操作进行了封装，形成了string类，可以更加方便地操作字符串。</p>
+<h4 id="6-6-2-string类"><a href="#6-6-2-string类" class="headerlink" title="6.6.2 string类"></a>6.6.2 string类</h4><p>C++标准类库将面向对象的串的概念加入到C++语言中，预定义了字符串类(string类)。string类提供了对字符串进行处理所需要的操作。使用string类需要包含头文件string。string类封装了串的属性并提供了一系列允许访问这此属性的函数。</p>
+<p><strong>细节：</strong>严格地说，string 并非一个独立的类，而是类模板basic_ string的一个特化实例。不过对于string的使用者来说，它的特点与一个类无异，因此可以把它当作一个类来看待。有关模板，将在第9章详细介绍。</p>
+<p>下面简要介绍一下string 类的构造函数、几个常用的成员函数和操作。为了简明起见，函数原型是经过简化的，与头文件中的形式不完全一样。 </p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Ep4l</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://Ep4l.com/2021/01/11/cpp2/">https://Ep4l.com/2021/01/11/cpp2/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Ep4l</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/C/">
+                                    <span class="chip bg-color">C++</span>
+                                </a>
+                            
+                                <a href="/tags/C-%E8%AF%AD%E8%A8%80%E8%AE%BE%E8%AE%A1%E6%8C%87%E5%8D%97%EF%BC%88%E7%AC%AC4%E7%89%88%EF%BC%89/">
+                                    <span class="chip bg-color">C++语言设计指南（第4版）</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+        <div class="disqus-card card" data-aos="fade-up">
+    <div id="disqus_thread" class="card-content">
+        <noscript>Please enable JavaScript to view the
+            <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+    </div>
+</div>
+
+<script type="text/javascript">
+    disqus_config = function () {
+        this.page.url = 'https://ep4l.com/2021/01/11/cpp2/';
+        this.page.identifier = '/2021/01/11/cpp2/';
+        this.page.title = 'c++语言程序设计（6-12章）';
+    };
+    let disqus_shortname = 'Ep4l';
+
+    (function () { // DON'T EDIT BELOW THIS LINE
+        let d = document, s = d.createElement('script');
+        // 如：s.src = 'https://blinkfox.disqus.com/embed.js';
+        s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2021/01/15/hackergame-2020-attempt/">
+                    <div class="card-image">
+                        
+                        <img src="/images/hackergame-2020-attempt/caigou.jpg" class="responsive-img" alt="hackergame 2020 尝试">
+                        
+                        <span class="card-title">hackergame 2020 尝试</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            信安负基础，从来没学过，尝试一下看看能不能学到什么东西
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-01-15
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/CTF/" class="post-category">
+                                    CTF
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/CTF/">
+                        <span class="chip bg-color">CTF</span>
+                    </a>
+                    
+                    <a href="/tags/Hackergame/">
+                        <span class="chip bg-color">Hackergame</span>
+                    </a>
+                    
+                    <a href="/tags/%E4%BF%A1%E5%AE%89/">
+                        <span class="chip bg-color">信安</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/01/04/github/">
+                    <div class="card-image">
+                        
+                        <img src="/images/github/github.jpg" class="responsive-img" alt="github使用学习">
+                        
+                        <span class="card-title">github使用学习</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            一直对github的使用一知半解，系统学习一下
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-04
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/git/" class="post-category">
+                                    git
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/github/">
+                        <span class="chip bg-color">github</span>
+                    </a>
+                    
+                    <a href="/tags/git/">
+                        <span class="chip bg-color">git</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$']]}
+    });
+</script>
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2020-2021</span>
+            
+            <!--       <span id="year">2020</span>      -->
+            <a href="/about" target="_blank">Ep4l</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme base on&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">31.3k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2020";
+                    var startMonth = "12";
+                    var startDate = "30";
+                    var startHour = "13";
+                    var startMinute = "21";
+                    var startSecond = "53";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+            <span id="icp"><img src="/medias/icp.png" style="vertical-align: text-bottom;" />
+                <a href="https://beian.miit.gov.cn/" target="_blank">晋ICP备2021001419号</a>
+            </span>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/neverland7" class="tooltipped" target="_blank" data-tooltip="我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1395017057@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1395017057" class="tooltipped" target="_blank" data-tooltip="QQ: 1395017057" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+    <a href="https://steamcommunity.com/id/jhleefangirl/" class="tooltipped" target="_blank" data-tooltip="steam" data-position="top" data-delay="50">
+        <i class="fab fa-steam"></i>
+    </a>
+
+
+
+    <a href="https://space.bilibili.com/8289856" class="tooltipped" target="_blank" data-tooltip="b站" data-position="top" data-delay="50">
+        <i class="fas fa-tv"></i>
+    </a>
+
+
+
+    <a href="https://bangumi.tv/user/ep4l" class="tooltipped" target="_blank" data-tooltip="bangumi" data-position="top" data-delay="50">
+        <i class="fas fa-chart-bar"></i>
+    </a>
+
+
+
+
+
+
+
+ </div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+	
+    
+
+    
+    
+    <script type="text/javascript" size="150" alpha='0.6'
+        zIndex="-1" src="/libs/background/ribbon.min.js" async="async"></script>
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
