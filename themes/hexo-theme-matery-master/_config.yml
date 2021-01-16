@@ -133,11 +133,11 @@ indexbtn:
 # 首页 banner 中的第二行个人信息配置，留空即不启用
 socialLink:
   qq: 1395017057
-  github: #https://github.com/neverland7
+  github: https://github.com/neverland7
   steam:  https://steamcommunity.com/id/jhleefangirl/
   bilibili:  https://space.bilibili.com/8289856
   bangumi:  https://bangumi.tv/user/ep4l
-  email: 
+  email: 1395017057@qq.com
   facebook: # https://www.facebook.com/xxx
   twitter: # https://twitter.com/xxx
   weibo: # https://weibo.com/xxx
@@ -310,8 +310,8 @@ gitment:
 # disqus config, default disabled
 # Disqus评论模块的配置，默认为不激活
 disqus:
-  enable: false
-  shortname:
+  enable: true
+  shortname: Ep4l
 
 # Livere comment configuration, the default is not activated
 # Livere 来必力评论模块的配置，默认为不激活
@@ -567,14 +567,14 @@ addthis:
 # 打字效果副标题.
 # 如果有符号 ‘ ，请在 ’ 前面加上 \
 subtitle:
-  enable: true
+  enable: false
   loop: false # 是否循环
   showCursor: true # 是否显示光标
   startDelay: 300 # 开始延迟
   typeSpeed: 150 # 打字速度
   backSpeed: 50 # 删除速度
   sub1: 明天一定要早起！               (不可能事件
-  sub2: 掏出了钱包，捏住两角，倒过来抖了抖，什么都没有                            
+  sub2: 掏出钱包，捏住两角，倒过来抖了抖，什么都没有                            
   sub3: 别看了，就这么两条
   sub4: 放弃真的很爽，不信你试试
   sub5:  。                                                。                                                 。         
@@ -597,8 +597,8 @@ banner:
 #ICP备案信息尾部显示
 icp:
   enable: true
-  url: 再等一会，马上
-  text: 快有了
+  url: https://beian.miit.gov.cn/
+  text: 晋ICP备2021001419号
 
 # CDN访问加速 
 # 第一次使用本功能，一定要先配置url，再`hexo cl && hexo g && hexo d`部署到GitHub的仓库，注意！必须是GitHub的仓库！
@@ -610,8 +610,8 @@ icp:
 # 更多关于访问速度优化，请查看：https://blog.sky03.cn/posts/42790.html
 # 注：jsdelivr可以自动帮你生成.min版的js和css，所以你在上面设置js及css路径中可以直接写.min.xxx
 jsDelivr:
-  url: # https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io
-  
+  url: https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com
+
 # 网站背景图
 background:
   enable: false

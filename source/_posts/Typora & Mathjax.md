@@ -1,6 +1,7 @@
 ---
 title: Typora & Mathjax使用文档
 date: 2020-12-31 03:42:17
+img: images/Typora & Mathjax/mathjax.jpg
 mathjax: true
 toc: true
 summary: 尝试一下Typora和Mathjax的基本功能
@@ -262,7 +263,7 @@ ps：按住ctrl点击链接可直接打开
 实例：$\begin{aligned}d(x,y)&=\sqrt{(x_1-y_1)^2+(x_2-y_2)^2+\dots+(x_n-y_n)^2}\\&=\sqrt{\sum_{i=1}^{n}{(x_i-y_i)^2}} \end{aligned}$
 ~~~
 
-$\begin{aligned}d(x,y)&=\sqrt{(x_1-y_1)^2+(x_2-y_2)^2+\dots+(x_n-y_n)^2}\\&=\sqrt{\sum_{i=1}^{n}{(x_i-y_i)^2}} \end{aligned}$
+$$\begin{aligned}d(x,y)&=\sqrt{(x_1-y_1)^2+(x_2-y_2)^2+\dots+(x_n-y_n)^2}\\&=\sqrt{\sum_{i=1}^{n}{(x_i-y_i)^2}} \end{aligned}$$
 
 ### 3.13 矩阵表示
 
@@ -276,7 +277,9 @@ $\left[\begin{matrix} 1 & 2 & 3\\ 4 & 5 & 6 \end{matrix}\right]$
 
 ### 3.14 希腊字母表示
 
-![img](/images/Typora & Mathjax/v2-68922903c83e504e3e3e4efd5b7327fa_720w.jpg)
+$\partial$ \partial
+
+![](/images/Typora & Mathjax/v2-68922903c83e504e3e3e4efd5b7327fa_720w.jpg)
 
 ### 3.15 箭头表示
 
@@ -322,18 +325,8 @@ $max \ a$
 
 ### 4.2 某种数学图的插入
 
-> Example: square wave 
+https://www.intmath.com/cg3/embed-desmos.php
 
-<style type="text/css" rel=" stylesheet">
-iframe{
-border: 1px solid black;
-width:60%;
-display: flex;
-margin: auto;
-}</style>
+<iframe src="https://www.desmos.com/calculator/yx1lco5nog" width="100%" style="min-height:200px"></iframe>
 
-<iframe id=""
-	height= 300px
-	scrolling="no"
-    src="http://graph.tk/#y=(sin(3.14x)+sin(3*3.14x)/3+sin(5*3.14x)/5)*4/3.14">
-</ iframe>
+s
