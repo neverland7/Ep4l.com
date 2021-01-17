@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>terraria服务器搭建</title>
+      <link href="2021/01/17/terraria/"/>
+      <url>2021/01/17/terraria/</url>
+      
+        <content type="html"><![CDATA[<p>心血来潮 参考<a href="https://www.sohu.com/a/325013560_120099900">https://www.sohu.com/a/325013560_120099900</a> 原文找不到了</p><p><code>free -m</code>查看swap分区<br><img src="/images/terraria/image-20210117125354448.png" style="zoom:200%;"></p><p>1、删除原来的Swap分区<br> <code>swapoff –a</code><br>2、新建一个读写块大小为1M、块个数为1024的Swap分区<br> <code>dd if=/dev/zero of=/root/swapfile bs=1M count=1024</code><br>3、格式化创建好的Swap交换分区<br><code>mkswap /root/swapfile</code><br>4、启动新建的Swap交换分区<br><code>swapon /root/swapfile</code></p><p><img src="/images/terraria/image-20210117125618777.png" alt=""></p><p>5、将Swap交换分区添加到开机自启动挂载：进入分区自动挂载配置文件<br> <code>vi /etc/fstab</code><br>在文本最后添加一行：<br> <code>/root/swapfile swap swap defaults 0 0</code><br>6、重启服务器<br><code>reboot</code></p><p>7、安装远程管理工具<br><code>screen # yum install -y screen</code></p><p>8、下载泰拉瑞亚官方服务器压缩包。先给泰拉瑞亚预先创建好文件夹<br><code>mkdir /opt/terraria</code><br>继续在新创建的terraria文件夹创建bin，worlds，zip三个文件夹<br><code>mkdir /opt/terraria/{bin,worlds,zip}</code><br>检查是否创建成功<br><code>ls /opt/terraria/</code></p><p><img src="/images/terraria/image-20210117130312252.png" alt=""></p><p>9、进入zip文件夹<br><code>cd /opt/terraria/zip</code><br>10、下载最新版本的泰拉瑞亚服务包（用wget太慢，我先用putty下到本地然后用上传到服务器）</p><p><img src="/images/terraria/image-20210117130858133.png" alt=""></p><p>11、将下载好的压缩包解压到bin文件夹<br><code>unzip terraria-server-1412.zip -d/opt/terraria/bin</code><br>12、将配置文件拷贝到泰拉瑞亚文件夹的根目录。<br><code>cp -p /opt/terraria/bin/1412/Windows/serverconfig.txt /opt/terraria/</code><br>13、编辑拷贝过来的配置文档。<br> <code>vim /opt/terraria/serverconfig.txt</code><br>14、在文件的末尾加上</p><pre class="line-numbers language-none"><code class="language-none">world=/opt/terraria/Worlds/building.wldautocreate=2worldname=buildingdifficulty=0maxplayers=4password=keqingworldpath=/opt/terraria/Worlds<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>其中<br>autocreate 是没有发现世界自动生成世界的大小 1、2、3分别对应小、中、大<br>difficulty 对应的是0为普通，1为专家<br>maxplayers是最大人数<br>15、给运行文件赋予运行权限。<br><code>chmod 777 /opt/terraria/bin/1412/Linux/TerrariaServer.bin.x86_64</code><br>16、启动服务器。<br><code>cd /opt/terraria/bin/1412/Linux &amp;&amp; ./TerrariaServer.bin.x86_64 -config/opt/terraria/serverconfig.txt</code></p><p>(怎么感觉1.4不一样了，在这时候才创建世界，好像14步是多余的)<br>17、退出服务器程序<br><code>:exit</code><br>18、将之前添加的一段话中三行代码前面加上#号，使其失效<br><code>vim /opt/terraria/serverconfig.txt</code></p><p>(看起来好像也没必要了，因为刚刚启动服务器时也配置了)</p><p>服务器只有在服务端输入save命令之后才会保存地图数据。</p><p><code>save</code></p><hr><p>发现启动服务器后我博客上不去了。。。。</p><p>好像得重启一下nginx服务</p><p><code>systemctl restart nginx.service</code></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 折腾 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> terraria </tag>
+            
+            <tag> 游戏 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>hackergame 2020 尝试</title>
       <link href="2021/01/15/hackergame-2020-attempt/"/>
       <url>2021/01/15/hackergame-2020-attempt/</url>
