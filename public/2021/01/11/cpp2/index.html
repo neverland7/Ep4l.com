@@ -253,7 +253,7 @@ if (windowWidth > 768) {
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/images/cpp/cpp.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/cpp/cpp.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -374,8 +374,8 @@ if (windowWidth > 768) {
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/C/">
-                                <span class="chip bg-color">C++</span>
+                            <a href="/tags/cpp/">
+                                <span class="chip bg-color">cpp</span>
                             </a>
                         
                             <a href="/tags/C-%E8%AF%AD%E8%A8%80%E8%AE%BE%E8%AE%A1%E6%8C%87%E5%8D%97%EF%BC%88%E7%AC%AC4%E7%89%88%EF%BC%89/">
@@ -390,8 +390,8 @@ if (windowWidth > 768) {
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/C/" class="post-category">
-                                C++
+                            <a href="/categories/cpp/" class="post-category">
+                                cpp
                             </a>
                         
                     </div>
@@ -410,14 +410,14 @@ if (windowWidth > 768) {
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-01-17
+                    2021-01-19
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    8.5k
+                    12k
                 </div>
                 
 
@@ -462,12 +462,20 @@ if (windowWidth > 768) {
 <h4 id="6-1-4-对象数组"><a href="#6-1-4-对象数组" class="headerlink" title="6.1.4 对象数组"></a><strong>6.1.4 对象数组</strong></h4><p>数组的元素不仅可以是基本数据类型，也可以是自定义类型。</p>
 <h4 id="6-1-5-程序实例"><a href="#6-1-5-程序实例" class="headerlink" title="6.1.5 程序实例"></a>6.1.5 程序实例</h4><p>例6-4 利用Point类进行点的线性拟合。</p>
 <p>考虑一个用n个数据点拟合成直线的问题，直线模型为</p>
-<script type="math/tex; mode=display">y(x)=ax+b</script><p>这个问题称为线性回归。设变量y随自变量x变化，给定n组观测数据（$x_i,y_i$)，用直线来拟合这些点，其中a，b是直线的斜率和截距，称为回归系数。</p>
+<script type="math/tex; mode=display">
+ y(x)=ax+b</script><p>这个问题称为线性回归。设变量y随自变量x变化，给定n组观测数据（$x_i,y_i$)，用直线来拟合这些点，其中a，b是直线的斜率和截距，称为回归系数。</p>
 <p>为确定回归系数，通常采用最小二乘法，即要使下式达到最小。</p>
-<script type="math/tex; mode=display">Q=\sum_{i=0}^{n-1}{[y_i-(ax_i+b)]^2}</script><p>根据极值定理，a和b满足下列方程：</p>
-<script type="math/tex; mode=display">\frac{\partial Q}{\partial a}=2\sum_{i=0}^{n-1}{[y_i-(ax_i+b)](-x_i)}=0</script><script type="math/tex; mode=display">\frac{\partial Q}{\partial b}=2\sum_{i=0}^{n-1}{[y_i-(ax_i+b)](-1)}=0</script><p>解得：</p>
-<script type="math/tex; mode=display">a=\frac{L_{xy}}{L_{xx}}=\frac{\sum_{i=0}^{n-1}{(x_i-\overline{x})(y_i-\overline{y})}}{\sum_{i=0}^{n-1}{(x_i-\overline{x})^2}}</script><script type="math/tex; mode=display">b=\overline{y}-a\overline{x}</script><p>相关系数r可以判断一组数据线性相关的密切程度，定义为：</p>
-<script type="math/tex; mode=display">r=\frac{L_{xy}}{\sqrt{L_{xx}L_{yy}}}</script><script type="math/tex; mode=display">L_{yy}=\sum_{i=0}^{n-1}{(y_i-\overline{y})^2}</script><p>r的绝对值越接近1，表示数据的线性关系越好</p>
+<script type="math/tex; mode=display">
+Q=\sum_{i=0}^{n-1}{[y_i-(ax_i+b)]^2}</script><p>根据极值定理，a和b满足下列方程：</p>
+<script type="math/tex; mode=display">
+\frac{\partial Q}{\partial a}=2\sum_{i=0}^{n-1}{[y_i-(ax_i+b)](-x_i)}=0</script><script type="math/tex; mode=display">
+\frac{\partial Q}{\partial b}=2\sum_{i=0}^{n-1}{[y_i-(ax_i+b)](-1)}=0</script><p>解得：</p>
+<script type="math/tex; mode=display">
+a=\frac{L_{xy}}{L_{xx}}=\frac{\sum_{i=0}^{n-1}{(x_i-\overline{x})(y_i-\overline{y})}}{\sum_{i=0}^{n-1}{(x_i-\overline{x})^2}}</script><script type="math/tex; mode=display">
+b=\overline{y}-a\overline{x}</script><p>相关系数r可以判断一组数据线性相关的密切程度，定义为：</p>
+<script type="math/tex; mode=display">
+r=\frac{L_{xy}}{\sqrt{L_{xx}L_{yy}}}</script><script type="math/tex; mode=display">
+L_{yy}=\sum_{i=0}^{n-1}{(y_i-\overline{y})^2}</script><p>r的绝对值越接近1，表示数据的线性关系越好</p>
 <pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">//Point.h</span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">ifndef</span> <span class="token expression">_POINT_H</span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token expression">_POINT_H</span></span>
@@ -874,8 +882,265 @@ cout<span class="token operator">&lt;&lt;</span> STRING1<span class="token punct
 <p>尽管对用字符数组表示的字符串进行初始化还比较容易、直观，但进行许多其他字符串操作时却比较麻烦。执行很多字符串操作需要借助cstring头文件中的字符串处理函数。例如将一个字符串的内容复制到另一个字符串需要用strcpy函数，按辞典顺序比较两个的大小需要用strcmp函数，将两个字符串连接起来需要用strcat函数。另外，当字符串长度很不确定时，需要用new来动态创建字符数组。最后还要用delete释放，这些都相当烦琐。C++对这些烦琐的操作进行了封装，形成了string类，可以更加方便地操作字符串。</p>
 <h4 id="6-6-2-string类"><a href="#6-6-2-string类" class="headerlink" title="6.6.2 string类"></a>6.6.2 string类</h4><p>C++标准类库将面向对象的串的概念加入到C++语言中，预定义了字符串类(string类)。string类提供了对字符串进行处理所需要的操作。使用string类需要包含头文件string。string类封装了串的属性并提供了一系列允许访问这此属性的函数。</p>
 <p><strong>细节：</strong>严格地说，string 并非一个独立的类，而是类模板basic_ string的一个特化实例。不过对于string的使用者来说，它的特点与一个类无异，因此可以把它当作一个类来看待。有关模板，将在第9章详细介绍。</p>
-<p>下面简要介绍一下string 类的构造函数、几个常用的成员函数和操作。为了简明起见，函数原型是经过简化的，与头文件中的形式不完全一样。 </p>
+<center><span style="color:blue;font-size:15px">2021/1/18</span></center>
 
+<p>下面简要介绍一下string 类的构造函数、几个常用的成员函数和操作。为了简明起见，函数原型是经过简化的，与头文件中的形式不完全一样。 </p>
+<p><strong>1.构造函数的原型</strong></p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">string();								//默认构造函数,建立一个长度为0的串
+string (const string&amp; rhs) ;			//复制构造函数
+string (const char* s);					//用指针s所指向的字符申常量初始化string类的对象
+string (const string&amp; rhs, unsigned int pos, unsigned int n) ;	
+		//将对象rhs中的串从位置pos开始取n个字符,用来初始化string类的对象
+		//注:申中的第一个字符的位置为0
+string (const char* s, unsigned int n);
+		//用指针s所指向的字符串中的前n个字符初始化string类的对象
+string (unsigned int n, char c);
+		//将参数c中的字符重复n次,用来初始化string类的对象<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>提示：</strong>由于string类具有接收const char*类型的构造函数，因此字符串常量和用字符数组表示的字符串变量都可以隐含地转换为string对象。<br>例如，可以直接使用字符串常量对string对象初始化:<br><code>string str= "Hello world!";</code></p>
+<p><strong>2.string类的操作符</strong></p>
+<p><img src="/images/cpp2/image-20210118183703493.png" alt="string类的操作符"></p>
+<p><strong>提示：</strong>之所以能够通过上面的操作符来操作string对象，是因为string类对这些操作符进行了重载。操作符的重载将在第8章详细介绍。</p>
+<p><strong>3.常用成员函数功能简介</strong></p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">string <span class="token function">append</span> <span class="token punctuation">(</span><span class="token keyword">const</span> <span class="token keyword">char</span><span class="token operator">*</span> s<span class="token punctuation">)</span><span class="token punctuation">;</span>							
+<span class="token comment">//append(在文章后面)附加，增补; 将字符串s添加在本串尾</span>
+string <span class="token function">assign</span> <span class="token punctuation">(</span><span class="token keyword">const</span> <span class="token keyword">char</span><span class="token operator">*</span> s<span class="token punctuation">)</span><span class="token punctuation">;</span>							
+<span class="token comment">//赋值,将s所指向的字符串赋值给本对象</span>
+<span class="token keyword">int</span> <span class="token function">compare</span> <span class="token punctuation">(</span><span class="token keyword">const</span> string <span class="token operator">&amp;</span>str<span class="token punctuation">)</span> <span class="token keyword">const</span><span class="token punctuation">;</span>
+<span class="token comment">//比较本串与str中串的大小，当本串&lt;str串时,返回负数;当本串&gt;str串时，返回正数;两串相等时,返回0</span>
+string <span class="token operator">&amp;</span> <span class="token function">insert</span> <span class="token punctuation">(</span><span class="token keyword">unsigned</span> <span class="token keyword">int</span> p0<span class="token punctuation">,</span> <span class="token keyword">const</span> <span class="token keyword">char</span><span class="token operator">*</span> s<span class="token punctuation">)</span><span class="token punctuation">;</span>		
+<span class="token comment">//将s所指向的字符串插人在本串中位置p0之前</span>
+string <span class="token function">substr</span> <span class="token punctuation">(</span><span class="token keyword">unsigned</span> <span class="token keyword">int</span> pos<span class="token punctuation">,</span> <span class="token keyword">unsigned</span> <span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token keyword">const</span><span class="token punctuation">;</span>
+<span class="token comment">//取子串,取本串中位置pos开始的n个字符,构成新的string类对象作为返回值</span>
+<span class="token keyword">unsigned</span> <span class="token keyword">int</span> <span class="token function">find</span> <span class="token punctuation">(</span><span class="token keyword">const</span> basic_string <span class="token operator">&amp;</span>str<span class="token punctuation">)</span> <span class="token keyword">const</span><span class="token punctuation">;</span>
+<span class="token comment">//在找并返回str在本串中第一次出现的位置</span>
+<span class="token keyword">unsigned</span> <span class="token keyword">int</span> <span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span><span class="token punctuation">;</span>
+<span class="token comment">//返回串的长度(字符个数)</span>
+vold <span class="token function">swap</span> <span class="token punctuation">(</span>string<span class="token operator">&amp;</span> str<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//将本串与str中的字符串进行交换</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>下面看一个string类应用的例子</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">//6_23.cpp    string类应用举例</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;string&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream&gt;</span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token comment">//根据value的值输出true或false,title为提示文字</span>
+<span class="token keyword">inline</span> <span class="token keyword">void</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token keyword">const</span> <span class="token keyword">char</span><span class="token operator">*</span> title<span class="token punctuation">,</span> <span class="token keyword">bool</span> value<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	cout <span class="token operator">&lt;&lt;</span> title <span class="token operator">&lt;&lt;</span> <span class="token string">" returns "</span> <span class="token operator">&lt;&lt;</span> <span class="token punctuation">(</span>value <span class="token operator">?</span> <span class="token string">"true"</span> <span class="token operator">:</span> <span class="token string">"false"</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	string s1 <span class="token operator">=</span> <span class="token string">"DEF"</span><span class="token punctuation">;</span>
+	cout <span class="token operator">&lt;&lt;</span> <span class="token string">"s1 1s "</span> <span class="token operator">&lt;&lt;</span> s1 <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+	string s2<span class="token punctuation">;</span>
+	cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Please enter s2: "</span><span class="token punctuation">;</span>
+	cin <span class="token operator">&gt;&gt;</span> s2<span class="token punctuation">;</span>
+	cout <span class="token operator">&lt;&lt;</span> <span class="token string">"length of s2: "</span> <span class="token operator">&lt;&lt;</span> s2<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+	<span class="token comment">//比较运算符的测试</span>
+	<span class="token function">test</span><span class="token punctuation">(</span><span class="token string">"s1&lt;= \"ABC\""</span><span class="token punctuation">,</span> s1 <span class="token operator">&lt;=</span> <span class="token string">"ABC"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">test</span><span class="token punctuation">(</span><span class="token string">"\"DEF\"&lt;=s1"</span><span class="token punctuation">,</span> <span class="token string">"DEF"</span> <span class="token operator">&lt;=</span> s1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token comment">//连接运算符的测试</span>
+	s2 <span class="token operator">+=</span> s1<span class="token punctuation">;</span>
+	cout <span class="token operator">&lt;&lt;</span> <span class="token string">"s2=s2+s1: "</span> <span class="token operator">&lt;&lt;</span> s2 <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+	cout <span class="token operator">&lt;&lt;</span> <span class="token string">"length of s2: "</span> <span class="token operator">&lt;&lt;</span> s2<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="/images/cpp2/image-20210118191532246.png" alt=""></p>
+<p>如果希望从键盘读入字符串，直到行末为止，不以中间的空格作为输入的分隔符，可以使用头文件string中定义的getline。例如，如果将上面的代码中输人s2的语句改为下列语句，就能达到这一目的。<br><code>getline(cin, s2);</code><br>这时，如果从键盘输入字符串“123 ABC” ，那么整个字符串都会被赋给s2。这实际表示输入字符串时只以换行符作为分隔符。getline还允许在输人字符串时增加其他分隔符，使用方法是把可以作为分隔符的字符作为第3个参数传递给getline。例如，使用下面的语句，可以把逗号作为分隔符。<br><code>getline(cin, s2, ',');</code></p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">//6.24.cpp  用getline输入字符串</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;iostream&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;string&gt;</span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">2</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		string city<span class="token punctuation">,</span> state<span class="token punctuation">;</span>
+		<span class="token function">getline</span><span class="token punctuation">(</span>cin<span class="token punctuation">,</span> city<span class="token punctuation">,</span> <span class="token string">','</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token function">getline</span><span class="token punctuation">(</span>cin<span class="token punctuation">,</span> state<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		cout <span class="token operator">&lt;&lt;</span> <span class="token string">"City:"</span> <span class="token operator">&lt;&lt;</span> city <span class="token operator">&lt;&lt;</span> <span class="token string">" state:"</span> <span class="token operator">&lt;&lt;</span> state <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<center><span style="color:blue;font-size:15px">2021/1/19</span></center>
+
+<h3 id="6-7-综合实例——个人银行账户管理系统"><a href="#6-7-综合实例——个人银行账户管理系统" class="headerlink" title="6.7 综合实例——个人银行账户管理系统"></a>6.7 综合实例——个人银行账户管理系统</h3><p>在第4章和第5章中，以一个银行账户管理程序为例，说明了类和成员函数的设计和应用，以及类的静态成员的应用和程序结构的组织问题。在本节中，将在第5章综合实例的基础上对银行账户管理程序进步 加以完善。<br>（1）第4章和第5章中，都是用一个整数来表示银行账号，但这并不是完美的方案，例如，如果银行账以“0”开头，或账号超过整数的表示范围，或账号中包括其他字符，这种表示方式都不能胜任。本章学习了字符串后，可以改<strong>用字符串来表示银行账号</strong>，这样以上问题得到了解决。另外，第4章和第5章的程序中所输出的账目列表，每笔账目都没有说明，<strong>使用字符串可以为各笔账目增加说明文字</strong>。此外，我们SavingsAccount类专门<strong>增加了一个用来报告错误的函数</strong>，当其他丽数需要输出错误信息时，直接把信息以字符串形式传递给该函数即可，简化了错误信息的输出。<br>（2）第4章和第5章中，主程序创建的两个账户为两个独立的变量，只能用名字去引用它们，在主程序末尾分别对两个账户进行结算(settle)和显示(show)时，需要将几乎相同的代码书写两遍，如果账户数量增多将会带来更大麻烦。本章学习了数组后，可以<strong>将多个账户组织在一个数组中</strong>，这样可以把需要对各个账户做的事情放在循环中，避免了代码的冗余。<br>（3）第4章和第5章的程序中，日期都是用一个整数来表示的，这样计算两个日期相距天数时非常方便，但这种表示很不直观，对用户很不友好。事实上，<strong>日期可以用一个类来表示</strong>，内含年、月、日三个数据成员，但这又给计算两个日期相差天数带来了麻烦。为了计算日期间相差的天数，可以先选取一个比较规整的基准日期，在构造日期对象时将该日期到这个基准日期的相对天数计算出来，我们将这个相对天数称为“相对日期”。这样在计算两个日期相差的天数时，只需将二者的相对日期相减即可。假设将公元元年1月1日作为公共的基准日期，将y年m月d日相距这一天的天数记为 f(y/m/d,1/1/1)，可以将其分解为3部分:</p>
+<script type="math/tex; mode=display">
+f(y / m / d, 1 / 1 / 1)=f(y / 1 / 1,1 / 1 / 1)+f(y / m / 1, y / 1 / 1)+f(y / m / d, y / m / 1)</script><p>f(y/1/1,1/1/1)表示当年的1月1日与公元元年1月1日相距的天数，即公元元年到公元y-1年的总天数。平年每年有365天,闰年多一天，因此该值为365(y-1)加上公元元年到y-1年之间的闰年数。由于4年一闰，100的倍数免闰，400的倍数再闰，故有:</p>
+<script type="math/tex; mode=display">
+f(y / 1 / 1,1 / 1 / 1)=365(y-1)+\left\lfloor\frac{y-1}{4}\right\rfloor-\left\lfloor\frac{y-1}{100}\right\rfloor+\left\lfloor\frac{y-1}{400}\right\rfloor</script><p>f(y/m/1,y/1/1)表示 y年的m月1日与1月1日相距天数。可以把每月1日到1月1日的天数放在一个数组中，计算时只要查询该数组，便可得到f(y/m/1,y/1/1)的值。而对于闰年，仍可通过数组查询，只需在m&gt;2时将查得的值加1。该值只依赖于T和y，将它记为g(m,y)。此外:</p>
+<script type="math/tex; mode=display">
+f(y/m/d,y/m/1) =d- 1</script><p>如果把公元元年1月1日的相对日期定为1,那么公元y年m月d日的相对日期就是:</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+f(y / m / d, 1 / 1 / 1)+1=& 365(y-1)+\left\lfloor\frac{y-1}{4}\right\rfloor \\
+&-\left\lfloor\frac{y-1}{100}\right\rfloor+\left\lfloor\frac{y-1}{400}\right\rfloor+g(m+y)+d
+\end{aligned}</script><p>相对日期得出后，计算两日期相差天数的难题就迎刃而解了。</p>
+<p><img src="/images/cpp2/image-20210119130403132.png" alt="UML图"></p>
+<p>以后，假定银行对活期储蓄账户的结算日期是每年的1月1日。</p>
+<p>例6-25个 人银行账户管理程序改进。<br>整个程序分为5个文件: <strong>date. h</strong>是日期类头文件，<strong>date. cpp</strong>是日期类实现文件，<strong>account.h</strong>是储蓄账户类定义头文件，<strong>account. cpp</strong>是储蓄账户类实现文件，<strong>6_25. cpp</strong>是主函数文件。</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">//date.h</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">ifndef</span> <span class="token expression">__DATE_H__</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token expression">__DATE_H__</span></span>
+<span class="token keyword">class</span> <span class="token class-name">Date</span> <span class="token punctuation">{</span>								<span class="token comment">//日期类</span>
+<span class="token keyword">private</span><span class="token operator">:</span>
+	<span class="token keyword">int</span> year<span class="token punctuation">;</span>								<span class="token comment">//年</span>
+	<span class="token keyword">int</span> month<span class="token punctuation">;</span>								<span class="token comment">//月</span>
+	<span class="token keyword">int</span> day<span class="token punctuation">;</span>								<span class="token comment">//日</span>
+	<span class="token keyword">int</span> totalDays<span class="token punctuation">;</span>							<span class="token comment">//该日期是从公元元年1月1日开始的第儿天</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+	<span class="token function">Date</span><span class="token punctuation">(</span><span class="token keyword">int</span> year<span class="token punctuation">,</span> <span class="token keyword">int</span> month<span class="token punctuation">,</span> <span class="token keyword">int</span> day<span class="token punctuation">)</span><span class="token punctuation">;</span>		<span class="token comment">//用年、月、日构造日期</span>
+	<span class="token keyword">int</span> <span class="token function">getYear</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> year<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+	<span class="token keyword">int</span> <span class="token function">getMonth</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> month<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+	<span class="token keyword">int</span> <span class="token function">getDay</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> day<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+	<span class="token keyword">int</span> <span class="token function">getMaxDay</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span><span class="token punctuation">;</span>					<span class="token comment">//获得当月有多少天</span>
+	<span class="token keyword">bool</span> <span class="token function">isLeapYear</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span> <span class="token punctuation">{</span>				<span class="token comment">//判断当年是否为闰年</span>
+		<span class="token keyword">return</span> year <span class="token operator">%</span> <span class="token number">4</span> <span class="token operator">==</span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> year <span class="token operator">%</span> <span class="token number">100</span> <span class="token operator">!=</span> <span class="token number">0</span> <span class="token operator">||</span> year <span class="token operator">%</span> <span class="token number">400</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">void</span> <span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span><span class="token punctuation">;</span>						<span class="token comment">//输出当前日期</span>
+	<span class="token keyword">int</span> <span class="token function">distance</span><span class="token punctuation">(</span><span class="token keyword">const</span> Date<span class="token operator">&amp;</span> date<span class="token punctuation">)</span> <span class="token keyword">const</span> <span class="token punctuation">{</span>	<span class="token comment">//计算两个日期之间差多少天</span>
+		<span class="token comment">//常成员函数保护目的对象，常引用保护所引用的对象</span>
+		<span class="token keyword">return</span> totalDays <span class="token operator">-</span> date<span class="token punctuation">.</span>totalDays<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">endif</span>										<span class="token comment">// __DATE_H__</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">//date.cpp</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">"date.h"</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;iostream&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;cstdlib&gt;</span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token keyword">namespace</span> <span class="token punctuation">{</span>										<span class="token comment">//namespace使下面的定义只在当前文件中有效</span>
+	<span class="token comment">//存储平年中的某个月1日之前有多少天，为便于getMaxDay函数的实现，该数组多出一项</span>
+	<span class="token keyword">const</span> <span class="token keyword">int</span> DAYS_BEFORE_MONTH<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token number">0</span><span class="token punctuation">,</span><span class="token number">31</span><span class="token punctuation">,</span><span class="token number">59</span><span class="token punctuation">,</span><span class="token number">90</span><span class="token punctuation">,</span><span class="token number">120</span><span class="token punctuation">,</span><span class="token number">151</span><span class="token punctuation">,</span><span class="token number">181</span><span class="token punctuation">,</span><span class="token number">212</span><span class="token punctuation">,</span><span class="token number">243</span><span class="token punctuation">,</span><span class="token number">273</span><span class="token punctuation">,</span><span class="token number">304</span><span class="token punctuation">,</span><span class="token number">334</span><span class="token punctuation">,</span><span class="token number">365</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token class-name">Date</span><span class="token operator">::</span><span class="token function">Date</span><span class="token punctuation">(</span><span class="token keyword">int</span> year<span class="token punctuation">,</span> <span class="token keyword">int</span> month<span class="token punctuation">,</span> <span class="token keyword">int</span> day<span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token function">year</span><span class="token punctuation">(</span>year<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">month</span><span class="token punctuation">(</span>month<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">day</span><span class="token punctuation">(</span>day<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token comment">//只验证天数不验证年月？</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span>day <span class="token operator">&lt;=</span> <span class="token number">0</span> <span class="token operator">||</span> day <span class="token operator">&gt;</span> <span class="token function">getMaxDay</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Invalid date: "</span><span class="token punctuation">;</span>
+		<span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		cout <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+		<span class="token function">exit</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>								<span class="token comment">//exit（1）：非正常运行导致退出程序；</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">int</span> years <span class="token operator">=</span> year <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
+	totalDays <span class="token operator">=</span> years <span class="token operator">*</span> <span class="token number">365</span> <span class="token operator">+</span> years <span class="token operator">/</span> <span class="token number">4</span> <span class="token operator">-</span> years <span class="token operator">/</span> <span class="token number">100</span> <span class="token operator">+</span> years <span class="token operator">/</span> <span class="token number">400</span> <span class="token operator">+</span> DAYS_BEFORE_MONTH<span class="token punctuation">[</span>month <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">+</span> day<span class="token punctuation">;</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isLeapYear</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> month <span class="token operator">&gt;</span> <span class="token number">2</span><span class="token punctuation">)</span> totalDays<span class="token operator">++</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">int</span> <span class="token class-name">Date</span><span class="token operator">::</span><span class="token function">getMaxDay</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span> <span class="token punctuation">{</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isLeapYear</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> month <span class="token operator">==</span> <span class="token number">2</span><span class="token punctuation">)</span>
+		<span class="token keyword">return</span> <span class="token number">29</span><span class="token punctuation">;</span>
+	<span class="token keyword">else</span>
+		<span class="token keyword">return</span> DAYS_BEFORE_MONTH<span class="token punctuation">[</span>month<span class="token punctuation">]</span> <span class="token operator">-</span> DAYS_BEFORE_MONTH<span class="token punctuation">[</span>month <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">void</span> <span class="token class-name">Date</span><span class="token operator">::</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span> <span class="token punctuation">{</span>
+	cout <span class="token operator">&lt;&lt;</span> <span class="token function">getYear</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> <span class="token string">"-"</span> <span class="token operator">&lt;&lt;</span> <span class="token function">getMonth</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> <span class="token string">"-"</span> <span class="token operator">&lt;&lt;</span> <span class="token function">getDay</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">//account.h</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">ifndef</span> <span class="token expression">__ACCOUNT_H__</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token expression">__ACCOUNT_H__</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">"date.h"</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;string&gt;</span></span>
+<span class="token keyword">class</span> <span class="token class-name">SavingsAccount</span> <span class="token punctuation">{</span>							<span class="token comment">//储蓄账户类</span>
+<span class="token keyword">private</span><span class="token operator">:</span>
+	std<span class="token operator">::</span>string id<span class="token punctuation">;</span>									<span class="token comment">//账号</span>
+	<span class="token keyword">double</span> balance<span class="token punctuation">;</span>									<span class="token comment">//余额</span>
+	<span class="token keyword">double</span> rate<span class="token punctuation">;</span>									<span class="token comment">//存款的年利率</span>
+	Date lastDate<span class="token punctuation">;</span>									<span class="token comment">//上次变更余额的时期</span>
+	<span class="token keyword">double</span> accumulation<span class="token punctuation">;</span>							<span class="token comment">//余额按日累加之和</span>
+	<span class="token keyword">static</span> <span class="token keyword">double</span> total<span class="token punctuation">;</span>							<span class="token comment">//所有账户的总金额</span>
+	<span class="token comment">//记录一笔账,date为日期，amount为金额，desc为说明</span>
+	<span class="token keyword">void</span> <span class="token function">record</span><span class="token punctuation">(</span><span class="token keyword">const</span> Date<span class="token operator">&amp;</span> date<span class="token punctuation">,</span> <span class="token keyword">double</span> amount<span class="token punctuation">,</span> <span class="token keyword">const</span> std<span class="token operator">::</span>string<span class="token operator">&amp;</span> desc<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token comment">//报告错误信息</span>
+	<span class="token keyword">void</span> <span class="token function">error</span><span class="token punctuation">(</span><span class="token keyword">const</span> std<span class="token operator">::</span>string<span class="token operator">&amp;</span> msg<span class="token punctuation">)</span> <span class="token keyword">const</span><span class="token punctuation">;</span>
+	<span class="token comment">//获得到指定日期为止的存款金额按日累积值</span>
+	<span class="token keyword">double</span> <span class="token function">accumulate</span><span class="token punctuation">(</span><span class="token keyword">const</span> Date<span class="token operator">&amp;</span> date<span class="token punctuation">)</span> <span class="token keyword">const</span> <span class="token punctuation">{</span>
+		<span class="token keyword">return</span> accumulation <span class="token operator">+</span> balance <span class="token operator">*</span> date<span class="token punctuation">.</span><span class="token function">distance</span><span class="token punctuation">(</span>lastDate<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+	<span class="token comment">//构造函数</span>
+	<span class="token function">SavingsAccount</span><span class="token punctuation">(</span><span class="token keyword">const</span> Date<span class="token operator">&amp;</span> date<span class="token punctuation">,</span> <span class="token keyword">const</span> std<span class="token operator">::</span>string<span class="token operator">&amp;</span> id<span class="token punctuation">,</span> <span class="token keyword">double</span> rate<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">const</span> std<span class="token operator">::</span>string<span class="token operator">&amp;</span> <span class="token function">getId</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> id<span class="token punctuation">;</span> <span class="token punctuation">}</span> <span class="token comment">//返回值是string类型的引用，也就是id本身</span>
+	<span class="token keyword">double</span> <span class="token function">getBalance</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> balance<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+	<span class="token keyword">double</span> <span class="token function">getRate</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> rate<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+	<span class="token keyword">static</span> <span class="token keyword">double</span> <span class="token function">getTotal</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> total<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+	<span class="token comment">//存入现金</span>
+	<span class="token keyword">void</span> <span class="token function">deposit</span><span class="token punctuation">(</span><span class="token keyword">const</span> Date<span class="token operator">&amp;</span> date<span class="token punctuation">,</span> <span class="token keyword">double</span> amount<span class="token punctuation">,</span> <span class="token keyword">const</span> std<span class="token operator">::</span>string<span class="token operator">&amp;</span> desc<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token comment">//取出现金</span>
+	<span class="token keyword">void</span> <span class="token function">withdraw</span><span class="token punctuation">(</span><span class="token keyword">const</span> Date<span class="token operator">&amp;</span> date<span class="token punctuation">,</span> <span class="token keyword">double</span> amount<span class="token punctuation">,</span> <span class="token keyword">const</span> std<span class="token operator">::</span>string<span class="token operator">&amp;</span> desc<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token comment">//结算利息,每年1月1日调用一次该函数</span>
+	<span class="token keyword">void</span> <span class="token function">settle</span><span class="token punctuation">(</span><span class="token keyword">const</span> Date <span class="token operator">&amp;</span>date<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token comment">//显示账户信息</span>
+	<span class="token keyword">void</span> <span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">endif</span>									<span class="token comment">//__ACCOUNT_H__</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">//account.cpp</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">"account.h"</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;cmath&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream&gt;</span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token keyword">double</span> SavingsAccount<span class="token operator">::</span>total <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token comment">//SacingsAccount类相关函数的实现</span>
+<span class="token class-name">SavingsAccount</span><span class="token operator">::</span><span class="token function">SavingsAccount</span><span class="token punctuation">(</span><span class="token keyword">const</span> Date<span class="token operator">&amp;</span> date<span class="token punctuation">,</span> <span class="token keyword">const</span> std<span class="token operator">::</span>string<span class="token operator">&amp;</span> id<span class="token punctuation">,</span> <span class="token keyword">double</span> rate<span class="token punctuation">)</span><span class="token operator">:</span><span class="token function">id</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token function">balance</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token function">rate</span><span class="token punctuation">(</span>rate<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token function">lastDate</span><span class="token punctuation">(</span>date<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token function">accumulation</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+	date<span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	cout <span class="token operator">&lt;&lt;</span> <span class="token string">"\t#"</span> <span class="token operator">&lt;&lt;</span> id <span class="token operator">&lt;&lt;</span> <span class="token string">" create"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">void</span> <span class="token class-name">SavingsAccount</span><span class="token operator">::</span><span class="token function">record</span><span class="token punctuation">(</span><span class="token keyword">const</span> Date <span class="token operator">&amp;</span>date<span class="token punctuation">,</span> <span class="token keyword">double</span> amount<span class="token punctuation">,</span> <span class="token keyword">const</span> string<span class="token operator">&amp;</span> desc<span class="token punctuation">)</span><span class="token punctuation">{</span>
+	accumulation <span class="token operator">=</span> <span class="token function">accumulate</span><span class="token punctuation">(</span>date<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	lastDate <span class="token operator">=</span> date<span class="token punctuation">;</span>
+	amount <span class="token operator">=</span> <span class="token function">floor</span><span class="token punctuation">(</span>amount <span class="token operator">*</span> <span class="token number">100</span> <span class="token operator">+</span> <span class="token number">0.5</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">100</span><span class="token punctuation">;</span>					<span class="token comment">//保留小数点后两位</span>
+	balance <span class="token operator">+=</span> amount<span class="token punctuation">;</span>
+	total <span class="token operator">+=</span> amount<span class="token punctuation">;</span>
+	date<span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	cout <span class="token operator">&lt;&lt;</span> <span class="token string">"\t# "</span> <span class="token operator">&lt;&lt;</span> id <span class="token operator">&lt;&lt;</span> <span class="token string">"\t"</span> <span class="token operator">&lt;&lt;</span> amount <span class="token operator">&lt;&lt;</span> <span class="token string">"\t"</span> <span class="token operator">&lt;&lt;</span> balance <span class="token operator">&lt;&lt;</span> <span class="token string">"\t"</span> <span class="token operator">&lt;&lt;</span> desc <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">void</span> <span class="token class-name">SavingsAccount</span><span class="token operator">::</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token keyword">const</span> string<span class="token operator">&amp;</span> msg<span class="token punctuation">)</span> <span class="token keyword">const</span> <span class="token punctuation">{</span>
+	cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Error(# "</span> <span class="token operator">&lt;&lt;</span> id <span class="token operator">&lt;&lt;</span> <span class="token string">"): "</span> <span class="token operator">&lt;&lt;</span> msg <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">void</span> <span class="token class-name">SavingsAccount</span><span class="token operator">::</span><span class="token function">deposit</span><span class="token punctuation">(</span><span class="token keyword">const</span> Date<span class="token operator">&amp;</span> date<span class="token punctuation">,</span> <span class="token keyword">double</span> amount<span class="token punctuation">,</span> <span class="token keyword">const</span> string<span class="token operator">&amp;</span> desc<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token function">record</span><span class="token punctuation">(</span>date<span class="token punctuation">,</span> amount<span class="token punctuation">,</span> desc<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">void</span> <span class="token class-name">SavingsAccount</span><span class="token operator">::</span><span class="token function">withdraw</span><span class="token punctuation">(</span><span class="token keyword">const</span> Date<span class="token operator">&amp;</span> date<span class="token punctuation">,</span> <span class="token keyword">double</span> amount<span class="token punctuation">,</span> <span class="token keyword">const</span> string<span class="token operator">&amp;</span> desc<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span>amount <span class="token operator">&gt;</span> <span class="token function">getBalance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+		<span class="token function">error</span><span class="token punctuation">(</span><span class="token string">"not enough money"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">else</span>
+		<span class="token function">record</span><span class="token punctuation">(</span>date<span class="token punctuation">,</span> <span class="token operator">-</span>amount<span class="token punctuation">,</span> desc<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">void</span> <span class="token class-name">SavingsAccount</span><span class="token operator">::</span><span class="token function">settle</span><span class="token punctuation">(</span><span class="token keyword">const</span> Date<span class="token operator">&amp;</span> date<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token comment">//计算年息</span>
+	<span class="token keyword">double</span> interest <span class="token operator">=</span> <span class="token function">accumulate</span><span class="token punctuation">(</span>date<span class="token punctuation">)</span> <span class="token operator">*</span> rate <span class="token operator">/</span> date<span class="token punctuation">.</span><span class="token function">distance</span><span class="token punctuation">(</span><span class="token function">Date</span><span class="token punctuation">(</span>date<span class="token punctuation">.</span><span class="token function">getYear</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span>interest <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span>
+		<span class="token function">record</span><span class="token punctuation">(</span>date<span class="token punctuation">,</span> interest<span class="token punctuation">,</span> <span class="token string">"interest"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	accumulation <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">void</span> <span class="token class-name">SavingsAccount</span><span class="token operator">::</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span> <span class="token punctuation">{</span>
+	cout <span class="token operator">&lt;&lt;</span> id <span class="token operator">&lt;&lt;</span> <span class="token string">"\tBalance: "</span> <span class="token operator">&lt;&lt;</span> balance<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">//6_25.cpp</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">"account.h"</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream&gt;</span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	Date <span class="token function">date</span><span class="token punctuation">(</span><span class="token number">2008</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>									<span class="token comment">//起始日期</span>
+	<span class="token comment">//建立几个账户</span>
+	SavingsAccount accounts<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+		<span class="token function">SavingsAccount</span><span class="token punctuation">(</span>date<span class="token punctuation">,</span> <span class="token string">"03755217"</span><span class="token punctuation">,</span> <span class="token number">0.015</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+		<span class="token function">SavingsAccount</span><span class="token punctuation">(</span>date<span class="token punctuation">,</span> <span class="token string">"02342342"</span><span class="token punctuation">,</span> <span class="token number">0.015</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span><span class="token punctuation">;</span>
+	<span class="token keyword">const</span> <span class="token keyword">int</span> n <span class="token operator">=</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>accounts<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>SavingsAccount<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token comment">//11月份的几笔账目</span>
+	accounts<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">deposit</span><span class="token punctuation">(</span><span class="token function">Date</span><span class="token punctuation">(</span><span class="token number">2008</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">5000</span><span class="token punctuation">,</span> <span class="token string">"salary"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	accounts<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">deposit</span><span class="token punctuation">(</span><span class="token function">Date</span><span class="token punctuation">(</span><span class="token number">2008</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">25</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">10000</span><span class="token punctuation">,</span> <span class="token string">"sell stock 0323"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token comment">//12月份的几笔账目</span>
+	accounts<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">deposit</span><span class="token punctuation">(</span><span class="token function">Date</span><span class="token punctuation">(</span><span class="token number">2008</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">5500</span><span class="token punctuation">,</span> <span class="token string">"salary"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	accounts<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">withdraw</span><span class="token punctuation">(</span><span class="token function">Date</span><span class="token punctuation">(</span><span class="token number">2008</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">4000</span><span class="token punctuation">,</span> <span class="token string">"buy a laptop"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token comment">//结算所有账户并输出各个账户信息</span>
+	cout <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+	<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		accounts<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">settle</span><span class="token punctuation">(</span><span class="token function">Date</span><span class="token punctuation">(</span><span class="token number">2009</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		accounts<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		cout <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Total: "</span> <span class="token operator">&lt;&lt;</span> <span class="token class-name">SavingsAccount</span><span class="token operator">::</span><span class="token function">getTotal</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="/images/cpp2/image-20210119143650821.png" alt="运行结构"></p>
+<p><strong>细节：</strong>以上程序的Date类的构造函数中使用了exit 函数，该函数的原型声明在cstdlib头文件中。它用来立即终止当前程序的执行，并且将一个整数返回给系统，该整数的作用与由主函数main返回的整数相同，如果是0表示程序正常退出，如果非0表示程序异常退出。</p>
+<p>上面的程序中增加了Date类，把对日期的表示均替换为Date类型。从输出结果明以看出，用“年-月-日”的形式所表示的日期与整数相比要直观得多。此外，本例广泛应用了字符串，这样在银行账号中可以出现字母，而且为每笔账目增加了说明文字，使得程序输出的信息更加丰富。 在主程序中，两个银行账户是用数组表示的，这样最后所执行的账户结算和输出账户信息的操作可以在一个循环中进行，无须把同样的代码书写多遍。</p>
+<h3 id="6-8-深度探索"><a href="#6-8-深度探索" class="headerlink" title="6.8 深度探索"></a>6.8 深度探索</h3>
                 
             </div>
             <hr/>
@@ -939,8 +1204,8 @@ cout<span class="token operator">&lt;&lt;</span> STRING1<span class="token punct
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/C/">
-                                    <span class="chip bg-color">C++</span>
+                                <a href="/tags/cpp/">
+                                    <span class="chip bg-color">cpp</span>
                                 </a>
                             
                                 <a href="/tags/C-%E8%AF%AD%E8%A8%80%E8%AE%BE%E8%AE%A1%E6%8C%87%E5%8D%97%EF%BC%88%E7%AC%AC4%E7%89%88%EF%BC%89/">
@@ -1268,7 +1533,7 @@ cout<span class="token operator">&lt;&lt;</span> STRING1<span class="token punct
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">31.9k</span>&nbsp;字
+                class="white-color">37.4k</span>&nbsp;字
             
             
             

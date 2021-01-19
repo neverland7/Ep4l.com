@@ -1,12 +1,12 @@
 ---
 title: c++语言程序设计（6-12章）
 date: 2021-01-11 16:40:34
-img: images/cpp/cpp.jpg
+img: https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/cpp/cpp.jpg
 mathjax: true
 summary: 持续更新中
-categories: C++
+categories: cpp
 tags:
- - C++
+ - cpp
  - C++语言设计指南（第4版）
 typora-root-url: ..
 ---
@@ -76,31 +76,50 @@ int main() {
 
 考虑一个用n个数据点拟合成直线的问题，直线模型为
 
-$$ y(x)=ax+b$$
-
+$$
+ y(x)=ax+b
+$$
 这个问题称为线性回归。设变量y随自变量x变化，给定n组观测数据（$x_i,y_i$)，用直线来拟合这些点，其中a，b是直线的斜率和截距，称为回归系数。
 
 为确定回归系数，通常采用最小二乘法，即要使下式达到最小。
 
-$$Q=\sum_{i=0}^{n-1}{[y_i-(ax_i+b)]^2}$$
+$$
+Q=\sum_{i=0}^{n-1}{[y_i-(ax_i+b)]^2}
+$$
+
 
 根据极值定理，a和b满足下列方程：
 
-$$\frac{\partial Q}{\partial a}=2\sum_{i=0}^{n-1}{[y_i-(ax_i+b)](-x_i)}=0 $$
+$$
+\frac{\partial Q}{\partial a}=2\sum_{i=0}^{n-1}{[y_i-(ax_i+b)](-x_i)}=0 
+$$
 
-$$\frac{\partial Q}{\partial b}=2\sum_{i=0}^{n-1}{[y_i-(ax_i+b)](-1)}=0 $$
+$$
+\frac{\partial Q}{\partial b}=2\sum_{i=0}^{n-1}{[y_i-(ax_i+b)](-1)}=0 
+$$
+
 
 解得：
 
-$$a=\frac{L_{xy}}{L_{xx}}=\frac{\sum_{i=0}^{n-1}{(x_i-\overline{x})(y_i-\overline{y})}}{\sum_{i=0}^{n-1}{(x_i-\overline{x})^2}}$$
+$$
+a=\frac{L_{xy}}{L_{xx}}=\frac{\sum_{i=0}^{n-1}{(x_i-\overline{x})(y_i-\overline{y})}}{\sum_{i=0}^{n-1}{(x_i-\overline{x})^2}}
+$$
 
- $$b=\overline{y}-a\overline{x}$$
+$$
+b=\overline{y}-a\overline{x}
+$$
+
 
 相关系数r可以判断一组数据线性相关的密切程度，定义为：
 
-$$r=\frac{L_{xy}}{\sqrt{L_{xx}L_{yy}}}$$
+$$
+r=\frac{L_{xy}}{\sqrt{L_{xx}L_{yy}}}
+$$
 
-$$L_{yy}=\sum_{i=0}^{n-1}{(y_i-\overline{y})^2}$$
+$$
+L_{yy}=\sum_{i=0}^{n-1}{(y_i-\overline{y})^2}
+$$
+
 
 r的绝对值越接近1，表示数据的线性关系越好
 
@@ -731,7 +750,326 @@ C++标准类库将面向对象的串的概念加入到C++语言中，预定义�
 
 **细节：**严格地说，string 并非一个独立的类，而是类模板basic_ string的一个特化实例。不过对于string的使用者来说，它的特点与一个类无异，因此可以把它当作一个类来看待。有关模板，将在第9章详细介绍。
 
+<center><span style='color:blue;font-size:15px'>2021/1/18</span></center>
+
 下面简要介绍一下string 类的构造函数、几个常用的成员函数和操作。为了简明起见，函数原型是经过简化的，与头文件中的形式不完全一样。 
 
+**1.构造函数的原型**
 
+~~~c++
+string();								//默认构造函数,建立一个长度为0的串
+string (const string& rhs) ;			//复制构造函数
+string (const char* s);					//用指针s所指向的字符申常量初始化string类的对象
+string (const string& rhs, unsigned int pos, unsigned int n) ;	
+		//将对象rhs中的串从位置pos开始取n个字符,用来初始化string类的对象
+		//注:申中的第一个字符的位置为0
+string (const char* s, unsigned int n);
+		//用指针s所指向的字符串中的前n个字符初始化string类的对象
+string (unsigned int n, char c);
+		//将参数c中的字符重复n次,用来初始化string类的对象
+~~~
+
+**提示：**由于string类具有接收const char*类型的构造函数，因此字符串常量和用字符数组表示的字符串变量都可以隐含地转换为string对象。
+例如，可以直接使用字符串常量对string对象初始化:
+`string str= "Hello world!";`
+
+**2.string类的操作符**
+
+![string类的操作符](/images/cpp2/image-20210118183703493.png)
+
+**提示：**之所以能够通过上面的操作符来操作string对象，是因为string类对这些操作符进行了重载。操作符的重载将在第8章详细介绍。
+
+**3.常用成员函数功能简介**
+
+~~~cpp
+string append (const char* s);							
+//append(在文章后面)附加，增补; 将字符串s添加在本串尾
+string assign (const char* s);							
+//赋值,将s所指向的字符串赋值给本对象
+int compare (const string &str) const;
+//比较本串与str中串的大小，当本串<str串时,返回负数;当本串>str串时，返回正数;两串相等时,返回0
+string & insert (unsigned int p0, const char* s);		
+//将s所指向的字符串插人在本串中位置p0之前
+string substr (unsigned int pos, unsigned int n) const;
+//取子串,取本串中位置pos开始的n个字符,构成新的string类对象作为返回值
+unsigned int find (const basic_string &str) const;
+//在找并返回str在本串中第一次出现的位置
+unsigned int length() const;
+//返回串的长度(字符个数)
+vold swap (string& str);
+//将本串与str中的字符串进行交换
+~~~
+
+下面看一个string类应用的例子
+
+~~~cpp
+//6_23.cpp    string类应用举例
+#include <string>
+#include <iostream>
+using namespace std;
+//根据value的值输出true或false,title为提示文字
+inline void test(const char* title, bool value) {
+	cout << title << " returns " << (value ? "true" : "false") << endl;
+}
+int main() {
+	string s1 = "DEF";
+	cout << "s1 1s " << s1 << endl;
+	string s2;
+	cout << "Please enter s2: ";
+	cin >> s2;
+	cout << "length of s2: " << s2.length() << endl;
+	//比较运算符的测试
+	test("s1<= \"ABC\"", s1 <= "ABC");
+	test("\"DEF\"<=s1", "DEF" <= s1);
+	//连接运算符的测试
+	s2 += s1;
+	cout << "s2=s2+s1: " << s2 << endl;
+	cout << "length of s2: " << s2.length() << endl;
+	return 0;
+}
+~~~
+
+![](/images/cpp2/image-20210118191532246.png)
+
+如果希望从键盘读入字符串，直到行末为止，不以中间的空格作为输入的分隔符，可以使用头文件string中定义的getline。例如，如果将上面的代码中输人s2的语句改为下列语句，就能达到这一目的。
+`getline(cin, s2);`
+这时，如果从键盘输入字符串“123 ABC" ，那么整个字符串都会被赋给s2。这实际表示输入字符串时只以换行符作为分隔符。getline还允许在输人字符串时增加其他分隔符，使用方法是把可以作为分隔符的字符作为第3个参数传递给getline。例如，使用下面的语句，可以把逗号作为分隔符。
+`getline(cin, s2, ',');`
+
+~~~cpp
+//6.24.cpp  用getline输入字符串
+#include<iostream>
+#include<string>
+using namespace std;
+int main() {
+	for (int i = 0; i < 2; i++) {
+		string city, state;
+		getline(cin, city, ',');
+		getline(cin, state);
+		cout << "City:" << city << " state:" << state << endl;
+	}
+	return 0;
+}
+~~~
+
+<center><span style='color:blue;font-size:15px'>2021/1/19</span></center>
+
+### 6.7 综合实例——个人银行账户管理系统
+
+在第4章和第5章中，以一个银行账户管理程序为例，说明了类和成员函数的设计和应用，以及类的静态成员的应用和程序结构的组织问题。在本节中，将在第5章综合实例的基础上对银行账户管理程序进步 加以完善。
+（1）第4章和第5章中，都是用一个整数来表示银行账号，但这并不是完美的方案，例如，如果银行账以“0"开头，或账号超过整数的表示范围，或账号中包括其他字符，这种表示方式都不能胜任。本章学习了字符串后，可以改**用字符串来表示银行账号**，这样以上问题得到了解决。另外，第4章和第5章的程序中所输出的账目列表，每笔账目都没有说明，**使用字符串可以为各笔账目增加说明文字**。此外，我们SavingsAccount类专门**增加了一个用来报告错误的函数**，当其他丽数需要输出错误信息时，直接把信息以字符串形式传递给该函数即可，简化了错误信息的输出。
+（2）第4章和第5章中，主程序创建的两个账户为两个独立的变量，只能用名字去引用它们，在主程序末尾分别对两个账户进行结算(settle)和显示(show)时，需要将几乎相同的代码书写两遍，如果账户数量增多将会带来更大麻烦。本章学习了数组后，可以**将多个账户组织在一个数组中**，这样可以把需要对各个账户做的事情放在循环中，避免了代码的冗余。
+（3）第4章和第5章的程序中，日期都是用一个整数来表示的，这样计算两个日期相距天数时非常方便，但这种表示很不直观，对用户很不友好。事实上，**日期可以用一个类来表示**，内含年、月、日三个数据成员，但这又给计算两个日期相差天数带来了麻烦。为了计算日期间相差的天数，可以先选取一个比较规整的基准日期，在构造日期对象时将该日期到这个基准日期的相对天数计算出来，我们将这个相对天数称为“相对日期”。这样在计算两个日期相差的天数时，只需将二者的相对日期相减即可。假设将公元元年1月1日作为公共的基准日期，将y年m月d日相距这一天的天数记为 f(y/m/d,1/1/1)，可以将其分解为3部分:
+$$
+f(y / m / d, 1 / 1 / 1)=f(y / 1 / 1,1 / 1 / 1)+f(y / m / 1, y / 1 / 1)+f(y / m / d, y / m / 1)
+$$
+f(y/1/1,1/1/1)表示当年的1月1日与公元元年1月1日相距的天数，即公元元年到公元y-1年的总天数。平年每年有365天,闰年多一天，因此该值为365(y-1)加上公元元年到y-1年之间的闰年数。由于4年一闰，100的倍数免闰，400的倍数再闰，故有:
+$$
+f(y / 1 / 1,1 / 1 / 1)=365(y-1)+\left\lfloor\frac{y-1}{4}\right\rfloor-\left\lfloor\frac{y-1}{100}\right\rfloor+\left\lfloor\frac{y-1}{400}\right\rfloor
+$$
+f(y/m/1,y/1/1)表示 y年的m月1日与1月1日相距天数。可以把每月1日到1月1日的天数放在一个数组中，计算时只要查询该数组，便可得到f(y/m/1,y/1/1)的值。而对于闰年，仍可通过数组查询，只需在m>2时将查得的值加1。该值只依赖于T和y，将它记为g(m,y)。此外:
+$$
+f(y/m/d,y/m/1) =d- 1
+$$
+如果把公元元年1月1日的相对日期定为1,那么公元y年m月d日的相对日期就是:
+$$
+\begin{aligned}
+f(y / m / d, 1 / 1 / 1)+1=& 365(y-1)+\left\lfloor\frac{y-1}{4}\right\rfloor \\
+&-\left\lfloor\frac{y-1}{100}\right\rfloor+\left\lfloor\frac{y-1}{400}\right\rfloor+g(m+y)+d
+\end{aligned}
+$$
+相对日期得出后，计算两日期相差天数的难题就迎刃而解了。
+
+![UML图](/images/cpp2/image-20210119130403132.png)
+
+以后，假定银行对活期储蓄账户的结算日期是每年的1月1日。
+
+例6-25个 人银行账户管理程序改进。
+整个程序分为5个文件: **date. h**是日期类头文件，**date. cpp**是日期类实现文件，**account.h**是储蓄账户类定义头文件，**account. cpp**是储蓄账户类实现文件，**6_25. cpp**是主函数文件。
+
+~~~cpp
+//date.h
+#ifndef __DATE_H__
+#define __DATE_H__
+class Date {								//日期类
+private:
+	int year;								//年
+	int month;								//月
+	int day;								//日
+	int totalDays;							//该日期是从公元元年1月1日开始的第儿天
+public:
+	Date(int year, int month, int day);		//用年、月、日构造日期
+	int getYear() const { return year; }
+	int getMonth() const { return month; }
+	int getDay() const { return day; }
+	int getMaxDay() const;					//获得当月有多少天
+	bool isLeapYear() const {				//判断当年是否为闰年
+		return year % 4 == 0 && year % 100 != 0 || year % 400 == 0;
+	}
+	void show() const;						//输出当前日期
+	int distance(const Date& date) const {	//计算两个日期之间差多少天
+		//常成员函数保护目的对象，常引用保护所引用的对象
+		return totalDays - date.totalDays;
+	}
+};
+#endif										// __DATE_H__
+~~~
+
+~~~cpp
+//date.cpp
+#include"date.h"
+#include<iostream>
+#include<cstdlib>
+using namespace std;
+namespace {										//namespace使下面的定义只在当前文件中有效
+	//存储平年中的某个月1日之前有多少天，为便于getMaxDay函数的实现，该数组多出一项
+	const int DAYS_BEFORE_MONTH[] = { 0,31,59,90,120,151,181,212,243,273,304,334,365 };
+};
+Date::Date(int year, int month, int day) : year(year), month(month), day(day) {
+	//只验证天数不验证年月？
+	if (day <= 0 || day > getMaxDay()) {
+		cout << "Invalid date: ";
+		show();
+		cout << endl;
+		exit(1);								//exit（1）：非正常运行导致退出程序；
+	}
+	int years = year - 1;
+	totalDays = years * 365 + years / 4 - years / 100 + years / 400 + DAYS_BEFORE_MONTH[month - 1] + day;
+	if (isLeapYear() && month > 2) totalDays++;
+}
+int Date::getMaxDay() const {
+	if (isLeapYear() && month == 2)
+		return 29;
+	else
+		return DAYS_BEFORE_MONTH[month] - DAYS_BEFORE_MONTH[month - 1];
+}
+void Date::show() const {
+	cout << getYear() << "-" << getMonth() << "-" << getDay();
+}
+~~~
+
+~~~cpp
+//account.h
+#ifndef __ACCOUNT_H__
+#define __ACCOUNT_H__
+#include"date.h"
+#include<string>
+class SavingsAccount {							//储蓄账户类
+private:
+	std::string id;									//账号
+	double balance;									//余额
+	double rate;									//存款的年利率
+	Date lastDate;									//上次变更余额的时期
+	double accumulation;							//余额按日累加之和
+	static double total;							//所有账户的总金额
+	//记录一笔账,date为日期，amount为金额，desc为说明
+	void record(const Date& date, double amount, const std::string& desc);
+	//报告错误信息
+	void error(const std::string& msg) const;
+	//获得到指定日期为止的存款金额按日累积值
+	double accumulate(const Date& date) const {
+		return accumulation + balance * date.distance(lastDate);
+	}
+public:
+	//构造函数
+	SavingsAccount(const Date& date, const std::string& id, double rate);
+	const std::string& getId() const { return id; } //返回值是string类型的引用，也就是id本身
+	double getBalance() const { return balance; }
+	double getRate() const { return rate; }
+	static double getTotal() { return total; }
+	//存入现金
+	void deposit(const Date& date, double amount, const std::string& desc);
+	//取出现金
+	void withdraw(const Date& date, double amount, const std::string& desc);
+	//结算利息,每年1月1日调用一次该函数
+	void settle(const Date &date);
+	//显示账户信息
+	void show() const;
+};
+#endif									//__ACCOUNT_H__
+~~~
+
+~~~cpp
+//account.cpp
+#include "account.h"
+#include <cmath>
+#include <iostream>
+using namespace std;
+double SavingsAccount::total = 0;
+//SacingsAccount类相关函数的实现
+SavingsAccount::SavingsAccount(const Date& date, const std::string& id, double rate):id(id),balance(0),rate(rate),lastDate(date),accumulation(0){
+	date.show();
+	cout << "\t#" << id << " create" << endl;
+}
+void SavingsAccount::record(const Date &date, double amount, const string& desc){
+	accumulation = accumulate(date);
+	lastDate = date;
+	amount = floor(amount * 100 + 0.5) / 100;					//保留小数点后两位
+	balance += amount;
+	total += amount;
+	date.show();
+	cout << "\t# " << id << "\t" << amount << "\t" << balance << "\t" << desc << endl;
+}
+void SavingsAccount::error(const string& msg) const {
+	cout << "Error(# " << id << "): " << msg << endl;
+}
+void SavingsAccount::deposit(const Date& date, double amount, const string& desc) {
+	record(date, amount, desc);
+}
+void SavingsAccount::withdraw(const Date& date, double amount, const string& desc) {
+	if (amount > getBalance())
+		error("not enough money");
+	else
+		record(date, -amount, desc);
+}
+void SavingsAccount::settle(const Date& date) {
+	//计算年息
+	double interest = accumulate(date) * rate / date.distance(Date(date.getYear() - 1, 1, 1));
+	if (interest != 0)
+		record(date, interest, "interest");
+	accumulation = 0;
+}
+void SavingsAccount::show() const {
+	cout << id << "\tBalance: " << balance;
+}
+~~~
+
+~~~cpp
+//6_25.cpp
+#include "account.h"
+#include <iostream>
+using namespace std;
+int main() {
+	Date date(2008, 11, 1);									//起始日期
+	//建立几个账户
+	SavingsAccount accounts[] = {
+		SavingsAccount(date, "03755217", 0.015),
+		SavingsAccount(date, "02342342", 0.015)
+	};
+	const int n = sizeof(accounts) / sizeof(SavingsAccount);
+	//11月份的几笔账目
+	accounts[0].deposit(Date(2008, 11, 5), 5000, "salary");
+	accounts[1].deposit(Date(2008, 11, 25), 10000, "sell stock 0323");
+	//12月份的几笔账目
+	accounts[0].deposit(Date(2008, 12, 5), 5500, "salary");
+	accounts[1].withdraw(Date(2008, 12, 20), 4000, "buy a laptop");
+	//结算所有账户并输出各个账户信息
+	cout << endl;
+	for (int i = 0; i < n; i++) {
+		accounts[i].settle(Date(2009, 1, 1));
+		accounts[i].show();
+		cout << endl;
+	}
+	cout << "Total: " << SavingsAccount::getTotal() << endl;
+	return 0;
+}
+~~~
+
+![运行结构](/images/cpp2/image-20210119143650821.png)
+
+**细节：**以上程序的Date类的构造函数中使用了exit 函数，该函数的原型声明在cstdlib头文件中。它用来立即终止当前程序的执行，并且将一个整数返回给系统，该整数的作用与由主函数main返回的整数相同，如果是0表示程序正常退出，如果非0表示程序异常退出。
+
+上面的程序中增加了Date类，把对日期的表示均替换为Date类型。从输出结果明以看出，用“年-月-日”的形式所表示的日期与整数相比要直观得多。此外，本例广泛应用了字符串，这样在银行账号中可以出现字母，而且为每笔账目增加了说明文字，使得程序输出的信息更加丰富。 在主程序中，两个银行账户是用数组表示的，这样最后所执行的账户结算和输出账户信息的操作可以在一个循环中进行，无须把同样的代码书写多遍。
+
+### 6.8 深度探索
 

@@ -3,13 +3,14 @@ title: terraria服务器搭建
 date: 2021-01-17 12:43:54
 img: https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/terraria/terraria.jpg
 categories: 折腾
+summary: 已关闭
 tags:
  - terraria
  - 游戏
 typora-root-url: ..
 ---
 
-心血来潮 参考https://www.sohu.com/a/325013560_120099900 原文找不到了
+参考https://www.sohu.com/a/325013560_120099900 原文找不到了
 
 `free -m`查看swap分区
 <img src="/images/terraria/image-20210117125354448.png" style="zoom:200%;" />
@@ -59,12 +60,12 @@ typora-root-url: ..
 14、在文件的末尾加上
 
 ~~~
-world=/opt/terraria/Worlds/building.wld
+world=/opt/terraria/Worlds/你的世界.wld
 autocreate=2
-worldname=building
+worldname=你的世界
 difficulty=0
 maxplayers=4
-password=keqing
+password=你的密码
 worldpath=/opt/terraria/Worlds
 ~~~
 
@@ -96,6 +97,19 @@ maxplayers是最大人数
 好像得重启一下nginx服务
 
 `systemctl restart nginx.service`
+
+
+
+screen常用命令：
+
+~~~
+screen -S yourname -> 新建一个叫yourname的session
+screen -ls -> 列出当前所有的session
+screen -r yourname -> 回到yourname这个session
+screen -d yourname -> 远程detach某个session
+screen -d -r yourname -> 结束当前session并回到yourname这个session
+ctrl+a d  暂时中断会话
+~~~
 
 
 

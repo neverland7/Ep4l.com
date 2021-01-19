@@ -374,8 +374,8 @@ if (windowWidth > 768) {
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/C/">
-                                <span class="chip bg-color">C++</span>
+                            <a href="/tags/cpp/">
+                                <span class="chip bg-color">cpp</span>
                             </a>
                         
                             <a href="/tags/C-%E8%AF%AD%E8%A8%80%E8%AE%BE%E8%AE%A1%E6%8C%87%E5%8D%97%EF%BC%88%E7%AC%AC4%E7%89%88%EF%BC%89/">
@@ -390,8 +390,8 @@ if (windowWidth > 768) {
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/C/" class="post-category">
-                                C++
+                            <a href="/categories/cpp/" class="post-category">
+                                cpp
                             </a>
                         
                     </div>
@@ -410,14 +410,14 @@ if (windowWidth > 768) {
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-01-16
+                    2021-01-19
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    17.8k
+                    17.7k
                 </div>
                 
 
@@ -1156,7 +1156,8 @@ Point <span class="token function">fun2</span><span class="token punctuation">(<
 	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><img src="/images/cpp/image-20210106192518724.png" alt="运行结果"></p>
-<h3 id="4-7-综合实例——个人银行账户管理系统"><a href="#4-7-综合实例——个人银行账户管理系统" class="headerlink" title="4.7 综合实例——个人银行账户管理系统"></a>4.7 综合实例——个人银行账户管理系统</h3><h4 id="4-7-2-源程序及说明"><a href="#4-7-2-源程序及说明" class="headerlink" title="4.7.2 源程序及说明"></a>4.7.2 源程序及说明</h4><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">//4_9.cpp 个人银行账户管理系统</span>
+<h3 id="4-7-综合实例——个人银行账户管理系统"><a href="#4-7-综合实例——个人银行账户管理系统" class="headerlink" title="4.7 综合实例——个人银行账户管理系统"></a>4.7 综合实例——个人银行账户管理系统</h3><p><img src="/images/cpp/image-20210119130143620.png" alt="UML图"></p>
+<h4 id="4-7-2-源程序及说明"><a href="#4-7-2-源程序及说明" class="headerlink" title="4.7.2 源程序及说明"></a>4.7.2 源程序及说明</h4><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">//4_9.cpp 个人银行账户管理系统</span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;iostream&gt;</span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;cmath&gt;</span></span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
@@ -1381,7 +1382,7 @@ Point <span class="token function">fun2</span><span class="token punctuation">(<
 <span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>关于友元，还有几点需要往意：<br><strong>第一</strong>，友元关系是不能传递的，B类是 A类的友元，C类是B类的友元，C类和A类之间，如果没有声明，就没有任何友元关系，不能进行数据共享。<br><strong>第二</strong>，友元关系是单向的。<br><strong>第三</strong>，友元关系是不被继承的，如果类B是类A的友元，类B的派生类并不会自动成为类A的友元。</p>
 <h3 id="5-5-共享数据的保护"><a href="#5-5-共享数据的保护" class="headerlink" title="5.5 共享数据的保护"></a>5.5 共享数据的保护</h3><h4 id="5-5-1-常对象"><a href="#5-5-1-常对象" class="headerlink" title="5.5.1 常对象"></a>5.5.1 常对象</h4><p>常对象的数据成员值在对象的整个生存期间内不能被改变。也就是说，常对象必须进行初始化，而且不能被更新。</p>
-<h4 id="5-5-2-用const修饰的类成员"><a href="#5-5-2-用const修饰的类成员" class="headerlink" title="5.5.2 用const修饰的类成员"></a>5.5.2 用const修饰的类成员</h4><p><strong>1.常成员函数</strong><br>使用const关键字修饰的函数为常成员函数，常成员函数声明的格式如下:<br>类型说明符 函数名(参数表) const;<br><strong>注意</strong>：<br>(1)const是函数类型的一个组成部分，因此在函数的定义部分也要带const关键字，<br>(2)如果将一个对象说明为常对象，则通过该常对象只能调用它的常成员函数，而不能调用其他成员函数(这就是C++从语法机制上对常对象的保护，也是常对象唯一的对外接口方式)。<br>(3)无论是否通过常对象调用常成员函数，在常成员函数调用期间，<strong>目的对象都被视同为常对象</strong>，因此常成员函数不能更新目的对象的数据成员，也不能针对目的对象调用该类中没有用const 修饰的成员函数(这就保证了在常成员函数中不会更改目的对象的数据成员的值)。<br>(4)const关键字可以用于对重载函数的区分。<br><strong>提示</strong>：<br>如果仅以const关键字为区分对成员函数重载，那么通过非const 的对象调用该函数，两个重载的函数都可以与之匹配，这时编译器将选择最近的重载函数——不带const关键字的函数。<br><strong>习惯</strong>：<br>在适当的地方使用const关键字，是能够提高程序质量的一个好习惯。对于无须改变对象状态的成员函数，都应当使用const。</p>
+<h4 id="5-5-2-用const修饰的类成员"><a href="#5-5-2-用const修饰的类成员" class="headerlink" title="5.5.2 用const修饰的类成员"></a>5.5.2 用const修饰的类成员</h4><p><strong>1.常成员函数</strong><br>使用const关键字修饰的函数为常成员函数，常成员函数声明的格式如下:<br>类型说明符 函数名(参数表) const;<br><strong>注意</strong>：<br>(1)const是函数类型的一个组成部分，因此在函数的定义部分也要带const关键字，<br>(2)如果将一个对象说明为常对象，则通过该常对象只能调用它的常成员函数，而不能调用其他成员函数(这就是C++从语法机制上对常对象的保护，也是常对象唯一的对外接口方式)。<br>(3)无论是否通过常对象调用常成员函数，在常成员函数调用期间，<span style="color:green;font-size:15px"><strong>目的对象</strong></span><strong>都被视同为常对象</strong>，因此常成员函数不能更新目的对象的数据成员，也不能针对目的对象调用该类中没有用const 修饰的成员函数(这就保证了在常成员函数中不会更改目的对象的数据成员的值)。<br>(4)const关键字可以用于对重载函数的区分。<br><strong>提示</strong>：<br>如果仅以const关键字为区分对成员函数重载，那么通过非const 的对象调用该函数，两个重载的函数都可以与之匹配，这时编译器将选择最近的重载函数——不带const关键字的函数。<br><strong>习惯</strong>：<br>在适当的地方使用const关键字，是能够提高程序质量的一个好习惯。对于无须改变对象状态的成员函数，都应当使用const。</p>
 <p><strong>2.常数据成员</strong></p>
 <p>就像一般数据一样，类的成员数据也可以是常量，使用const说明的数据成员为常数据成员。如果在一个类中说明了常数据成员，那么任何函数中都不能对该成员赋值。构造函数对该数据成员进行初始化，就只能通过初始化列表。</p>
 <pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">//5_8.cpp 常数据成员举例</span>
@@ -1481,9 +1482,9 @@ Point <span class="token function">fun2</span><span class="token punctuation">(<
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">endif</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <center><span style="color:blue;font-size:15px">2021/1/9</span></center>
 
-<h3 id="5-7-综合实例——个人银行账户管理系统"><a href="#5-7-综合实例——个人银行账户管理系统" class="headerlink" title="5.7 综合实例——个人银行账户管理系统"></a>5.7 综合实例——个人银行账户管理系统</h3><p>对第四章的改进：<br>（1）在SavingsAccount类增加一个静态成员total，用来记录各个账户的总金额，并为其增加相应的静态函数成员getTotal用来对其进行访问。<br>（2）</p>
-<p>例5-11 个人银行账户管理。<br>整个程序分为3个文件：account.h是类定义头文件，account.cpp是类实现文件，5_11.cpp是主函数文件。</p>
-<p>对第四章的改进：<br>（1）在SavingsAccount类中增加了一个静态数据cyuantotal，用来记录各个账户的总金额，并为其增加相应的静态成员函数getTotal用来对其进行访问。<br>（2）诸如getBalance，accumulate这些不需要改变对象状态的成员函数声明为常成员函数。<br>（3）将SavingAccount类从主函数所在的源文件中分开，建立两个新的文件account.h和account.cpp分别存放SavingAccount类的定义和实现。</p>
+<h3 id="5-7-综合实例——个人银行账户管理系统"><a href="#5-7-综合实例——个人银行账户管理系统" class="headerlink" title="5.7 综合实例——个人银行账户管理系统"></a>5.7 综合实例——个人银行账户管理系统</h3><p>对第四章的改进：<br>（1）在SavingsAccount类中增加了一个静态数据成员total，用来记录各个账户的总金额，并为其增加相应的静态成员函数getTotal用来对其进行访问。<br>（2）诸如getBalance，accumulate这些不需要改变对象状态的成员函数声明为常成员函数。<br>（3）将SavingAccount类从主函数所在的源文件中分开，建立两个新的文件account.h和account.cpp分别存放SavingAccount类的定义和实现。</p>
+<p><img src="/images/cpp/image-20210119130237279.png" alt="UML图"></p>
+<p>例5-11 个人银行账户管理。<br>整个程序分为3个文件：account.h是类定义头文件，account.cpp是类实现文件，5_11.cpp是主函数文件</p>
 <pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">//account.h</span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">ifndef</span> <span class="token expression">__ACCOUNT_H__</span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token expression">__ACCOUNT_H__</span></span>
@@ -1653,8 +1654,8 @@ Point <span class="token function">fun2</span><span class="token punctuation">(<
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/C/">
-                                    <span class="chip bg-color">C++</span>
+                                <a href="/tags/cpp/">
+                                    <span class="chip bg-color">cpp</span>
                                 </a>
                             
                                 <a href="/tags/C-%E8%AF%AD%E8%A8%80%E8%AE%BE%E8%AE%A1%E6%8C%87%E5%8D%97%EF%BC%88%E7%AC%AC4%E7%89%88%EF%BC%89/">
@@ -1974,7 +1975,7 @@ Point <span class="token function">fun2</span><span class="token punctuation">(<
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">31.9k</span>&nbsp;字
+                class="white-color">37.4k</span>&nbsp;字
             
             
             

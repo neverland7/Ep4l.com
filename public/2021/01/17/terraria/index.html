@@ -410,14 +410,14 @@ if (windowWidth > 768) {
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-01-17
+                    2021-01-18
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    601
+                    675
                 </div>
                 
 
@@ -437,7 +437,7 @@ if (windowWidth > 768) {
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>心血来潮 参考<a target="_blank" rel="noopener" href="https://www.sohu.com/a/325013560_120099900">https://www.sohu.com/a/325013560_120099900</a> 原文找不到了</p>
+                <p>参考<a target="_blank" rel="noopener" href="https://www.sohu.com/a/325013560_120099900">https://www.sohu.com/a/325013560_120099900</a> 原文找不到了</p>
 <p><code>free -m</code>查看swap分区<br><img src="/images/terraria/image-20210117125354448.png" style="zoom:200%;"></p>
 <p>1、删除原来的Swap分区<br> <code>swapoff –a</code><br>2、新建一个读写块大小为1M、块个数为1024的Swap分区<br> <code>dd if=/dev/zero of=/root/swapfile bs=1M count=1024</code><br>3、格式化创建好的Swap交换分区<br><code>mkswap /root/swapfile</code><br>4、启动新建的Swap交换分区<br><code>swapon /root/swapfile</code></p>
 <p><img src="/images/terraria/image-20210117125618777.png" alt=""></p>
@@ -448,12 +448,12 @@ if (windowWidth > 768) {
 <p>9、进入zip文件夹<br><code>cd /opt/terraria/zip</code><br>10、下载最新版本的泰拉瑞亚服务包（用wget太慢，我先用putty下到本地然后用上传到服务器）</p>
 <p><img src="/images/terraria/image-20210117130858133.png" alt=""></p>
 <p>11、将下载好的压缩包解压到bin文件夹<br><code>unzip terraria-server-1412.zip -d/opt/terraria/bin</code><br>12、将配置文件拷贝到泰拉瑞亚文件夹的根目录。<br><code>cp -p /opt/terraria/bin/1412/Windows/serverconfig.txt /opt/terraria/</code><br>13、编辑拷贝过来的配置文档。<br> <code>vim /opt/terraria/serverconfig.txt</code><br>14、在文件的末尾加上</p>
-<pre class="line-numbers language-none"><code class="language-none">world=/opt/terraria/Worlds/building.wld
+<pre class="line-numbers language-none"><code class="language-none">world=/opt/terraria/Worlds/你的世界.wld
 autocreate=2
-worldname=building
+worldname=你的世界
 difficulty=0
 maxplayers=4
-password=keqing
+password=你的密码
 worldpath=/opt/terraria/Worlds<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>其中<br>autocreate 是没有发现世界自动生成世界的大小 1、2、3分别对应小、中、大<br>difficulty 对应的是0为普通，1为专家<br>maxplayers是最大人数<br>15、给运行文件赋予运行权限。<br><code>chmod 777 /opt/terraria/bin/1412/Linux/TerrariaServer.bin.x86_64</code><br>16、启动服务器。<br><code>cd /opt/terraria/bin/1412/Linux &amp;&amp; ./TerrariaServer.bin.x86_64 -config/opt/terraria/serverconfig.txt</code></p>
 <p>(怎么感觉1.4不一样了，在这时候才创建世界，好像14步是多余的)<br>17、退出服务器程序<br><code>:exit</code><br>18、将之前添加的一段话中三行代码前面加上#号，使其失效<br><code>vim /opt/terraria/serverconfig.txt</code></p>
@@ -464,6 +464,13 @@ worldpath=/opt/terraria/Worlds<span aria-hidden="true" class="line-numbers-rows"
 <p>发现启动服务器后我博客上不去了。。。。</p>
 <p>好像得重启一下nginx服务</p>
 <p><code>systemctl restart nginx.service</code></p>
+<p>screen常用命令：</p>
+<pre class="line-numbers language-none"><code class="language-none">screen -S yourname -&gt; 新建一个叫yourname的session
+screen -ls -&gt; 列出当前所有的session
+screen -r yourname -&gt; 回到yourname这个session
+screen -d yourname -&gt; 远程detach某个session
+screen -d -r yourname -&gt; 结束当前session并回到yourname这个session
+ctrl+a d  暂时中断会话<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -603,51 +610,49 @@ worldpath=/opt/terraria/Worlds<span aria-hidden="true" class="line-numbers-rows"
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/01/17/terraria/">
+                <a href="/2021/01/19/encoding-diff/">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/terraria/terraria.jpg" class="responsive-img" alt="terraria服务器搭建">
+                        <img src="https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/encoding-diff/unicode.jpg" class="responsive-img" alt="字符编码中ASCII、Unicode和UTF-8的区别">
                         
-                        <span class="card-title">terraria服务器搭建</span>
+                        <span class="card-title">字符编码中ASCII、Unicode和UTF-8的区别</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            诶呦，又乱码了
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-17
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-01-19
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%8A%98%E8%85%BE/" class="post-category">
-                                    折腾
+                            <a href="/categories/%E6%9D%82%E8%B0%88/" class="post-category">
+                                    杂谈
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/terraria/">
-                        <span class="chip bg-color">terraria</span>
+                    <a href="/tags/%E7%BC%96%E7%A0%81/">
+                        <span class="chip bg-color">编码</span>
                     </a>
                     
-                    <a href="/tags/%E6%B8%B8%E6%88%8F/">
-                        <span class="chip bg-color">游戏</span>
+                    <a href="/tags/Unicode/">
+                        <span class="chip bg-color">Unicode</span>
                     </a>
                     
                 </div>
@@ -852,7 +857,7 @@ worldpath=/opt/terraria/Worlds<span aria-hidden="true" class="line-numbers-rows"
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">31.9k</span>&nbsp;字
+                class="white-color">37.4k</span>&nbsp;字
             
             
             

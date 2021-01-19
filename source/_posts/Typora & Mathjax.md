@@ -1,5 +1,5 @@
 ---
-title: Typora & Mathjax使用文档
+t1itle: Typora & Mathjax使用文档
 date: 2020-12-31 03:42:17
 img: https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/Typora & Mathjax/mathjax.jpg
 mathjax: true
@@ -323,10 +323,16 @@ $max \ a$
 
 <span style='color:red;background:blue;font-size:30px;font-family:微软雅黑;'>文字</span>
 
-### 4.2 某种数学图的插入
+### 4.2 某些数学图的插入
 
 https://www.intmath.com/cg3/embed-desmos.php
 
-<iframe src="https://www.desmos.com/calculator/yx1lco5nog" width="100%" style="min-height:200px"></iframe>
+desmos：
 
-s
+<iframe src="https://www.desmos.com/calculator/yx1lco5nog" width="100%" height="600"></iframe>
+
+ggb：
+
+<iframe src="https://ggb123.cn/classic/nfvqbwqt?embed" width="100%" height="600" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
+
+<iframe src="https://ggb123.cn/classic/n4aa6vgh?embed" width="100%" height="600" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
