@@ -1,7 +1,7 @@
 ---
 title: c++语言程序设计（第六章）
 date: 2021-01-11 16:40:34
-img: https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/cpp/cpp.jpg
+img: /images/cpp/cpp.jpg
 mathjax: true
 summary: 近期不更了
 categories: 学习笔记

@@ -1,7 +1,7 @@
 ---
 title: 汇编
 date: 2021-01-20 22:26:10
-img: https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/assembly/assembly.jpg
+img: /images/assembly/assembly.jpg
 mathjax: true
 summary: 持续更新中
 categories: 学习笔记

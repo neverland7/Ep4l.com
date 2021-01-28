@@ -2,7 +2,7 @@
 
 title: 字符编码中ASCII、Unicode和UTF-8的区别
 date: 2021-01-19 16:23:49
-img: https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/encoding-diff/unicode.jpg
+img: /images/encoding-diff/unicode.jpg
 summary: 诶呦，又乱码了
 categories: 杂谈
 tags:

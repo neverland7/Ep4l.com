@@ -1,7 +1,7 @@
 ---
 t1itle: Typora & Mathjax使用文档
 date: 2020-12-31 03:42:17
-img: https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/Typora & Mathjax/mathjax.jpg
+img: /images/Typora & Mathjax/mathjax.jpg
 mathjax: true
 toc: true
 summary: 尝试一下Typora和Mathjax的基本功能

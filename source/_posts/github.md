@@ -1,7 +1,7 @@
 ---
 title: github使用学习
 date: 2021-01-04 14:19:20
-img: https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/github/github.jpg
+img: /images/github/github.jpg
 summary: 一直对github的使用一知半解，系统学习一下
 categories: 学习笔记
 tags:

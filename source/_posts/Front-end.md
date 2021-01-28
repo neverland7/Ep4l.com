@@ -1,7 +1,7 @@
 ---
 title: 前端
 date: 2021-01-28 19:22:33
-img: https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/Front-end/js2.jpg
+img: /images/Front-end/js2.jpg
 mathjax: true
 summary: 持续更新中
 categories: 学习笔记

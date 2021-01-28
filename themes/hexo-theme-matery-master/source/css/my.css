@@ -1,4 +1,4 @@
 /* Here is your custom css styles. */
 *{
-    cursor: url("https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/medias/cursor.ico"),auto!important;
+    cursor: url("/medias/cursor.ico"),auto!important;
 }
