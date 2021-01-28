@@ -409,11 +409,6 @@ if (windowWidth > 768) {
                 
 
                 
-                <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-01-28
-                </div>
-                
 
                 
                 <div class="info-break-policy">
@@ -444,7 +439,7 @@ if (windowWidth > 768) {
 <h2 id="1-基本功能"><a href="#1-基本功能" class="headerlink" title="1.基本功能"></a>1.基本功能</h2><p><strong>协同修改</strong><br>多人并行不悖的修改服务器端的同一个文件。<br><strong>数据备份</strong><br>不仅保存目录和文件的当前状态， 还能够保存每一个提交过的历史状态。<br><strong>版本管理</strong><br>在保存每一个版本的文件信息的时候要做到不保存重复数据， 以节约存储空<br>间， 提高运行效率。 这方面 SVN 采用的是增量式管理的方式， 而 Git 采取了文<br>件系统快照的方式。<br><strong>权限控制</strong><br>对团队中参与开发的人员进行权限控制。<br>对团队外开发者贡献的代码进行审核——Git 独有。<br><strong>历史记录</strong><br>查看修改人、 修改时间、 修改内容、 日志信息。<br>将本地文件恢复到某一个历史状态。<br><strong>分支管理</strong><br>允许开发团队在工作过程中多条生产线同时推进任务， 进一步提高效率</p>
 <h2 id="2-git的优势"><a href="#2-git的优势" class="headerlink" title="2.git的优势"></a>2.git的优势</h2><p><strong>版本控制简介</strong>工程设计领域中使用版本控制管理工程蓝图的设计过程。在 IT 开发过程中也可以使用版本控制思想管理代码的版本迭代。<br><strong>版本控制工具</strong><br>集中式版本控制工具：<br>CVS、SVN、VSS……<br>分布式版本控制工具：<br>Git、Mercurial、Bazaar、Darcs……</p>
 <p><strong>Git 的优势</strong><br>大部分操作在本地完成，不需要联网<br>完整性保证<br>尽可能添加数据而不是删除或修改数据<br>分支操作非常快捷流畅<br>与 Linux 命令全面兼容</p>
-<h2 id="3-git简介"><a href="#3-git简介" class="headerlink" title="3.git简介"></a>3.git简介</h2><p><img src="/images/github/image-20210104145617035.png" alt="git结构"></p>
+<h2 id="3-git简介"><a href="#3-git简介" class="headerlink" title="3.git简介"></a>3.git简介</h2><p><img src="https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/github/image-20210104145617035.png" alt="git结构"></p>
 <p><strong>Git 和代码托管中心</strong><br>代码托管中心的任务：维护远程库<br> 局域网环境下： GitLab 服务器<br> 外网环境下 ： GitHub 、 码云</p>
 <h2 id="4-Git-命令行操作"><a href="#4-Git-命令行操作" class="headerlink" title="4.Git 命令行操作"></a>4.Git 命令行操作</h2><h3 id="4-1-本地库初始化"><a href="#4-1-本地库初始化" class="headerlink" title="4.1 本地库初始化"></a>4.1 本地库初始化</h3><p>命令：</p>
 <pre class="line-numbers language-git" data-language="git"><code class="language-git">git init<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -498,17 +493,17 @@ git reset --hard a6ace91<span aria-hidden="true" class="line-numbers-rows"><span
 <p>第一步：编辑文件，删除特殊符号<br>第二步：把文件修改到满意的程度，保存退出<br>第三步：git add [文件名]<br>第四步：git commit -m “日志信息”（后面不带文件名）</p>
 <h2 id="5-Git-基本原理"><a href="#5-Git-基本原理" class="headerlink" title="5.Git 基本原理"></a>5.Git 基本原理</h2><h3 id="5-1-哈希"><a href="#5-1-哈希" class="headerlink" title="5.1 哈希"></a>5.1 哈希</h3><p>哈希是一个系列的加密算法，各个不同的哈希算法虽然加密强度不同，但是有以下 几个共同点：<br> ①不管输入数据的数据量有多大，输入同一个哈希算法，得到的加密结果长度固定。<br>②哈希算法确定，输入数据确定，输出数据能够保证不变<br>③哈希算法确定，输入数据有变化，输出数据一定有变化，而且通常变化很大<br>④哈希算法不可逆 Git 底层采用的是 SHA-1 算法。（MD5也是哈希算法的一种）<br>哈希算法可以被用来验证文件，Git 就是靠这种机制来从根本上保证数据完整性的。</p>
 <h3 id="5-2-Git-保存版本的机制"><a href="#5-2-Git-保存版本的机制" class="headerlink" title="5.2 Git 保存版本的机制"></a>5.2 Git 保存版本的机制</h3><h4 id="5-2-1-集中式版本控制工具的文件管理机制"><a href="#5-2-1-集中式版本控制工具的文件管理机制" class="headerlink" title="5.2.1 集中式版本控制工具的文件管理机制"></a>5.2.1 集中式版本控制工具的文件管理机制</h4><p>以文件变更列表的方式存储信息。这类系统将它们保存的信息看作是一组基本 文件和每个文件随时间逐步累积的差异。</p>
-<p><img src="/images/github/image-20210105000016196.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/github/image-20210105000016196.png" alt=""></p>
 <h4 id="5-2-2-Git-的文件管理机制"><a href="#5-2-2-Git-的文件管理机制" class="headerlink" title="5.2.2 Git 的文件管理机制"></a>5.2.2 Git 的文件管理机制</h4><p>Git 把数据看作是小型文件系统的一组快照。每次提交更新时 Git 都会对当前 的全部文件制作一个快照并保存这个快照的索引。为了高效，如果文件没有修改， Git 不再重新存储该文件，而是只保留一个链接指向之前存储的文件。所以 Git 的 工作方式可以称之为快照流。</p>
-<p><img src="/images/github/image-20210105000029275.png" alt=""></p>
-<h4 id="5-2-3-Git-文件管理机制细节"><a href="#5-2-3-Git-文件管理机制细节" class="headerlink" title="5.2.3 Git 文件管理机制细节"></a>5.2.3 Git 文件管理机制细节</h4><p><img src="/images/github/image-20210104235138752.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/github/image-20210105000029275.png" alt=""></p>
+<h4 id="5-2-3-Git-文件管理机制细节"><a href="#5-2-3-Git-文件管理机制细节" class="headerlink" title="5.2.3 Git 文件管理机制细节"></a>5.2.3 Git 文件管理机制细节</h4><p><img src="https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/github/image-20210104235138752.png" alt=""></p>
 <p>提交对象及其父对象形成的链条</p>
-<p><img src="/images/github/image-20210104235208324.png" alt=""></p>
-<h3 id="5-3-Git-分支管理机制"><a href="#5-3-Git-分支管理机制" class="headerlink" title="5.3 Git 分支管理机制"></a>5.3 Git 分支管理机制</h3><h4 id="5-3-1-分支的创建"><a href="#5-3-1-分支的创建" class="headerlink" title="5.3.1 分支的创建"></a>5.3.1 分支的创建</h4><p><img src="/images/github/image-20210104235624280.png" alt=""></p>
-<h4 id="5-3-2-分支的切换"><a href="#5-3-2-分支的切换" class="headerlink" title="5.3.2 分支的切换"></a>5.3.2 分支的切换</h4><p><img src="/images/github/image-20210104235717453.png" alt=""></p>
-<p><img src="/images/github/image-20210104235729611.png" alt=""></p>
-<p><img src="/images/github/image-20210104235745003.png" alt=""></p>
-<p><img src="/images/github/image-20210104235758253.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/github/image-20210104235208324.png" alt=""></p>
+<h3 id="5-3-Git-分支管理机制"><a href="#5-3-Git-分支管理机制" class="headerlink" title="5.3 Git 分支管理机制"></a>5.3 Git 分支管理机制</h3><h4 id="5-3-1-分支的创建"><a href="#5-3-1-分支的创建" class="headerlink" title="5.3.1 分支的创建"></a>5.3.1 分支的创建</h4><p><img src="https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/github/image-20210104235624280.png" alt=""></p>
+<h4 id="5-3-2-分支的切换"><a href="#5-3-2-分支的切换" class="headerlink" title="5.3.2 分支的切换"></a>5.3.2 分支的切换</h4><p><img src="https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/github/image-20210104235717453.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/github/image-20210104235729611.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/github/image-20210104235745003.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/github/image-20210104235758253.png" alt=""></p>
 <h2 id="6-GitHub"><a href="#6-GitHub" class="headerlink" title="6.GitHub"></a>6.GitHub</h2><h3 id="6-2-创建远程库"><a href="#6-2-创建远程库" class="headerlink" title="6.2 创建远程库"></a>6.2 创建远程库</h3><h3 id="6-3-创建远程库地址别名"><a href="#6-3-创建远程库地址别名" class="headerlink" title="6.3 创建远程库地址别名"></a>6.3 创建远程库地址别名</h3><pre class="line-numbers language-none"><code class="language-none">git remote -v 查看当前所有远程地址别名
 git remote add [别名] [远程地址]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h3 id="6-4-推送"><a href="#6-4-推送" class="headerlink" title="6.4 推送"></a>6.4 推送</h3><pre class="line-numbers language-none"><code class="language-none">git push [别名] [分支名]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -910,18 +905,6 @@ git merge [远程库地址别名/远程分支名]<span aria-hidden="true" class=
             
             
             
-            
-            <span id="busuanzi_container_site_pv">
-                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
-                    class="white-color"></span>&nbsp;次
-            </span>
-            
-            
-            <span id="busuanzi_container_site_uv">
-                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
-                    class="white-color"></span>&nbsp;人
-            </span>
-            
             <br>
             
             <span id="sitetime">载入运行时间...</span>
@@ -975,7 +958,7 @@ git merge [远程库地址别名/远程分支名]<span aria-hidden="true" class=
             </span>
             
         </div>
-        <div class="col s12 m4 l4 social-link social-statis">
+        <div class="col s12 m4 l4 social-link ">
     <a href="https://github.com/neverland7" class="tooltipped" target="_blank" data-tooltip="我的GitHub" data-position="top" data-delay="50">
         <i class="fab fa-github"></i>
     </a>
@@ -1169,8 +1152,6 @@ $(function () {
 </script>
 
     
-    
-    <script async src="https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/libs/others/busuanzi.pure.mini.js"></script>
     
 
     

@@ -53,7 +53,7 @@ Git、Mercurial、Bazaar、Darcs……
 
 ## 3.git简介
 
-![git结构](/images/github/image-20210104145617035.png)
+![git结构](https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/github/image-20210104145617035.png)
 
 **Git 和代码托管中心** 
 代码托管中心的任务：维护远程库
@@ -260,37 +260,37 @@ git merge [有新内容分支名]
 
 以文件变更列表的方式存储信息。这类系统将它们保存的信息看作是一组基本 文件和每个文件随时间逐步累积的差异。
 
-![](/images/github/image-20210105000016196.png)
+![](https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/github/image-20210105000016196.png)
 
 #### 5.2.2 Git 的文件管理机制 
 
 Git 把数据看作是小型文件系统的一组快照。每次提交更新时 Git 都会对当前 的全部文件制作一个快照并保存这个快照的索引。为了高效，如果文件没有修改， Git 不再重新存储该文件，而是只保留一个链接指向之前存储的文件。所以 Git 的 工作方式可以称之为快照流。
 
-![](/images/github/image-20210105000029275.png)
+![](https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/github/image-20210105000029275.png)
 
 #### 5.2.3 Git 文件管理机制细节
 
-![](/images/github/image-20210104235138752.png)
+![](https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/github/image-20210104235138752.png)
 
 提交对象及其父对象形成的链条
 
-![](/images/github/image-20210104235208324.png)
+![](https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/github/image-20210104235208324.png)
 
 ### 5.3 Git 分支管理机制 
 
 #### 5.3.1 分支的创建
 
-![](/images/github/image-20210104235624280.png)
+![](https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/github/image-20210104235624280.png)
 
 #### 5.3.2 分支的切换
 
-![](/images/github/image-20210104235717453.png)
+![](https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/github/image-20210104235717453.png)
 
-![](/images/github/image-20210104235729611.png)
+![](https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/github/image-20210104235729611.png)
 
-![](/images/github/image-20210104235745003.png)
+![](https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/github/image-20210104235745003.png)
 
-![](/images/github/image-20210104235758253.png)
+![](https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/github/image-20210104235758253.png)
 
 ## 6.GitHub
 

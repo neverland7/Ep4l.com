@@ -409,11 +409,6 @@ if (windowWidth > 768) {
                 
 
                 
-                <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-01-28
-                </div>
-                
 
                 
                 <div class="info-break-policy">
@@ -445,7 +440,7 @@ if (windowWidth > 768) {
 <h2 id="1-ASCII码"><a href="#1-ASCII码" class="headerlink" title="1. ASCII码"></a><strong>1. ASCII码</strong></h2><p>我们知道，在计算机内部，所有的信息最终都表示为一个二进制的字符串。每一个二进制位（bit）有0和1两种状态，因此八个二进制位就可以组合出256种状态，这被称为一个字节（byte）。也就是说，一个字节一共可以用来表示256种不同的状态，每一个状态对应一个符号，就是256个符号，从00000000到11111111。</p>
 <p>上个世纪60年代，美国制定了一套字符编码，对英语字符与二进制位之间的关系，做了统一规定。这被称为ASCII码，一直沿用至今。</p>
 <p>ASCII码一共规定了128个字符的编码，比如空格”SPACE”是32（二进制00100000），大写的字母A是65（二进制01000001）。这128个符号（包括32个不能打印出来的控制符号），只占用了一个字节的后面7位，最前面的1位统一规定为0。</p>
-<p><img src="/images/encoding-diff/ascii.jpg" alt="ascii"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/encoding-diff/ascii.jpg" alt="ascii"></p>
 <h2 id="2-非ASCII编码"><a href="#2-非ASCII编码" class="headerlink" title="2.非ASCII编码"></a><strong>2.非ASCII编码</strong></h2><p>英语用128个符号编码就够了，但是用来表示其他语言，128个符号是不够的。比如，在法语中，字母上方有注音符号，它就无法用ASCII码表示。于是，一些欧洲国家就决定，利用字节中闲置的最高位编入新的符号。比如，法语中的é的编码为130（二进制10000010）。这样一来，这些欧洲国家使用的编码体系，可以表示最多256个符号。</p>
 <p>但是，这里又出现了新的问题。不同的国家有不同的字母，因此，哪怕它们都使用256个符号的编码方式，代表的字母却不一样。比如，130在法语编码中代表了é，在希伯来语编码中却代表了字母Gimel (ג)，在俄语编码中又会代表另一个符号。但是不管怎样，所有这些编码方式中，0—127表示的符号是一样的，不一样的只是128—255的这一段。</p>
 <p>至于亚洲国家的文字，使用的符号就更多了，汉字就多达10万左右。一个字节只能表示256种符号，肯定是不够的，就必须使用多个字节表达一个符号。比如，简体中文常见的编码方式是GB2312，使用两个字节表示一个汉字，所以理论上最多可以表示256x256=65536个符号。</p>
@@ -466,9 +461,9 @@ if (windowWidth > 768) {
 <p>以下内容引用自<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44431371/article/details/110430312">https://blog.csdn.net/weixin_44431371/article/details/110430312</a></p>
 </blockquote>
 <h2 id="6-三者之间的联系"><a href="#6-三者之间的联系" class="headerlink" title="6.三者之间的联系"></a>6.三者之间的联系</h2><p>搞清楚了ASCII、Unicode和UTF-8的关系，我们就可以总结一下现在计算机系统通用的字符编码工作方式：<br>（1）在计算机内存中，统一使用Unicode编码，当需要保存到硬盘或者需要传输的时候，就转换为UTF-8编码。（2）用记事本编辑的时候，从文件读取的UTF-8字符被转换为Unicode字符到内存里，编辑完成后，保存的时候再把Unicode转换为UTF-8保存到文件。如下图</p>
-<p><img src="/images/encoding-diff/20201201135931894.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/encoding-diff/20201201135931894.png" alt=""></p>
 <p>浏览网页的时候，服务器会把动态生成的Unicode内容转换为UTF-8再传输到浏览器</p>
-<p><img src="/images/encoding-diff/20201201135945121.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/encoding-diff/20201201135945121.png" alt=""></p>
 <h2 id="7-计算机内存中为何不直接使用-UTF-8-编码"><a href="#7-计算机内存中为何不直接使用-UTF-8-编码" class="headerlink" title="7.计算机内存中为何不直接使用 UTF-8 编码"></a>7.计算机内存中为何不直接使用 UTF-8 编码</h2><ol>
 <li>因为utf8编码的字符串长度和字符个数没有固定换算关系，导致排版，排序之类的复杂度上升。</li>
 <li>储文本文件或用于传输字符串数据时，转换为UTF-8编码以节省存储空间和宽带。</li>
@@ -853,18 +848,6 @@ if (windowWidth > 768) {
             
             
             
-            
-            <span id="busuanzi_container_site_pv">
-                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
-                    class="white-color"></span>&nbsp;次
-            </span>
-            
-            
-            <span id="busuanzi_container_site_uv">
-                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
-                    class="white-color"></span>&nbsp;人
-            </span>
-            
             <br>
             
             <span id="sitetime">载入运行时间...</span>
@@ -918,7 +901,7 @@ if (windowWidth > 768) {
             </span>
             
         </div>
-        <div class="col s12 m4 l4 social-link social-statis">
+        <div class="col s12 m4 l4 social-link ">
     <a href="https://github.com/neverland7" class="tooltipped" target="_blank" data-tooltip="我的GitHub" data-position="top" data-delay="50">
         <i class="fab fa-github"></i>
     </a>
@@ -1112,8 +1095,6 @@ $(function () {
 </script>
 
     
-    
-    <script async src="https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/libs/others/busuanzi.pure.mini.js"></script>
     
 
     

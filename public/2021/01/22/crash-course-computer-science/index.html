@@ -409,11 +409,6 @@ if (windowWidth > 768) {
                 
 
                 
-                <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-01-28
-                </div>
-                
 
                 
                 <div class="info-break-policy">
@@ -448,49 +443,49 @@ if (windowWidth > 768) {
 <ul>
 <li>半加器：<br>sum：当前位的和<br>carry：进位</li>
 </ul>
-<p><img src="/images/Crash-Course-Computer-Science/image-20210123023411810.png" alt="半加器"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/Crash-Course-Computer-Science/image-20210123023411810.png" alt="半加器"></p>
 <ul>
 <li>全加器：<br>由于有进位的存在，半加器输出了进位，下一位需要接收3个二进制位</li>
 </ul>
-<p><img src="/images/Crash-Course-Computer-Science/image-20210123023902758.png" alt="全加器"></p>
-<p><img src="/images/Crash-Course-Computer-Science/image-20210123024147310.png" alt="8位行波进位加法器，现代实际使用超前进位加法器"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/Crash-Course-Computer-Science/image-20210123023902758.png" alt="全加器"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/Crash-Course-Computer-Science/image-20210123024147310.png" alt="8位行波进位加法器，现代实际使用超前进位加法器"></p>
 <p>除了加减，类似计算机里也有专门做乘法的算术单元，电路比较复杂</p>
 <p>逻辑单元：<br>执行逻辑操作，例如and，or，not和一些简单的数值测试（如测试输出是否为0）</p>
-<p><img src="/images/Crash-Course-Computer-Science/image-20210123025231997.png" alt="简单的ALU"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/Crash-Course-Computer-Science/image-20210123025231997.png" alt="简单的ALU"></p>
 <h2 id="6-寄存器和内存"><a href="#6-寄存器和内存" class="headerlink" title="6.寄存器和内存"></a>6.寄存器和内存</h2><p>用基本逻辑门可以做出存一位信息的叫”AND-OR锁存器”</p>
-<p><img src="/images/Crash-Course-Computer-Science/image-20210123025835832.png" alt="锁存器"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/Crash-Course-Computer-Science/image-20210123025835832.png" alt="锁存器"></p>
 <p>加亿点细节，用一根线来同时作用设置和复位，再加一根线用来做写入的开关</p>
-<p><img src="/images/Crash-Course-Computer-Science/image-20210123025922499.png" alt="门锁"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/Crash-Course-Computer-Science/image-20210123025922499.png" alt="门锁"></p>
 <p><img src="/images/Crash-Course-Computer-Science/image-20210123030158536.png" alt="门锁"></p>
 <p>数个锁存器的组合叫<strong>寄存器</strong>，寄存器有多少位称为<strong>位宽</strong>，早期位宽为8，现在很多都是64<br>用1根线连接寄存器所有的允许输入线，用8条数据线发送数据，就可以给一个寄存器存入数据</p>
-<p><img src="/images/Crash-Course-Computer-Science/image-20210123030623292.png" alt="写寄存器"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/Crash-Course-Computer-Science/image-20210123030623292.png" alt="写寄存器"></p>
 <p>有n个单元时，需要非常多(2n+1根)的线，可以改进成为矩阵</p>
-<p><img src="/images/Crash-Course-Computer-Science/image-20210123030954261.png" alt="门锁矩阵"></p>
-<p><img src="/images/Crash-Course-Computer-Science/image-20210123031155319.png" alt="放大"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/Crash-Course-Computer-Science/image-20210123030954261.png" alt="门锁矩阵"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/Crash-Course-Computer-Science/image-20210123031155319.png" alt="放大"></p>
 <p>对于256位的存储，只需要1条数据线，1条允许写入线，1条允许读取线，和16行16列的线，共35条即可</p>
 <p>用8位可以表示这里的地址，12行8列的地址就是11001000，然后用两个多路复用器将8位的地址装换为行和列</p>
-<p><img src="/images/Crash-Course-Computer-Science/image-20210123031909074.png" alt="256位内存"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/Crash-Course-Computer-Science/image-20210123031909074.png" alt="256位内存"></p>
 <p>将8个内存连接起来，同一个地址可以存一个8位数字（1个字节），这里总共能存256个字节（byte）</p>
-<p><img src="/images/Crash-Course-Computer-Science/image-20210123031955194.png" alt=""></p>
-<p><img src="/images/Crash-Course-Computer-Science/image-20210123032242052.png" alt="抽象成一块整体"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/Crash-Course-Computer-Science/image-20210123031955194.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/Crash-Course-Computer-Science/image-20210123032242052.png" alt="抽象成一块整体"></p>
 <p>现在的64位计算机有64位的内存，但不论几位机，一个地址都是对应1Byte<br>内存的一个重要特征是：可以随时访问任何位置，因此叫”随机存取存储器（RAM）“</p>
 <h2 id="7-中央处理器（CPU）"><a href="#7-中央处理器（CPU）" class="headerlink" title="7.中央处理器（CPU）"></a>7.中央处理器（CPU）</h2><p>先构建一个16个地址的内存和4个寄存器</p>
-<p><img src="/images/Crash-Course-Computer-Science/image-20210123033206319.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/Crash-Course-Computer-Science/image-20210123033206319.png" alt=""></p>
 <p>在内存里存储的数据前4位为操作码，后4位为地址或者寄存器</p>
-<p><img src="/images/Crash-Course-Computer-Science/image-20210123033336716.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/Crash-Course-Computer-Science/image-20210123033336716.png" alt=""></p>
 <p>我们还需要两个寄存器来完成CPU，一个叫指令地址寄存器，一个叫指令寄存器</p>
 <p>取指令阶段：从地址寄存器存放的地址中取出指令 </p>
-<p><img src="/images/Crash-Course-Computer-Science/image-20210123120300566.png" alt="取指令"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/Crash-Course-Computer-Science/image-20210123120300566.png" alt="取指令"></p>
 <p>解码阶段：由控制单元（也是一堆逻辑门）进行解码</p>
 <p>执行阶段：操作码0010：存放到寄存器a；地址码1110的值：00000011</p>
-<p><img src="/images/Crash-Course-Computer-Science/image-20210123121150970.png" alt="执行"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/Crash-Course-Computer-Science/image-20210123121150970.png" alt="执行"></p>
 <p>指令完成后，关闭所有电路，去拿下一条指令，指令地址寄存器+1，执行阶段结束<br>接下来再经过一个执行阶段，把一个值送进寄存器B，指令地址+1<br>接下来到了地址2，指令码是1000，把寄存器B的值加进A里，需要整合ALU来执行</p>
-<p><img src="/images/Crash-Course-Computer-Science/image-20210123123610284.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/Crash-Course-Computer-Science/image-20210123123610284.png" alt=""></p>
 <p>运算完之后output输出到control unit的临时存储寄存器，关闭ALU，把值写入寄存器A，A变为了00010001，指令地址再+1。</p>
 <p>最后一个指令将寄存器A中的内存写入内存中</p>
-<p><img src="/images/Crash-Course-Computer-Science/image-20210123125844934.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/Crash-Course-Computer-Science/image-20210123125844934.png" alt=""></p>
 <p>cpu工作的节奏由“时钟”来负责管理，CPU”取指令→解码→执行“的速度叫”<strong>时钟速度</strong>“，单位是赫兹<br>cpu可以超频也可以降频</p>
-<p><img src="/images/Crash-Course-Computer-Science/image-20210123230724705.png" alt="CPU"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/Crash-Course-Computer-Science/image-20210123230724705.png" alt="CPU"></p>
 <h2 id="8-指令与程序"><a href="#8-指令与程序" class="headerlink" title="8.指令与程序"></a>8.指令与程序</h2>
                 
             </div>
@@ -883,18 +878,6 @@ if (windowWidth > 768) {
             
             
             
-            
-            <span id="busuanzi_container_site_pv">
-                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
-                    class="white-color"></span>&nbsp;次
-            </span>
-            
-            
-            <span id="busuanzi_container_site_uv">
-                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
-                    class="white-color"></span>&nbsp;人
-            </span>
-            
             <br>
             
             <span id="sitetime">载入运行时间...</span>
@@ -948,7 +931,7 @@ if (windowWidth > 768) {
             </span>
             
         </div>
-        <div class="col s12 m4 l4 social-link social-statis">
+        <div class="col s12 m4 l4 social-link ">
     <a href="https://github.com/neverland7" class="tooltipped" target="_blank" data-tooltip="我的GitHub" data-position="top" data-delay="50">
         <i class="fab fa-github"></i>
     </a>
@@ -1142,8 +1125,6 @@ $(function () {
 </script>
 
     
-    
-    <script async src="https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/libs/others/busuanzi.pure.mini.js"></script>
     
 
     

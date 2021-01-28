@@ -405,11 +405,6 @@ if (windowWidth > 768) {
                 
 
                 
-                <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-01-28
-                </div>
-                
 
                 
                 <div class="info-break-policy">
@@ -456,7 +451,7 @@ if (windowWidth > 768) {
 </ul>
 <p>在计算机中专门有连接CPU和其他芯片的导线，通常称为总线。总线从物理上来讲，就是一根根导线的集合。根据传送信息的不同，总线从逻辑上又分为3类，<strong>地址总线</strong>、<strong>控制总线</strong>和<strong>数据总线</strong>。</p>
 <p>CPU从3号单元中读取数据的过程如下：</p>
-<p><img src="/images/assembly/image-20210120230352328.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/assembly/image-20210120230352328.png" alt=""></p>
 <p>（1）CPU 通过地址线将地址信息3发出。<br>（2）CPU通过控制线发出内存读命令，选中存储器芯片，并通知它，将要从中读取数据。<br>（3）存储器将3号单元中的数据8通过数据线送入CPU。</p>
 <h3 id="1-8-地址总线"><a href="#1-8-地址总线" class="headerlink" title="1.8 地址总线"></a>1.8 地址总线</h3><p>一个CPU有N跟地址总线，则可以说这个CPU的地址总线的宽度为N。这样的CPU最多可以寻找2的N次方个内存单元。</p>
 <h3 id="1-9-数据总线"><a href="#1-9-数据总线" class="headerlink" title="1.9 数据总线"></a>1.9 数据总线</h3><p>数据总线的宽度决定了CPU和外界的数据传送速度。8 根数据总线一次可传送一个8位二进制数据(即一个字节)。16 根数据总线一次可传送两个字节。</p>
@@ -472,14 +467,14 @@ if (windowWidth > 768) {
 </li>
 <li>接口卡上的RAM<br>某些接口卡需要对大批量输入、输出数据进行暂时存储，在其上装有RAM。最典型的是显示卡上的RAM，一般称为显存。显示卡随时将显存中的数据向显示器上输出。换句话说，我们将需要显示的内容写入显存，就会出现在显示器上。</li>
 </ul>
-<p><img src="/images/assembly/image-20210120235427070.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/assembly/image-20210120235427070.png" alt=""></p>
 <h3 id="1-15-内存地址空间"><a href="#1-15-内存地址空间" class="headerlink" title="1.15 内存地址空间"></a>1.15 内存地址空间</h3><p>上述的那些存储器，在物理上是独立的器件，但是在以下两点上相同。</p>
 <ul>
 <li>都和CPU的总线相连。</li>
 <li>CPU对它们进行读或写的时候都通过控制线发出内存读写命令。</li>
 </ul>
 <p>这也就是说，CPU 在操控它们的时候，把它们都当作内存来对待，把它们总的看作一个由若干存储单元组成的逻辑存储器，这个逻辑存储器就是我们所说的内存地址空间。在汇编这门课中，我们所面对的是内存地址空间。</p>
-<p><img src="/images/assembly/image-20210120235904993.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/assembly/image-20210120235904993.png" alt=""></p>
 <p>在图1.8中，所有的物理存储器被看作一个由若干存储单元组成的逻辑存储器，每个物理存储器在这个逻辑存储器中占有一个地址段，即一段地址空间。CPU在这段地址空间中读写数据，实际上就是在相对应的物理存储器中读写数据。</p>
 <p>假设，图1.8中的内存地址空间的地址段分配如下。<br>地址0~7FFFH的32KB空间为主随机存储器的地址空间:<br>地址8000H~9FFFH的8KB空间为显存地址空间:<br>地址A000H~FFFFH的24KB空间为各个ROM的地址空间。</p>
 <p>这样，CPU向内存地址为1000H的内存单元中写入数据，这个数据就被写入主随机存储器中；CPU向内存地址为8000H的内存单元中写入数据，这个数据就被写入显存中，然后会被显卡输出到显示器上；CPU向内存地址为C000H的内存单元中写入数据的操作是没有结果的，C000H 单元中的内容不会被改变，C000H 单元实际上就是ROM存储器中的一个单元。</p>
@@ -995,18 +990,6 @@ if (windowWidth > 768) {
             
             
             
-            
-            <span id="busuanzi_container_site_pv">
-                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
-                    class="white-color"></span>&nbsp;次
-            </span>
-            
-            
-            <span id="busuanzi_container_site_uv">
-                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
-                    class="white-color"></span>&nbsp;人
-            </span>
-            
             <br>
             
             <span id="sitetime">载入运行时间...</span>
@@ -1060,7 +1043,7 @@ if (windowWidth > 768) {
             </span>
             
         </div>
-        <div class="col s12 m4 l4 social-link social-statis">
+        <div class="col s12 m4 l4 social-link ">
     <a href="https://github.com/neverland7" class="tooltipped" target="_blank" data-tooltip="我的GitHub" data-position="top" data-delay="50">
         <i class="fab fa-github"></i>
     </a>
@@ -1254,8 +1237,6 @@ $(function () {
 </script>
 
     
-    
-    <script async src="https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/libs/others/busuanzi.pure.mini.js"></script>
     
 
     

@@ -17,16 +17,16 @@ typora-root-url: ..
 
 ## 签到
 
-![](/images/hackergame-2020-attempt/image-20210116000201094.png)
+![](https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/hackergame-2020-attempt/image-20210116000201094.png)
 
 要求提取一个flag，但是滑条的步长为0.00001，js代码还会把1略过，不可能滑到1
 
-![](/images/hackergame-2020-attempt/image-20210116000645177.png)点击提交发现是用get请求，URL变为`http://202.38.93.111:10000/?number=0.01145`，可直接改为1
+![](https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/hackergame-2020-attempt/image-20210116000645177.png)点击提交发现是用get请求，URL变为`http://202.38.93.111:10000/?number=0.01145`，可直接改为1
 也可在控制台直接使用`$('#number')[0].value = 1;`
 
 ## 猫咪问答++
 
-![](/images/hackergame-2020-attempt/image-20210116001306225.png)
+![](https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/hackergame-2020-attempt/image-20210116001306225.png)
 
 1.不知道
 
@@ -62,17 +62,17 @@ for (let i = 0; i < 23; i++){
 
 ## 2048
 
-![](/images/hackergame-2020-attempt/image-20210116011522357.png)
+![](https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/hackergame-2020-attempt/image-20210116011522357.png)
 
 游戏很好玩，不过我是菜鸟，通过不了
 
-![](/images/hackergame-2020-attempt/image-20210116012914685.png)
+![](https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/hackergame-2020-attempt/image-20210116012914685.png)
 
 拦截到了一个请求，打开js
 
-![](/images/hackergame-2020-attempt/image-20210116013020557.png)
+![](https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/hackergame-2020-attempt/image-20210116013020557.png)
 
-![](/images/hackergame-2020-attempt/image-20210116013632841.png)
+![](https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/hackergame-2020-attempt/image-20210116013632841.png)
 
 访问`http://202.38.93.111:10005/getflxg?my_favorite_fruit=banana`通过
 
@@ -82,7 +82,7 @@ for (let i = 0; i < 23; i++){
 
 把文件拖入cmd即可
 
-![](/images/hackergame-2020-attempt/image-20210116014242933.png)
+![](https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/hackergame-2020-attempt/image-20210116014242933.png)
 
 ## 从零开始的记账工具人
 
@@ -119,7 +119,7 @@ for (let i = 0; i < 23; i++){
 
 好家伙，搞了半天没解出来，不过得到了常用乱码表
 
-![这可得好好记得](/images/hackergame-2020-attempt/image-20210116021901318.png)
+![这可得好好记得](https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/hackergame-2020-attempt/image-20210116021901318.png)
 
 标准答案：
 

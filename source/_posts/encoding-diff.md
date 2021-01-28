@@ -24,7 +24,7 @@ typora-root-url: ..
 
 ASCII码一共规定了128个字符的编码，比如空格"SPACE"是32（二进制00100000），大写的字母A是65（二进制01000001）。这128个符号（包括32个不能打印出来的控制符号），只占用了一个字节的后面7位，最前面的1位统一规定为0。
 
-![ascii](/images/encoding-diff/ascii.jpg)
+![ascii](https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/encoding-diff/ascii.jpg)
 
 ## **2.非ASCII编码**
 
@@ -73,11 +73,11 @@ UTF-8的编码规则很简单，只有二条：
 搞清楚了ASCII、Unicode和UTF-8的关系，我们就可以总结一下现在计算机系统通用的字符编码工作方式：
 （1）在计算机内存中，统一使用Unicode编码，当需要保存到硬盘或者需要传输的时候，就转换为UTF-8编码。（2）用记事本编辑的时候，从文件读取的UTF-8字符被转换为Unicode字符到内存里，编辑完成后，保存的时候再把Unicode转换为UTF-8保存到文件。如下图
 
-![](/images/encoding-diff/20201201135931894.png)
+![](https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/encoding-diff/20201201135931894.png)
 
 浏览网页的时候，服务器会把动态生成的Unicode内容转换为UTF-8再传输到浏览器
 
-![](/images/encoding-diff/20201201135945121.png)
+![](https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/encoding-diff/20201201135945121.png)
 
 ## 7.计算机内存中为何不直接使用 UTF-8 编码
 
