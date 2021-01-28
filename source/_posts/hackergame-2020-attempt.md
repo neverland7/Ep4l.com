@@ -4,11 +4,10 @@ date: 2021-01-15 22:44:18
 img: https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/hackergame-2020-attempt/caigou.jpg
 mathjax: true
 summary: 信安负基础，从来没学过，尝试一下看看能不能学到什么东西
-categories: CTF
+categories: 折腾
 tags:
   - CTF
   - Hackergame
-  - 信安
 typora-root-url: ..
 ---
 

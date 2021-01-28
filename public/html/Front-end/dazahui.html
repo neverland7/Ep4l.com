@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--这里设置编码方式-->
+    <meta charset="utf-8">
+    <!--为搜索引擎定义关键词-->
+    <meta name="keywords" content="HTML, CSS, XML, XHTML, JavaScript">
+    <!--为网页定义描述内容:-->
+    <meta name="description" content="免费 Web & 编程 教程">
+    <!--定义网页作者:-->
+    <meta name="author" content="Ep4l">
+    <!--每300秒钟刷新当前页面:-->
+    <meta http-equiv="refresh" content="300">
+
+    <!--浏览器工具栏的标题/显示在收藏夹中的标题/显示在搜索引擎结果页面的标题-->
+    <title>这里是标题</title>
+
+    <!--base标签描述了基本的链接地址/链接目标，该标签作为HTML文档中所有的链接标签的默认链接:-->
+    <base href="https://Ep4l.com" target="_blank">
+
+    <!--link标签定义了文档与外部资源之间的关系，通常用于链接到样式表:-->
+    <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/medias/logo.png">
+    <link rel="stylesheet" type="text/css" href="某css.css">
+
+    <!--style标签定义 HTML 文档的样式信息。-->
+    <style type="text/css">
+        h1 {
+            color: red;
+        }
+
+        p {
+            color: rgb(180, 103, 103);
+        }
+
+        p.info {
+            text-align: center;
+            color: rgb(2, 19, 250)
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/libs/jquery/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id=h1-h6>
+        <p class=info>h1-h6</p>
+        <!--有h1-h6，html5属性值已废弃-->
+        <h1>这是第一级标题</h1>
+        <hr />
+    </div>
+    <div id=p>
+        <p class=info>p</p>
+        <!--各属性值html5均已废弃-->
+        <p>这是一段话</p>
+        <hr />
+    </div>
+    <div id=br>
+        <p class=info>br</p>
+        <!--在 XHTML、XML 以及未来版本的 HTML 中，所有元素都必须被关闭。-->
+        <br />
+        <hr />
+    </div>
+    <div id=hr>
+        <p class=info>hr</p>
+        <!--各属性值html5均已废弃-->
+        <hr />
+    </div>
+    <div id=em/strong/mark/small/sub/sup/del/ins>
+        <p class=info>em/strong/mark/small/sub/sup/del/ins</p>
+        <em>现斜体 em</em><br />
+        <strong>现粗体 strong</strong><br />
+        <mark>高亮</mark><br />
+        <small>小号字</small><br />
+        这是 <sub> 下标</sub> 和 <sup> 上标</sup><br />
+        <del>删除的内存</del> <ins>新插入的内容</ins><br />
+        <hr />
+    </div>
+    <div id=code/samp/var/pre>
+        <p class=info>code/samp/var/pre</p>
+        <code>一段电脑代码 print("Hello World")</code><br />
+        <samp>计算机程序的样本文本</samp><br />
+        <var>变量</var><br />
+        <pre>
+            此例演示如何使用 pre 标签
+            对空行和 空格
+            进行控制
+        </pre><br />
+        <hr />
+    </div>
+    <div id=abbr/address/bdo/blockquote/q/cite/dfn>
+        <p class=info>abbr/address/bdo/blockquote/q/cite/dfn</p>
+        <!--abbreviation n. 缩写；缩写词-->
+        <abbr title="这里是没有缩写过的内容">缩写的内容</abbr><br />
+        <!--address 标签定义文档作者/所有者的联系信息。-->
+        <address>
+            邮件：<a href="mailto:123@example.com">某人</a><br />
+            作者：啦啦啦
+        </address>
+        <!--可能有某一段文本使用的语言的阅读方式与其他不同-->
+        <bdo dir="rtl">该段落文字从右到左显示。</bdo><br />
+        <!--提示：如果标记是不需要段落分隔的短引用，请使用 <q>。-->
+        <blockquote cite="http://www.worldwildlife.org/who/index.html">
+            这里应该是很长很长的引用
+        </blockquote>
+        <!--浏览器经常在短引用的周围插入引号。-->
+        <p>我曾经说过<q>歪比歪比，歪比巴卜</q>这样的话</p><br />
+        <!--cite标签来定义作品的标题：-->
+        <p><cite>我画过的作品</cite> by Ep4l</p>
+        <dfn>定义项目</dfn>
+        <hr />
+    </div>
+    <div id=a>
+        <p class=info>a</p>
+        <!--页面跳转-->
+        <a href="url" target="_blank">链接文本1</a><br />
+        <a href="url" target="_self">链接文本2</a><br />
+        <!--链接到同一页面的不同位置-->
+        <a id="tips">有用的提示部分</a><br />
+        <a href="大杂烩.html#tips">访问有用的提示部分</a><br />
+        <!--邮件链接-->
+        <a href="mailto:1395017057@.com?subject=这是邮件的主题&body=这是邮件的内容&cc=someoneelse@example.com&bcc=andsomeoneelse@example.com"
+            target="_top" rel="nofollow">发送邮件</a><br />
+        <hr />
+    </div>
+    <div id=img/map>
+        <p class=info>img/map</p>
+        <img src="https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/medias/logo.png" alt="替代文字" title="悬停文字"
+            width="300"><br />
+        <img src="https://www.runoob.com/try/demo_source/planets.gif" width="145" height="126" alt="Planets"
+            usemap="#planetmap">
+        <map name="planetmap">
+            <area shape="rect" coords="0,0,82,126" alt="Sun" href="https://www.runoob.com/try/demo_source/sun.htm">
+            <area shape="circle" coords="90,58,3" alt="Mercury"
+                href="https://www.runoob.com/try/demo_source/mercur.htm">
+            <area shape="circle" coords="124,58,8" alt="Venus" href="https://www.runoob.com/try/demo_source/venus.htm">
+        </map>
+        <hr />
+    </div>
+    <div id=table>
+        <p class=info>table</p>
+        <!--在 HTML5 中，仅支持 "border" 属性，并且只允许使用值 "1" 或 ""。-->
+        <table border="1">
+            <!--caption n. (图片、漫画等的)说明文字-->
+            <caption>这是标题</caption>
+            <tr>
+                <th>Name</th>
+                <th colspan="2">Telephone</th>
+            </tr>
+            <tr>
+                <td>Bill Gates</td>
+                <td>555 77 854</td>
+                <td>555 77 855</td>
+            </tr>
+        </table>
+        <hr />
+    </div>
+    <div id=ul/ol/dl>
+        <p class=info>ul/ol/dl</p>
+        <ul>
+            <li>Coffee</li>
+            <li>Tea
+                <ul>
+                    <li>Black tea</li>
+                    <li>Green tea
+                        <ul>
+                            <li>China</li>
+                            <li>Africa</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>Milk</li>
+        </ul><br />
+        <!--type不赞成使用。请使用样式代替。-->
+        <ol type="a" start="15">
+            <li>Coffee</li>
+            <li>Tea</li>
+            <li>Milk</li>
+        </ol><br />
+        <dl>
+            <dt>Coffee</dt>
+            <dd>- black hot drink</dd>
+            <dt>Milk</dt>
+            <dd>- white cold drink</dd>
+        </dl>
+        <hr />
+    </div>
+    <div id=div/span>
+        <p class=info>div/span</p>
+        <!--大多数 HTML 元素被定义为块级元素或内联元素。-->
+        <!--块级元素在浏览器显示时，通常会以新行来开始（和结束）。实例: <h1>, <p>, <ul>, <table>-->
+        <!--内联元素在显示时通常不会以新行开始。实例: <b>, <td>, <a>, <img>-->
+        <!--HTML <div> 元素是块级元素,没有特定的含义,与 CSS 一同使用，<div> 元素可用于对大的内容块设置样式属性-->
+        <!--<div> 元素的另一个常见的用途是文档布局。它取代了使用表格定义布局的老式方法。-->
+        <!--HTML <span> 元素是内联元素，可用作文本的容器-->
+        <!--<span> 元素也没有特定的含义。当与 CSS 一同使用时，<span> 元素可用于为部分文本设置样式属性。-->
+        <hr />
+    </div>
+    <div id=布局>
+        <p class=info>布局</p>
+        <!--大多数网站可以使用 <div> 或者 <table> 元素来创建多列。CSS 用于对元素进行定位，或者为页面创建背景以及色彩丰富的外观。-->
+        <!DOCTYPE html>
+        <html>
+
+        <head> 
+            <meta charset="utf-8"> 
+            <title>菜鸟教程(runoob.com)</title> 
+        </head>
+
+        <body>
+
+            <div id="container" style="width:500px">
+
+                <div id="header" style="background-color:#FFA500;">
+                    <h1 style="margin-bottom:0;">主要的网页标题</h1>
+                </div>
+
+                <div id="menu" style="background-color:#FFD700;height:200px;width:100px;float:left;">
+                    <b>菜单</b><br>
+                    HTML<br>
+                    CSS<br>
+                    JavaScript
+                </div>
+
+                <div id="content" style="background-color:#EEEEEE;height:200px;width:400px;float:left;">
+                    内容在这里</div>
+
+                <div id="footer" style="background-color:#FFA500;clear:both;text-align:center;">
+                    版权 © runoob.com</div>
+
+            </div>
+        </body>
+
+        </html>
+        <hr />
+    </div>
+    <div id=form/input/label/datalist/textarea/select>
+        <p class=info>form/input/label/datalist/textarea/select</p>
+        <!--文本域通过<input type="text"> 标签来设定，当用户要在表单中键入字母、数字等内容时，就会用到文本域。-->
+        <!--表单（form）的控件名，提交的数据都用控件的name而不是id来控制。因为有许多name会同时对应多个控件-->
+        <!--用到name的控件有   form   input   select   textarea   iframe   frame-->
+        <form id="input" action="某申必链接" method="get">
+            <!--label-->
+            <label for="labeltest">First name: </label> 
+            <!--placeholder-->
+            <!--datalist-->
+            <input type="text" name="firstname" id="labeltest" placeholder="李" list="testlist" /><br />
+            <datalist id="testlist">
+                <option label="李" value="李"></option>
+                <option label="王" value="王"></option>
+                <option label="张" value="张"></option>
+            </datalist>
+            <!--hidden-->
+            看不见的框: <input type="text" name="hidden2" hidden><br>
+            <!--readonly-->
+            Last name: <input type="text" name="lastname" value="田所" readonly/><br />
+            <!--requird/autofocus-->
+            Password: <input type="password" name="pwd" required autofocus /><br />
+            <!--单选框-->
+            <!--checked disabled-->
+            <input type="radio" name="sex" value="male" checked disabled/>Male<br />
+            <input type="radio" name="sex" value="female" disabled/>Female<br />
+            <!--复选框-->
+            <input type="checkbox" name="vehicle" value="Bike" />I have a bike<br />
+            <input type="checkbox" name="vehicle" value="Car" />I have a car<br />
+            <!--文本框-->
+            <textarea name="feedback" rows="5" cols="50" wrap="hard" id="buttontest">我是一个文本框。</textarea><br />
+            <!--选择框-->
+            aneki: <select name="aneki">
+                <option value="RU">RU</option>
+                <option value="UDK">UDK</option>
+                <option value="YMN" selected>YMN</option>
+                <option value="RRM">RRM</option>
+            </select><br>
+            <!--按钮-->
+            <input type="button" id="button1" value="我是一个按钮"
+                onclick="document.getElementById('buttontest').value=document.getElementById('button1').value "><br>
+            <!--滑块-->
+            <input type="range" max="1000000" min="1" step="10"><br>
+            <!--选择文件-->
+            <input type="file" name="file"><br>
+            <!--隐藏字段-->
+            <input type="hidden" id="hidden1" name="提交的信息"><br>
+            <!--html新增控件-->
+            url: <input type="url" name="url" /><br />
+            email: <input type="email" name="email" /><br />
+            search: <input type="search" name="search"><br />
+            number: <input type="number" placeholder="114514" max="1000000" min="1" step="10"><br />
+            range: <input type="range" /><br />1
+            color: <input type="color" list="" /><br />
+            date: <input type="date" name="date" id='yjsp'><br>
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    var yjsp = "1919-08-10";
+                    $('#yjsp').val(yjsp);
+                })
+            </script>
+            <!--提交/重置-->
+            <input type="submit" value="Submit" />
+            <input type="reset" value="reset">
+        </form>
+        <hr />
+    </div>
+    <div id=iframe>
+        <p class=info>iframe</p>
+        <iframe src="https://ep4l.com" width="600" height="200" name="iframe_a">不会还有浏览器不支持iframe吧</iframe>
+        <p><a href="https://ep4l.com/404" target="iframe_a">点一下我</a></p>
+        <iframe src="//player.bilibili.com/player.html?aid=386266&bvid=BV1Yx411F77W&cid=593411&page=1" scrolling="no"
+            border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="960" height="540"> </iframe>
+        <hr>
+    </div>
+    <div id=颜色>
+        <p class=info>颜色</p>
+        <a href="https://www.runoob.com/html/html-colorvalues.html">颜色在这</a><br>
+        <p style="background-color:rgba(175, 32, 139, 0.377)">啦啦啦啦啦</p>
+        <hr>
+    </div>
+    <div id=script>
+        <p class=info>script</p>
+        <script>
+            document.write("Hello World!")
+        </script>
+        <!--不支持 JavaScript 的浏览器会使用 <noscript> 元素中定义的内容（文本）来替代-->
+        <noscript>抱歉，你的浏览器不支持 JavaScript!</noscript>
+        <hr>
+    </div>
+    <div id=常用转义字符>
+        <p class=info>常用转义字符</p>
+        <table>
+            <tr>
+                <td>空格&nbsp;&nbsp;</td>
+                <td>&amp;nbsp;</td>
+            </tr>
+            <tr>
+                <td>&lt;</td>
+                <td>&amp;lt;</td>
+            </tr>
+            <tr>
+                <td>&gt;</td>
+                <td>&amp;gt;</td>
+            </tr>
+            <tr>
+                <td>&amp;</td>
+                <td>&amp;amp;</td>
+            </tr>
+            <tr>
+                <td>&quot;</td>
+                <td>&amp;quot;</td>
+            </tr>
+            <tr>
+                <td>&times;</td>
+                <td>&amp;times;</td>
+            </tr>
+            <tr>
+                <td>&divide;</td>
+                <td>&amp;divide;</td>
+            </tr>
+        </table>
+        <hr>
+    </div>
+</body>
+
+</html>

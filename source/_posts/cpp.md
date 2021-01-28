@@ -4,7 +4,7 @@ date: 2021-01-01 20:14:09
 img: https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/cpp/cpp.jpg
 mathjax: true
 summary: <del> 持续更新中 </del>（已完结）
-categories: cpp
+categories: 学习笔记
 tags:
  - cpp
  - C++语言设计指南（第4版）

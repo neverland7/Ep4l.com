@@ -1,17 +1,15 @@
 ---
-title: c++语言程序设计（6-12章）
+title: c++语言程序设计（第六章）
 date: 2021-01-11 16:40:34
 img: https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/cpp/cpp.jpg
 mathjax: true
-summary: 持续更新中
-categories: cpp
+summary: 近期不更了
+categories: 学习笔记
 tags:
  - cpp
  - C++语言设计指南（第4版）
 typora-root-url: ..
 ---
-
-
 
 <center><span style='color:blue;font-size:15px'>2021/1/10</span></center>
 

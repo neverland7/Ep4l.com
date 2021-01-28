@@ -5,7 +5,7 @@ img: https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/Typora & Math
 mathjax: true
 toc: true
 summary: 尝试一下Typora和Mathjax的基本功能
-categories: Typora
+categories: 学习笔记
 tags:
   - Mathjax
   - Typora
@@ -279,6 +279,12 @@ $\left[\begin{matrix} 1 & 2 & 3\\ 4 & 5 & 6 \end{matrix}\right]$
 
 $\partial$ \partial
 
+$\infin$ \infin
+
+$\forall$ \forall
+
+$\exists$ \exists
+
 ![](/images/Typora & Mathjax/v2-68922903c83e504e3e3e4efd5b7327fa_720w.jpg)
 
 ### 3.15 箭头表示
@@ -286,6 +292,8 @@ $\partial$ \partial
 ![img](/images/Typora & Mathjax/v2-42ff8eb3a827056b16b2133f58009abe_720w.jpg)
 
 ### 3.16 公式大全
+
+[Mathjax 常用语法](https://blog.csdn.net/fly0202/article/details/82534854)
 
 ![img](/images/Typora & Mathjax/v2-2f57dd9499cba748a39be06d2104fe21_720w.jpg)
 
