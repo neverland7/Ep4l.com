@@ -1,7 +1,7 @@
 ---
 title: 计算机科学速成课
 date: 2021-01-22 22:20:31
-img: /images/Crash-Course-Computer-Science/cpu.jpg
+img: https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/Crash-Course-Computer-Science/cpu.jpg
 summary: 虽然不太深入，但讲的真清楚，可以把知识串起来，受益匪浅
 categories: 学习笔记
 tags:

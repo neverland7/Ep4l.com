@@ -1,7 +1,7 @@
 ---
 title: linux上的terraria服务器搭建
 date: 2021-01-17 12:43:54
-img: /images/terraria/terraria.jpg
+img: https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/terraria/terraria.jpg
 categories: 折腾
 summary: 已关服，没人和我玩owo
 tags:
