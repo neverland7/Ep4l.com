@@ -1,7 +1,7 @@
 ---
 title: c++语言程序设计（1-5章）
 date: 2021-01-01 20:14:09
-img: https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/cpp/cpp.jpg
+img: https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com@master/public/images/cpp/cpp.jpg
 mathjax: true
 summary: <del> 持续更新中 </del>（已完结）
 categories: 学习笔记
@@ -11,7 +11,7 @@ tags:
 typora-root-url: ..
 ---
 
-<span style="color: #c31887;">第一次学是在2017上半年，大一的第二个学期，虽然当时学的挺不错，但是已经忘了许多，最近需要找工作，重新学一下。</span>
+<span style="color: #c31887;">第一次学是在2017上半年，大一的第二个学期，虽然当时学的挺不错，但是已经忘了许多，重新学一下。</span>
 
 使用的教材：C++语言程序设计（第4版）郑莉等
 

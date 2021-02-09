@@ -1,7 +1,7 @@
 ---
 t1itle: Typora & Mathjax使用文档
 date: 2020-12-31 03:42:17
-img: https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/Typora & Mathjax/mathjax.jpg
+img: https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com@master/public/images/Typora & Mathjax/mathjax.jpg
 mathjax: true
 toc: true
 summary: 尝试一下Typora和Mathjax的基本功能
@@ -215,7 +215,7 @@ ps：按住ctrl点击链接可直接打开
 示例：![](C:\1.jpg)
 ```
 
-![img](https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/Typora & Mathjax/v2-96d8a3b13676b08768ef4003478c0ade_720w.jpg)
+![img](https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com@master/public/images/Typora & Mathjax/v2-96d8a3b13676b08768ef4003478c0ade_720w.jpg)
 
 
 
@@ -287,21 +287,21 @@ $\forall$ \forall
 
 $\exists$ \exists
 
-![](https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/Typora & Mathjax/v2-68922903c83e504e3e3e4efd5b7327fa_720w.jpg)
+![](https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com@master/public/images/Typora & Mathjax/v2-68922903c83e504e3e3e4efd5b7327fa_720w.jpg)
 
 ### 3.15 箭头表示
 
-![img](https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/Typora & Mathjax/v2-42ff8eb3a827056b16b2133f58009abe_720w.jpg)
+![img](https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com@master/public/images/Typora & Mathjax/v2-42ff8eb3a827056b16b2133f58009abe_720w.jpg)
 
 ### 3.16 公式大全
 
 [Mathjax 常用语法](https://blog.csdn.net/fly0202/article/details/82534854)
 
-![img](https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/Typora & Mathjax/v2-2f57dd9499cba748a39be06d2104fe21_720w.jpg)
+![img](https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com@master/public/images/Typora & Mathjax/v2-2f57dd9499cba748a39be06d2104fe21_720w.jpg)
 
 ### 3.17 二进制运算/相关符号
 
-![img](https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/Typora & Mathjax/v2-fd7827f7c554e1f2c6d9a356f868a0fe_720w.jpg)
+![img](https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com@master/public/images/Typora & Mathjax/v2-fd7827f7c554e1f2c6d9a356f868a0fe_720w.jpg)
 
 ### 3.18 空格表示
 
