@@ -6,7 +6,7 @@
   <link href="https://ep4l.com/atom.xml" rel="self"/>
   
   <link href="https://ep4l.com/"/>
-  <updated>2021-02-03T16:23:25.298Z</updated>
+  <updated>2021-02-14T06:08:11.936Z</updated>
   <id>https://ep4l.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>又一次搞崩博客的经历</title>
+    <link href="https://ep4l.com/2021/02/14/annoying-err/"/>
+    <id>https://ep4l.com/2021/02/14/annoying-err/</id>
+    <published>2021-02-14T05:40:33.000Z</published>
+    <updated>2021-02-14T06:08:11.936Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;经过一次折腾，网站又双叒叕访问不了了，怎么都解决不了，而且这次的问题也太怪了&lt;/p&gt;
+&lt;p&gt;ip和域名都能ping通&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/annoying-err/image-20210214134957668.png&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>c++中STL的常用用法</title>
@@ -48,7 +71,7 @@
     <link href="https://ep4l.com/2021/01/28/front-end/"/>
     <id>https://ep4l.com/2021/01/28/front-end/</id>
     <published>2021-01-28T11:22:33.000Z</published>
-    <updated>2021-02-09T12:19:40.854Z</updated>
+    <updated>2021-02-13T15:38:32.470Z</updated>
     
     
       
