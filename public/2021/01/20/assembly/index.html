@@ -409,7 +409,7 @@ if (windowWidth > 768) {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    6.1k
+                    7.5k
                 </div>
                 
 
@@ -737,7 +737,8 @@ if (windowWidth > 768) {
 <p>(4)向内存从B8100H开始的单元中填写数据</p>
 <p><img src="https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com@master/public/images/assembly/image-20210303223129794.png" alt=""></p>
 <p><img src="https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com@master/public/images/assembly/image-20210303223121403.png" alt="执行后在屏幕右上方出现这些字符"></p>
-<p>但是用d查看，内存中存储的数据会变化，因为显存中的内容和屏幕是一一对应的。在输入的过程中屏幕上的内容变化了，显存中的内容也会跟着变。</p>
+<p>但是用d查看，内存中存储的数据会变化，因为显存中的内容和屏幕是一一对应的。在</p>
+<p>输入的过程中屏幕上的内容变化了，显存中的内容也会跟着变。</p>
 <h2 id="第3章-寄存器（内存访问）"><a href="#第3章-寄存器（内存访问）" class="headerlink" title="第3章 寄存器（内存访问）"></a>第3章 寄存器（内存访问）</h2><p>上一章中，我们主要从CPU如何执行指令的角度讲解了8086CPU的逻辑结构，形成物理地址的方法，相关的寄存器以及一些指令。<br>这一章中，我们从访问内存的角度继续学习几个寄存器。</p>
 <h3 id="3-1-内存中字的存储"><a href="#3-1-内存中字的存储" class="headerlink" title="3.1 内存中字的存储"></a>3.1 内存中字的存储</h3><p>CPU中，用16位寄存器来存储一个字。高8位高字节，低8位低字节。在内存中存储时，由于内存是字节单元，则一个字要用两个地址连续的内存单元来存放。<br>比如用0,1两个内存单元来存放数据20000（4E20H)，则0号单元存储20H，1号单元存储4EH。</p>
 <p>我们提出<strong>字单元</strong>的概念：字单元，即存放一个字型数据（16位）的内存单元，由两个地址连续的内存单元组成。高地址内存单元存放字型数据的高位字节，低地址内存单元中存放字型数据的低位字节。</p>
@@ -769,9 +770,83 @@ if (windowWidth > 768) {
 <li>add 寄存器,内存单元</li>
 <li>add 内存单元,寄存器</li>
 </ul>
-<center><span style="color:blue;font-size:15px">2021/3/4</span></center>
+<center><span style="color:blue;font-size:15px">2021/4/10</span></center>
 
-<h3 id="3-5-数据段"><a href="#3-5-数据段" class="headerlink" title="3.5 数据段"></a>3.5 数据段</h3>
+<h3 id="3-5-数据段"><a href="#3-5-数据段" class="headerlink" title="3.5 数据段"></a>3.5 数据段</h3><p>前面讲过，对于8086pc机，在编程时，可以根据需要，将一组内存单元定义为一个段。所以我们也可以将一组长度小于64kb，地址连续，起始地址为16的倍数的内存单元当作专门存储数据的内存空间，从而定义了一个数据段。</p>
+<p>将一段内存当作数据段，是我们在编程时的一种安排，可以在具体操作时，用ds存放数据段的段地址，再根据需要，用相关指令访问数据段中的具体单元。</p>
+<blockquote>
+<p>数据和程序没有区别，段地址若是ds段，可看做是数据，段地址若是cs段，可看做是程序指令</p>
+</blockquote>
+<h3 id="3-6-栈"><a href="#3-6-栈" class="headerlink" title="3.6 栈"></a>3.6 栈</h3><p>LIFO(Last In First Out)</p>
+<h3 id="3-7-CPU提供的栈机制"><a href="#3-7-CPU提供的栈机制" class="headerlink" title="3.7 CPU提供的栈机制"></a>3.7 CPU提供的栈机制</h3><p>现今的CPU中都有栈的设计，8086CPU提供相关的指令来以栈的方式访问内存空间。这意味着，可以将一段内存当作栈来使用</p>
+<p>下面举例说明，我们可以将10000H~1000FH这段内存当作栈来使用。</p>
+<p><img src="/images/assembly/image-20210410145339891.png" alt="8086CPU的栈操作"></p>
+<pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly">mov ax,0123H
+push ax
+mov bx,2266H
+push bx
+mov cx,1122H
+push cx
+pop ax
+pop bx
+pop cx<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>注意</strong>：字型数据用两个单元存放，高地址单元存放高8位，低地址单元存放低8位。</p>
+<p>在8086CPU中，有两个寄存器，<strong>段寄存器</strong>SS (Stack Segment) 和<strong>寄存器</strong>SP (stack pointer) ，栈顶的段地址存放在SS中，偏移地址存放在SP中。任意时刻，SS:SP指向栈顶元素，push和pop指令执行时，CPU从SS和SP中得到栈顶的地址。</p>
+<blockquote>
+<p>如上图，初试状态栈为空时，SS=1000H，SP=0010H</p>
+</blockquote>
+<p>push ax 的执行，由以下两步完成。</p>
+<ol>
+<li>SP=SP-2，SS:SP 指向当前栈顶前面的单元，以当前栈顶前面的单元为新的栈顶</li>
+<li>将ax中的内容送入SS:SP指向的内存单元处，SS:SP此时指向新栈顶</li>
+</ol>
+<p>pop ax 的执行过程和 push ax 刚好相反，由以下两步完成。</p>
+<ol>
+<li>将SS:SP 指向的内存单元处的数据送入ax中</li>
+<li>SP=SP+2，SS:SP 指向当前栈顶下面的单元，以当前栈顶下面的单元为新栈顶</li>
+</ol>
+<h3 id="3-8-栈顶超界的问题"><a href="#3-8-栈顶超界的问题" class="headerlink" title="3.8 栈顶超界的问题"></a>3.8 栈顶超界的问题</h3><p>栈顶超界是危险的，我们希望CPU可以帮我们解决这个问题，但实际的情况是，8086CPU中并没有这样的寄存器，我们在编程的时候要自己操心栈顶超界的问题。</p>
+<h3 id="3-9-push、pop指令"><a href="#3-9-push、pop指令" class="headerlink" title="3.9 push、pop指令"></a>3.9 push、pop指令</h3><p>push和pop指令的格式可以是如下形式：</p>
+<ul>
+<li>push 寄存器</li>
+<li>push 段寄存器</li>
+<li>push 内存单元</li>
+</ul>
+<p>push、pop实质上就是一种内存传送指令，可以在寄存器和内存之间传送数据，与mov不同的是，push和pop指令访问的内存单元的地址是由SS:SP 指出的。同时，push 和 pop 指令还要改变sp中的内容。</p>
+<h3 id="3-10-栈段"><a href="#3-10-栈段" class="headerlink" title="3.10 栈段"></a>3.10 栈段</h3><p>我们也可以将长度小于64kb的一组地址连续，起始地址为16的倍数的内存单元当作栈空间来用，从而定义了一个栈段。（段地址放在ss中）</p>
+<blockquote>
+<p>一段内存，可以既是代码的存储空间，又是数据的存储空间，还可以是栈空间，也可以什么也不是。关键在于CPU中寄存器的设置，即CS , IP , SS , SP , DS的指向。</p>
+</blockquote>
+<h3 id="实验2-用机器指令和汇编指令编程"><a href="#实验2-用机器指令和汇编指令编程" class="headerlink" title="实验2 用机器指令和汇编指令编程"></a>实验2 用机器指令和汇编指令编程</h3><h4 id="1-预备知识：Debug的使用-1"><a href="#1-预备知识：Debug的使用-1" class="headerlink" title="1.预备知识：Debug的使用"></a>1.预备知识：Debug的使用</h4><p>(1)关于D命令</p>
+<p>D命令是查看内存单元的命令，CPU在访问内存单元的时候从段寄存器中得到内存单元的段地址，所以，Debug在其处理D命令的程序段中，必须有将段地址送入寄存器的代码。</p>
+<p>D命令也提供了一种符合CPU机理的格式：“d 段寄存器:偏移地址”，以下是几个例子。</p>
+<pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly">①	-r ds
+	:1000
+	-d ds:0							;查看从1000:0开始的内存
+②	-r ds
+	:1000
+	-d ds:10 18						;查看1000:10~1000:18中的内容
+③	-d cs:0							;查看当前代码段中的指令代码
+④	-d ss:0							;查看当前栈段中的内容<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>(2)在E、A、U命令中使用寄存器</p>
+<pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly">①	-r ds
+	:1000
+	-e ds:0 11 22 33 44 55 66		;查看从1000:0开始的内存
+②	-u cs:0							;以汇编指令的形式，显示当然代码段中的代码
+③ 	-r cs:0
+	:1000
+	-a ds:0							;以汇编指令的形式，向从1000:0开始的内存单元中写入指令<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>(3)下一条指令执行了吗？</p>
+<pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly">mov ax,2000
+mov ss,ax
+mov sp,10
+mov ax,3123
+...<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>在用T执行单步操作 mov ss,ax 后，下一条指令直接变成了mov ax,3123。<br>在用T命令执行 mov ss,ax的时候，它的下一条指令mov sp,10也紧接着执行了。<br>不单是mov ss,ax，对于如 mov ss,bx，mov ss,[0]，pop ss等指令都会发生上面的情况，这些指令有哪些共性呢，它们都是<strong>修改栈段寄存器SS的指令</strong>。</p>
+<p>为什么会这样呢，这涉及我们在以后的课程中要深入研究的内容：<strong>中断机制</strong>。</p>
+<h4 id="2-实验任务-1"><a href="#2-实验任务-1" class="headerlink" title="2.实验任务"></a>2.实验任务</h4><p>(1) 使用Debug，将下面的程序段写入内存，逐条执行，根据指令执行后的实际运行情况填空。（ez)</p>
+<p>(2) 仔细观察图3.19中的实验内容，然后分析：为什么2000:0~2000:f中的内容会发生改变。（书上）</p>
+<center><span style="color:blue;font-size:15px">2021/4/11</span></center>
                 
             </div>
             <hr/>
@@ -1156,7 +1231,7 @@ if (windowWidth > 768) {
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">51.3k</span>&nbsp;字
+                class="white-color">52.6k</span>&nbsp;字
             
             
             
