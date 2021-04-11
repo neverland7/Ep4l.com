@@ -409,7 +409,7 @@ if (windowWidth > 768) {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    7.5k
+                    9.2k
                 </div>
                 
 
@@ -847,6 +847,92 @@ mov ax,3123
 <h4 id="2-实验任务-1"><a href="#2-实验任务-1" class="headerlink" title="2.实验任务"></a>2.实验任务</h4><p>(1) 使用Debug，将下面的程序段写入内存，逐条执行，根据指令执行后的实际运行情况填空。（ez)</p>
 <p>(2) 仔细观察图3.19中的实验内容，然后分析：为什么2000:0~2000:f中的内容会发生改变。（书上）</p>
 <center><span style="color:blue;font-size:15px">2021/4/11</span></center>
+
+<h2 id="第4章-第一个程序"><a href="#第4章-第一个程序" class="headerlink" title="第4章 第一个程序"></a>第4章 第一个程序</h2><p>现在我们将开始编写完整的汇编语言程序，用编译和连接程序将它们编译连接成为可执行文件</p>
+<h3 id="4-1-一个源程序从写出到执行的过程"><a href="#4-1-一个源程序从写出到执行的过程" class="headerlink" title="4.1 一个源程序从写出到执行的过程"></a>4.1 一个源程序从写出到执行的过程</h3><ul>
+<li>编写源程序</li>
+<li>对源程序进行编译连接（编译生成目标文件，连接生成可执行文件）</li>
+<li>执行可执行文件中的程序</li>
+</ul>
+<h3 id="4-2-源程序"><a href="#4-2-源程序" class="headerlink" title="4.2 源程序"></a>4.2 源程序</h3><pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly">assume cs:codesg
+codesg segment
+		mov ax,0123H
+		mov bx,0456H
+		add ax,bx
+		add ax,ax
+		
+		mov ax,4c00H
+		int 21H
+codesg ends
+end<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="1-伪指令"><a href="#1-伪指令" class="headerlink" title="1. 伪指令"></a>1. 伪指令</h4><p>在汇编语言源程序中，包含两种指令，一种是汇编指令，一种是伪指令。汇编指令有对应的机器码，可以被编译为机器指令，最终为CPU所执行。而伪指令是由编译器来执行的指令，编译器根据伪指令来进行相关的编译工作。</p>
+<p>上面的程序出现了3种伪指令</p>
+<p>(1)    XXX segment<br>                    …<br>        XXX ends<br>segment 和 ends 是一对成对使用的伪指令，是在写可被编译器编译的汇编程序时，必须要用到的一对伪指令。功能是定义一个段，分别说明段的开始和结束。<br>一个汇编程序是由多个段组成的，这些段被用来存放代码，数据或当作栈空间来使用。<br>一个有意义的汇编程序中至少要有一个段，这个段用来存放代码。</p>
+<p>(2)    end<br>end是一个汇编程序的结束标记，汇编器在编译汇编程序的过程中，如果碰到了指令end，就结束对源程序的编译。<br><strong>注意</strong>：不要把end和ends搞混</p>
+<p>(3)    assume<br>这条伪指令可以把某一段寄存器和程序中的某一个用segment…ends定义的段相关联。</p>
+<h4 id="2-源程序中的”程序”"><a href="#2-源程序中的”程序”" class="headerlink" title="2. 源程序中的”程序”"></a>2. 源程序中的”程序”</h4><p>程序最先以汇编指令的形式存放在源程序中，经编译，连接后转变为机器码，存储在可执行文件中。（伪指令是由编译器来处理的）</p>
+<h4 id="3-标号"><a href="#3-标号" class="headerlink" title="3. 标号"></a>3. 标号</h4><p>如“codesg”。一个标号指代了一个地址，作为一个段的名称，这个段的名称最终将被编译，连接程序处理为一个段的段地址。</p>
+<h4 id="4-程序的结构"><a href="#4-程序的结构" class="headerlink" title="4. 程序的结构"></a>4. 程序的结构</h4><p>如上程序</p>
+<h4 id="5-程序返回"><a href="#5-程序返回" class="headerlink" title="5. 程序返回"></a>5. 程序返回</h4><p>若想要一个程序p2运行，则必须有一个正在运行的程序p1，将p2从可执行文件中加载入内存后，将CPU的控制权交给p2，p2才能运行。p2开始运行后，p1暂停运行。<br>当p2运行完毕后，将CPU的控制权交还给使它得以运行的程序p1，此后，p1继续运行。<br>我们把交还CPU的控制权的过程称为<strong>程序返回</strong></p>
+<p>​    mov ax,4c00H<br>​    int 21H</p>
+<p>这两条指令所实现的功能就是程序返回。</p>
+<h4 id="6-语法错误和逻辑错误"><a href="#6-语法错误和逻辑错误" class="headerlink" title="6. 语法错误和逻辑错误"></a>6. 语法错误和逻辑错误</h4><p>语法错误可以在程序编译时被编译器发现。</p>
+<h3 id="4-3-编译源程序"><a href="#4-3-编译源程序" class="headerlink" title="4.3 编译源程序"></a>4.3 编译源程序</h3><p>可以用任意的文本编辑器来编辑源程序，只要最终将其存储为纯文本文件即可。(扩展名一般写.asm)</p>
+<h3 id="4-4-编译"><a href="#4-4-编译" class="headerlink" title="4.4 编译"></a>4.4 编译</h3><p><img src="/images/assembly/image-20210411105338039.png" alt=""></p>
+<h3 id="4-5-连接"><a href="#4-5-连接" class="headerlink" title="4.5 连接"></a>4.5 连接</h3><p><img src="/images/assembly/image-20210411105620229.png" alt=""></p>
+<p>连接的作用有以下几个</p>
+<ul>
+<li>当源程序很大时，可以将它分为多个源程序文件来编译，成为目标文件后，再用连接程序将它们连接到一起，生成一个可执行文件。</li>
+<li>程序中调用了某个库文件中的子程序，需要将这个库文件和该程序生成的目标文件连接到一起，生成一个可执行文件。</li>
+<li>一个源程序编译后，得到了存有机器码的目标文件，目标文件中的有些内容还不能直接用来生成可执行文件，连接程序将这些内容处理为最终的可执行信息。</li>
+</ul>
+<h3 id="4-6-以简化的方式进行编译和连接"><a href="#4-6-以简化的方式进行编译和连接" class="headerlink" title="4.6 以简化的方式进行编译和连接"></a>4.6 以简化的方式进行编译和连接</h3><h3 id="4-7-1-exe的运行"><a href="#4-7-1-exe的运行" class="headerlink" title="4.7 1.exe的运行"></a>4.7 1.exe的运行</h3><h3 id="4-8-谁将可执行文件中的程序装载进入内存并使它运行？"><a href="#4-8-谁将可执行文件中的程序装载进入内存并使它运行？" class="headerlink" title="4.8 谁将可执行文件中的程序装载进入内存并使它运行？"></a>4.8 谁将可执行文件中的程序装载进入内存并使它运行？</h3><h4 id="操作系统的外壳（shell）"><a href="#操作系统的外壳（shell）" class="headerlink" title="操作系统的外壳（shell）"></a>操作系统的外壳（shell）</h4><p>任何通用的操作系统，都要提供一个称为shell（外壳）的程序，用户（操作人员）使用这个程序来操作计算机系统进行工作。</p>
+<p>DOS中有一个程序<strong>command.com</strong>，这个程序在DOS中称为命令解释器，也就是<strong>DOS系统的shell</strong>。</p>
+<p>DOS启动时，先完成其他重要的初始化工作，然后运行command.com，command.com运行后，执行完其他的相关任务后，在屏幕上显示出由当前盘符和当前路径组成的提示符，等待用户的输入。</p>
+<p>用户可以输入所要执行的命令，如cd、dir等，这些命令由command执行，完成这些命令后，再次等待用户的输入。</p>
+<p><strong>如果用户要执行一个程序</strong>，则输入可执行文件的名称，command会找到文件，将这个可执行文件中的程序加载入内存，设置CS：IP指向程序的入口，此后，command暂停运行，CPU运行程序。程序运行结束后，返回到command中，再次等待用户输入。</p>
+<p>刚才的汇编程序从写出到执行的过程：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>编程</th>
+<th>1.asm</th>
+<th>编译</th>
+<th>1.obj</th>
+<th>连接</th>
+<th>1.exe</th>
+<th>加载</th>
+<th>内存中的程序</th>
+<th>运行</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>（Edit）</td>
+<td></td>
+<td>（masm）</td>
+<td></td>
+<td>（link）</td>
+<td></td>
+<td>（command）</td>
+<td></td>
+<td>（CPU）</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="4-9-程序执行过程的跟踪"><a href="#4-9-程序执行过程的跟踪" class="headerlink" title="4.9 程序执行过程的跟踪"></a>4.9 程序执行过程的跟踪</h3><p>使用command不能逐条指令地看到程序的执行过程，因为command的程序加载，设置CS：IP指向程序的入口的操作是连续完成的，当CS：IP一指向程序的入口，command就放弃了CPU的控制权。</p>
+<p>为了观察程序的运行过程，可以使用Debug，Debug可以将程序加载入内存，设置CS：IP指向程序的入口，但Debug并不放弃对CPU的控制，这样，我们就可以使用Debug的相关命令来单步执行程序，查看每一条指令的执行结果。</p>
+<p><img src="/images/assembly/image-20210411113906738.png" alt=""></p>
+<p>这里，需要讲解一下DOS系统中.EXE文件中的程序的加载过程。</p>
+<p><img src="/images/assembly/image-20210411165545638.png" alt=""></p>
+<p>（1）程序加载后，ds中存放着程序所在内存区的段地址，这个内存区的偏移地址为0，则程序所在的内存区的地址为ds：0；</p>
+<p>（2）这个内存区的前256个字节中存放的是PSP，DOS用来和程序进行通信。从256字节处向后的空间存放的是程序。</p>
+<h3 id="实验3-编程、编译、连接、跟踪"><a href="#实验3-编程、编译、连接、跟踪" class="headerlink" title="实验3 编程、编译、连接、跟踪"></a>实验3 编程、编译、连接、跟踪</h3><p>书上</p>
+<center><span style="color:blue;font-size:15px">2021/4/12</span></center>
+
+<h2 id="第5章-BX-和loop指令"><a href="#第5章-BX-和loop指令" class="headerlink" title="第5章 [BX]和loop指令"></a>第5章 [BX]和loop指令</h2>
                 
             </div>
             <hr/>
@@ -1231,7 +1317,7 @@ mov ax,3123
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">52.6k</span>&nbsp;字
+                class="white-color">54.3k</span>&nbsp;字
             
             
             
