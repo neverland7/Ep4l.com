@@ -59,19 +59,19 @@ ALU有2个单元：1个算术单元和一个逻辑单元
 逻辑单元：
 执行逻辑操作，例如and，or，not和一些简单的数值测试（如测试输出是否为0）
 
-![简单的ALU](https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com@master/public/images/Crash-Course-Computer-Science/image-20210123025231997.png)
+![简单的ALU](https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/Crash-Course-Computer-Science/image-20210123025231997.png)
 
 ## 6.寄存器和内存
 
 用基本逻辑门可以做出存一位信息的叫"AND-OR锁存器"
 
-![锁存器](https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com@master/public/images/Crash-Course-Computer-Science/image-20210123025835832.png)
+![锁存器](https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/Crash-Course-Computer-Science/image-20210123025835832.png)
 
 加亿点细节，用一根线来同时作用设置和复位，再加一根线用来做写入的开关
 
 ![门锁](https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com@master/public/images/Crash-Course-Computer-Science/image-20210123025922499.png)
 
-![门锁](https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com@master/public/images/Crash-Course-Computer-Science/image-20210123030158536.png)
+![门锁](https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/Crash-Course-Computer-Science/image-20210123030158536.png)
 
 数个锁存器的组合叫**寄存器**，寄存器有多少位称为**位宽**，早期位宽为8，现在很多都是64
 用1根线连接寄存器所有的允许输入线，用8条数据线发送数据，就可以给一个寄存器存入数据
@@ -82,19 +82,19 @@ ALU有2个单元：1个算术单元和一个逻辑单元
 
 ![门锁矩阵](https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com@master/public/images/Crash-Course-Computer-Science/image-20210123030954261.png)
 
-![放大](https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com@master/public/images/Crash-Course-Computer-Science/image-20210123031155319.png)
+![放大](https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/Crash-Course-Computer-Science/image-20210123031155319.png)
 
 对于256位的存储，只需要1条数据线，1条允许写入线，1条允许读取线，和16行16列的线，共35条即可
 
 用8位可以表示这里的地址，12行8列的地址就是11001000，然后用两个多路复用器将8位的地址装换为行和列
 
-![256位内存](https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com@master/public/images/Crash-Course-Computer-Science/image-20210123031909074.png)
+![256位内存](https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/Crash-Course-Computer-Science/image-20210123031909074.png)
 
 将8个内存连接起来，同一个地址可以存一个8位数字（1个字节），这里总共能存256个字节（byte）
 
 ![](https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com@master/public/images/Crash-Course-Computer-Science/image-20210123031955194.png)
 
-![抽象成一块整体](https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com@master/public/images/Crash-Course-Computer-Science/image-20210123032242052.png)
+![抽象成一块整体](https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/Crash-Course-Computer-Science/image-20210123032242052.png)
 
 现在的64位计算机有64位的内存，但不论几位机，一个地址都是对应1Byte
 内存的一个重要特征是：可以随时访问任何位置，因此叫”随机存取存储器（RAM）“
@@ -125,13 +125,13 @@ ALU有2个单元：1个算术单元和一个逻辑单元
 接下来再经过一个执行阶段，把一个值送进寄存器B，指令地址+1
 接下来到了地址2，指令码是1000，把寄存器B的值加进A里，需要整合ALU来执行
 
-![](https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com@master/public/images/Crash-Course-Computer-Science/image-20210123123610284.png)
+![](https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/Crash-Course-Computer-Science/image-20210123123610284.png)
 
 运算完之后output输出到control unit的临时存储寄存器，关闭ALU，把值写入寄存器A，A变为了00010001，指令地址再+1。
 
 最后一个指令将寄存器A中的内存写入内存中
 
-![](https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com@master/public/images/Crash-Course-Computer-Science/image-20210123125844934.png)
+![](https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/images/Crash-Course-Computer-Science/image-20210123125844934.png)
 
 cpu工作的节奏由“时钟”来负责管理，CPU”取指令→解码→执行“的速度叫”**时钟速度**“，单位是赫兹
 cpu可以超频也可以降频
