@@ -6,7 +6,7 @@
   <link href="https://ep4l.com/atom.xml" rel="self"/>
   
   <link href="https://ep4l.com/"/>
-  <updated>2021-02-14T06:08:11.936Z</updated>
+  <updated>2021-04-13T00:28:45.076Z</updated>
   <id>https://ep4l.com/</id>
   
   <author>
@@ -15,6 +15,69 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>高数</title>
+    <link href="https://ep4l.com/2021/04/12/calculus/"/>
+    <id>https://ep4l.com/2021/04/12/calculus/</id>
+    <published>2021-04-12T13:30:39.000Z</published>
+    <updated>2021-04-13T00:28:45.076Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;高等数学常用基础知识&quot;&gt;&lt;a href=&quot;#高等数学常用基础知识&quot; class=&quot;headerlink&quot; title=&quot;高等数学常用基础知识&quot;&gt;&lt;/a&gt;高等数学常用基础知识&lt;/h2&gt;&lt;h3 id=&quot;基本初等函数&quot;&gt;&lt;a href=&quot;#基本初等函数&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="学习笔记" scheme="https://ep4l.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="考研" scheme="https://ep4l.com/tags/%E8%80%83%E7%A0%94/"/>
+    
+    <category term="数学" scheme="https://ep4l.com/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+    <category term="微积分" scheme="https://ep4l.com/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数据结构</title>
+    <link href="https://ep4l.com/2021/04/11/data-structure/"/>
+    <id>https://ep4l.com/2021/04/11/data-structure/</id>
+    <published>2021-04-11T11:01:07.000Z</published>
+    <updated>2021-04-13T12:02:36.399Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;使用的教材：&lt;/p&gt;
+&lt;p&gt;数据结构（C语言版） 严蔚敏&lt;/p&gt;
+&lt;p&gt;王道数据结构考研复习指导&lt;/p&gt;
+&lt;center&gt;&lt;span style=&quot;color:blue;font-size:15px&quot;&gt;2021/4/11&lt;/span&gt;&lt;/center&gt;
+
+&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="学习笔记" scheme="https://ep4l.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="c语言" scheme="https://ep4l.com/tags/c%E8%AF%AD%E8%A8%80/"/>
+    
+    <category term="数据结构" scheme="https://ep4l.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+    <category term="考研" scheme="https://ep4l.com/tags/%E8%80%83%E7%A0%94/"/>
+    
+  </entry>
   
   <entry>
     <title>又一次搞崩博客的经历</title>
@@ -132,7 +195,7 @@
     <link href="https://ep4l.com/2021/01/20/assembly/"/>
     <id>https://ep4l.com/2021/01/20/assembly/</id>
     <published>2021-01-20T14:26:10.000Z</published>
-    <updated>2021-04-11T09:23:28.747Z</updated>
+    <updated>2021-04-13T02:47:49.440Z</updated>
     
     
       
@@ -350,11 +413,11 @@
   </entry>
   
   <entry>
-    <title></title>
+    <title>Typora &amp; Mathjax使用文档</title>
     <link href="https://ep4l.com/2020/12/31/typora-mathjax/"/>
     <id>https://ep4l.com/2020/12/31/typora-mathjax/</id>
     <published>2020-12-30T19:42:17.000Z</published>
-    <updated>2021-02-09T12:22:08.587Z</updated>
+    <updated>2021-04-12T13:51:00.829Z</updated>
     
     
       

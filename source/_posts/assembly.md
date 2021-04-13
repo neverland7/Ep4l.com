@@ -711,3 +711,331 @@ DOS启动时，先完成其他重要的初始化工作，然后运行command.com
 <center><span style='color:blue;font-size:15px'>2021/4/12</span></center>
 
 ## 第5章 [BX]和loop指令
+
+**1.[bx]和内存单元的描述**
+
+[bx]同样也表示一个内存单元，它的偏移地址在bx中，比如下面的指令:
+mov ax,[bx]
+将一个内存单元的内容送入ax，这个内存单元的长度为2字节(字单元)，存放一个字，偏移地址在bx中，段地址在ds中
+
+**2.loop**
+
+我们在这一章，讲解[bx]和loop指令的应用、意义和相关的内容。
+
+**3.我们定义的描述性的符号:“()”**
+
+为了描述上的简洁，使用一个描述性的符号 “()”来表示一个寄存器或一个丙存单元中的内容。比如:
+(ax)表示ax中的内容、(al)表示al中的内容:
+
+**4.约定符号idata表示常量**
+
+### 5.1 [BX]
+
+mov ax, [bx]
+功能: bx中存放的数据作为一个偏移地址EA，段地址SA默认在ds中，将SA:EA处的数据送入ax中。即: (ax)=((ds)* 16+(bx))。
+
+**注意：**inc bx的含义是bx中的内容加1。
+
+### 5.2 Loop指令
+
+loop指令的格式是: loop 标号，CPU执行loop指令的时候，要进行两步操作，
+①(cx)=(cx)-1;
+②判断cx中的值，不为零则转至标号处执行程序，如果为零则向下执行。
+
+从上面的描述中，可以看到，cx中的值影响着loop指令的执行结果。通常我们用loop指令来实现循环功能，cx 中存放循环次数。
+
+任务：编程计算$2^{12}$
+
+分析：计算$2^{12}$需要11条重复的指令 add ax,ax。
+
+~~~assembly
+assume cs:code
+code segment
+	mov ax,2
+	mov cx,11
+s:	add ax,ax
+	loop s
+	mov ax,4c00h
+	int 21h
+code ends;
+end
+~~~
+
+用cx和loop指令相配合实现循环功能的程序框架如下
+
+~~~assembly
+	mov cx，循环次数
+s:	
+	循环执行的程序段
+	loop s
+~~~
+
+### 5.3 在Debug中跟踪用loop指令实现的循环程序
+
+![image-20210412144427605](/images/assembly/image-20210412144427605.png)
+
+循环程序段从CS:0012开始，CS:0012前面的指令，我们不想一步步跟踪，可以使用g命令"g 0012"，它表示执行程序到当前代码段的0012h处。
+
+当遇到loop指令时，可以使用p命令来执行，Debug就会自动重复执行循环中的指令，直到(cx)=0为止。
+
+当然，也可以使用g命令来达到目的。
+
+### 5.4 Debug和汇编编译器masm对指令的不同处理
+
+在Debug中，mov ax,[0]表示将ds:0处的数据送入ax中。
+但是在汇编源程序中，指令“mov ax,[0]”被编译器当作指令"mov ax,0处理"。
+
+那么我们如何在源程序中实现将内存2000:0之类的数据送入al，bl，cl，dl呢？
+可将偏移地址送入bx寄存器中，用[bx]的方式来访问内存单元。
+也可以在[]的前面显式地给出段地址所在的段寄存器，如"mov al,ds:[0]"。
+
+### 5.5 loop和[bx]的联合应用
+
+计算ffff:0~ffff:b单元中的数据的和，结果存储在dx中。
+
+~~~assembly
+assume cs:code
+code segment
+	mov ax,0ffffh
+	mov ds,ax
+	mov bx,0					;bx充当代表内存单元地址的变量
+	mov dx,0
+	mov cx,12
+s:	mov al,[bx]
+	mov ah,[0]
+	add,dx,ax
+	inc bx
+	loop s
+
+	mov ax,4c00h
+	int 21h
+code ends
+end
+~~~
+
+### 5.6 段前缀
+
+我们可以在访问内存单元的指令中显示地给出内存单元的段地址所在的寄存器，比如"ds:" "cs:"等，这些在汇编语言中称为段前缀。
+
+### 5.7 一段安全的空间
+
+在8086模式中，随意向一段内存空间写入内容是很危险的，因为这段空间中可能存放着重要的系统数据或代码。
+
+在一般的pc机中，DOS方法下，0:200~0:2ff的256个字节的空间一般不会被使用。
+
+### 5.8 段前缀的使用
+
+将内存ffff:0\~ffff:b单元中的数据复制到0:200\~0:20b单元中。
+
+~~~assembly
+assume cs:code
+code segment
+	mov ax,0ffffh
+	mov ds,ax
+	mov ax,0020h
+	mov es,ax
+	mov bx,0
+	mov cx,12
+s:	mov dl,[bx]
+	mov es:[bx],dl
+	inc bx
+	loop s
+	
+	mov ax,4c00h
+	int 21h
+code ends
+end
+~~~
+
+### 实验4 [bx]和loop的使用
+
+(1)、(2)编程，向内存0:200\~0:23F依次传送数据0\~63(3FH)。
+
+~~~assembly
+assume cs:code
+code segment
+	mov ax,20h
+	mov ds,ax
+	mov bx,0
+	mov cx,64
+s:	mov [bx],bx
+	inc bx
+	loop s
+	
+	mov ax,4c00h
+	int 21h
+code ends
+end
+~~~
+
+![](/images/assembly/image-20210412161520503.png)
+
+<center><span style='color:blue;font-size:15px'>2021/4/13</span></center>
+
+## 第6章 包含多个段的程序
+
+在前面的程序中，只有一个代码段，现在的问题是，如果程序需要用其他空间来存放数据，使用哪里呢？
+合法地通过操作系统取得的空间都是安全的，程序取得空间的方法有两种，一是在加载程序的时候为程序分配，再就是程序在执行的过程中向系统申请。在我们的课程中，不讨论第二种方法。
+
+### 6.1 在代码段中使用数据
+
+从规范的角度来讲，我们是不能自已随便决定哪段空间可以使用的，应该让系统来为我们分配。
+我们可以在程序中，定义我们希望处理的数据，这现数据就会被编译、连接程序作为程序的一部分载入内存。 与此同时，我们要处理的数据也就自然而然地获得了存储空间。
+
+编程计算8个数据的和，结果存在ax寄存器中：
+
+~~~assembly
+assume cs:code
+code segment
+	dw 0123h,0456h,0789h,0abch,0defh,0fedh,0cbah,0987h
+	mov cx,0
+	...
+code ends
+end
+~~~
+
+dw(define word)的含义是定义字型数据，由于它们在代码段中，所以可以从cs中得到它们的段地址。用dw定义的数据处于代码段的最开始，所以偏移地址为0。
+
+可是这样一来，我们就必须用Debug来执行程序，因为程序的入口处不是我们所希望执行的指令（指令在ip=10h处）。我们可以在源程序中指明程序的入口所在。
+
+~~~assembly
+assume cs:code
+code segment
+	dw 0123h,0456h,0789h,0abch,0defh,0fedh,0cbah,0987h
+	strat:	mov bx,0
+			mov ax,0
+			mov cx,8
+		s:	add ax,cs:[bx]
+			add bx,2
+			loop s
+			
+			mov ax,4c00h
+			int 21h
+code ends
+end start
+~~~
+
+end除了通知编译器程序结束外，还可以通知编译器程序的入口在什么地方。在程序6.2中我们**用end指令指明了程序的入口**在标号start处。
+
+在前面的课程中，我们已经知道在单任务系统中，**可执行文件中的程序执行过程如下**。
+(1)由其他的程序(Debug、command 或其他程序)将可执行文件中的程序加载入内存:
+(2)设置CS:IP指向程序的第一条要执行的指令(即程序的入口)，从而使程序得以运行;
+(3)程序运行结束后，返回到加载者。
+
+现在的问题是，**根据什么设置CPU的CS:IP 指向程序的第一条要执行的指令？**
+这一点，是由可执行文件中的描述信息指明的。我们知道可执行文件由描述信息和程序组成，程序来自于源程序中的汇编指令和定义的数据；**描述信息**则主要是编译、连接程序对源程序中**相关伪指令进行处理**所得到的信息。我们在程序6.2中，用伪指令end描述了程序的结束和程序的入口。在编译、连接后，由“end start” 指明的程序入口，被转化为一个入口地址，存储在可执行文件的描述信息中。在被加载到内存后，加载者从程序的可执行文件的描述信息中读到程序的入口地址，设置CS:IP。
+
+### 6.2 在代码段中使用栈
+
+完成下面的程序，利用栈，将程序中定义的数据逆序存放
+
+~~~assembly
+assume cs:codesg
+codesg segment
+	dw 0123h,0456h,0789h,0abch,0defh,0fedh,0cbah,0987h
+	?
+codesg ends
+end
+~~~
+
+可以在程序中通过定义数据来取得一段空间，然后将这段空间当作栈空间来用。
+
+
+
+~~~assembly
+assume cs:codesg
+codesg segment
+	dw 0123h,0456h,0789h,0abch,0defh,0fedh,0cbah,0987h
+	dw 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+			;用dw定义16个字型数据，当栈来使用。
+	start:	mov ax,cs
+			mov ss,ax
+			mov sp,30h
+			
+			mov bx,0
+			mov cx,8
+		s:	push cs:[bx]
+			add bx,2
+			loop s
+			
+			mov bx,0
+			mov cx,8
+		s0:	pop cs:[bx]
+			add bx,2
+			loop s0
+			
+			mov ax,4c00h
+			int 21h
+codesg ends
+end start
+~~~
+
+ss:sp要指向栈底，使用设置ss:sp指向cs:30
+
+### 6.3 将数据、代码、栈放入不同的栈
+
+我们用和定义代码段一样的方法来定义多个段，然后在这些段里面定义需要的数据，或通过定义数据来取得栈空间。
+
+~~~assembly
+assume cs:code,ds:data,ss:stack
+data segment
+	dw 0123h,0456h,0789h,0abch,0defh,0fedh,0cbah,0987h
+data ends
+stack segment
+	dw 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+stack ends
+code segment
+	start:	mov ax,stack
+			mov ss,ax
+			mov sp,20h
+			
+			mov ax,data
+			mov ds,ax
+			
+			mov bx,0
+			mov cx,8
+		s:	push [bx]
+			add bx,2
+			loop s
+			
+			mov bx,0
+			mov cx,8
+		s0:	pop [bx]
+			add bx,2
+			loop s0
+			
+			mov ax,4c00h
+			int 21h
+code ends
+end start
+~~~
+
+我们可以明显看出，定义一个段的方法和前面讲的定义代码段的方法没有区别。在程序中，段名就相当于一个标号，它代表了段地址。但是我们用伪指令"assume cs:code,ds:data,ss:stack"，CPU并没有真正将cs，ds，ss指向这3个地址，而是我们后来写的指令将其送入，因为assume是伪指令，是由编译器执行的，CPU并不知道它们，我们不必深究assume的作用。
+
+### 实验5 编写、调试具有多个段的程序
+
+书上。
+
+每个段的大小最低为16字节的倍数，向上取整。
+
+## 第7章 更灵活的定位内存地址的方法
+
+本章我们主要通过具体的问题来讲解一些更灵活的定位内存地址的方法和相关的编程方法
+
+### 7.1 and 和 or 指令
+
+(1) and指令：逻辑与指令，按位进行与运算。
+mov 		 al, 01100011B
+and	 	  al, 00111011B
+执行后: 	al=00100011B
+通过该指令可将操作对象的相应位设为0，其他位不变。
+
+(2) or指令：逻辑或指令，按位进行或运算。
+mov 		 al, 01100011B
+or    		  al, 00111011B
+执行后: 	al=01111011B
+通过该指令可将操作对象的相应位设为1,其他位不变。
+
+<center><span style='color:blue;font-size:15px'>2021/4/14</span></center>
+
+### 7.2 关于ASCII码

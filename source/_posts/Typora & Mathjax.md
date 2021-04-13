@@ -1,5 +1,5 @@
 ---
-t1itle: Typora & Mathjax使用文档
+title: Typora & Mathjax使用文档
 date: 2020-12-31 03:42:17
 img: https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com@master/public/images/Typora & Mathjax/mathjax.jpg
 mathjax: true
