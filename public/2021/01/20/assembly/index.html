@@ -60,7 +60,7 @@ if (windowWidth > 768) {
                     
                     <span class="logo-span">Ep4l的小博客</span>
                 </a>
-<span class="shaky">冬天好冷o((>﹏<))o</span>
+<span class="shaky">咕噜咕噜o((>﹏<))o</span>
             </div>
             
 
@@ -379,6 +379,10 @@ if (windowWidth > 768) {
                                 <span class="chip bg-color">assembly</span>
                             </a>
                         
+                            <a href="/tags/8086/">
+                                <span class="chip bg-color">8086</span>
+                            </a>
+                        
                     </div>
                     
                 </div>
@@ -409,7 +413,7 @@ if (windowWidth > 768) {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    11.8k
+                    21k
                 </div>
                 
 
@@ -429,7 +433,10 @@ if (windowWidth > 768) {
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><span style="color: #c31887;">把基本的都忘了，重新简单学一下，不深入，以后有时间再说</span></p>
+                <p><span style="color: #c31887;">受益匪浅，对cpu指令的执行，显存的运行过程，操作系统对程序的控制和运行，内存定位/寻址，递归/函数栈/子程序等等有了进一步的了解。</span></p>
+<p><span style="color: #c31887;">本书的课后检测点和实验很重要，日后需要用的时候应重点复习</span></p>
+<p><span style="color: #c31887;">重点：第九章，第十章</span></p>
+<p><span style="color: #c31887;">2021/4/19 暂停更新，有时间再看，10-12章均有未完成的部分</span></p>
 <p>使用的教材：汇编语言（第3版）王爽</p>
 <center><span style="color:blue;font-size:15px">2021/1/20</span></center>
 
@@ -1119,14 +1126,581 @@ code segment
 code ends
 end start<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>我们可以明显看出，定义一个段的方法和前面讲的定义代码段的方法没有区别。在程序中，段名就相当于一个标号，它代表了段地址。但是我们用伪指令”assume cs:code,ds:data,ss:stack”，CPU并没有真正将cs，ds，ss指向这3个地址，而是我们后来写的指令将其送入，因为assume是伪指令，是由编译器执行的，CPU并不知道它们，我们不必深究assume的作用。</p>
-<h3 id="实验5-编写、调试具有多个段的程序"><a href="#实验5-编写、调试具有多个段的程序" class="headerlink" title="实验5 编写、调试具有多个段的程序"></a>实验5 编写、调试具有多个段的程序</h3><p>书上。</p>
+<h3 id="实验5-编写、调试具有多个段的程序"><a href="#实验5-编写、调试具有多个段的程序" class="headerlink" title="实验5 编写、调试具有多个段的程序"></a>实验5 编写、调试具有多个段的程序</h3><p>重要，书上。</p>
 <p>每个段的大小最低为16字节的倍数，向上取整。</p>
 <h2 id="第7章-更灵活的定位内存地址的方法"><a href="#第7章-更灵活的定位内存地址的方法" class="headerlink" title="第7章 更灵活的定位内存地址的方法"></a>第7章 更灵活的定位内存地址的方法</h2><p>本章我们主要通过具体的问题来讲解一些更灵活的定位内存地址的方法和相关的编程方法</p>
 <h3 id="7-1-and-和-or-指令"><a href="#7-1-and-和-or-指令" class="headerlink" title="7.1 and 和 or 指令"></a>7.1 and 和 or 指令</h3><p>(1) and指令：逻辑与指令，按位进行与运算。<br>mov          al, 01100011B<br>and           al, 00111011B<br>执行后:     al=00100011B<br>通过该指令可将操作对象的相应位设为0，其他位不变。</p>
 <p>(2) or指令：逻辑或指令，按位进行或运算。<br>mov          al, 01100011B<br>or              al, 00111011B<br>执行后:     al=01111011B<br>通过该指令可将操作对象的相应位设为1,其他位不变。</p>
 <center><span style="color:blue;font-size:15px">2021/4/14</span></center>
 
-<h3 id="7-2-关于ASCII码"><a href="#7-2-关于ASCII码" class="headerlink" title="7.2 关于ASCII码"></a>7.2 关于ASCII码</h3>
+<h3 id="7-2-关于ASCII码"><a href="#7-2-关于ASCII码" class="headerlink" title="7.2 关于ASCII码"></a>7.2 关于ASCII码</h3><p>ASCII码是一种编码方案，比如61H表示”a”，41H表示”A”</p>
+<p>在文本编辑过程中，我们按下键盘的a键，这个按键的信息被送入计算机，计算机用ASCII码的规则对其进行编码，将其转化为61H存储在内存的指定空间中；文本编辑软件从内存中取出61H，将其送到显卡上的显存中;工作在文本模式下的显卡，用ASCII码的规则解释显存中的内容，61H被当作字符“a”，显卡驱动显示器，将字符“a”的图像画在屏幕上。</p>
+<p>这也就是说，如果我们要想在显示器上看到“a”，就要给显卡提供“a”的ASCI码，61H。如何提供？当然是写入显存中。</p>
+<h3 id="7-3-以字符形式给出的数据"><a href="#7-3-以字符形式给出的数据" class="headerlink" title="7.3 以字符形式给出的数据"></a>7.3 以字符形式给出的数据</h3><p>我们可以在汇编程序中，用’…’的方式指明数据是以字符的形式给出的，编译器将把它们转化为相对应的ASCII码。</p>
+<pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly">assume cs:code ds:data
+data segment
+	db 'unIX'
+	db 'foRK'
+data ends
+code segment
+start:	mov al,'a'
+		mov bl,'b'
+		mov ax,4c00h
+		int 21h
+code ends
+end start<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="7-4-大小写转换的问题"><a href="#7-4-大小写转换的问题" class="headerlink" title="7.4 大小写转换的问题"></a>7.4 大小写转换的问题</h3><p>考虑这样一个问题，在codesg中填写代码，将datasg中的第一个字符串转化为大写，第二个字符串转化为小写。</p>
+<pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly">datasg segment
+	db 'BaSiC'
+	db 'iNFOrMaTiOn'
+datasg ends<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>但是，现实的问题却要求重新必须能区别对待大写字母和小写字母，我们还没有学习判断指令。</p>
+<p>寻找新的规律可以看出，就ASCII码的二进制形式看，除第5位（位数从0开始计算）外，大写字母和小写字母的其他各位都一样。这样，我们就有了新的方法，一个字母，将它的第5位置0，它就必将变为大写字母；将它的第5位置1，它就必将变为小写字母。</p>
+<p>这样就可以用or和and指令来将一个数据中的某一位置0或置1。</p>
+<h3 id="7-5-bx-idata"><a href="#7-5-bx-idata" class="headerlink" title="7.5 [bx+idata]"></a>7.5 [bx+idata]</h3><p>我们也可以用[bx+idata]表示一个内存单元，它的偏移地址为(bx)+idata<br>mov ax,[bx+200]<br>该指令也可以写成如下格式<br>mov ax,[200+bx]<br>mov ax,200[bx]<br>mov ax,[bx].200</p>
+<h3 id="7-6-用-bx-idata-的方式进行数组的处理"><a href="#7-6-用-bx-idata-的方式进行数组的处理" class="headerlink" title="7.6 用[bx+idata]的方式进行数组的处理"></a>7.6 用[bx+idata]的方式进行数组的处理</h3><p>在codesg中填写代码，将datasg中的第一个字符串转化为大写，第二个字符串转化为小写</p>
+<pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly">assume cs:code ds:data
+datasg segment
+	db 'BaSiC'
+	db 'MinIX'
+datasg ends
+code segment
+start:	mov ax,datasg
+		mov ds,ax
+		mov bx,0
+		mov cx,5
+	s:	mov al,[bx]
+		and al,11011111b
+		mov [bx],al
+		mov al,[5+bx]
+		or al,00100000b
+		mov [5+bx],al
+		int bx
+		loop s
+code ends
+end start<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>[bx+idata]的方式为高级语言实现数组提供了便利机制。</p>
+<h3 id="7-7-SI和DI"><a href="#7-7-SI和DI" class="headerlink" title="7.7 SI和DI"></a>7.7 SI和DI</h3><p>si和di是8086CPU中和bx功能相近的寄存器，但si和di不能够分成两个8位寄存器来使用。</p>
+<h3 id="7-8-bx-si-和-bx-di"><a href="#7-8-bx-si-和-bx-di" class="headerlink" title="7.8 [bx+si]和[bx+di]"></a>7.8 [bx+si]和[bx+di]</h3><p>mov ax,[bx+si]<br>该指令也可以写成如下格式<br>mov ax,[bx][si]</p>
+<h3 id="7-9-bx-si-idata-和-bx-di-idata"><a href="#7-9-bx-si-idata-和-bx-di-idata" class="headerlink" title="7.9 [bx+si+idata]和[bx+di+idata]"></a>7.9 [bx+si+idata]和[bx+di+idata]</h3><p>mov ax,[bx+si+idata]<br>该指令也可以写成如下格式（si好像都在后面）<br>mov ax,[bx+200+si]<br>mov ax,[200+bx+si]<br>mov ax,200[bx][si]<br>mov  ax,[bx].200[si]<br>mov ax,[bx][si].200</p>
+<h3 id="7-10-不同的寻址方式的灵活应用（二重循环）"><a href="#7-10-不同的寻址方式的灵活应用（二重循环）" class="headerlink" title="7.10 不同的寻址方式的灵活应用（二重循环）"></a>7.10 不同的寻址方式的灵活应用（二重循环）</h3><p>问题7.7：编程，将datasg段中每个单词改写成大写字母</p>
+<pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly">assume cs:codesg,ds:datasg
+datasg segment
+	db 'ibm             '
+	db 'dec             '
+	db 'dos             '
+	db 'vax             '
+datasg ends
+codesg segment
+start:
+codesg ends
+end start<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>我们需要进行4*3次的二重循环，问题在于cx的使用，我们进行二重循环，却只用了一个循环计算器，造成在进行内存循环的时候，覆盖了外层循环的循环计数值。多用一个计算器又不可能，因为loop指令默认cx为循环计数器。</p>
+<p>我们应该在每次内层循环的时候，将外层循环的cx中的数值保存起来，在执行外层循环的loop指令前，再恢复外层循环的cx数值。但是寄存器的数量有限，我们不应该选择寄存器，那么可以使用的就是内存了。可以考虑将需要暂存的数据放到内存单元中。</p>
+<pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly">assume cs:codesg,ds:datasg
+datasg segment
+	db 'ibm             '
+	db 'dec             '
+	db 'dos             '
+	db 'vax             '
+	dw 0							;定义一个字，用来暂存cx
+datasg ends
+codesg segment
+start:	
+		mov ax,datasg
+		mov ds,ax
+		mov bx,0
+		mov cx,4
+	s0:	mov [40h],cx
+		mov si,0
+		mov cx,3
+		
+	s1: mov al,[bx+si]
+		and al,11011111b
+		mov [bx+si],al
+		inc si
+		loop s1
+		
+		add bx 10h;
+		mov cx,[40h]
+		loop s0
+		
+		mov ax,4c00h
+		int 21h
+codesg ends
+end start<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>一般来说，在需要暂存数据的时候，我们都应该使用栈。</p>
+<pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly">assume cs:codesg,ds:datasg,ss:stacksg
+datasg segment
+	db 'ibm             '
+	db 'dec             '
+	db 'dos             '
+	db 'vax             '
+datasg ends
+stacksg segment
+	dw 0,0,0,0,0,0,0,0
+stacksg ends
+codesg segment
+start:	
+		mov ax,datasg
+		mov ds,ax
+		mov ax,stacksg
+		mov ss,ax
+		mov sp,10h
+		mov bx,0
+		mov cx,4
+	s0:	pash cx
+		mov si,0
+		mov cx,3
+		
+	s1: mov al,[bx+si]
+		and al,11011111b
+		mov [bx+si],al
+		inc si
+		loop s1
+		
+		add bx 10h;
+		pop cx
+		loop s0
+		
+		mov ax,4c00h
+		int 21h
+codesg ends
+end start<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="实验6-实践课程中的程序"><a href="#实验6-实践课程中的程序" class="headerlink" title="实验6 实践课程中的程序"></a>实验6 实践课程中的程序</h3><p>电脑上</p>
+<center><span style="color:blue;font-size:15px">2021/4/15</span></center>
+
+<h2 id="第8章-数据处理的两个基本问题"><a href="#第8章-数据处理的两个基本问题" class="headerlink" title="第8章 数据处理的两个基本问题"></a>第8章 数据处理的两个基本问题</h2><p>本章对前面的所有内容是具有总结性的。我们知道，计算机是进行数据外理、运算的机器，那么有两个基本的问题就包含在其中:<br>(1)处理的数据在什么地方?<br>(2)要处理的数据有多长?<br>这两个问题，在机器指令中必须给以明确或隐含的说明，否则计算机就无法工作。</p>
+<p>我们定义的描述性符号：<br>reg表示一个寄存器<br>sreg表示一个段寄存器</p>
+<h3 id="8-1-bx、si、di和bp"><a href="#8-1-bx、si、di和bp" class="headerlink" title="8.1 bx、si、di和bp"></a>8.1 bx、si、di和bp</h3><p>（1）在8086CPU中，只有这4个寄存器可以用在’[…]’中来进行内存单元的寻址。</p>
+<p>（2）在[…]中，这4个寄存器可以单个出现，或只能以4种组合出现：</p>
+<ul>
+<li>bx和si</li>
+<li>bx和di</li>
+<li>bp和si</li>
+<li>bp和di</li>
+</ul>
+<p>（3）<strong>只要在[…]中使用寄存器bp，而指令中没有显性地给出段地址，段地址就默认在ss中。</strong></p>
+<h3 id="8-2-机器指令处理的数据在什么地方"><a href="#8-2-机器指令处理的数据在什么地方" class="headerlink" title="8.2 机器指令处理的数据在什么地方"></a>8.2 机器指令处理的数据在什么地方</h3><p>绝大部分机器指令都是进行数据处理的指令，处理大致可分为3类：读取、写入、运算。在机器指令这一层来讲， 并不关心数据的值是多少，而关心指令执行前一刻，它将要处理的数据所在的位置。<br>指令在执行前，所要处理的数据可以在3个地方: CPU内部、内存、端口(端口将在后面的课程中进行讨论)</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>机器码</th>
+<th>汇编指令</th>
+<th>执行指令前数据的位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8E1E0000</td>
+<td>mov bx,[0]</td>
+<td>内存，ds:0单元</td>
+</tr>
+<tr>
+<td>89C3</td>
+<td>mov bx,ax</td>
+<td>CPU内部，ax寄存器</td>
+</tr>
+<tr>
+<td>BB0100</td>
+<td>mov bx,1</td>
+<td>CPU内部，指令寄存器</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="8-3-汇编语言中数据位置的表达"><a href="#8-3-汇编语言中数据位置的表达" class="headerlink" title="8.3 汇编语言中数据位置的表达"></a>8.3 汇编语言中数据位置的表达</h3><p>（1）立即数（idata）：执行前在CPU的指令缓冲器中</p>
+<p>（2）寄存器</p>
+<p>（3）段地址（SA）和偏移地址（EA）：指令要处理的数据在内存中</p>
+<h3 id="8-4-寻址方式"><a href="#8-4-寻址方式" class="headerlink" title="8.4 寻址方式"></a>8.4 寻址方式</h3><p>当数据存放在内存中的时候，我们可以用多种方式来给定这个内存单元的偏移地址，这种定位内存单元的方法一般被称为寻址方式。（就是那些[bx+si+idata]什么的）</p>
+<h3 id="8-5-指令要处理的数据的长度（byte-word）"><a href="#8-5-指令要处理的数据的长度（byte-word）" class="headerlink" title="8.5 指令要处理的数据的长度（byte/word）"></a>8.5 指令要处理的数据的长度（byte/word）</h3><p>8086CPU的指令，可以处理两种尺寸的数据，byte 和word。所以在机器指令中要指明，指令进行的是字操作还是字节操作。对于这个问题，汇编语言中用以下方法处理。</p>
+<p>（1）通过寄存器名指明要处理的数据的尺寸。（ax/al）</p>
+<p>（2）在没有寄存器名存在的情况下，用操作符word/byte ptr指明内存单元的长度，例如</p>
+<p><code>mov word ptr ds:[0],1</code></p>
+<p><code>inc byte ptr [bx]</code></p>
+<p>在没有寄存器参与的内存单元访问指令中，用word ptr 或byte ptr 显性地指明所要访问的内存单元的长度是很必要的。否则，CPU无法得知所要访问的单元是字单元，还是字节单元。</p>
+<p>（3）有些指令默认了访问的是字单元还是字节单元，例如push指令只能进行字操作。</p>
+<h3 id="8-6-寻址方式的综合应用"><a href="#8-6-寻址方式的综合应用" class="headerlink" title="8.6 寻址方式的综合应用"></a>8.6 寻址方式的综合应用</h3><p>书上</p>
+<h3 id="8-7-div指令"><a href="#8-7-div指令" class="headerlink" title="8.7 div指令"></a>8.7 div指令</h3><p>div是除法指令，使用div做除法的时候应注意以下问题。<br>（1）除数：有8位和16位两种，在一个reg或内存单元中。<br>（2）被除数：有16位和32位两种。如果除数为8位，被除数则为16位，默认在AX中存放；<br>如果除数为16位，被除数则为32位，在DX和AX中存放，DX存放高16位，AX存放低16位。<br>（3）结果：如果除数为8位，则AL存储除法操作的商，AH存储除法操作的余数:<br>如果除数为16位，则AX存储除法操作的商，DX存储除法操作的余数。</p>
+<p><code>div byte ptr ds:[0]</code><br>含义：(al)=(ax)/((ds)*16+0)的商    (ah)=(ax)/((ds)*16+0)的余数</p>
+<p><code>div word prt [bx+si+8]</code><br>含义：(ax)=[(dx)*10000H+(ax)]/((ds)*10H+(bx)+(si)+8)的商<br>(dx)=[(dx)*10000H+(ax)]/((ds)*10H+(bx)+(si)+8)的余数</p>
+<h3 id="8-8-伪指令dd"><a href="#8-8-伪指令dd" class="headerlink" title="8.8 伪指令dd"></a>8.8 伪指令dd</h3><p>dd用来定义dword（双字）型数据</p>
+<h3 id="8-9-dup"><a href="#8-9-dup" class="headerlink" title="8.9 dup"></a>8.9 dup</h3><p>dup也是由编译器识别处理的符号，用来进行数据的重复。</p>
+<p><code>db 3 dup(0)</code>    相当于db 0,0,0</p>
+<p><code>db 3 dup(0,1,2)</code>    相当于db 0,1,2,0,1,2,0,1,2</p>
+<p><code>db 3 dup('abc','ABC')</code>    相当于 db’abcABCabcABCabcABC’</p>
+<h3 id="实验7-寻址方式在结构化数据访问中的应用"><a href="#实验7-寻址方式在结构化数据访问中的应用" class="headerlink" title="实验7 寻址方式在结构化数据访问中的应用"></a>实验7 寻址方式在结构化数据访问中的应用</h3><p>重要，见代码</p>
+<center><span style="color:blue;font-size:15px">2021/4/16</span></center>
+
+<h2 id="第9章-转移指令的原理"><a href="#第9章-转移指令的原理" class="headerlink" title="第9章 转移指令的原理"></a>第9章 转移指令的原理</h2><p>可以修改IP，或同时修改CS和IP的指令统称为<strong>转移指令</strong>。概括地讲，转移指令就是可以控制CPU执行内存中某处代码的指令。</p>
+<p>8086CPU的转移行为有以下几类。</p>
+<ul>
+<li>只修改IP时，称为段内转移，比如: jmp ax。</li>
+<li>同时修改CS 和IP时，称为段间转移，比如: jmp 1000:0。</li>
+</ul>
+<p>由于转移指令对IP的修改范围不同，段内转移又分为：短转移和近转移。</p>
+<ul>
+<li>短转移IP的修改范围为 -128~127.</li>
+<li>近转移IP的修改范围为 -32768~32767.</li>
+</ul>
+<p>8086CPU的转移指令分为以下几类。</p>
+<ul>
+<li>无条件转移指令(如: jmp)</li>
+<li>条件转移指令</li>
+<li>循环指令(如: loop)</li>
+<li>过程</li>
+<li>中断</li>
+</ul>
+<p>这些转移指令转移的前提条件可能不同，但转移的基本原理是相同的。我们在这一章主要通过深入学习无条件转移指令jmp来理解CPU执行转移指令的基本原理。</p>
+<h3 id="9-1-操作符offset"><a href="#9-1-操作符offset" class="headerlink" title="9.1 操作符offset"></a>9.1 操作符offset</h3><p>操作符offset 在汇编语言中是由编译器处理的符号，它的功能是取得<strong>标号的偏移地址</strong>。</p>
+<p>如：<code>start:mov ax,offset start</code></p>
+<h3 id="9-2-jmp指令"><a href="#9-2-jmp指令" class="headerlink" title="9.2 jmp指令"></a>9.2 jmp指令</h3><p>jmp为无条件转移指令，可以只修改ip，也可以同时修改cs和ip。</p>
+<p>指令要给出两种信息:<br>(1) 转移的目的地址<br>(2) 转移的距离(段间转移、段内短转移，段内近转移)<br>不同的给出目的地址的方法，和不同的转移位置，对应有不同格式的jmp指令。</p>
+<h3 id="9-3-依据位移进行转移的jmp指令"><a href="#9-3-依据位移进行转移的jmp指令" class="headerlink" title="9.3 依据位移进行转移的jmp指令"></a>9.3 依据位移进行转移的jmp指令</h3><p><code>jmp short标号</code>(转到标号处执行指令)</p>
+<p>这种格式的jmp指令实现的是<strong>段内短转移</strong>，它对IP的修改范围为-128~127，也就是说，它向前转移时可以最多越过128 个字节，向后转移可以最多越过127个字节。</p>
+<p>汇编指令jmp short s对应的机器指令应该是什么样的呢？我们先看一下别的汇编指令和其相对应的机器指令。</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>汇编指令</th>
+<th>机器指令</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mov ax,0123h</td>
+<td>B8 23 01</td>
+</tr>
+<tr>
+<td>mov ax, ds: [0123h]</td>
+<td>A1 23 01</td>
+</tr>
+<tr>
+<td>push ds:[0123h]</td>
+<td>FF 36 23 01</td>
+</tr>
+<tr>
+<td>jmp short s   (0BBD:000B)</td>
+<td>EB 03</td>
+</tr>
+<tr>
+<td>jmp fat ptr s (0BBD:010B)</td>
+<td>EA 0B 01 BD 0B</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>可以看到，在一般的汇编指令中，汇编指令中的idata(立即数)， 不论它是表示一个数据还是内存单元的偏移地址，都会在对应的机器指令中出现。</p>
+<p>而 jmp short 标号 的机器码却不包含转移的目的地址，而包含的是<strong>转移的位移</strong>（和目标标号的距离（由编译器计算））。</p>
+<p>实际上，<code>jmp short 标号</code> 的功能为：(IP)=(IP)+8位位移(-128~127)</p>
+<p><code>jmp near ptr 标号</code> 的功能为：(IP)=(IP)+16位位移(-32768~32767)</p>
+<h3 id="9-4-转移的目的地址在指令中的jmp指令"><a href="#9-4-转移的目的地址在指令中的jmp指令" class="headerlink" title="9.4 转移的目的地址在指令中的jmp指令"></a>9.4 转移的目的地址在指令中的jmp指令</h3><p>前面讲的jmp指令是根据相对于当前ip的转移位移，<code>jmp far ptr</code> 标号 实现的是段间转移，又称<strong>远转移</strong>。</p>
+<p>far ptr 指明了指令用标号的段地址和偏移地址修改CS和IP。</p>
+<h3 id="9-5-转移地址在寄存器中的jmp指令"><a href="#9-5-转移地址在寄存器中的jmp指令" class="headerlink" title="9.5 转移地址在寄存器中的jmp指令"></a>9.5 转移地址在寄存器中的jmp指令</h3><p>指令格式：<code>jmp 16位reg</code><br>功能：(IP)=(16 位reg)<br>这种指令我们在前面的内容(参见2.11节)中已经讲过，这里就不再详述。</p>
+<h3 id="9-6-转移地址和内存中的jmp指令"><a href="#9-6-转移地址和内存中的jmp指令" class="headerlink" title="9.6 转移地址和内存中的jmp指令"></a>9.6 转移地址和内存中的jmp指令</h3><p>转移地址在内存中的jmp指令有两种格式:</p>
+<p>(1) <code>jmp word ptr 内存单元地址</code>(段内转移)</p>
+<p>功能:从内存单元地址处开始存放着一个字，是转移的目的偏移地址。</p>
+<p>(2) <code>jmp dword ptr 内存单元地址</code>(段间转移)</p>
+<p>功能:从内存单元地址处开始存放着两个字，高地址处的字是转移的目的段地址，低地址处是转移的目的偏移地址。</p>
+<h3 id="9-7-jcxz指令"><a href="#9-7-jcxz指令" class="headerlink" title="9.7 jcxz指令"></a>9.7 jcxz指令</h3><p>jcxz指令为有条件转移指令，所有的有条件转移指令都是<strong>短转移</strong>，在对应的机器码中包含转移的位移，而不是目的地址。对IP的修改范围都为: - 128~127。</p>
+<p>指令格式：<code>jcxz 标号</code>(如果(cx)=0，转移到标号处执行。)<br>“jcxz 标号” 的功能相当于    if((cx)==0)    jmp short标号;</p>
+<h3 id="9-8-loop指令"><a href="#9-8-loop指令" class="headerlink" title="9.8 loop指令"></a>9.8 loop指令</h3><p>loop指令为循环指令，所有的循环指令都是<strong>短转移</strong>。</p>
+<h3 id="9-9-根据位移进行转移的意义"><a href="#9-9-根据位移进行转移的意义" class="headerlink" title="9.9 根据位移进行转移的意义"></a>9.9 根据位移进行转移的意义</h3><p>这种设计，方便了程序段在内存中的浮动装配。</p>
+<p>一段程序装在内存中的不同位置都可正确执行，因为他们根据位移进行转移，而不是根据地址。</p>
+<h3 id="9-10-编译器对转移位移超界的检测"><a href="#9-10-编译器对转移位移超界的检测" class="headerlink" title="9.10 编译器对转移位移超界的检测"></a>9.10 编译器对转移位移超界的检测</h3><p>如果在源程序中出现了转移范围超界的问题，在编译的时候，编译器将报错。</p>
+<h3 id="实验9-根据材料编程"><a href="#实验9-根据材料编程" class="headerlink" title="实验9 根据材料编程"></a>实验9 根据材料编程</h3><p>80x25彩色字符模式显示缓冲区(以下简称为显示缓冲区)的结构:</p>
+<p>内存地址空间中，B8000H~BFFFH共32KB的空间，为80X25彩色字符模式的显示缓冲区。向这个地址空间写入数据，写入的内容将立即出现在显示器上。<br>在80*25彩色字符模式下，显示器可以显示25行，每行80个字符，每个字符可以有256种属性(背景色、前景色、闪烁、高亮等组合信息)。<br>这样，一个字符在显示缓冲区中就要占两个字节，分别存放字符的ASCII码和属性。80x25模式下，一屏的内容在显示缓冲区中共占4000个字节。</p>
+<p>$2<em>25</em>80*8=32000=32kb$</p>
+<p>显示缓冲区分为8页，每页4KB(≈4000B)，显示器可以显示任意一页的 1内容。 一般情况下，显示第0页的内容。也就是说通常情况下，B8000H~B8F9FH 中的4000个字节的内容将出现在显示器上。</p>
+<p><img src="/images/assembly/image-20210419093204509.png" alt=""></p>
+<p>例：在显示器的0行0列显示红底高亮闪烁绿字’ABCDEF’（红底高亮闪烁绿字，属性字节为11001010B，CAH）</p>
+<pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly">assume ds:data,cs:code
+data segment
+data ends
+code segment
+start:	mov ax,data
+	mov ds,ax
+	mov ax,0B800H
+	mov es,ax
+	mov bx,0
+	mov ax,41h
+	mov cx,6
+s:	mov es:[bx],ax
+	inc ax
+	inc bx
+	mov dx,0CAH
+	mov es:[bx],dx
+	inc bx
+	loop s
+	mov ax,4c00h
+	int 21h
+code ends
+end start<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="/images/assembly/1-1618793997191.gif" alt=""></p>
+<center><span style="color:blue;font-size:15px">2021/4/17</span></center>
+
+<h2 id="第10章-CALL和RET指令"><a href="#第10章-CALL和RET指令" class="headerlink" title="第10章 CALL和RET指令"></a>第10章 CALL和RET指令</h2><p>call和ret指令都是转移指令，它们都修改IP，或同时修改CS和IP。</p>
+<h3 id="10-1-ret和retf"><a href="#10-1-ret和retf" class="headerlink" title="10.1 ret和retf"></a>10.1 ret和retf</h3><p>ret指令用栈中的数据，修改IP的内容，从而实现近转移；<br>retf指令用栈中的数据，修改CS和IP的内容，从而实现远转移。</p>
+<p>CPU执行ret指令时，相当于进行:<br><code>pop IP</code></p>
+<p>CPU执行retf指令时，相当于进行:<br><code>pop IP</code><br><code>pop CS</code></p>
+<h3 id="10-2-call指令"><a href="#10-2-call指令" class="headerlink" title="10.2 call指令"></a>10.2 call指令</h3><p>CPU执行call指令时，进行两步操作：<br>（1）将当前的IP或CS和IP压入栈中；<br>（2）转移。</p>
+<p>call指令<strong>不能实现短转移</strong>，除此之外，call 指令实现转移的方法和jmp指令的原理相同，下面的几个小节中，我们以给出转移目的地址的不同方法为主线，讲解call指令的主要应用格式。</p>
+<h3 id="10-3-依据位移进行转移的call指令"><a href="#10-3-依据位移进行转移的call指令" class="headerlink" title="10.3 依据位移进行转移的call指令"></a>10.3 依据位移进行转移的call指令</h3><p><code>call 标号</code> (将当前的IP压栈后，转到标号处执行指令)</p>
+<p>CPU执行“call 标号”时，相当于进行:<br><code>push IP</code><br><code>jmp near ptr标号</code></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>内存地址</th>
+<th>机器码</th>
+<th>汇编指令</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1000:0</td>
+<td>b8 00 00</td>
+<td>mov ax,0</td>
+</tr>
+<tr>
+<td>1000:3</td>
+<td>e8 01 00</td>
+<td>call s</td>
+</tr>
+<tr>
+<td>1000:6</td>
+<td>40</td>
+<td>inc ax</td>
+</tr>
+<tr>
+<td>1000:7</td>
+<td>58</td>
+<td>S:pop ax</td>
+</tr>
+</tbody>
+</table>
+</div>
+<blockquote>
+<p>上面的程序执行后，ax=6，因为在call s的时候，相当在读入指令后，ip便自动增加。</p>
+</blockquote>
+<h3 id="10-4-转移的目的地址在指令中的call指令"><a href="#10-4-转移的目的地址在指令中的call指令" class="headerlink" title="10.4 转移的目的地址在指令中的call指令"></a>10.4 转移的目的地址在指令中的call指令</h3><p>前面讲的call指令，其对应的机器指令中并没有转移的目的地址，而是相对于当前IP的转移位移。</p>
+<p><code>call far ptr标号</code> 实现的是段间转移。</p>
+<p>CPU执行“call far ptr标号”时，相当于进行：<br><code>push CS</code><br><code>push IP</code><br><code>jmp far ptr标号</code></p>
+<h3 id="10-5-转移地址在寄存器中的call指令"><a href="#10-5-转移地址在寄存器中的call指令" class="headerlink" title="10.5 转移地址在寄存器中的call指令"></a>10.5 转移地址在寄存器中的call指令</h3><p>指令格式: <code>call 16位reg</code><br>CPU执行“call 16位reg”时，相当于进行：<br><code>push IP</code><br><code>jmp 16位reg</code></p>
+<center><span style="color:blue;font-size:15px">2021/4/18</span></center>
+
+<h3 id="10-6-转移地址在内存中的call-指令"><a href="#10-6-转移地址在内存中的call-指令" class="headerlink" title="10.6 转移地址在内存中的call 指令"></a>10.6 转移地址在内存中的call 指令</h3><p>转移地址在内存中的call指令有两种格式。</p>
+<p>（1）<code>call word ptr 内存单元地址</code><br>CPU执行“call word ptr 内存单元地址”时，相当于进行:<br><code>push IP</code><br><code>jmp word ptr 内存单元地址</code></p>
+<p>（2）<code>call dword ptr 内存单元地址</code><br>CPU执行“call dword ptr 内存单元地址”时，相当于进行:<br><code>push CS</code><br><code>push IP</code><br><code>jmp dword ptr 内存单元地址</code></p>
+<h3 id="10-7-call和ret的配合使用-子程序-函数调用-函数栈-递归栈"><a href="#10-7-call和ret的配合使用-子程序-函数调用-函数栈-递归栈" class="headerlink" title="10.7 call和ret的配合使用(子程序/函数调用/函数栈/递归栈)"></a>10.7 call和ret的配合使用(子程序/函数调用/函数栈/递归栈)</h3><p>现在来看一下，如何将它们配合使用来实现<strong>子程序</strong>的机制。</p>
+<p>可以写一个具有一定功能的程序段，我们称其为子程序，在需要的时候，用call 指令转去执行。call 指令转去执行子程序之前，call指令后面的指令的地址将存储在栈中，所以可在子程序的后面使用ret指令，用栈中的数据设置IP的值，从而转到call指令后面的代码处继续执行。</p>
+<p>这样，我们可以利用call 和ret来实现子程序的机制。子程序的框架如下。</p>
+<pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly">assume cs:code
+code segment
+main:	...
+		call subl			;调用子程序sub1
+		...
+		mov ax,4c00h
+		int 21h
+sub1:	...					;子程序sub1开始
+		...
+		call sub2			;调用子程序sub2
+		...
+		ret					;子程序返回
+sub2:	...					;子程序sub2开始
+		...
+		ret					;子程序返回
+code ends
+end main<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="10-8-mul指令"><a href="#10-8-mul指令" class="headerlink" title="10.8 mul指令"></a>10.8 mul指令</h3><p>mul 是乘法指令，使用mul做乘法的时候，注意以下两点。<br>（1）两个相乘的数：两个相乘的数，要么都是8位，要么都是16位。如果是8位，一个默认放在AL中，另一个放在8位reg或内存字节单元中；如果是16位，一个默认在AX中，另一个放在16位reg或内存字单元中。<br>（2）结果：如果是8位乘法，结果默认放在AX中；如果是16 位乘法，结果高位默认在DX中存放，低位在AX中放。</p>
+<p>格式如下：<br><code>mul reg</code><br><code>mul内存单元</code></p>
+<h3 id="10-9-模块化程序设计"><a href="#10-9-模块化程序设计" class="headerlink" title="10.9 模块化程序设计"></a>10.9 模块化程序设计</h3><p>从上面我们看到，call 与ret 指令共同支持了汇编语言编程中的模块化设计。在实际编程中，程序的模块化是必不可少的。因为现实的问题比较复杂，对现实问题进行分析时，把它转化成为相互联系、不同层次的子问题，是必须的解决方法。而call与ret指令对这种分析方法提供了程序实现上的支持。利用call 和ret 指令，我们可以用简捷的方法，实现多个相互联系、功能独立的子程序来解决一个复杂的问题。</p>
+<h3 id="10-10-参数和结果传递的问题"><a href="#10-10-参数和结果传递的问题" class="headerlink" title="10.10 参数和结果传递的问题"></a>10.10 参数和结果传递的问题</h3><p>子程序一般都要根据提供的参数处理一定的事务， 处理后，将结果(返回值)提供给调用者。其实，我们讨论参数和返回值传递的问题，实际上就是在探讨，应该如何存储子程序需要的参数和产生的返回值。</p>
+<p>例：编程，计算data段中第一组数据的3次方，结果保存在后面一组dword单元中。</p>
+<pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly">assume cs:code
+data segment
+	dw 1,2,3,4,5,6,7,8 
+	dd 0,0,0,0,0,0,0,0
+data ends
+code segment
+start:	mov ax,data
+		mov ds,ax
+		mov si,0						;ds:si指向第一组word单元
+		mov di,16						;ds:di指向第二组dword单元
+
+		mov cx,8		
+s:		mov bx,[si]
+		cal1 cube
+		mov [di],ax
+		mov [di].2, dx
+		add si,2						;ds:si指向下一个word单元
+		add di,4						;ds:di指向下一个dword单元
+		1oop s
+		
+		mov ax, 4c00h
+		int 21h
+cube:	mov ax,bx
+		mul bx
+		mul bx
+		ret
+code ends
+end start<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="10-11-批量数据的传递"><a href="#10-11-批量数据的传递" class="headerlink" title="10.11 批量数据的传递"></a>10.11 批量数据的传递</h3><p>前面的例程中，子程序cube只有一-个参数，放在bx中。如果有两个参数，那么可以用两个寄存器来放，可是如果需要传递的数据有3个、4个或更多直至N个，在这种时候，我们将批量数据放到内存中，然后将它们所在内存空间的首地址放在寄字器中，传递给需要的子程序。对于具有批量数据的返回结果，也可用同样的方法。</p>
+<p>编程，将data段中的字符串转化为大写。</p>
+<pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly">assume cs:code
+data segment
+	db 'conversation'
+data ends
+
+code segment
+start:	mov ax,data
+		mov ds,ax
+		mov si,0						;ds:si指向字符串(批量数据)所在空间的首地址
+		mov cx,12						;cx存放字符串的长度
+		call capital
+		mov ax, 4c00h
+		int 21h
+		
+capital:and byte ptr [si],11011111b
+		inc si
+		1oop capital
+		ret
+code ends
+end start<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="10-12-寄存器冲突的问题"><a href="#10-12-寄存器冲突的问题" class="headerlink" title="10.12 寄存器冲突的问题"></a>10.12 寄存器冲突的问题</h3><p>设计一个子程序，功能:将-一个全是字母，以0结尾的字符串，转化为大写。（可以用jcxz来检测0）</p>
+<pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly">capital:mov c1,[si]
+		mov ch,0
+		jcxz ok						;如果(cx)=0，结束;如果不是0,处理
+		and byte ptr [si],11011111b	;将ds:si所指单元中的字母转化为大写
+		inc si						;ds:si指向下一个单元
+		jmp short capital
+ok: 	ret<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>但是，如果使用循环，重复调用子程序capital，完成对多个字符串的处理，就会重复使用cx，使得程序出错。</p>
+<p>解决这个问题的简捷方法是，在子程序的开始将子程序中所有用到的寄存器中的内容都保存起来，在子程序返回前再恢复。可以用栈来保存寄存器中的内容。</p>
+<p>以后，我们编写子程序的标准框架如下:</p>
+<pre class="line-numbers language-none"><code class="language-none">子程序开始:	 子程序中使用的寄存器入栈
+			子程序内容
+			子程序中使用的寄存器出栈
+			返回(ret、retf)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>我们改进一下子程序capital的设计：</p>
+<pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly">capital:	push cx
+			push si
+change:		mov cl,[si]
+			mov ch, 0
+			jcxz ok
+			and byte ptr [si],11011111b
+			inc si
+			jmp short change
+ok:			pop si
+			pop cx
+			ret<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<center><span style="color:blue;font-size:15px">2021/4/19</span></center>
+
+<h3 id="实验10-编写子程序"><a href="#实验10-编写子程序" class="headerlink" title="实验10 编写子程序"></a>实验10 编写子程序</h3><p>在这次实验中，我们将要编写3个子程序，通过它们来认识几个常见的问题和掌握解决这些问题的方法。同前面的所有实验y一样，这个实验是必须独立完成的，在后面的课程中，将要用到这个实验中编写的3个子程序。<br><strong>1.显示字符串</strong><br><strong>问题：</strong><br>显示字符串是现实工作中经常要用到的功能，应该编写一个通用的子程序来实现这个功能。我们应该提供灵活的调用接口，使调用者可以决定显示的位置(行、列)、内容和颜色。</p>
+<p><strong>子程序描述：</strong><br>名称：show_ str<br>功能：在指定的位置，用指定的颜色，显示一个用0结束的字符串。<br>参数：(dh)= 行号（取值范围0~24）， (dl)= 列号（取值范围0~79），(cl)=颜色，ds:si指向字符串的首地址<br>返回：无<br>应用举例：在屏幕的8行3列，用绿色显示data段中的字符串。</p>
+<pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly">assume cs: code
+data segment
+	db 'Welcome to masm !',0
+data ends
+
+code segment
+start:	mov dh,8					;8行
+		mov dl,3					;3列
+		mov cl,2					;绿色
+		mov ax,data
+		mov ds,ax
+		mov si,0					;si字符串首地址（ds里的）
+		call show_str
+		mov ax,4c00h
+		int 21h
+
+show_str:	push cx
+		push si
+		push dx
+		push bx
+		sub dh,1					;dh=7
+		mov al,160					
+		mul dh
+		mov bx,ax					;bx为行的偏移地址
+		mov al,2
+		mul dl
+		add bl,al					;bx为总偏移地址
+		mov ax,0B800H
+		mov es,ax					;es为显存显示在屏幕上的段地址
+		mov dl,cl
+
+display:	mov cl,ds:[si]
+		mov ch,0
+		jcxz ok
+		mov es:[bx],cl
+		inc bx
+		mov es:[bx],dl
+		inc bx
+		inc si
+		jmp short display
+ok:		pop bx
+		pop dx
+		pop si
+		pop cx
+		ret
+code ends
+end start<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="/images/assembly/image-20210419105713773.png" alt=""></p>
+<p>实验2和3暂时未做</p>
+<h2 id="第11章-标准寄存器"><a href="#第11章-标准寄存器" class="headerlink" title="第11章 标准寄存器"></a>第11章 标准寄存器</h2><p>flag和其他寄存器不一样，其他寄存器是用来存放数据的，都是整个寄存器具有一个含义。而flag寄存器是按位起作用的，也就是说，它的每一位都有专门的含义，记录特定的信息。</p>
+<p><img src="/images/assembly/image-20210419111503723.png" alt=""></p>
+<p>在这一章中，我们学习标志寄存器中的CF、PF、ZF、SF、OF、DF标志位，以及些与其相关的典型指令。</p>
+<h3 id="11-1-ZF（Zero-Flag）标志"><a href="#11-1-ZF（Zero-Flag）标志" class="headerlink" title="11.1 ZF（Zero Flag）标志"></a>11.1 ZF（Zero Flag）标志</h3><p>flag的第6位是ZF，零标志位。它记录相关指令执行后，其结果是否为0。如果结果为0，那么zf=l；如果结果不为0，那么zf=0。</p>
+<p>比如，指令:<br><code>mov ax,1</code><br><code>sub ax,1</code><br>执行后，结果为0，则zf=1。</p>
+<p><strong>注意：</strong>在8086CPU的指令集中，有的指令的执行是影响标志寄存器的，比如，add、sub、mul、 div、 inc、 or、 and 等，它们大都是运算指令(进行逻辑或算术运算)；有的指令的执行对标志寄存器没有影响，比如，mov、push、 pop 等，它们大都是传送指令。在使用一条指令的时候，要注意这条指令的全部功能，其中包括，执行结果对标志寄存器的哪些标志位造成影响。</p>
+<h3 id="11-2-PF（Parity-Flag）标志"><a href="#11-2-PF（Parity-Flag）标志" class="headerlink" title="11.2 PF（Parity Flag）标志"></a>11.2 PF（Parity Flag）标志</h3><p>flag的第2位是PF，奇偶标志位。它记录相关指令执行后，其结果的所有bit位中1的个数是否为偶数。如果1的个数为偶数，pf=1，如果为奇数，那么pf=0。</p>
+<h3 id="11-3-SF（Sign-Flag）标志"><a href="#11-3-SF（Sign-Flag）标志" class="headerlink" title="11.3 SF（Sign Flag）标志"></a>11.3 SF（Sign Flag）标志</h3><p>flag的第7位是SF，符号标志位。它记录相关指令执行后，其结果是否为负。结果为负，sf=1；如果非负sf=0。</p>
+<p>SF标志，就是CPU对有符号数运算结果的一种记录，它记录数据的正负。在我们将数据当作有符号数来运算的时候，可以通过它来得知结果的正负。如果我们将数据当作无符号数来运算，SF的值则没有意义，虽然相关的指令影响了它的值。</p>
+<p>这也就是说，CPU在执行add等指令时，是必然要影响到SF标志位的值的。至于我们需不需要这种影响，那就看我们如何看待指令所进行的运算了。</p>
+<h3 id="11-4-CF（Carry-Flag）标志"><a href="#11-4-CF（Carry-Flag）标志" class="headerlink" title="11.4 CF（Carry Flag）标志"></a>11.4 CF（Carry Flag）标志</h3><p>flag的第0位是CF，进位标志位。一般情况下，在进行<strong>无符号数运算</strong>的时候，它记录了运算结果的最高有效位向更高位的进位值，或从更高位的借位值。</p>
+<p>我们知道，当两个数据相加的时候，有可能产生从最高有效位向更高位的进位。由于这个进位值在8位数中无法保存，我们在前面的课程中，就只是简单地说这个进位值丢失了。其实CPU在运算的时候，并不丢弃这个进位值。</p>
+<p>而当两个数据做减法的时候，也有可能向更高位借位。比如，下面的指令:</p>
+<pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly">mov al, 97H
+sub al, 98H					;执行后: (al)=FFH， CF=1, CF记录了向更高位的借位值
+sub al,al					;执行后: (al)=0， CF=0，CF记录了向更高位的借位值<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h3 id="11-5-OF（Overflow-Flag）标志"><a href="#11-5-OF（Overflow-Flag）标志" class="headerlink" title="11.5 OF（Overflow Flag）标志"></a>11.5 OF（Overflow Flag）标志</h3><p>在进行<strong>有符号数运算</strong>的时候，如结果超过了机器所能表示的范围称为溢出。</p>
+<p>注意，这里所讲的溢出，只是对有符号数运算而言。如果在进行有符号数运算时发生溢出，那么运算的结果将不正确。</p>
+<p>一定要注意 CF和OF的区别：CF是对无符号数运算有意义的标志位，而OF是对有符号数运算有意义的标志位。它们之间没有任何关系。</p>
+<h3 id="11-6-adc指令"><a href="#11-6-adc指令" class="headerlink" title="11.6 adc指令"></a>11.6 adc指令</h3><p>adc是带进位加法指令，它利用了CF位上记录的进位值。<br>指令格式：adc 操作对象1,操作对象2.<br>功能：操作对象1=操作对象1+操作对象2 + CF<br>比如指令<code>adc ax,bx</code>实现的功能是: (ax)=(ax)+(bx)+ CF</p>
+<p>CPU提供adc指令的目的，就是来进行加法的第二步运算的。adc指令和add指令相配合就可以对更大的数据进行加法运算。</p>
+<p>编程，计算1EF0001000H+2010001EF0H，结果放在ax(最高16位)，bx(次高16位)，cx(低16位)中。</p>
+<pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly">mov ax,001EH
+mov bx,0F000H
+mov cx,1000H
+add cx,1EF0H
+adc bx,1000H
+adc ax,0020H<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>inc和loop指令不影响CF位</p>
+<h3 id="11-7-sbb指令"><a href="#11-7-sbb指令" class="headerlink" title="11.7 sbb指令"></a>11.7 sbb指令</h3><p>sbb是带借位减法指令，它利用了CF位上记录的借位值。<br>指令格式：sbb 操作对象1,操作对象2<br>功能：操作对象1=操作对象1-操作对象2-CF<br>比如指令<code>sbb ax,bx</code>实现的功能是: (ax)=(ax)-(bx)-CF</p>
+<p>sbb和adc是基于同样的思想设计的两条指令，在应用思路上和adc类似。</p>
+<p>11.8-11.12暂未看</p>
+<h2 id="第12章-内中断"><a href="#第12章-内中断" class="headerlink" title="第12章 内中断"></a>第12章 内中断</h2><p>任何一个通用的CPU，比如8086，都具备一种能力， 可以在执行完当前正在执行的指令之后，检测到从CPU外部发送过来的或内部产生的一种特殊信息， 并且可以立即对所接收到的信息进行处理。这种特殊的信息，我们可以称其为：中断信息。中断的意思是指，CPU不再接着(刚执行完的指令)向下执行，而是转去处理这个特殊信息。</p>
+<p>中断信息可以来自CPU的内部和外部，这一章中，我们主要讨论来自于CPU内部的中断信息。</p>
+<h3 id="12-1-内中断的产生"><a href="#12-1-内中断的产生" class="headerlink" title="12.1 内中断的产生"></a>12.1 内中断的产生</h3><p>当CPU的内部有什么事情发生的时候，将产生需要马上处理的中断信息呢?对于8086CPU，当CPU内部有下面的情况发生的时候，将产生相应的中断信息。<br>（1）除法错误， 比如，执行div指令产生的除法溢出；<br>（2）单步执行；<br>（3）执行into指令；<br>（4）执行int指令。</p>
+<p>既然是不同的信息，就需要进行不同的处理。要进行不同的处理，CPU首先要知道，所接收到的中断信息的来源。8086CPU用称为中断类型码的数据来标识中断信息的来源。中断类型码为一个字节型数据，可以表示256种中断信息的来源。</p>
+<p>上述的4种中断源，在8086CPU中的中断类型码如下。<br>（1）除法错误：0<br>（2）单步执行：1<br>（3）执行into指令：4<br>（4）执行int指令，该指令的格式为int n，指令中的n为字节型立即数，是提供给CPU的中断类型码。</p>
+<h3 id="12-2-中断处理程序"><a href="#12-2-中断处理程序" class="headerlink" title="12.2 中断处理程序"></a>12.2 中断处理程序</h3><p>CPU收到中断信息后，需要对中断信息进行处理。而如何对中断信息进行处理，可以由我们编程决定。我们编写的，用来处理中断信息的程序被称为中断处理程序。一般来说，需要对不同的中断信息编写不同的处理程序。</p>
+<h3 id="12-3-中断向量表"><a href="#12-3-中断向量表" class="headerlink" title="12.3 中断向量表"></a>12.3 中断向量表</h3><p>CPU用8位的中断类型码通过中断向量表找到相应的中断处理程序的入口地址。那么什么是<strong>中断向量表</strong>呢？中断向量表就是中断向量的列表。那么什么又是中断向量呢?所谓<strong>中断向量</strong>，就是中断处理程序的入口地址。展开来讲，中断向量表，就是中断处理程序入口地址的列表。</p>
+<p>中断向量表在内存中保存，其中存放着256个中断源所对应的中断处理程序的入口。CPU只要知道了中断类型码，就可以将中断类型码作为中断向量表的表项号，定位相应的表项，从而得到中断处理程序的入口地址。</p>
+<p><img src="/images/assembly/image-20210419151822169.png" alt=""></p>
+<p>中断向量表在内存中存放，对于8086PC机，中断向量表指定放在内存地址0处。从内存0000:0000到0000:03FF 的1024 个单元中存放着中断向量表。一个表项存放一个中断向量，也就是一个中断处理程序的入口地址，对于8086CPU，这个入口地址包括段地址和偏移地址，所以一个表项占两个字，高地址字存放段地址，低地址字存放偏移地址。</p>
+<h3 id="12-4-中断过程"><a href="#12-4-中断过程" class="headerlink" title="12.4 中断过程"></a>12.4 中断过程</h3><p>可以用中断类型码，在中断向量表中找到中断处理程序的入口。找到这个入口地址的最终目的是用它设置CS和IP，使CPU执行中断处理程序。用中断类型码找到中断向量，并用它设置CS和IP，这个工作是由CPU的硬件自动<br>完成的。CPU硬件完成这个工作的过程被称为中断过程。</p>
+<p>CPU收到中断信息后，要对中断信息进行处理，首先将引发中断过程。硬件在完成中断过程后，CS:IP 将指向中断处理程序的入口，CPU开始执行中断处理程序。</p>
+<p>在中断过程中，在设置CS:IP之前，还要将原来的CS和IP的值保存起来。</p>
+<p>下面是8086CPU在收到中断信息后，所引发的中断过程。<br>（1）（从中断信息中）取得中断类型码；<br>（2）标志寄存器的值入栈（在中断过程中会改变标志寄存器的值）<br>（3）设置标志寄存器的第8位TF和第9位IF的值为0（这一步的目的后面将介绍）；<br>（4）CS的内容入栈；<br>（5） IP 的内容入栈；<br>（6）从内存地址为中断类型*4和中断类型码*4+2的两个字单元中读取中断处理程序的入口地址设置IP和CS。</p>
+<p>CPU在收到中断信息之后，如果处理该中断信息，就完成一个由硬件自动执行的中断过程（程序员无法改变这个过程中所要做的工作）。<br>我们更简洁地描述中断过程，如下:<br>（1）取得中断类型码N;<br>（2）pushf<br>（3）TF=0，IF=0<br>（4）push CS<br>（5）push IP<br>（6）(IP)=(N*4),(CS)=(N*4+2)<br>在最后一步完成后，CPU开始执行由程序员编写的中断处理程序。</p>
+<h3 id="12-5-中断处理程序和iret指令"><a href="#12-5-中断处理程序和iret指令" class="headerlink" title="12.5 中断处理程序和iret指令"></a>12.5 中断处理程序和iret指令</h3><p>由于CPU随时都可能检测到中断信息，也就是说，CPU随时都可能执行中断处理程序，所以中断处理程序必须一直存储在内存某段空间之中。而中断处理程序的入口地址，即中断向量，必须存储在对应的中断向量表表项中。</p>
+<p>中断处理程序的编写方法和子程序的比较相似，下面是常规的步骤:</p>
+<p>（1）保存用到的寄存器；<br>（2）处理中断；<br>（3）恢复用到的寄存器；<br>（4）用iret指令返回。</p>
+<p>iret指令的功能用汇编语法描述为:<br><code>pop IP</code><br><code>pop CS</code><br><code>popf</code></p>
+
                 
             </div>
             <hr/>
@@ -1192,6 +1766,10 @@ end start<span aria-hidden="true" class="line-numbers-rows"><span></span><span><
                             
                                 <a href="/tags/assembly/">
                                     <span class="chip bg-color">assembly</span>
+                                </a>
+                            
+                                <a href="/tags/8086/">
+                                    <span class="chip bg-color">8086</span>
                                 </a>
                             
                         </div>
@@ -1511,7 +2089,7 @@ end start<span aria-hidden="true" class="line-numbers-rows"><span></span><span><
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">59.8k</span>&nbsp;字
+                class="white-color">73.5k</span>&nbsp;字
             
             
             

@@ -15,7 +15,7 @@ typora-root-url: ..
 
 Typora里面直接编写html代码，对hexo生效，但是如果直接改动Typora本身的css和html，则对hexo不生效
 
-以下部分内容来自 https://zhuanlan.zhihu.com/p/90561228
+Mathjax语法总结 https://blog.csdn.net/ajacker/article/details/80301378
 
 ## 1. 字体编辑
 
@@ -281,7 +281,7 @@ $\left[\begin{matrix} 1 & 2 & 3\\ 4 & 5 & 6 \end{matrix}\right]$
 
 $\partial$ \partial
 
-$\infin$ \infin
+$\infty$ \infty
 
 $\forall$ \forall
 
@@ -314,6 +314,8 @@ $\exists$ \exists
 $max \ a$
 
 ---
+
+
 
 ## 4. 杂项
 
