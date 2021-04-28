@@ -417,7 +417,7 @@ if (windowWidth > 768) {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    6.4k
+                    7.8k
                 </div>
                 
 
@@ -458,7 +458,7 @@ if (windowWidth > 768) {
 <h3 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h3><p> (一)查找的基本概念<br> (二)顺序查找法<br> (三)分块查找法<br> (四)折半查找法<br> (五)B 树及其基本操作、B+树的基本概念<br> (六)散列(Hash)表<br> (七)字符串模式匹配<br> (八)查找算法的分析及应用</p>
 <h3 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h3><p> (一)排序的基本概念<br> (二)插入排序<br> 1.直接插入排序<br> 2.折半插入排序<br> (三)起泡排序(bubble sort)<br> (四)简单选择排序<br> (五)希尔排序(shell sort)<br> (六)快速排序<br> (七)堆排序<br> (八)二路归并排序(mergesort)<br> (九)基数排序<br> (十)外部排序<br> (十一)各种内部排序算法的比较<br> (十二)排序算法的应用</p>
 <h2 id="第1章-绪论"><a href="#第1章-绪论" class="headerlink" title="第1章 绪论"></a>第1章 绪论</h2><p>本章的内容是数据结构概述，不在考研大纲中，但是分析算法的时间复杂度和空间复杂度是本章的重点，属于必考内容，一定要熟练掌握。</p>
-<h3 id="1-1-基本概念和术语"><a href="#1-1-基本概念和术语" class="headerlink" title="1.1 基本概念和术语"></a>1.1 基本概念和术语</h3><ul>
+<h3 id="1-1-数据结构的基本概念"><a href="#1-1-数据结构的基本概念" class="headerlink" title="1.1 数据结构的基本概念"></a>1.1 数据结构的基本概念</h3><h4 id="1-1-1-基本概念和术语"><a href="#1-1-1-基本概念和术语" class="headerlink" title="1.1.1 基本概念和术语"></a>1.1.1 基本概念和术语</h4><ul>
 <li>数据：信息的载体，是对客观事物的符号表示</li>
 <li>数据元素：数据的基本单位，一个数据元素可由若干个数据项组成。如：一个学生记录（学号、姓名、…）</li>
 <li>数据对象：具有相同性质的数据元素的集合，是数据的一个子集。</li>
@@ -470,11 +470,15 @@ if (windowWidth > 768) {
 </ul>
 </li>
 </ul>
-<h3 id="1-2-算法和算法分析"><a href="#1-2-算法和算法分析" class="headerlink" title="1.2 算法和算法分析"></a>1.2 算法和算法分析</h3><h4 id="1-2-1-算法效率的度量"><a href="#1-2-1-算法效率的度量" class="headerlink" title="1.2.1 算法效率的度量"></a>1.2.1 算法效率的度量</h4><p><strong>1.时间复杂度</strong></p>
+<h4 id="1-1-2-数据结构三要素"><a href="#1-1-2-数据结构三要素" class="headerlink" title="1.1.2 数据结构三要素"></a>1.1.2 数据结构三要素</h4><h5 id="1-数据的逻辑结构"><a href="#1-数据的逻辑结构" class="headerlink" title="1.数据的逻辑结构"></a>1.数据的逻辑结构</h5><p>线性结构：一对一<br>树形结构：一对多<br>图结构：多对多<br>集合</p>
+<h5 id="2-数据的存储结构"><a href="#2-数据的存储结构" class="headerlink" title="2.数据的存储结构"></a>2.数据的存储结构</h5><p>顺序存储<br>链式存储<br>索引存储<br>散列存储</p>
+<p>绪论部分只需要理解三点:<br>1.若采用<strong>顺序存储</strong>，则各个数据元素在<strong>物理上必须是连续的</strong>；若采用<strong>非顺序存储</strong>，则各个数据元素在物理上可以是<strong>离散的</strong>。<br>2.数据的<strong>存储结构</strong>会影响<strong>存储空间分配的方便程度</strong>。<br>3.数据的<strong>存储结构</strong>会影响对<strong>数据运算的速度</strong>。</p>
+<h5 id="3-数据的运算"><a href="#3-数据的运算" class="headerlink" title="3.数据的运算"></a>3.数据的运算</h5><p>施加在数据上的运算包括运算的定义和实现。<strong>运算的定义</strong>是<strong>针对逻辑结构</strong>的，指出运算的功能；<strong>运算的实现</strong>是<strong>针对存储结构</strong>的，指出运算的具体操作步骤。</p>
+<h3 id="1-2-算法和算法分析"><a href="#1-2-算法和算法分析" class="headerlink" title="1.2 算法和算法分析"></a>1.2 算法和算法分析</h3><h4 id="1-2-2-算法效率的度量"><a href="#1-2-2-算法效率的度量" class="headerlink" title="1.2.2 算法效率的度量"></a>1.2.2 算法效率的度量</h4><p><strong>1.时间复杂度</strong></p>
 <p>一般情况下，算法中基本操作重复执行的次数是问题规模n的<strong>某个函数</strong>f(n)，算法的时间量度记作</p>
 <script type="math/tex; mode=display">T(n)=O(f(n))</script><p>它表示随问题规模n的增大，算法执行时间的<strong>增长率</strong>和f(n)的增长率相同，称作算法的<strong>渐进时间复杂度</strong>，简称时<strong>间复杂度</strong>。</p>
 <p>常见的渐进时间复杂度为</p>
-<p>O(1)&lt;O($log_2n$)&lt;O(n)&lt;O($nlog_2n$)&lt;O($n^2$)&lt;O($n^3$)&lt;O($2^n$)&lt;O(n!)&lt;O($n^n$)</p>
+<p>$O(1)&lt;O(log_2n)&lt;O(n)&lt;O(nlog_2n)&lt;O(n^2)&lt;O(n^3)&lt;O(2^n)&lt;O(n!)&lt;O(n^n)$</p>
 <p><strong>2.空间复杂度</strong></p>
 <p>算法的空间复杂度作为算法所需存储空间的量度，记作</p>
 <script type="math/tex; mode=display">S(n)=O(f(n))</script><center><span style="color:blue;font-size:15px">2021/4/12</span></center>
@@ -493,12 +497,18 @@ if (windowWidth > 768) {
     Elemtype <span class="token operator">*</span>data<span class="token punctuation">;</span>
     <span class="token keyword">int</span> maxSize<span class="token punctuation">;</span>
     <span class="token keyword">int</span> length<span class="token punctuation">;</span> 						<span class="token comment">//在进行增删操作后记得更改length</span>
-<span class="token punctuation">}</span>Sqlist<span class="token punctuation">;</span>
-
-Sqlist L<span class="token punctuation">;</span>
-<span class="token comment">//动态分配语句</span>
-L<span class="token punctuation">.</span>data<span class="token operator">=</span><span class="token punctuation">(</span>ElemType<span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>ElemType<span class="token punctuation">)</span><span class="token operator">*</span>InitSize<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>顺序表最主要的特点是随机访问，即通过首地址和元素序号可在时间O(1)内找到指定的元素。<br>顺序表的存储密度高，每个结点只存储数据元素。<br>顺序表逻辑上相邻的元素物理上也相邻，所以插入和删除操作需要移动大量元素。</p>
+<span class="token punctuation">}</span>Sqlist<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">//动态增加动态数组的长度</span>
+<span class="token keyword">void</span> <span class="token function">IncreaseSize</span><span class="token punctuation">(</span>SeqList <span class="token operator">&amp;</span>L，<span class="token keyword">int</span> len<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">int</span> <span class="token operator">*</span>p<span class="token operator">=</span>L<span class="token punctuation">.</span>data<span class="token punctuation">;</span>
+    L<span class="token punctuation">.</span>data<span class="token operator">=</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token punctuation">(</span>L<span class="token punctuation">.</span>MaxSize<span class="token operator">+</span>len<span class="token punctuation">)</span><span class="token operator">*</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>L<span class="token punctuation">.</span>length<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        L<span class="token punctuation">.</span>data<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span>p<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    L<span class="token punctuation">.</span>MaxSize<span class="token operator">=</span>L<span class="token punctuation">.</span>MaxSize<span class="token operator">+</span>len<span class="token punctuation">;</span>
+    <span class="token function">free</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>顺序表最主要的特点是<strong>随机访问</strong>，即通过首地址和元素序号可在时间O(1)内找到指定的元素。<br>顺序表的存储密度高，每个结点只存储数据元素。<br>顺序表逻辑上相邻的元素物理上也相邻，所以插入和删除操作需要移动大量元素。</p>
 <h4 id="2-2-2-顺序表上基本操作的实现"><a href="#2-2-2-顺序表上基本操作的实现" class="headerlink" title="2.2.2 顺序表上基本操作的实现"></a>2.2.2 顺序表上基本操作的实现</h4><p>略</p>
 <center><span style="color:blue;font-size:15px">2021/4/13</span></center>
 
@@ -669,7 +679,61 @@ L<span class="token punctuation">.</span>data<span class="token operator">=</spa
 <h4 id="3-3-4-队列在层次遍历中的应用（广度优先遍历）"><a href="#3-3-4-队列在层次遍历中的应用（广度优先遍历）" class="headerlink" title="3.3.4 队列在层次遍历中的应用（广度优先遍历）"></a>3.3.4 队列在层次遍历中的应用（广度优先遍历）</h4><p>逐层\逐行处理（广度优先遍历）。这类问题的解决方法往往是在处理当前层或当前行时就对下一层或下一行做预处理，把处理顺序安排好，待当前层或当前行处理完毕，就可以处理下一层或下一行。使用队列是为了保存下一步的处理顺序。表3.2显示了层次遍历二叉树的过程。<br>该过程的简单描述如下:<br>①根结点入队。<br>②若队空（所有结点都已处理完毕），则结束遍历；否则重复③操作。<br>③队列中第一个结点出队并访问。若其有左孩子，则将左孩子入队；若其有右孩子，则将右孩子入队，返回②。</p>
 <p><img src="/images/Data-Structure/image-20210422210537669.png" alt=""></p>
 <h4 id="3-3-5-队列在计算机系统中的应用"><a href="#3-3-5-队列在计算机系统中的应用" class="headerlink" title="3.3.5 队列在计算机系统中的应用"></a>3.3.5 队列在计算机系统中的应用</h4><p>打印数据缓冲区、CPU进程访问队列……</p>
-<h3 id="3-4-特殊矩阵的压缩存储"><a href="#3-4-特殊矩阵的压缩存储" class="headerlink" title="3.4 特殊矩阵的压缩存储"></a>3.4 特殊矩阵的压缩存储</h3>
+<center><span style="color:blue;font-size:15px">2021/4/23</span></center>
+
+<h3 id="3-4-特殊矩阵的压缩存储"><a href="#3-4-特殊矩阵的压缩存储" class="headerlink" title="3.4 特殊矩阵的压缩存储"></a>3.4 特殊矩阵的压缩存储</h3><p>矩阵在计算机图形学、工程计算中占有举足轻重的地位。在数据结构中考虑的是如何用最小的内存空间来存储同样的一组数据。</p>
+<h4 id="3-4-1-数组的定义"><a href="#3-4-1-数组的定义" class="headerlink" title="3.4.1 数组的定义"></a>3.4.1 数组的定义</h4><h4 id="3-4-2-数组的存储结构"><a href="#3-4-2-数组的存储结构" class="headerlink" title="3.4.2 数组的存储结构"></a>3.4.2 数组的存储结构</h4><h4 id="3-4-3-矩阵的压缩存储"><a href="#3-4-3-矩阵的压缩存储" class="headerlink" title="3.4.3 矩阵的压缩存储"></a>3.4.3 矩阵的压缩存储</h4><p>压缩存储：指为多个值相同的元素只分配一个存储空间，对零元素不分配存储空间。其目的是为了节省存储空间。</p>
+<h5 id="1-对称矩阵"><a href="#1-对称矩阵" class="headerlink" title="1.对称矩阵"></a>1.对称矩阵</h5><p><img src="/images/Data-Structure/PL%5D02XD8%5BHT24T%605$D1%7B%7BG4-1619144889792.png" alt=""></p>
+<h5 id="2-三角矩阵"><a href="#2-三角矩阵" class="headerlink" title="2.三角矩阵"></a>2.三角矩阵</h5><p><img src="/images/Data-Structure/image-20210423103127933.png" alt=""></p>
+<h5 id="3-三对角矩阵"><a href="#3-三对角矩阵" class="headerlink" title="3.三对角矩阵"></a>3.三对角矩阵</h5><p><img src="/images/Data-Structure/image-20210423104520259.png" alt=""></p>
+<h4 id="3-4-4-稀疏矩阵"><a href="#3-4-4-稀疏矩阵" class="headerlink" title="3.4.4 稀疏矩阵"></a>3.4.4 稀疏矩阵</h4><p>稀疏矩阵：非零元素远远少于矩阵元素的个数</p>
+<p><img src="/images/Data-Structure/image-20210423104735236.png" alt=""></p>
+<center><span style="color:blue;font-size:15px">2021/4/27</span></center>
+
+<h2 id="第4章-串"><a href="#第4章-串" class="headerlink" title="第4章 串"></a>第4章 串</h2><p>统考大纲只要求掌握字符串模式匹配，需重点掌握KMP匹配算法的原理及next数组的推理过程，了解nextval数组的求解方法。</p>
+<h3 id="408大纲-2"><a href="#408大纲-2" class="headerlink" title="408大纲"></a>408大纲</h3><p>字符串模式匹配</p>
+<h3 id="4-1-串的定义和实现"><a href="#4-1-串的定义和实现" class="headerlink" title="4.1 串的定义和实现"></a>4.1 串的定义和实现</h3><p>字符串简称串，计算机上非数值处理的对象基本都是字符串数据。</p>
+<h4 id="4-1-1-串的定义"><a href="#4-1-1-串的定义" class="headerlink" title="4.1.1 串的定义"></a>4.1.1 串的定义</h4><p>串(string) 是由零个或多个字符组成的有限序列。一般记为</p>
+<script type="math/tex; mode=display">S='{a_1a_2...a_n}'(n\geq0)</script><p><strong>子串：</strong>串中任意个连续的字符组成的子序列。<br><strong>主串：</strong>包含子串的串。<br><strong>字符在主串中的位置：</strong>字符在串中的序号。<br><strong>子串在主串中的位置：</strong>子串的第一个字符在主串中的位置。</p>
+<p>串的逻辑结构和线性表极为相似，区别仅在于串的数据对象限定为字符集。</p>
+<p>串的基本操作通常以子串作为操作对象，如查找、插入或删除一个子串等。</p>
+<h4 id="4-1-2-串的顺序结构"><a href="#4-1-2-串的顺序结构" class="headerlink" title="4.1.2 串的顺序结构"></a>4.1.2 串的顺序结构</h4><h5 id="1-定长顺序存储表示"><a href="#1-定长顺序存储表示" class="headerlink" title="1.定长顺序存储表示"></a>1.定长顺序存储表示</h5><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token expression">MAXLEN <span class="token number">255</span></span></span>
+<span class="token keyword">typedef</span> <span class="token keyword">struct</span><span class="token punctuation">{</span>
+    <span class="token keyword">char</span> ch<span class="token punctuation">[</span>MAXLEN<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> length<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>SString<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>串长有两种表示方法：一是如上述定义描述的那样，用一个额外的变量len来存放串的长度；二是在串<br>值后面加一一个不计入串长的结束标记字符“\0”， 此时的串长为隐含值。</p>
+<h5 id="2-堆（动态）分配存储表示"><a href="#2-堆（动态）分配存储表示" class="headerlink" title="2.堆（动态）分配存储表示"></a>2.堆（动态）分配存储表示</h5><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">typedef</span> <span class="token keyword">struct</span><span class="token punctuation">{</span>
+    <span class="token keyword">char</span> <span class="token operator">*</span>ch<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> length<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>SString<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="3-块链存储表示"><a href="#3-块链存储表示" class="headerlink" title="3.块链存储表示"></a>3.块链存储表示</h5><p>也可采用链表方式存储串值。由于串的特殊性(每个元素只有一个字符)，在具体实现时，每个结点既可以存放一个字符， 也可以存放多个字符。每个结点称为块，整个链表称为块链结构。最后一个结点占不满时通常用“#”补上。</p>
+<p><img src="/images/Data-Structure/image-20210427105854294.png" alt=""></p>
+<h4 id="4-1-3-串的基本操作"><a href="#4-1-3-串的基本操作" class="headerlink" title="4.1.3 串的基本操作"></a>4.1.3 串的基本操作</h4><ul>
+<li><strong>StrAssign(&amp;T, chars)：赋值操作。</strong>把串T赋值为chars。</li>
+<li>StrCopy(&amp;T,S)：复制操作。由串S复制得到串T。</li>
+<li>StrEmpty(S)：判空操作。若S为空串，则返回TRUE，否则返回FALSE。</li>
+<li><strong>StrCompare(S,T)：比较操作</strong>。若S&gt;T，则返回值&gt;0；若S=T，则返回值=0;若S&lt;T，则返回值&lt;0。</li>
+<li><strong>StrLength(S)：求串长。</strong>返回串S的元素个数。</li>
+<li><strong>SubString (&amp;Sub,S,pos,len)：求子串。</strong>用Sub返回串S的第pos个字符起长度为len的子串。</li>
+<li><strong>Concat (&amp;T,S1,S2)：串联接。</strong>用T返回由S1和S2联接而成的新串。</li>
+<li>Index(S,T)：定位操作。若主串S中存在与串T值相同的子串，则返回它在主串S中第一次出现的位置；否则函数值为0。</li>
+<li>ClearString(&amp;S)：清空操作。将S清为空串。</li>
+<li>DestroyString(&amp;S)：销毁串。将串S销毁。</li>
+</ul>
+<p>在上述定义的操作中，<strong>串赋值StrAssign、串比较StrCompare、求串长StrLength、串联接Concat及求子串SubString五种操作构成串类型的最小操作子集</strong>，即这些操作不可能利用其他串操作来实现；反之，其他串操作（除串清除ClearString和串销毁DestroyString外）均可在该最小操作子集上实现。</p>
+<p>例如，可利用判等、求串长和求子串等操作实现定位函数Index(S,T)。算法思想为:在主串S中取从第一个字符起、长度和串T相等的子串，与串T比较，若相等则求得函数值为i，否则i值增1，直至串S中不存在和串T相等的子串为止。</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">int</span> <span class="token function">Index</span><span class="token punctuation">(</span>String S，String T<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span>n<span class="token operator">=</span><span class="token function">StrLength</span><span class="token punctuation">(</span>S<span class="token punctuation">)</span><span class="token punctuation">,</span>m<span class="token operator">=</span><span class="token function">StrLength</span><span class="token punctuation">(</span>T<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>i<span class="token operator">&lt;=</span>n<span class="token operator">-</span>m<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token function">SubString</span><span class="token punctuation">(</span>sub<span class="token punctuation">,</span>S<span class="token punctuation">,</span>i<span class="token punctuation">,</span>m<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">StrCompare</span><span class="token punctuation">(</span>sub<span class="token punctuation">,</span>T<span class="token punctuation">)</span><span class="token operator">!=</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">++</span>i<span class="token punctuation">;</span>
+        <span class="token keyword">else</span> <span class="token keyword">return</span> i<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="4-2-串的模式匹配"><a href="#4-2-串的模式匹配" class="headerlink" title="4.2 串的模式匹配"></a>4.2 串的模式匹配</h3><p>子串的定位操作通常称为串的模式匹配，它求的是子串(常称模式串)在主串中的位置。</p>
+<h4 id="4-2-1-简单的模式匹配算法"><a href="#4-2-1-简单的模式匹配算法" class="headerlink" title="4.2.1 简单的模式匹配算法"></a>4.2.1 简单的模式匹配算法</h4>
                 
             </div>
             <hr/>
@@ -1052,7 +1116,7 @@ L<span class="token punctuation">.</span>data<span class="token operator">=</spa
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">73.5k</span>&nbsp;字
+                class="white-color">75.7k</span>&nbsp;字
             
             
             
