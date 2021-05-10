@@ -13,11 +13,20 @@ typora-root-url: ..
 
 ## 高等数学常用基础知识
 
-**反应：**
+### 基本基础知识
 
-$(a-1)(b-1)=ab-a-b+1\qquad例：e^3-e^2-e+1=(e^2-1)(e-1)$
-
-
+- $(a+b)^n=\displaystyle\sum_{k=0}^nC_n^ka^kb^{n-k}$
+- $a^3+b^3=(a+b)(a^2-ab+b^2)$
+- $a^3-b^3=(a-b)(a^2+ab+b^2)$
+- $\displaystyle(a-1)(b-1)=ab-a-b+1\qquad例：e^3-e^2-e+1=(e^2-1)(e-1)$
+- $\displaystyle\log_ae=\frac{\ln e}{\ln a}(对数换底公式）$
+- $\displaystyle(a+b)^x=a^x(1+\frac{b}{a})^x$
+- $\displaystyle\arcsin x+\ arccos x=\frac{\pi}{2}$
+- $\displaystyle \frac{1}{x^2-1}=\frac{1}{(x+1)(x-1)}=\frac{(x+1)-(x-1)}{2(x+1)(x-1)}=\frac{1}{2}[\frac{1}{x-1}-\frac{1}{x+1}]$
+- $\displaystyle\tan x=\csc 2x-\cot 2x=\frac{1-\cos 2x}{\sin 2x}=\frac{\sin 2x}{1+\cos 2x}=\frac{1}{\csc 2x+\cot 2x}$
+- $\displaystyle1+\sin x=(\sin\frac{x}{2}+cos\frac{x}{2})^2$
+- $\displaystyle\sin x+\cos x=\sqrt2\sin (\frac{\pi}{4}+x)=\sqrt2\cos (\frac{\pi}{4}-x)$
+- 
 
 ### 基本初等函数
 
@@ -28,14 +37,6 @@ $(a-1)(b-1)=ab-a-b+1\qquad例：e^3-e^2-e+1=(e^2-1)(e-1)$
 - 反三角函数
 
 由常数和基本初等函数经过有限次的四则运算，以及有限次的复合步骤所构成的并且可以由一个式子所表示的函数称为初等函数。
-
-### 基本基础知识
-
-$(a+b)^n=\displaystyle\sum_{k=0}^nC_n^ka^kb^{n-k}$
-
-$a^3+b^3=(a+b)(a^2-ab+b^2)$
-
-$a^3-b^3=(a-b)(a^2+ab+b^2)$
 
 #### 数列
 
@@ -66,7 +67,7 @@ $\cot\alpha=\frac{1}{\tan\alpha}$ 余切
 
 $\sec^2\alpha-\tan^2\alpha=1$
 
-$\csc^2\alpha=\cot^2\alpha=1$
+$\csc^2\alpha-\cot^2\alpha=1$
 
 $三角函数(x)=co三角函数(\frac{\pi}{2}-x)$
 
