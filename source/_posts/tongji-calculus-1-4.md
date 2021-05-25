@@ -1,8 +1,9 @@
 ---
-title: 高数同济第七版
+title: 同济高数第七版（1-4章）
 date: 2021-04-15 21:01:51
+img: images/tongji-calculus-1-4/calculus_1.png
 mathjax: true
-summary: 随便写的
+summary: 同济高数
 categories: 学习笔记
 tags:
  - 数学
@@ -123,21 +124,21 @@ $(\varepsilon-\delta)$：设函数$f(x)$在点$x_0$的某个去心领域有定�
 
 函数极限研究的是临近点的变化趋势，与该点值无关。$x\to x_0$，但$x\not=x_0$
 
-![](/images/%E9%AB%98%E6%95%B0%E9%9B%B6%E5%9F%BA%E7%A1%80/image-20210423213834371.png)
+![](/images/tongji-calculus-1-4/image-20210423213834371.png)
 
 **2.自变量趋向于无穷大时函数的极限**
 
-![](/images/%E9%AB%98%E6%95%B0%E9%9B%B6%E5%9F%BA%E7%A1%80/image-20210423214929882.png)
+![](/images/tongji-calculus-1-4/image-20210423214929882.png)
 
-![](/images/%E9%AB%98%E6%95%B0%E9%9B%B6%E5%9F%BA%E7%A1%80/image-20210423223437636.png)
+![](/images/tongji-calculus-1-4/image-20210423223437636.png)
 
 #### <span style='color:sienna;font-size:20px'>函数极限的性质</span>
 
 - 唯一性：函数有极限必唯一
 - 局部有界：
-  ![](/images/%E9%AB%98%E6%95%B0%E9%9B%B6%E5%9F%BA%E7%A1%80/image-20210423220733170.png)
+  ![](/images/tongji-calculus-1-4/image-20210423220733170.png)
 - 保号性：
-  ![](/images/%E9%AB%98%E6%95%B0%E9%9B%B6%E5%9F%BA%E7%A1%80/image-20210423221001457.png)
+  ![](/images/tongji-calculus-1-4/image-20210423221001457.png)
 
 <center><span style='color:blue;font-size:15px'>2021/4/26</span></center>
 
@@ -184,13 +185,13 @@ $(\varepsilon-\delta)$：设函数$f(x)$在点$x_0$的某个去心领域有定�
 
 <span style='color:green;font-size:20px'>推论2：</span>$如果\lim f(x)存在,而n是正整数,那么\lim[f(x)]^n = [lim f(x)]^n$
 
-![](/images/%E9%AB%98%E6%95%B0%E9%9B%B6%E5%9F%BA%E7%A1%80/image-20210426172940420.png)
+![](/images/tongji-calculus-1-4/image-20210426172940420.png)
 
 <span style='color:blue;font-size:20px'>定理5：</span>$如果φ(x)≥ψ(x),而\lim φ(x)= A, \lim ψ(x)= B,那么A≥B$
 
 #### <span style='color:purple;font-size:20px'>复合函数的极限运算法则</span>
 
-![](/images/%E9%AB%98%E6%95%B0%E9%9B%B6%E5%9F%BA%E7%A1%80/image-20210426201553110.png)
+![](/images/tongji-calculus-1-4/image-20210426201553110.png)
 
 **note：注意使用条件！极限四则运算法则的条件是f和g的极限都存在，计算商的时候分母极限不能等于0。复合使用的条件是内外层都有极限，内层趋向于u0但不等于u0**
 
@@ -200,7 +201,7 @@ $(\varepsilon-\delta)$：设函数$f(x)$在点$x_0$的某个去心领域有定�
 
 <span style='color:blue;font-size:20px'>（数列型）</span>$$如果数列 \{x_n\},\{y_n\} 及\{z_n\} 满足下列条件:\\(1) 存在N，当n>N时,x_n≤y_n≤z_n;\\(2)\displaystyle\lim_{n\to\infty}x_n=\lim_{n\to \infty}z_n=a,\\则\displaystyle\lim_{n\to \infty}y_n=a$$
 
-<span style='color:blue;font-size:20px'>（函数型）</span>![](/images/%E9%AB%98%E6%95%B0%E9%9B%B6%E5%9F%BA%E7%A1%80/image-20210426215057630.png)
+<span style='color:blue;font-size:20px'>（函数型）</span>![](/images/tongji-calculus-1-4/image-20210426215057630.png)
 
 #### <span style='color:blue;font-size:20px'>重要极限1：$\displaystyle\lim_{x\to 0}\frac{\sin x}{x}=1$</span>
 
@@ -230,7 +231,7 @@ $(\varepsilon-\delta)$：设函数$f(x)$在点$x_0$的某个去心领域有定�
 
 <span style='color:red;font-size:20px'>定义2(无穷小的比较）：</span>
 
-![](/images/%E9%AB%98%E6%95%B0%E9%9B%B6%E5%9F%BA%E7%A1%80/image-20210427134245916.png)
+![](/images/tongji-calculus-1-4/image-20210427134245916.png)
 
 <span style='color:blue;font-size:20px'>定理1：</span>$\alpha(x) \sim β(x) 的充要条件是\alpha(x)=β(x)+ o(\beta(x))$
 
@@ -240,7 +241,7 @@ $(\varepsilon-\delta)$：设函数$f(x)$在点$x_0$的某个去心领域有定�
 
 <span style='color:blue;font-size:20px'>定理2（等价无穷小代换）：</span>
 
-![](/images/%E9%AB%98%E6%95%B0%E9%9B%B6%E5%9F%BA%E7%A1%80/image-20210427140815402.png)
+![](/images/tongji-calculus-1-4/image-20210427140815402.png)
 
 定理2表明，求两个无穷小**之比**（乘除关系）的极限时，分子和分母都可用等价无穷小来代替。因此，如果用来代替的无穷小选得恰当的话，就可以使计算简化。
 
@@ -388,7 +389,7 @@ $如果函数y=f(x)在区间I_X上单调增加（或减少）且连续，\\那�
 
 #### <span style='color:purple;font-size:20px'>一、函数的和、差、积、商的求导法则</span>
 
-![](/images/%E9%AB%98%E6%95%B0%E9%9B%B6%E5%9F%BA%E7%A1%80/image-20210428113111535.png)
+![](/images/tongji-calculus-1-4/image-20210428113111535.png)
 
 推论：$(uvw)'=u'vw+vu'w+uvw'$
 
@@ -396,7 +397,7 @@ $如果函数y=f(x)在区间I_X上单调增加（或减少）且连续，\\那�
 
 #### <span style='color:purple;font-size:20px'>二、反函数的求导法则</span>
 
-![](/images/%E9%AB%98%E6%95%B0%E9%9B%B6%E5%9F%BA%E7%A1%80/image-20210428114535953.png)
+![](/images/tongji-calculus-1-4/image-20210428114535953.png)
 
 例：$求y=\arcsin x(x\in[-1,1])的导数$
 
@@ -414,7 +415,7 @@ $如果函数y=f(x)在区间I_X上单调增加（或减少）且连续，\\那�
 
 ##### 基本初等函数的导数公式
 
-![](/images/%E9%AB%98%E6%95%B0%E9%9B%B6%E5%9F%BA%E7%A1%80/image-20210428135707145.png)
+![](/images/tongji-calculus-1-4/image-20210428135707145.png)
 
 
 
@@ -422,9 +423,9 @@ $如果函数y=f(x)在区间I_X上单调增加（或减少）且连续，\\那�
 
 二阶及二阶以上的导数统称高阶导数
 
-![](/images/%E9%AB%98%E6%95%B0%E9%9B%B6%E5%9F%BA%E7%A1%80/image-20210428151010886.png)
+![](/images/tongji-calculus-1-4/image-20210428151010886.png)
 
-![](/images/%E9%AB%98%E6%95%B0%E9%9B%B6%E5%9F%BA%E7%A1%80/image-20210428153636553.png)
+![](/images/tongji-calculus-1-4/image-20210428153636553.png)
 
 
 
@@ -444,7 +445,7 @@ $如果函数y=f(x)在区间I_X上单调增加（或减少）且连续，\\那�
 
 **导数的乘除公式复杂，和差公式复杂，所以在遇到像这样的连乘连除时，也可利用对数可以将乘除法变成加减法的性质，将显函数化为隐函数再求导。**
 
-![](/images/%E9%AB%98%E6%95%B0%E9%9B%B6%E5%9F%BA%E7%A1%80/image-20210428163206454.png)
+![](/images/tongji-calculus-1-4/image-20210428163206454.png)
 
 解：$$\displaystyle\ln|y|=\frac{1}{3}[\ln|x+\ln(x^2+1)-2\ln|x^2-1|]\\\displaystyle\frac{y'}{y}=\frac{1}{3}[\frac{1}{x}+\frac{2x}{x^2+1}-\frac{4x}{x^2-1}]\\y'=...$$
 
@@ -468,7 +469,7 @@ $如果函数y=f(x)在区间I_X上单调增加（或减少）且连续，\\那�
 
 #### 一、微分的定义
 
-![](/images/%E9%AB%98%E6%95%B0%E9%9B%B6%E5%9F%BA%E7%A1%80/image-20210428195222432.png)
+![](/images/tongji-calculus-1-4/image-20210428195222432.png)
 
 <span style='color:red;font-size:20px'>定义：</span>$$若f(x_0+\triangle x)- f(x_0)=A\triangle x+o(\triangle x),则称f(x)在x_0点可微，A\triangle x称为f(x)在x_0点的微分\\记为\qquad dy=A\triangle x\\dy是\triangle y的线性主部$$
 
@@ -482,9 +483,9 @@ $可微\Longleftrightarrow 可导$
 
 #### 二、微分的几何意义
 
-![](/images/%E9%AB%98%E6%95%B0%E9%9B%B6%E5%9F%BA%E7%A1%80/image-20210428200118788.png)
+![](/images/tongji-calculus-1-4/image-20210428200118788.png)
 
-![](/images/%E9%AB%98%E6%95%B0%E9%9B%B6%E5%9F%BA%E7%A1%80/image-20210428202817555.png)
+![](/images/tongji-calculus-1-4/image-20210428202817555.png)
 
 #### 三、基本初等函数的微分公式与微分运算法则
 
@@ -494,11 +495,11 @@ $dy=df(x)=f'(x)dx$
 
 **四则运算法则：**设u和v都可微，则
 
-![](/images/%E9%AB%98%E6%95%B0%E9%9B%B6%E5%9F%BA%E7%A1%80/image-20210428203416042.png)
+![](/images/tongji-calculus-1-4/image-20210428203416042.png)
 
 **复合函数微分法则(微分形式不变性)：**
 
-![](/images/%E9%AB%98%E6%95%B0%E9%9B%B6%E5%9F%BA%E7%A1%80/image-20210428203932209.png)
+![](/images/tongji-calculus-1-4/image-20210428203932209.png)
 
 例：$y=\ln(1+x^2)$
 
@@ -532,7 +533,7 @@ $dy=\frac{2x}{1+x^2}dx\qquad dy=\frac{1}{1+x^2}d(1+x^2)$
 
 <span style='color:blue;font-size:20px'>罗尔定理：</span>$$若\\(1)f在[a,b]上连续\\(2)f在(a,b)内可导\\(3)f(a)=f(b)\\则\exists\xi\in(a,b),使f'(\xi)=0$$
 
-![](/images/%E9%AB%98%E6%95%B0%E9%9B%B6%E5%9F%BA%E7%A1%80/image-20210429135954616.png)
+![](/images/tongji-calculus-1-4/image-20210429135954616.png)
 
 证：$由于f(x)在[a,b]连续，则存在最小值m，最大值M（最大最小值定理）\\ (1)若m=M\Rightarrow f(x)=m\\ (2)若m<M,则m和M至少有一个在(a,b)取到,设\exists \xi\in(a,b),使f(\xi)=M\\ \quad\Rightarrow f'(\xi)=0(费马定理)$
 
@@ -540,7 +541,7 @@ $dy=\frac{2x}{1+x^2}dx\qquad dy=\frac{1}{1+x^2}d(1+x^2)$
 
 <span style='color:blue;font-size:20px'>拉格朗日中值定理：</span>$$若\\(1)f在[a,b]上连续\\(2)f在(a,b)内可导\\则\exists\xi\in(a,b),使f(b)-f(a)=f'(\xi)(b-a)\\\displaystyle或写成\frac{f(b)-f(a)}{b-a}=f'(\xi)$$
 
-![](/images/%E9%AB%98%E6%95%B0%E9%9B%B6%E5%9F%BA%E7%A1%80/image-20210429135740646.png)
+![](/images/tongji-calculus-1-4/image-20210429135740646.png)
 
 证：$$改写为f'(\xi)-\frac{f(b)-f(a)}{b-a}=0（用来构造辅助函数）\\使上式=F'(\xi)\\令F(x)=f(x)-x\frac{f(b)-f(a)}{b-a}\\易得\\(1)F在[a,b]上连续\\(2)F在(a,b)内可导\\(3)F(a)=F(b)\\\Rightarrow \exists\xi\in(a,b),使F'(\xi)=0$$
 
@@ -587,7 +588,7 @@ $dy=\frac{2x}{1+x^2}dx\qquad dy=\frac{1}{1+x^2}d(1+x^2)$
 
 <span style='color:purple;font-size:20px'>洛必达法则</span>
 
-![](/images/%E9%AB%98%E6%95%B0%E9%9B%B6%E5%9F%BA%E7%A1%80/RD2B%60%5D3ZPLY%25FUX_HLDMCF.png)
+![](/images/tongji-calculus-1-4/RD2B%60%5D3ZPLY%25FUX_HLDMCF.png)
 
 若$$\displaystyle\lim_{x\to x_0}\frac{f'(x)}{g'(x)}不存在，只能说明洛必达法则不适用，不能说\lim_{x\to x_0}\frac{f(x)}{g(x)}不存在$$
 
@@ -640,7 +641,7 @@ P_n(x)=a_0+a_1(x-x_0)+a_2(x- x_0)^2+...+a_n(x-x_0)^n\\
 
 #### 几个初等函数的麦克劳林公式
 
-![](/images/%E9%AB%98%E6%95%B0%E9%9B%B6%E5%9F%BA%E7%A1%80/image-20210430155914656.png)
+![](/images/tongji-calculus-1-4/image-20210430155914656.png)
 
 #### 内容小结
 
@@ -664,11 +665,11 @@ P_n(x)=a_0+a_1(x-x_0)+a_2(x- x_0)^2+...+a_n(x-x_0)^n\\
 
 #### 一、函数单调性的判别方法
 
-![](/images/%E9%AB%98%E6%95%B0%E9%9B%B6%E5%9F%BA%E7%A1%80/image-20210430203100846.png)
+![](/images/tongji-calculus-1-4/image-20210430203100846.png)
 
 #### 二、曲线的凹凸性与拐点
 
-![](/images/%E9%AB%98%E6%95%B0%E9%9B%B6%E5%9F%BA%E7%A1%80/image-20210430204415094.png)
+![](/images/tongji-calculus-1-4/image-20210430204415094.png)
 
 <span style='color:blue;font-size:20px'>定理2：</span>$$设函数f(x)在区间[a,b]上连续,在(a,b)内二阶可导，\\
 (1)若在(a,b)内f''(x)>0,则f(x)在[a,b] 上的图形是凹的;\\
@@ -684,7 +685,7 @@ P_n(x)=a_0+a_1(x-x_0)+a_2(x- x_0)^2+...+a_n(x-x_0)^n\\
 
 #### 一、函数的极值及其求法
 
-![](/images/%E9%AB%98%E6%95%B0%E9%9B%B6%E5%9F%BA%E7%A1%80/image-20210502100507736.png)
+![](/images/tongji-calculus-1-4/image-20210502100507736.png)
 
 驻点$\nrightarrow$极值点
 
@@ -703,7 +704,7 @@ P_n(x)=a_0+a_1(x-x_0)+a_2(x- x_0)^2+...+a_n(x-x_0)^n\\
 
 #### 曲线的渐近线
 
-![=](/images/%E9%AB%98%E6%95%B0%E9%9B%B6%E5%9F%BA%E7%A1%80/image-20210502172746146.png)
+![=](/images/tongji-calculus-1-4/image-20210502172746146.png)
 
 函数图形的描绘
 
@@ -776,7 +777,7 @@ P_n(x)=a_0+a_1(x-x_0)+a_2(x- x_0)^2+...+a_n(x-x_0)^n\\
 
 #### 一、第一类换元法（凑微分法）
 
-![](/images/%E9%AB%98%E6%95%B0%E9%9B%B6%E5%9F%BA%E7%A1%80/image-20210504153757910.png)
+![](/images/tongji-calculus-1-4/image-20210504153757910.png)
 
 例1：$$\displaystyle\int\tan x dx=\int\frac{\sin x}{\cos x}dx=-\int\frac{1}{\cos x}d(\cos x)=-\ln|\cos x|+c$$
 
@@ -790,7 +791,7 @@ P_n(x)=a_0+a_1(x-x_0)+a_2(x- x_0)^2+...+a_n(x-x_0)^n\\
 
 #### 二、第二类换元法
 
-![](/images/%E9%AB%98%E6%95%B0%E9%9B%B6%E5%9F%BA%E7%A1%80/image-20210504162026244.png)
+![](/images/tongji-calculus-1-4/image-20210504162026244.png)
 
 **case1：无理数（有根号但无法用第一类换元积分法求解的）**
 
@@ -814,7 +815,7 @@ P_n(x)=a_0+a_1(x-x_0)+a_2(x- x_0)^2+...+a_n(x-x_0)^n\\
 (12)$\int e^x dx=e^x+C$
 (13)$\int a^x dx=\frac{a^x}{\ln a}+C$
 
-![](/images/%E9%AB%98%E6%95%B0%E9%9B%B6%E5%9F%BA%E7%A1%80/GMOUH2ANJE1N%5BWS%60YMZI@P0.png)
+![](/images/tongji-calculus-1-4/GMOUH2ANJE1N%5BWS%60YMZI@P0.png)
 
  
 
@@ -840,7 +841,7 @@ case6：$(\sec^nx/\csc^n x)$（n为奇数）进行两次分部积分后还原，
 
 #### 内容小结
 
-![](/images/%E9%AB%98%E6%95%B0%E9%9B%B6%E5%9F%BA%E7%A1%80/image-20210506111708176.png)
+![](/images/tongji-calculus-1-4/image-20210506111708176.png)
 
 
 

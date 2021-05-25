@@ -1,8 +1,9 @@
 ---
-title: 高数同济第七版2
+title: 同济高数第七版（5-7章）
 date: 2021-05-07 19:48:07
+img: images/tongji-calculus-5-7/calculus_1.png
 mathjax: true
-summary: 随便写的
+summary: 同济高数
 categories: 学习笔记
 tags:
  - 数学
@@ -143,7 +144,7 @@ $\displaystyle\int^b_audv=uv|^b_a-\int^b_avdu$
 
 **重要：**$$\displaystyle I_n=\int^{\frac{\pi}{2}}_0\sin^n(x)dx\left(=\int^{\frac{\pi}{2}}_0\cos^n(x)dx\right)\\\displaystyle I_n=\frac{n-1}{n}I_{n-2}\\\displaystyle I_n=\frac{n-1}{n}*\frac{n-3}{n-2}*...*\frac{3}{4}*\frac{1}{2}*\frac{\pi}{2}\quad(n为正偶数)\\\displaystyle I_n=\frac{n-1}{n}*\frac{n-3}{n-2}*...*\frac{4}{5}*\frac{2}{3}\quad(n为大于1的正奇数) $$
 
-![](/images/%E9%AB%98%E6%95%B0%E9%9B%B6%E5%9F%BA%E7%A1%802/image-20210509114132972.png)
+![](/images/tongji-calculus-5-7/image-20210509114132972.png)
 
 
 
@@ -219,13 +220,13 @@ $\displaystyle\int^b_audv=uv|^b_a-\int^b_avdu$
 
 #### 小结：
 
-![](/images/%E9%AB%98%E6%95%B0%E9%9B%B6%E5%9F%BA%E7%A1%802/image-20210510140859852.png)
+![](/images/tongji-calculus-5-7/image-20210510140859852.png)
 
 **note：**$$\displaystyle由右上角可知，在x\to+\infty时，\frac{1}{\ln x}>\frac{1}{x^p}>\frac{1}{e^x}，p可以取任意值\\\displaystyle当p>1时，\int^{+\infty}_1\frac{1}{x^p}收敛，所以\int^{+\infty}_1\frac{1}{e^x}\left(或\frac{x^a\ln ^nx}{e^{bx}}\right)是收敛的\\\displaystyle当p\leq1时，\int^{+\infty}_1\frac{1}{x^p}发散，所以\int^{+\infty}_2\frac{1}{\ln x}\left(或\frac{1}{\ln ^nx}\right)是发散的\\\displaystyle\int^{+\infty}_1\frac{\ln ^nx}{x^\alpha}(\alpha >1)也是收敛的$$
 
 <iframe src="https://www.desmos.com/calculator/yci00xdlr3" width="100%" height="500px" style="border: 1px solid #ccc" frameborder=0></iframe>
 
-![](/images/%E9%AB%98%E6%95%B0%E9%9B%B6%E5%9F%BA%E7%A1%802/image-20210510151946627.png)
+![](/images/tongji-calculus-5-7/image-20210510151946627.png)
 
 **note：**$$当x\to0时，\displaystyle-\ln x=\ln\frac{1}{x}<\frac{1}{x^p}=(\frac{1}{x})^p<e^{\frac{1}{x}}，p可以取任意值\\\displaystyle当p<1时，\int^b_0\frac{1}{x^p}收敛，所以\int^b_0\ln x收敛\\\displaystyle当p\geq1时，\int^b_0\frac{1}{x^p}发散，所以\int^b_0e^{\frac{1}{x}}发散$$
 
@@ -333,7 +334,7 @@ $dF=\rho gxldx$
 
 
 
-### 第三节 齐次微分方程(x和y齐次)
+### 第三节 （一阶）齐次微分方程(x和y齐次)
 
 > 齐次：$f(ax,ay,...)=a^nf(x,y,...)$
 
@@ -363,7 +364,9 @@ $\displaystyle \frac{dy}{dx}+P(x)y=0的通解为\\\displaystyle y=Ce^{-\int p(x)
 
 $\displaystyle \frac{dy}{dx}+P(x)y=Q(x)的通解为\\\displaystyle y=\left(\int Q(x)e^{\int p(x)dx}dx+C\right)e^{-\int p(x)dx}$
 
-**(非齐次特解+齐次通解)**
+**(非齐次通解=齐次通解+一个非齐次特解)**
+
+**note：**有时用适当的变量代换可以将方程化为可分离变量的方程
 
 #### 三、伯努利方程
 
@@ -407,14 +410,116 @@ $\displaystyle \frac{dy}{dx}+P(x)y=Q(x)y^n(n\not=0,1)$叫做伯努利方程
 
 ### 第六节 高阶线性微分方程
 
+#### 一、基本概念
+
+| n阶齐次线性微分方程   | $$y^{(n)}+a_1(x)y^{(n-1)}+...+a_{n-1}(x)y'+a_n(x)y=0$$    |
+| --------------------- | --------------------------------------------------------- |
+| n阶非齐次线性微分方程 | $$y^{(n)}+a_1(x)y^{(n-1)}+...+a_{n-1}(x)y'+a_n(x)y=f(x)$$ |
+
+设f(x)，g(x)为两个函数
+若f(x)，g(x)不成比例，称他们**线性无关**
+若f(x)，g(x)成比例，称他们**线性相关**
+
+#### 二、结构
+
+对于$$y''+a(x)y'+b(x)y=0\qquad(1) 二阶齐次线性微分方程\\y''+a(x)y'+b(x)y=c(x)\qquad(2) 二阶非齐次线性微分方程$$
+
+<span style='color:blue;font-size:20px'>定理1：</span>$若函数y_1(x)与y_2(x)是(1)的两个解，那么y=C_1y_1(x)+C_2y_2(x)也是(1)的解$
+
+<span style='color:blue;font-size:20px'>定理2：</span>$若函数y_1(x)与y_2(x)分别为(1)(2)的解，那么y=y_1(x)+y_2(x)是(2)的解$
+
+<span style='color:blue;font-size:20px'>定理3：</span>$若函数y_1(x)与y_2(x)是(2)的两个解，那么y=y_1(x)-y_2(x)是(1)的解$
+
+<span style='color:blue;font-size:20px'>定理4：</span>
+
+- $若函数y_1(x)与y_2(x)是(1)的两个线性无关的特解，那么y=C_1y_1(x)+C_2y_2(x)是(1)的通解$
+- $若函数y_1(x)为(1)的通解，y_2(x)为(2)的一个特解，那么y=y_1(x)+y_2(x)是(2)的通解$
+
+<span style='color:blue;font-size:20px'>定理5：</span>
+
+对于$$y''+a(x)y'+b(x)y=f_1(x)+f_2(x)\\若函数y_1(x)与y_2(x)分别是方程\\y''+a(x)y'+b(x)y=f_1(x)\\y''+a(x)y'+b(x)y=f_2(x)\\的一个特解，则y=y_1(x)+y_2(x)就是原方程的特解$$
+
+
+
 ### 第七节 常系数齐次线性微分方程
 
-$y''+py'+qy=0$
+#### 一、二阶常系数齐次线性微分方程
+
+$y''+py'+qy=0\qquad(*)$
+
+其中p，q为**常数**，称(*)为二阶常系数齐次线性微分方程
+
+设$y=e^{\lambda x}为(*)的解，代入方程得$
 
 $\lambda^2+p\lambda+q=0$
 
-| $\triangle>0$ | $y=C_1e^{\lambda_1x}+C_2e^{\lambda_2x}$             |
-| ------------- | --------------------------------------------------- |
-| $\triangle=0$ | $y=(C_1+xC_2)e^{\lambda_1x}$                        |
-| $\triangle<0$ | $y=e^{\alpha x}(C_1\cos(\beta x)+C_2\sin(\beta x))$ |
+称为(*)的**特征方程**
+
+|          | $p^2-4q$      | 二阶常系数线性微分方程的通解                                 |
+| -------- | ------------- | ------------------------------------------------------------ |
+| 不等实根 | $\triangle>0$ | $y=C_1e^{\lambda_1x}+C_2e^{\lambda_2x}$                      |
+| 相等实根 | $\triangle=0$ | $y=(C_1+xC_2)e^{\lambda_1x}$                                 |
+| 共轭复根 | $\triangle<0$ | $$y=e^{\alpha x}(C_1\cos(\beta x)+C_2\sin(\beta x))\qquad(\lambda_{1,2}=\alpha\pm i\beta)$$ |
+
+> 欧拉公式：$e^{\theta i}=\cos\theta+i\sin\theta$
+
+#### 二、高阶常系数齐次线性微分方程
+
+![](/images/tongji-calculus-5-7/image-20210515171500130.png)
+
+> 解三次方程野法：先把-2,-1,0,1,2代入，一般有个解就是这几个，然后通过此解把原方程分解成二次方程求解 
+
+**例一** $$求y'''-y'=0的通解\\解:\lambda^3-\lambda=0 \Rightarrow\lambda_1=0 ,\lambda_2=-1,\lambda_3=1\\通解:y=C_1+C_2e^{-x}+C_3e^x$$
+
+**例二** $$求y'''-3y''+3y'-y=0的通解\\解:\lambda^3-3\lambda^2+3\lambda-1=0 \Rightarrow\lambda_1=\lambda_2=\lambda_3=1\\通解:y=(C_1+C_2x+C_3x^2)e^x$$
+
+**例二** $$求y^{(4)}-2y^{(3)}+5y''=0的通解\\解:\lambda^4-2\lambda^3+5\lambda^2=0\Rightarrow\lambda^2(\lambda^2-2\lambda+5)=0\\\Rightarrow\lambda_1=\lambda_2=0,\lambda_{3,4}=1\pm2i\\通解:y=e^{0x}(C_1+C_2x)+e^x(C_3\cos(2x)+C_4\sin(2x))$$
+
+
+
+### 第八节 常系数非齐次线性微分方程
+
+非齐次的通解=齐次的通解+一个非齐次的特解
+
+我们研究两种常见的非齐次项
+
+#### 一、$f(x)=e^{kx}P_n(x)$
+
+ 令$y_0(x)=x^aQ_n(x)e^{kx}$
+
+**f(x)的特征方程的根中有几个和k相等，a就是几，没有相等的话a就是0，多项式$Q_n(x)$的次数n与$P_n(x)$的n相同**
+
+**将$y_0(x)$代入方程中，解得多项式的系数，即可找到非齐次特解，加上齐次通解可得到非齐次通解**
+
+**例一：**$$求微分方程y''- 2y'- 3y=3x+1的通解.\\解:\lambda^2-2\lambda-3=0\Rightarrow\lambda_1=3,\lambda_2=-1\\令y_0(x)=x^0(ax+b)e^{0x}=ax+b\\代入原方程，得a=-1,b=\frac{1}{3}\\所以原方程的通解为y=C_1e^{-x}+C_2e^{3x}-x+\frac{1}{3}$$
+
+#### 二、$f(x)=e^{\alpha x}[P_l(x)\cos\beta x+Q_n(x)\sin\beta x]$
+
+ 令$$y_0(x)=x^ae^{\alpha x}[R_m^{(1)}(x)\cos\beta x+R_m^{(2)}(x)\sin\beta x],m=\max(l,n)$$
+
+**f(x)的特征方程的根中有几个和$\alpha+i\beta$相等，a就是几，没有相等的话a就是0，多项式$R_m(x)$的次数m与l和n中的最大值相同**
+
+**将$y_0(x)$代入方程中，解得多项式的系数，即可找到非齐次特解，加上齐次通解可得到非齐次通**
+
+**例二：**$$求微分方程y''- 3y'+2y=x\cos x的通解.\\解:\lambda^2-3\lambda+2=0\Rightarrow\lambda_1=1,\lambda_2=2\\令y_0(x)=x^0e^{0x}[(ax+b)\cos x+(cx+d)\sin x]\\代入原方程,......$$
+
+
+
+### 第九节 欧拉方程
+
+形如$$x^ny^{(n)}+p_1x^{n-1}y^{(n-1)}+...+p_{n-1}xy'+p_ny=f(x)的方程（其中p_1,p_2,...为常数）$$叫做**欧拉方程**
+
+做变换$x=e^t或t=\ln x$，
+
+得$$\frac{dy}{dx}=\frac{dy}{dt}\frac{dt}{dx}=\frac{dy}{dt}\frac{1}{x}\\\frac{d^2y}{dt^2}=\frac{1}{x^2}(\frac{d^2y}{dt^2}-\frac{dy}{dt})\\\frac{d^3y}{dt^3}=\frac{1}{x^3}(\frac{d^3y}{dt^3}-3\frac{d^2y}{dt^2}+2\frac{dy}{dt})$$
+
+用算符D表示$\frac{d}{dt}$，
+
+则$$xy'=x\frac{1}{x}\frac{d}{dt}y=Dy\\x^2y''=\frac{d^2y}{dt^2}-\frac{dy}{dt}=(\frac{d^2}{dt^2}-\frac{d}{dt})y=(D^2-D)y=D(D-1)y\\x^3y'''=...=D(D-1)(D-2)y$$
+
+一般地，有$x^ky^{(k)}=D(D-1)...(D-k-1)y$
+
+将其代入欧拉方程，便得到一个**以t为自变量的常系数线性微分方程**，解完后把x代回即得到原方程的解
+
+**例一：**$$求欧拉方程x^3y'''+x^2y''-4xy'=3x^2的解\\解：令x=e^t,t=\ln x，得\\D(D-1)(D-2)y+D(D-1)y-4Dy=3e^{2t}\\D^3y-2D^2y-3Dy=3e^{2t}\\特征方程:\lambda^3-2\lambda^2-3\lambda=0\Rightarrow\lambda_1=0,\lambda_2=-1,\lambda_3=3\\所以齐次的通解为y=C_1+C_2e^{-t}+C_3e^{3t}=C_1+C_2\frac{1}{x}+C_3x^3\\设非齐次特解y_0为ae^{2t},代入后解得a=-\frac{1}{2}\\所以齐次特解为y_0=-\frac{1}{2}e^{2t}=-\frac{1}{2}x^2\\所以原方程的通解为y=C_1+C_2\frac{1}{x}+C_3x^3-\frac{1}{2}x^2 $$
 
