@@ -482,7 +482,9 @@ $\Pi:F(x,y,z)=0的法向量\vec n=\{F_x,F_y,F_z\}$
 
 #### 二、梯度
 
-$对于三维函数F(x,y,z)=0（或z=f(x,y）来说，梯度就是曲面法向量(F_x,F_y,F_z)去掉z方向的分量,\\即函数在此点沿(F_x,F_y)就是z增长率最大的方向,很容易理解$
+$grad f(x_0,y_0)=\triangledown f(x_0,y_0)=f_x((x_0,y_0)\vec i+f_x((x_0,y_0)\vec j$
+
+$对于三维函数F(x,y,z)=0（或f(x,y)-z=0）来说，梯度就是曲面法向量(f_x,f_y,-1)去掉z方向的分量,\\即函数在此点沿(f_x,f_y)就是z增长率最大的方向,很容易理解$
 
 $\displaystyle\frac{\partial f}{\partial l}_{(x_0,y_0)}=grad f(x_0,y_0)·\vec{e_l}=|grad f(x_0,y_0)|\cos\theta$
 

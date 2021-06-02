@@ -624,7 +624,8 @@ if (windowWidth > 768) {
 <h3 id="第七节-方向导数和梯度"><a href="#第七节-方向导数和梯度" class="headerlink" title="第七节 方向导数和梯度"></a>第七节 方向导数和梯度</h3><h4 id="一、方向导数"><a href="#一、方向导数" class="headerlink" title="一、方向导数"></a>一、方向导数</h4><p>偏导数反映的是函数沿坐标轴方向的变化率，方向导数反映的是函数沿任一指定方向的变化率问题</p>
 <p><span style="color:blue;font-size:20px">定理：</span><script type="math/tex">如果函数f(x,y)在点P_0(x_0,y_0)可微，那么函数在该点沿任一方向l的方向导数存在，且有\\\displaystyle\frac{\partial f}{\partial l}_{(x_0,y_0)}=f_x(x_0,y_0)\cos\alpha+f_y(x_0,y_0)\cos\beta\\其中\cos\alpha和\cos\beta是方向l的方向余弦</script></p>
 <p>按照定义的话，<script type="math/tex">\displaystyle \triangle z=f(x_0+\triangle x,y_0+\triangle y)-f(x_0,y_0);\qquad \rho=\sqrt{(\triangle x)^2+(\triangle y)^2};\qquad \lim_{\rho\to0}\frac{\triangle z}{\rho}=\frac{\partial f}{\partial l}_{(x_0,y_0)}</script></p>
-<h4 id="二、梯度"><a href="#二、梯度" class="headerlink" title="二、梯度"></a>二、梯度</h4><p>$对于三维函数F(x,y,z)=0（或z=f(x,y）来说，梯度就是曲面法向量(F_x,F_y,F_z)去掉z方向的分量,\\即函数在此点沿(F_x,F_y)就是z增长率最大的方向,很容易理解$</p>
+<h4 id="二、梯度"><a href="#二、梯度" class="headerlink" title="二、梯度"></a>二、梯度</h4><p>$grad f(x_0,y_0)=\triangledown f(x_0,y_0)=f_x((x_0,y_0)\vec i+f_x((x_0,y_0)\vec j$</p>
+<p>$对于三维函数F(x,y,z)=0（或f(x,y)-z=0）来说，梯度就是曲面法向量(f_x,f_y,-1)去掉z方向的分量,\\即函数在此点沿(f_x,f_y)就是z增长率最大的方向,很容易理解$</p>
 <p>$\displaystyle\frac{\partial f}{\partial l}_{(x_0,y_0)}=grad f(x_0,y_0)·\vec{e_l}=|grad f(x_0,y_0)|\cos\theta$</p>
 <p><img src="/images/tongji-calculus-8-10/image-20210521180716379.png" alt=""></p>
 <p>θ=0：l与梯度方向相同（增长率最大方向）</p>
@@ -847,17 +848,16 @@ if (windowWidth > 768) {
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/05/16/tongji-calculus-8-10/">
+                <a href="/2021/05/27/tongji-calculus-11-12/">
                     <div class="card-image">
                         
-                        <img src="/images/tongji-calculus-8-10/calculus_2.png" class="responsive-img" alt="同济高数第七版（8-10章）">
+                        <img src="/images/tongji-calculus-11-12/calculus_2.png" class="responsive-img" alt="同济高数第七版（11-12章）">
                         
-                        <span class="card-title">同济高数第七版（8-10章）</span>
+                        <span class="card-title">同济高数第七版（11-12章）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -867,9 +867,9 @@ if (windowWidth > 768) {
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-16
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-05-27
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -882,7 +882,6 @@ if (windowWidth > 768) {
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -1107,7 +1106,7 @@ if (windowWidth > 768) {
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">81.4k</span>&nbsp;字
+                class="white-color">84.2k</span>&nbsp;字
             
             
             

@@ -720,7 +720,17 @@ P_n(x)=a_0+a_1(x-x_0)+a_2(x- x_0)^2+...+a_n(x-x_0)^n\\
 
 ### 第七节 曲率
 
-弧微分考研不作要求
+#### 一、弧微分（考研不作要求）
+
+**case1:**$L:y=f(x)$
+
+$\displaystyle ds=\sqrt{(dx)^2+(dy)^2}=\sqrt{1+(\frac{dy}{dx})^2}dx=\sqrt{1+f'^2(x)}dx$
+
+**case2:**$L:\begin{cases}x=\varphi(t)\\y=\psi(t)\end{cases}$
+
+$\displaystyle ds=\sqrt{(dx)^2+(dy)^2}=\sqrt{(\frac{dx}{dt})^2+(\frac{dy}{dt})^2}dt=\sqrt{\varphi'^2(t)+\psi'^2(t)}dt$
+
+#### 二、曲率
 
 曲率：$\displaystyle k=\frac{|y''|}{(1+y'^2)^{\frac{3}{2}}}$
 
