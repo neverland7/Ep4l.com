@@ -417,7 +417,7 @@ if (windowWidth > 768) {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    736
+                    3.1k
                 </div>
                 
 
@@ -450,8 +450,16 @@ if (windowWidth > 768) {
 <li>$\displaystyle\tan x=\csc 2x-\cot 2x=\frac{1-\cos 2x}{\sin 2x}=\frac{\sin 2x}{1+\cos 2x}=\frac{1}{\csc 2x+\cot 2x}$</li>
 <li>$\displaystyle1+\sin x=(\sin\frac{x}{2}+cos\frac{x}{2})^2$</li>
 <li>$\displaystyle\sin x+\cos x=\sqrt2\sin (\frac{\pi}{4}+x)=\sqrt2\cos (\frac{\pi}{4}-x)$</li>
-<li>$\displaystyle|xy|\leq\frac{x^2+y^2}{2}$</li>
-<li>万能公式：把所有三角函数都化成只有$\tan\frac a2$的多项式<br>$\sin a=\frac{2\tan\frac a2}{1+\tan^2\frac a2}$<br>$\cos a=\frac{1-\tan^2\frac a2}{1+\tan^2\frac a2}$<br>$\tan a=\frac{2\tan\frac a2}{1-\tan^2\frac a2}$</li>
+<li>$\displaystyle a^2+b^2\geq2ab$</li>
+<li>$\sqrt {x^2}=|x|$</li>
+<li>$||a|-|b||\leq|a-b|$</li>
+<li><p>万能公式：把所有三角函数都化成只有$\tan\frac a2$的多项式<br>$\sin a=\frac{2\tan\frac a2}{1+\tan^2\frac a2}$<br>$\cos a=\frac{1-\tan^2\frac a2}{1+\tan^2\frac a2}$<br>$\tan a=\frac{2\tan\frac a2}{1-\tan^2\frac a2}$</p>
+</li>
+<li><p>一元三次方程的求解：</p>
+<p>例：$x^3-x^2-x-2=0$</p>
+<p>（1）代入0，$\pm 1$，$\pm 2$，$\pm 3$求出一个解，本题为2</p>
+<p>（2）$(x-2)(x^2+x+1)=x^3-x^2-x-2=0$（从前往后填，缺哪个补哪个）</p>
+</li>
 </ul>
 <h3 id="基本初等函数"><a href="#基本初等函数" class="headerlink" title="基本初等函数"></a>基本初等函数</h3><ul>
 <li>幂函数：$y=x^u$</li>
@@ -498,7 +506,160 @@ if (windowWidth > 768) {
 <h5 id="积化和差公式："><a href="#积化和差公式：" class="headerlink" title="积化和差公式："></a>积化和差公式：</h5><p>$\sin\alpha\cos\beta=\frac{\sin(\alpha-\beta)+\sin(\alpha+\beta)}{2}$</p>
 <p>$\sin\alpha\sin\beta=\frac{\cos(\alpha-\beta)-\cos(\alpha+\beta)}{2}$</p>
 <p>$\cos\alpha\cos\beta=\frac{\cos(\alpha-\beta)+\cos(\alpha+\beta)}{2}$</p>
+<center><span style="color:blue;font-size:15px">2021/6/11</span></center>
 
+<h2 id="考研高等数学框架"><a href="#考研高等数学框架" class="headerlink" title="考研高等数学框架"></a>考研高等数学框架</h2><p><img src="/images/calculus/image-20210611105455028.png" alt=""></p>
+<p><strong>整个考研数学中，一元微积分是重点和难点，后面画圈划线的是难点，是强化阶段的任务</strong></p>
+<h2 id="第一章-函数-极限-连续"><a href="#第一章-函数-极限-连续" class="headerlink" title="第一章 函数 极限 连续"></a>第一章 函数 极限 连续</h2><p>极限是第一章的重点和难点</p>
+<h3 id="第一节-函数"><a href="#第一节-函数" class="headerlink" title="第一节 函数"></a>第一节 函数</h3><h3 id="一、考试内容概要："><a href="#一、考试内容概要：" class="headerlink" title="一、考试内容概要："></a>一、考试内容概要：</h3><h4 id="一-函数的概念及常见函数"><a href="#一-函数的概念及常见函数" class="headerlink" title="(一)函数的概念及常见函数"></a>(一)函数的概念及常见函数</h4><ol>
+<li><p>函数概念（两要素：定义域，对应规则）</p>
+</li>
+<li><p>复合函数（不是任意两个函数都可以符合，要求内层函数的值域和外层函数的定义域交集不为空</p>
+</li>
+<li><p>反函数</p>
+<p>存在反函数的充要条件：$\forall x_1\not=x_2\in D,有f(x_1)\not=f(x_2)$</p>
+</li>
+<li><p>初等函数</p>
+<p>由5个基本初等函数（幂、指、对、三角、反三角）经过有限次的四则和复合构成的可以用一个式子表示的函数</p>
+</li>
+</ol>
+<h4 id="二-函数的性质"><a href="#二-函数的性质" class="headerlink" title="(二)函数的性质"></a>(二)函数的性质</h4><ol>
+<li><p>单调性</p>
+</li>
+<li><p>奇偶性</p>
+<p>前提：定义域关于原点对称</p>
+<p>常见的奇函数：$\ln\frac{1-x}{1+x}$，$\ln(x+\sqrt{1+x^2})$，$\frac{e^x-1}{e^x+1}$，$f(x)-f(-x)$</p>
+<p>常见的偶函数：$f(x)+f(-x)$</p>
+</li>
+<li><p>周期性</p>
+</li>
+<li><p>有界性</p>
+</li>
+</ol>
+<h3 id="二、常考题型与典型例题"><a href="#二、常考题型与典型例题" class="headerlink" title="二、常考题型与典型例题"></a>二、常考题型与典型例题</h3><h4 id="题型一、函数有界性、单调性、周期性及奇偶性的判定"><a href="#题型一、函数有界性、单调性、周期性及奇偶性的判定" class="headerlink" title="题型一、函数有界性、单调性、周期性及奇偶性的判定"></a>题型一、函数有界性、单调性、周期性及奇偶性的判定</h4><h4 id="题型二、复合函数"><a href="#题型二、复合函数" class="headerlink" title="题型二、复合函数"></a>题型二、复合函数</h4><h3 id="第二节-极限"><a href="#第二节-极限" class="headerlink" title="第二节 极限"></a>第二节 极限</h3><h3 id="一、考试内容概要"><a href="#一、考试内容概要" class="headerlink" title="一、考试内容概要"></a>一、考试内容概要</h3><h4 id="一-极限的概念"><a href="#一-极限的概念" class="headerlink" title="(一)极限的概念"></a>(一)极限的概念</h4><ol>
+<li><p>数列的极限</p>
+<p>$(\varepsilon-N)$ ：$\forall\varepsilon&gt;0，\exists N，当 n&gt;N时，有|x_n-a|&lt;\varepsilon$</p>
+</li>
+<li><p>函数的极限</p>
+<p>自变量趋于无穷大时函数的极限：</p>
+<p>和数列极限类似，有三个（正无穷，负无穷，无穷）</p>
+<p>自变量趋于有限值时函数的极限：</p>
+<p>$(\varepsilon-\delta)$ ：$若\forall\varepsilon&gt;0，\exists\delta&gt;0，当0&lt;|x-x_0|&lt;\delta时，恒有|f(x)-A|&lt;\varepsilon，则称A为x\to x_0时f(x)的极限$。</p>
+</li>
+</ol>
+<h4 id="二-极限的性质（数列和函数对比）"><a href="#二-极限的性质（数列和函数对比）" class="headerlink" title="(二)极限的性质（数列和函数对比）"></a>(二)极限的性质（数列和函数对比）</h4><ol>
+<li><p>有界性（收敛数列必有界；函数极限存在则局部有界）</p>
+</li>
+<li><p>保号性（极限值保函数值；函数值保极限值）</p>
+</li>
+<li><p>极限值与无穷小之间的关系</p>
+<p>$\lim f(x)=A\Leftrightarrow f(x)=A +a(x),其中\lim a(x)= 0$</p>
+</li>
+</ol>
+<h4 id="三-极限存在准则（一般考数列极限）"><a href="#三-极限存在准则（一般考数列极限）" class="headerlink" title="(三)极限存在准则（一般考数列极限）"></a>(三)极限存在准则（一般考数列极限）</h4><ol>
+<li>夹逼准则</li>
+<li>单调有界准则</li>
+</ol>
+<h4 id="四-无穷小"><a href="#四-无穷小" class="headerlink" title="(四)无穷小"></a>(四)无穷小</h4><ol>
+<li>无穷小量的概念（极限为0的<strong>变量</strong>）</li>
+<li>无穷小的比较（阶）</li>
+<li>无穷小的性质（有限个无穷小的和、积是无穷小；无穷小与有界量的乘积是无穷小）</li>
+</ol>
+<h4 id="五-无穷大"><a href="#五-无穷大" class="headerlink" title="(五)无穷大"></a>(五)无穷大</h4><ol>
+<li><p>无穷大量的概念（无穷大包含正无穷和负无穷）</p>
+<p>$\forall M&gt;0,\exists\delta&gt;0,当0&lt;|x-x_0|&lt;\delta时，恒有|f(x)|&gt;M,称f(x)为x\to x_0时的无穷大量$</p>
+</li>
+<li><p>常用的一些无穷大量的比较（对&lt;幂&lt;指&lt;阶乘&lt;幂指）</p>
+</li>
+<li><p>无穷大量的性质（有限个无穷大的积是无穷大（和不一定）；（无穷大与有界变量的积不一定是无穷大）；无穷大量与有界变量的和是无穷大）</p>
+</li>
+<li><p>无穷大量与无界变量的关系（无穷大量必为无界变量，而无界变量不一定是无穷大量）</p>
+</li>
+<li><p>无穷大量与无穷小量的关系（在同一极限过程中）</p>
+</li>
+</ol>
+<center><span style="color:blue;font-size:15px">2021/6/13</span></center>
+
+<h3 id="二、常考题型与典型例题-1"><a href="#二、常考题型与典型例题-1" class="headerlink" title="二、常考题型与典型例题"></a>二、常考题型与典型例题</h3><h4 id="题型一、极限的概念性质及存在准则"><a href="#题型一、极限的概念性质及存在准则" class="headerlink" title="题型一、极限的概念性质及存在准则"></a>题型一、极限的概念性质及存在准则</h4><h4 id="题型二、求极限"><a href="#题型二、求极限" class="headerlink" title="题型二、求极限"></a>题型二、求极限</h4><p>方法1：利用基本极限求极限<br>方法2：利用等价无穷小代换求极限<br>方法3：利用有理运算法则求极限<br>方法4：利用洛必达法则求极限<br>方法5：利用泰勒公式求极限<br>方法6：利用夹逼原理求极限<br>方法7：利用单调有界准则求极限<br>方法8：利用定积分定义求极限(见第五章)</p>
+<h4 id="题型三、无穷小量阶的比较"><a href="#题型三、无穷小量阶的比较" class="headerlink" title="题型三、无穷小量阶的比较"></a>题型三、无穷小量阶的比较</h4><center><span style="color:blue;font-size:15px">2021/6/14</span></center>
+
+<h3 id="第三节-函数的连续性"><a href="#第三节-函数的连续性" class="headerlink" title="第三节 函数的连续性"></a>第三节 函数的连续性</h3><h3 id="一、考试内容概要-1"><a href="#一、考试内容概要-1" class="headerlink" title="一、考试内容概要"></a>一、考试内容概要</h3><h4 id="一-连续性的概念"><a href="#一-连续性的概念" class="headerlink" title="(一)连续性的概念"></a>(一)连续性的概念</h4><p>在某点极限值等于函数值；开区间连续；闭区间连续</p>
+<h4 id="二-间断点及其分类"><a href="#二-间断点及其分类" class="headerlink" title="(二)间断点及其分类"></a>(二)间断点及其分类</h4><p>间断点的定义：f(x)在某点去心领域有定义，但在该点不连续</p>
+<p>间断点的分类：左右极限都存在（第一类：可去、跳跃）至少有一个不存在（第二类：无穷、振荡）</p>
+<h4 id="三-连续性的运算与性质"><a href="#三-连续性的运算与性质" class="headerlink" title="(三)连续性的运算与性质"></a>(三)连续性的运算与性质</h4><p>连续函数的四则（商的时候分母不等于0）、复合仍为连续函数</p>
+<p>基本初等函数在其定义域内连续，初等函数在其定义区间内连续</p>
+<h4 id="四-闭区间上连续函数的性质"><a href="#四-闭区间上连续函数的性质" class="headerlink" title="(四)闭区间上连续函数的性质"></a>(四)闭区间上连续函数的性质</h4><p> 有界性定理、最大值最小值定理、介值定理（和推论）、零点定理（用的多）</p>
+<h3 id="二、常考题型与典型例题-2"><a href="#二、常考题型与典型例题-2" class="headerlink" title="二、常考题型与典型例题"></a>二、常考题型与典型例题</h3><h4 id="题型一、讨论函数连续性及间断点的类型（重点，基础）（目前不熟练）"><a href="#题型一、讨论函数连续性及间断点的类型（重点，基础）（目前不熟练）" class="headerlink" title="题型一、讨论函数连续性及间断点的类型（重点，基础）（目前不熟练）"></a>题型一、讨论函数连续性及间断点的类型（重点，基础）（目前不熟练）</h4><h4 id="题型二、有关闭区间上连续函数性质的证明题（难点）"><a href="#题型二、有关闭区间上连续函数性质的证明题（难点）" class="headerlink" title="题型二、有关闭区间上连续函数性质的证明题（难点）"></a>题型二、有关闭区间上连续函数性质的证明题（难点）</h4><center><span style="color:blue;font-size:15px">2021/6/17</span></center>
+
+<h2 id="第二章-导数与微分"><a href="#第二章-导数与微分" class="headerlink" title="第二章 导数与微分"></a>第二章 导数与微分</h2><h3 id="一、考试内容概要：-1"><a href="#一、考试内容概要：-1" class="headerlink" title="一、考试内容概要："></a>一、考试内容概要：</h3><h4 id="一-导数与微分的概念"><a href="#一-导数与微分的概念" class="headerlink" title="(一)导数与微分的概念"></a>(一)导数与微分的概念</h4><ol>
+<li><p>导数的概念：（左右导数；区间上可导（开，闭）及导函数）导数反映了函数在一点的变化率</p>
+<p>若<script type="math/tex">\displaystyle\lim_{\triangle x\to 0}\frac{f(x_0+\triangle x)-f(x_0)}{\triangle x}=\lim_{x \to x_0}\frac{f(x)-f(x_0)}{x-x_0}=\lim_{\triangle x\to 0}\frac{\triangle y}{\triangle x}存在，则称f(x)在x_0点可导</script></p>
+<p>记作<script type="math/tex">f'(x_0)\quad或y'|_{x=x_0}\quad或\frac{dy}{dx}|_{x=x_0}</script></p>
+</li>
+<li><p>微分的概念：微分反映了函数的改变量（或微分是函数改变量的线性主部）</p>
+<p>如果<script type="math/tex">\triangle y=f(x_0+\triangle x)- f(x_0)=A\triangle x+o(\triangle x)(\triangle x\to 0)</script></p>
+<p>那么<script type="math/tex">A\triangle x称为f(x)在x_0点的微分，记为dy=A\triangle x，dy是\triangle y的线性主部</script></p>
+</li>
+<li><p>导数和微分的几何意义：（导数代表切线的斜率；切线、法线方程；微分代表切线上的增量）</p>
+<p><img src="/images/calculus/image-20210617204300947.png" alt=""></p>
+</li>
+<li><p>连续，可导，可微之间的关系：（可微$\Leftrightarrow$可导；可导$\Rightarrow$连续；连续$\not\Rightarrow$可导）</p>
+<p><strong>（重要）</strong>f(x)在$x_0$点可导$\not\Rightarrow$f(x)在$x_0$点连续；f(x)在$x_0$点可导$\not\Rightarrow$f(x)在$x_0$点存在</p>
+<p>例子：<script type="math/tex">\displaystyle f(x)=\begin{cases}x^2\sin\frac 1 x,x\not=0\\0\qquad \quad,x=0\end{cases}</script>在0点导数等于0（定义算）但是在0点导数无极限</p>
+</li>
+</ol>
+<h4 id="二-导数公式与求导法则"><a href="#二-导数公式与求导法则" class="headerlink" title="(二)导数公式与求导法则"></a>(二)导数公式与求导法则</h4><ol>
+<li>基本初等函数的导数公式</li>
+<li>求导法则（有理运算；复合函数；隐函数；反函数；参数方程；对数求导法）</li>
+</ol>
+<h4 id="三-高阶导数"><a href="#三-高阶导数" class="headerlink" title="(三)高阶导数"></a>(三)高阶导数</h4><ol>
+<li>高阶导数的定义</li>
+<li>常用的高阶导数公式</li>
+</ol>
+<center><span style="color:blue;font-size:15px">2021/6/18</span></center>
+
+<h3 id="二、常考题型与典型例题："><a href="#二、常考题型与典型例题：" class="headerlink" title="二、常考题型与典型例题："></a>二、常考题型与典型例题：</h3><h4 id="题型一、导数定义"><a href="#题型一、导数定义" class="headerlink" title="题型一、导数定义"></a>题型一、导数定义</h4><h4 id="题型二、复合函数、隐函数、参数方程求导"><a href="#题型二、复合函数、隐函数、参数方程求导" class="headerlink" title="题型二、复合函数、隐函数、参数方程求导"></a>题型二、复合函数、隐函数、参数方程求导</h4><h4 id="题型三、高阶导数"><a href="#题型三、高阶导数" class="headerlink" title="题型三、高阶导数"></a>题型三、高阶导数</h4><ol>
+<li>公式法</li>
+<li>y’、y’’、···归纳法</li>
+<li>泰勒</li>
+</ol>
+<h4 id="题型四、导数应用"><a href="#题型四、导数应用" class="headerlink" title="题型四、导数应用"></a>题型四、导数应用</h4><ol>
+<li>导数的几何意义（直角坐标、参数方程、极坐标的切线、法线）</li>
+<li>相关变化率</li>
+</ol>
+<center><span style="color:blue;font-size:15px">2021/6/20</span></center>
+
+<h2 id="第三章-微分中值定理及导数应用"><a href="#第三章-微分中值定理及导数应用" class="headerlink" title="第三章 微分中值定理及导数应用"></a>第三章 微分中值定理及导数应用</h2><h3 id="一、考试内容概要-2"><a href="#一、考试内容概要-2" class="headerlink" title="一、考试内容概要"></a>一、考试内容概要</h3><h4 id="一-微分中值定理"><a href="#一-微分中值定理" class="headerlink" title="(一)微分中值定理"></a>(一)微分中值定理</h4><ol>
+<li><p>费马引理、罗尔定理、拉格朗日中值定理、柯西中值定理</p>
+<p><strong>中值定理的本质：</strong></p>
+<p>（1）建立<strong>一阶导数</strong>和函数之间的关系</p>
+<p>（2）罗-拉-柯（左边的是右边的特例，右边的是左边的推广）（拉和柯都是有罗证得）（罗和拉使用较多）</p>
+</li>
+<li><p>泰勒公式（皮亚诺型余项；拉格朗日型余项）</p>
+<p><strong>泰勒公式的本质：</strong></p>
+<p>（1）建立<strong>高阶导数</strong>和函数之间的关系</p>
+<p>（2）用多项式逼近函数</p>
+<p><strong>两种带余项的泰勒公式的不同：</strong></p>
+<p>（1）条件不同，皮要求在点$x_0$有直至n阶的导数；拉要求在含有$x_0$的开区间（a,b)内有n+1阶的导数</p>
+<p>（2）<script type="math/tex">\begin{cases}皮:R_n(x)=o(x-x_n)^n（定性）——局部泰勒公式\begin{cases}极限\\极值\end{cases}\\拉:R_n(x)=\displaystyle\frac{f^{n+1}(\xi)}{(n+1)!}(x-x_0)^{n+1}（定量）——整体泰勒公式\begin{cases}最值\\不等式\end{cases}\end{cases}</script></p>
+<p><strong>四大中值定理：</strong>（罗尔、拉格朗日、柯西中值定理；带拉格朗日余项的泰勒公式）</p>
+</li>
+</ol>
+<center><span style="color:blue;font-size:15px">2021/6/21</span></center>
+
+<h4 id="二-导数的应用"><a href="#二-导数的应用" class="headerlink" title="(二)导数的应用"></a>(二)导数的应用</h4><ol>
+<li>导数的单调性  </li>
+<li>函数的极值（驻点，不可导点）</li>
+<li>函数的最大值与最小值（驻点，不可导点，端点）（唯一极值点也是最值点）</li>
+<li>曲线的凹凸性（拐点，一必要两充分和驻点类似）</li>
+<li>曲线的渐近线（水平、垂直、斜）</li>
+<li>函数的作图（单调性、极值、曲线的凹凸性、拐点和渐近线）</li>
+<li>曲线的弧微分和曲率（$K=\frac{|y’’|}{(1+y’^2)^{\frac{3}{2}}}$）</li>
+</ol>
+<h3 id="二、常考题型与典型例题-3"><a href="#二、常考题型与典型例题-3" class="headerlink" title="二、常考题型与典型例题"></a>二、常考题型与典型例题</h3><p>前两类是基本题，后三类是难题，最后一类最难</p>
+<h4 id="题型一、函数的极值和最值，曲线的凹向与拐点"><a href="#题型一、函数的极值和最值，曲线的凹向与拐点" class="headerlink" title="题型一、函数的极值和最值，曲线的凹向与拐点"></a>题型一、函数的极值和最值，曲线的凹向与拐点</h4><h4 id="题型二、曲线的渐近线"><a href="#题型二、曲线的渐近线" class="headerlink" title="题型二、曲线的渐近线"></a>题型二、曲线的渐近线</h4><h4 id="题型三、方程的根"><a href="#题型三、方程的根" class="headerlink" title="题型三、方程的根"></a>题型三、方程的根</h4><p>（1）存在性：零点定理，罗尔定理（2）个数：单调性</p>
+<h4 id="题型四、不等式的证明-（薄弱）"><a href="#题型四、不等式的证明-（薄弱）" class="headerlink" title="题型四、不等式的证明 （薄弱）"></a>题型四、不等式的证明 （薄弱）</h4><p>（1）单调性（2）拉格朗日中值定理（3）最大最小值</p>
+<h4 id="题型五、中值定理的证明题"><a href="#题型五、中值定理的证明题" class="headerlink" title="题型五、中值定理的证明题"></a>题型五、中值定理的证明题</h4>
                 
             </div>
             <hr/>
@@ -899,7 +1060,7 @@ if (windowWidth > 768) {
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">84.2k</span>&nbsp;字
+                class="white-color">90.3k</span>&nbsp;字
             
             
             

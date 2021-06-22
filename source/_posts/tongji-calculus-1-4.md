@@ -81,7 +81,7 @@ typora-root-url: ..
 
 #### <span style='color:red;font-size:20px'>复合函数定义</span>
 
-设$y= f(u)$的定义域为$D_f$，$u=g(x)$的定义域为$D_g$，值域为$R_g$，若$D_f\cap R_g≠\phi$，则称函数$y= f|g(x)|$为函数$y= f(u)$与$u= g(x)$的复合函数。它的定义域为$\{x|x\in D_g,g(x)\in D_f\}$
+设$y= f(u)$的定义域为$D_f$，$u=g(x)$的定义域为$D_g$，值域为$R_g$，若$D_f\cap R_g≠\phi$，则称函数$y= f[g(x)]$为函数$y= f(u)$与$u= g(x)$的复合函数。它的定义域为$\{x|x\in D_g,g(x)\in D_f\}$
 
 #### <span style='color:red;font-size:20px'>初等函数定义</span>
 
@@ -622,7 +622,7 @@ P_n(x)=a_0+a_1(x-x_0)+a_2(x- x_0)^2+...+a_n(x-x_0)^n\\
 
 #### 带佩亚诺余项的泰勒公式
 
-<span style='color:blue;font-size:20px'>定理1（Taylor定理）：</span>$$设f(x)在x_0处n阶可微，则\\\displaystyle f(x)=f(x_0)+f'(x_0)(x-x_0)+\frac{f''(x_0)}{2!}(x-x_0)^2+...+\frac{f^{n}(x_0)}{n!}(x-x_0)^n+o((x-x_0)^n)\\上式称为带Peano余项的Taylor公式\\\displaystyle p_n(x)=f(x_0)+f'(x_0)(x-x_0)+\frac{f''(x_0)}{2!}(x-x_0)^2+...+\frac{f^{n}(x_0)}{n!}(x-x_0)^n\\上式称为f(x)在x_0处的n次Taylor多项式\\R_n(x)=o((x-x_0)^n)\qquad f(x)的Peano余项$$
+<span style='color:blue;font-size:20px'>定理1（Taylor定理）：</span>$$设f(x)在x_0处n阶可导，则\\\displaystyle f(x)=f(x_0)+f'(x_0)(x-x_0)+\frac{f''(x_0)}{2!}(x-x_0)^2+...+\frac{f^{n}(x_0)}{n!}(x-x_0)^n+o((x-x_0)^n)\\上式称为带Peano余项的Taylor公式\\\displaystyle p_n(x)=f(x_0)+f'(x_0)(x-x_0)+\frac{f''(x_0)}{2!}(x-x_0)^2+...+\frac{f^{n}(x_0)}{n!}(x-x_0)^n\\上式称为f(x)在x_0处的n次Taylor多项式\\R_n(x)=o((x-x_0)^n)\qquad f(x)的Peano余项$$
 
 **缺点：**
 

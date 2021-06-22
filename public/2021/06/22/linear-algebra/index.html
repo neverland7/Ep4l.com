@@ -1,0 +1,1198 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="线性代数, Ep4l的小博客">
+    <meta name="description" content="回归">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>线性代数 | Ep4l的小博客</title>
+    <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/medias/logo.png">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/css/my.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/libs/shaky/shaky.css">
+
+    <script src="https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="Ep4l的小博客" type="application/atom+xml">
+</head>
+
+
+
+
+<!--浏览器搞笑标题-->
+<script type="text/javascript" src="\js\FunnyTitle.js"></script>
+<script type="text/javascript">
+//只在桌面版网页启用特效
+var windowWidth = $(window).width();
+if (windowWidth > 768) {
+    document.write('<script type="text/javascript" src="/js/sakura.js"><\/script>');
+}
+</script>
+<script async src="\js\lihua.js"></script>
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Ep4l的小博客</span>
+                </a>
+<span class="shaky">咕噜咕噜o((>﹏<))o</span>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Ep4l的小博客</div>
+        <div class="logo-desc">
+            
+            回归
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+<script src="https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/medias/featureimages/13.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">线性代数</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E6%95%B0%E5%AD%A6/">
+                                <span class="chip bg-color">数学</span>
+                            </a>
+                        
+                            <a href="/tags/%E8%80%83%E7%A0%94/">
+                                <span class="chip bg-color">考研</span>
+                            </a>
+                        
+                            <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">
+                                <span class="chip bg-color">线性代数</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-category">
+                                学习笔记
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2021-06-22
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    2k
+                </div>
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <center><span style="color:blue;font-size:15px">2021/6/22</span></center>
+
+<h2 id="第一章-行列式"><a href="#第一章-行列式" class="headerlink" title="第一章 行列式"></a>第一章 行列式</h2><h3 id="第一节-全排列及其逆序数、对换"><a href="#第一节-全排列及其逆序数、对换" class="headerlink" title="第一节 全排列及其逆序数、对换"></a>第一节 全排列及其逆序数、对换</h3><h4 id="一、全排列的定义"><a href="#一、全排列的定义" class="headerlink" title="一、全排列的定义"></a>一、全排列的定义</h4><p>n个不同的元素排成一列， 叫做这n个元素的<strong>全排列</strong>，简称<strong>排列</strong>。</p>
+<h4 id="二、排列的逆序数"><a href="#二、排列的逆序数" class="headerlink" title="二、排列的逆序数"></a>二、排列的逆序数</h4><p>对于n个不同的元素，规定各元素之间由小到大为<strong>标准次序</strong>。<br><span style="color:red;font-size:20px">定义：</span>当某两个元素的先后次序与标准次序不同时，就说有一个<strong>逆序</strong>，一个排列中所有逆序的总数叫做这个<strong>排列的逆序数</strong>。</p>
+<p><strong>例：</strong>12345为标准次序，t(12345)=0；32145有3个逆序数，t(32145)=3 </p>
+<p>$\displaystyle t\left(n(n-1)(n-2)····21\right)=n-1+n-2+····+2+1=\frac{n(n-1)}{2}$</p>
+<h4 id="三、排列的奇偶性"><a href="#三、排列的奇偶性" class="headerlink" title="三、排列的奇偶性"></a>三、排列的奇偶性</h4><p>逆序数为奇数的排列称为奇排列；逆序数为偶数的排列称为偶排列</p>
+<h4 id="四、对换"><a href="#四、对换" class="headerlink" title="四、对换"></a>四、对换</h4><p><span style="color:blue;font-size:20px">定理：</span>一个排列中任意两个元素对换，排列改变奇偶性</p>
+<p><span style="color:green;font-size:20px">推论：</span>奇排列对换成标准排列的对换次数为奇数，偶排列对换成标准排列的对换次数为偶数</p>
+<h3 id="第二节-行列式的定义"><a href="#第二节-行列式的定义" class="headerlink" title="第二节 行列式的定义"></a>第二节 行列式的定义</h3><h4 id="一、二元线性方程组"><a href="#一、二元线性方程组" class="headerlink" title="一、二元线性方程组"></a>一、二元线性方程组</h4><p><strong>例1：</strong>用消元法解二元线性方程组</p>
+<script type="math/tex; mode=display">\left\{\begin{array}{l}
+a_{11} x_{1}+a_{12} x_{2}=b_{1}\qquad (1) \\
+a_{21} x_{1}+a_{22} x_{2}=b_{2}\qquad (2)
+\end{array}\right.\\
+(1) \times a_{22}: a_{11} a_{22} x_{1}+a_{12} a_{22} x_{2}=b_{1} a_{22}\\
+(2) \times a_{12}: a_{11} a_{21} x_{1}+a_{12} a_{22} x_{2}=b_{2} a_{12}</script><p>两式相减消去$x_2$，得</p>
+<script type="math/tex; mode=display">(a_{11}a_{22}-a_{12}a_{21}x_1)=b_1a_{22}-a_{12}b_2</script><p>类似地，消去$x_1$，得</p>
+<script type="math/tex; mode=display">(a_{11}a_{22}-a_{12}a_{21}x_2)=b_2a_{11}-a_{21}b_1</script><p>当<script type="math/tex">a_{11} a_{22}-a_{12} a_{21} \neq 0</script> 时，方程组的解为</p>
+<script type="math/tex; mode=display">\displaystyle x_{1}=\frac{b_{1} a_{22}-a_{12} b_{2}}{a_{11} a_{22}-a_{12} a_{21}}, \quad x_{2}=\frac{a_{11} b_{2}-b_{1} a_{21}}{a_{11} a_{22}-a_{12} a_{21}}</script><h4 id="二、二阶行列式"><a href="#二、二阶行列式" class="headerlink" title="二、二阶行列式"></a>二、二阶行列式</h4><p><span style="color:red;font-size:20px">定义：</span><script type="math/tex">\begin{vmatrix}a_{11}&a_{12}\\a_{21}&a_{22}\end{vmatrix}=a_{11}a_{22}-a_{12}a_{21}</script></p>
+<p>利用二阶行列式的概念，二元线性方程组的解也可写成二阶行列式，即</p>
+<p>记<script type="math/tex">D=\begin{vmatrix}a_{11}&a_{12}\\a_{21}&a_{22}\end{vmatrix}=a_{11} a_{22}-a_{12} a_{21}\quad \\D_1=\begin{vmatrix}b_{1}&a_{12}\\b_{2}&a_{22}\end{vmatrix}=b_{1} a_{22}-a_{12} b_{2}\\D_2=\begin{vmatrix}a_{11}&b_{1}\\a_{21}&b_{2}\end{vmatrix}=a_{11} b_{2}-b_{1} a_{21}</script></p>
+<p>那么行列式的解可写作<script type="math/tex">\displaystyle x_1=\frac{D_1}{D},x_2=\frac{D_2}{D}</script></p>
+<p><strong>注意：</strong>分子分母都为原方程组的系数构成的行列式</p>
+<h4 id="三、三阶行列式"><a href="#三、三阶行列式" class="headerlink" title="三、三阶行列式"></a>三、三阶行列式</h4><p><span style="color:red;font-size:20px">定义：</span><script type="math/tex">\begin{vmatrix}a_{11}&a_{12}&a_{13}\\a_{21}&a_{22}&a_{23}\\a_{31}&a_{32}&a_{33}\end{vmatrix}=a_{11} a_{22} a_{33}+a_{12} a_{23} a_{31}+a_{13} a_{21} a_{32}-a_{11} a_{23} a_{32}-a_{12} a_{21} a_{33}-a_{13} a_{22} a_{31},</script></p>
+<p>三元线性方程组的解问题也同理</p>
+<h3 id="第三节-n阶行列式的定义"><a href="#第三节-n阶行列式的定义" class="headerlink" title="第三节 n阶行列式的定义"></a>第三节 n阶行列式的定义</h3><p>$a_{xy}$的第一个下标称为行标，第二个下标称为列标，在行列式的每一项中，所有元素都处在不同的行，不同的列</p>
+<p><strong>列标</strong>的排列为偶排列时的项为正号，列标的排列为奇排列时的项为负号，因此各项的正负号可以表示为$(-1)^t$</p>
+<p>二阶：<script type="math/tex">\begin{vmatrix}
+a_{11} & a_{12} \\
+a_{21} & a_{22}
+\end{vmatrix}=\sum(-1)^{t\left(p_{1} p_{2}\right)} a_{1 p_{1}} a_{2 p_{2}}</script>，共有两项</p>
+<p>三阶：<script type="math/tex">\begin{vmatrix}
+a_{11} & a_{12} & a_{13} \\
+a_{21} & a_{22} & a_{23} \\
+a_{31} & a_{32} & a_{33}
+\end{vmatrix}=\sum(-1)^{t\left(p_{1} p_{2} p_{3}\right)} a_{1 p_{1}} a_{2 p_{2}} a_{3 p_{3}}</script>，共有六项</p>
+<p>n阶的行列式有n!项</p>
+<p><strong>例：</strong>已知$a<em>{23}a</em>{31}a<em>{42}a</em>{65}a<em>{56}a</em>{14}$是六阶行列式中的一项，试确定该项所带符号</p>
+<p>解：$a<em>{23}a</em>{31}a<em>{42}a</em>{65}a<em>{56}a</em>{14}=a<em>{14}a</em>{23}a<em>{31}a</em>{42}a<em>{56}a</em>{65}$</p>
+<p>t(431265)=6，所以该项带正号</p>
+<p><strong>notes:</strong></p>
+<ol>
+<li>行列式结果是一个数</li>
+<li>当n=1时，竖杠不用写，直接写$a_{11}$，与绝对值分开</li>
+<li>二阶、三阶行列式有对角线法则，四阶及四阶以上的行列式没有对角线法则</li>
+</ol>
+<p>主对角线以下（上）的元素都为0的行列式叫做<strong>上（下）三角行列式</strong><br>主对角线以下和以上的元素都为0的行列式叫做<strong>对角行列式</strong><br>三角行列式和对角行列式的值都是主对角线的元素相乘</p>
+<h4 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h4><p>n阶行列式共有n!项，每项都是位于不同行、不同列的n个元素的乘积组成，正负号由下标排列的逆序数决定。</p>
+<h3 id="第四节-行列式的性质"><a href="#第四节-行列式的性质" class="headerlink" title="第四节 行列式的性质"></a>第四节 行列式的性质</h3><p><span style="color:sienna;font-size:20px">性质1：</span>行列式和它的转置行列式相等（行列式对行有的性质对列也有）</p>
+<p><span style="color:sienna;font-size:20px">性质2：</span>对换行列式的两行（列），行列式变号（$r_i\leftrightarrow r_j$)</p>
+<p><span style="color:green;font-size:20px">推论：</span>如果行列式有两行（列）完全相同，则此行列式等于零</p>
+<p><span style="color:sienna;font-size:20px">性质3：</span>行列式的某一行（列）中的所有元素都乘同一数k，等于用数k乘此行列式（$r_i\times k$)</p>
+<p><span style="color:green;font-size:20px">推论：</span>行列式中某一行（列)中的元素的公因子可以提到行列式记号的外面</p>
+<p><span style="color:sienna;font-size:20px">性质4：</span>行列式中如果有两行（列）元素成比例，则此行列式等于零</p>
+<p><span style="color:sienna;font-size:20px">性质5：</span>若行列式中某一行(列)元素均为两数之和，则行列式可按照该行分拆成两个行列式之和，其他各行保持不变(每次只能按照一行或者一列分拆)</p>
+<p><span style="color:sienna;font-size:20px">性质6：</span>把行列式的某一行(列)的各元素乘以同一数然后加到另一行(列)对应的元素上去，行列式值不变（$r_i+kr_j$）</p>
+<p><strong>计算行列式常用的方法一：</strong>任一n阶行列式均可以只经过行(列)变换化为上(下)三角形行列式</p>
+<p>  <strong>note：</strong>若各行元素之和相同，则可将各列加到第一列提取公因子再造零</p>
+<h3 id="第五节-行列式按行（列）展开"><a href="#第五节-行列式按行（列）展开" class="headerlink" title="第五节 行列式按行（列）展开"></a>第五节 行列式按行（列）展开</h3><p>一般来说，低阶行列式的计算比高阶行列式的计算要简便，我们先引进余子式和代数余子式的概念</p>
+<h4 id="一、余子式和代数余子式的定义"><a href="#一、余子式和代数余子式的定义" class="headerlink" title="一、余子式和代数余子式的定义"></a>一、余子式和代数余子式的定义</h4><p><strong>余子式：</strong>在n阶行列式中，划去元素$a<em>{ij}$所在的第i行和第j列，余下元素保持原来位置组成一个n-1阶行列式，称为元素$a</em>{ij}$的余子式，记为$M_{ij}$</p>
+<p><strong>代数余子式：</strong>$A<em>{ij}=(-1)^{i+j}M</em>{ij}$</p>
+<p><strong>note：</strong>$A<em>{ij}$与$a</em>{ij}$的数值无关，与$a_{ij}$的位置有关</p>
+<h4 id="二、有关定理、范德蒙德行列式"><a href="#二、有关定理、范德蒙德行列式" class="headerlink" title="二、有关定理、范德蒙德行列式"></a>二、有关定理、范德蒙德行列式</h4><p><span style="color:blue;font-size:20px">引理：</span>一个n阶行列式，如果其中第i行所有元素除$a<em>{ij}$外都为零，那么这个行列式等于$a</em>{ij}$与它的代数余子式的乘积，即$D=a<em>{ij}A</em>{ij}$</p>
+<p><span style="color:blue;font-size:20px">定理（拉普拉斯定理）：</span>行列式D等于它任一行(列)的各个元素与其代数余子式的乘积之和（行列式按行（列）展开定理）</p>
+<p><span style="color:green;font-size:20px">推论：</span><script type="math/tex">a_{i1}A_{j1}+a_{i2}A_{j2}+\cdots+a_{in}A_{jn}=\begin{cases}0\qquad(i\neq j)\\D\qquad(i=j)\end{cases}</script></p>
+<p><strong>note：</strong>展开时尽量划边，让余子式易于辨认</p>
+<p><strong>计算行列式常用的方法二：</strong>利用性质将行列式D化为某行(某列)只有一个非零元素，然后按该行(列)将行列式展开</p>
+<p><strong>范德蒙德行列式：</strong><script type="math/tex">\displaystyle\begin{vmatrix}
+1 & 1 & 1 & \cdots & 1 \\
+x_{1} & x_{2} & x_{3} & \cdots & x_{n} \\
+x_{1}^{2} & x_{2}^{2} & x_{3}^{2} & \cdots & x_{n}^{2} \\
+\cdots & \cdots & \cdots &  & \cdots \\
+x_{1}^{n-2} & x_{2}^{n-2} & x_{3}^{n-2} & \cdots & x_{n}^{n-2} \\
+x_{1}^{n-1} & x_{2}^{n-1} & x_{3}^{n-1} & \cdots & x_{n}^{n-1}
+\end{vmatrix}=\prod_{n \geq i>j \geq 1}(x_{i}-x_{j})</script></p>
+<p>特点：第一行都为1；每列等比；$x_i、x_j$为第二行元素，共有n-1+n-2+···+1=$\displaystyle \frac{n(n-1)}{2}$项</p>
+<p><strong>计算行列式常用的方法三：</strong>递推法（建立$D<em>n$与$D</em>{n-1}$之间的关系式）</p>
+<p><strong>note：</strong>三对角线形可用递推法</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Ep4l</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://Ep4l.com/2021/06/22/linear-algebra/">https://Ep4l.com/2021/06/22/linear-algebra/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Ep4l</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E6%95%B0%E5%AD%A6/">
+                                    <span class="chip bg-color">数学</span>
+                                </a>
+                            
+                                <a href="/tags/%E8%80%83%E7%A0%94/">
+                                    <span class="chip bg-color">考研</span>
+                                </a>
+                            
+                                <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">
+                                    <span class="chip bg-color">线性代数</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+        <div class="disqus-card card" data-aos="fade-up">
+    <div id="disqus_thread" class="card-content">
+        <noscript>Please enable JavaScript to view the
+            <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+    </div>
+</div>
+
+<script type="text/javascript">
+    disqus_config = function () {
+        this.page.url = 'https://ep4l.com/2021/06/22/linear-algebra/';
+        this.page.identifier = '/2021/06/22/linear-algebra/';
+        this.page.title = '线性代数';
+    };
+    let disqus_shortname = 'Ep4l';
+
+    (function () { // DON'T EDIT BELOW THIS LINE
+        let d = document, s = d.createElement('script');
+        // 如：s.src = 'https://blinkfox.disqus.com/embed.js';
+        s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2021/06/22/linear-algebra/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/medias/featureimages/13.jpg" class="responsive-img" alt="线性代数">
+                        
+                        <span class="card-title">线性代数</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            考研线性代数
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-06-22
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    学习笔记
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%95%B0%E5%AD%A6/">
+                        <span class="chip bg-color">数学</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%80%83%E7%A0%94/">
+                        <span class="chip bg-color">考研</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">
+                        <span class="chip bg-color">线性代数</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/05/27/tongji-calculus-11-12/">
+                    <div class="card-image">
+                        
+                        <img src="/images/tongji-calculus-11-12/calculus_2.png" class="responsive-img" alt="同济高数第七版（11-12章）">
+                        
+                        <span class="card-title">同济高数第七版（11-12章）</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            同济高数
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-27
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    学习笔记
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%95%B0%E5%AD%A6/">
+                        <span class="chip bg-color">数学</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/">
+                        <span class="chip bg-color">微积分</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%80%83%E7%A0%94/">
+                        <span class="chip bg-color">考研</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$']]}
+    });
+</script>
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2020-2021</span>
+            
+            <!--       <span id="year">2020</span>      -->
+            <a href="/about" target="_blank">Ep4l</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme base on&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">90.3k</span>&nbsp;字
+            
+            
+            
+            
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2020";
+                    var startMonth = "12";
+                    var startDate = "30";
+                    var startHour = "13";
+                    var startMinute = "21";
+                    var startSecond = "53";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+            <span id="icp"><img src="https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/medias/icp.png" style="vertical-align: text-bottom;" />
+                <a href="https://beian.miit.gov.cn/" target="_blank">晋ICP备2021001419号</a>
+            </span>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link ">
+    <a href="https://github.com/neverland7" class="tooltipped" target="_blank" data-tooltip="我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1395017057@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1395017057" class="tooltipped" target="_blank" data-tooltip="QQ: 1395017057" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+    <a href="https://steamcommunity.com/id/jhleefangirl/" class="tooltipped" target="_blank" data-tooltip="steam" data-position="top" data-delay="50">
+        <i class="fab fa-steam"></i>
+    </a>
+
+
+
+    <a href="https://space.bilibili.com/8289856" class="tooltipped" target="_blank" data-tooltip="b站" data-position="top" data-delay="50">
+        <i class="fas fa-tv"></i>
+    </a>
+
+
+
+    <a href="https://bangumi.tv/user/ep4l" class="tooltipped" target="_blank" data-tooltip="bangumi" data-position="top" data-delay="50">
+        <i class="fas fa-chart-bar"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+ </div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/libs/materialize/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/libs/aos/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    
+
+    
+
+    
+
+	
+    
+
+    
+    
+    <script type="text/javascript" size="150" alpha='0.6'
+        zIndex="-1" src="https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/libs/background/ribbon.min.js" async="async"></script>
+    
+
+    
+
+    
+    <script src="https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com/public/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
