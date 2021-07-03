@@ -22,6 +22,7 @@ typora-root-url: ..
 - $\displaystyle\log_ae=\frac{\ln e}{\ln a}(对数换底公式）$
 - $\displaystyle(a+b)^x=a^x(1+\frac{b}{a})^x$
 - $\displaystyle\arcsin x+\ arccos x=\frac{\pi}{2}$
+- $$\displaystyle \arctan x+\arctan\frac{1}{x}=\begin{cases}+\frac{\pi}{2}\quad,x>0\\-\frac{\pi}{2}\quad,x<0\end{cases}$$
 - $\displaystyle \frac{1}{x^2-1}=\frac{1}{(x+1)(x-1)}=\frac{(x+1)-(x-1)}{2(x+1)(x-1)}=\frac{1}{2}[\frac{1}{x-1}-\frac{1}{x+1}]$
 - 裂项公式：$\displaystyle \frac{1}{(ax+b)(cx+d)}=\frac{1}{ad-bc}[\frac{a}{ax+b}-\frac{c}{cx+d}]$
 - $\displaystyle\tan x=\csc 2x-\cot 2x=\frac{1-\cos 2x}{\sin 2x}=\frac{\sin 2x}{1+\cos 2x}=\frac{1}{\csc 2x+\cot 2x}$
@@ -416,3 +417,245 @@ $\cos\alpha\cos\beta=\frac{\cos(\alpha-\beta)+\cos(\alpha+\beta)}{2}$
 
 #### 题型五、中值定理的证明题
 
+
+
+<center><span style='color:blue;font-size:15px'>2021/6/25</span></center>
+
+## 第四章 不定积分
+
+### 一、考试内容概要
+
+#### (一)不定积分的概念与性质
+
+1. 原函数（F'(x)=f(x)；F(x)是f(x)的一个原函数）
+
+2. 不定积分（原函数的全体（一个函数族））
+
+3. 不定积分的几何意义（平面上的曲线（连续且光滑，因为可导））
+
+4. 原函数存在定理 （连续函数一定有原函数；若有第一类间断点，则没有原函数；振荡可能有原函数）
+
+   有第一类间断点会让其积分曲线不光滑，导致某些点不可导。
+
+5. 不定积分的性质
+
+#### (二)不定积分基本公式
+
+#### (三)三种主要积分法
+
+1. 第一类换元法（凑微分法）
+2. 第二类换元法（基本都是用来去根号）
+3. 分部积分法
+
+#### (四)三类常见可积函数的积分
+
+三类的基础都是有理函数积分
+
+1. 有理函数积分（$\int R(x)dx$）（一般加项减项拆，凑微分降幂）
+2. 三角有理式积分（$\int R(\sin x,\cos x)dx$）（一般三角变形，换元，分部）
+3. 简单无理式积分（$\int R(x,\sqrt[n]{\frac{ax+b}{cx+d}})dx$）（一般直接让根式等于t换元）
+
+#### 总结：
+
+**2+3+3**（**两个概念**（原函数，不定积分）**三种方法**（两种换元，分部积分）**三类积分**（有理函数积分，三角有理式的积分，带有简单无理式的积分）)
+**重点：**三种方法
+**尺度：**考研不会考特殊方法的积分，把基本方法练会就可以
+
+### 二、常考题型与典型例题
+
+#### 求不定积分(换元、分部)
+
+
+
+<center><span style='color:blue;font-size:15px'>2021/6/26</span></center>
+
+## 第五章 定积分与反常积分
+
+### 第一节 定积分
+
+### 一、考试内容概要
+
+#### (一)定积分概念
+
+1. 定积分的定义：（定积分是一个**常数**，一个和数的极限，仅与积分区间和被积函数有关，与积分变量无关）
+
+   （分割、求和、取极限）$$\displaystyle\lim_{\lambda\to 0}\sum^n_{i=1}f(\xi_i)\triangle x_i=\int^b_af(x)dx$$
+
+   若极限存在，则与$\xi_i$的**取法**和区间[a,b]的**分法**无关
+
+   因此，如果积分$\int^1_0f(x)dx$存在，可以将区间n等分，此时$\triangle x_i=\frac{1}{n}$，取右端点$\xi_i=\frac i n$，由定积分的定义得
+
+   :$$\displaystyle \int ^1_0f(x)dx=\lim_{\lambda\to 0}\sum^n_{i=1}f(\xi_i)\triangle x_i=\lim_{n\to\infty}\frac 1 n \sum^n_{i=1}f(\frac i n)$$
+
+2. 定积分存在的充分条件（函数连续必存在；有界且有有限个间断点必存在；有有限个第一类间断点必存在）
+
+3. 定积分的几何意义（x轴上方的面积减去下方的面积）
+
+#### (二)定积分的性质
+
+1. 不等式性质
+
+   (1) 若 $f(x) \leq g(x)$，则 $$\int_{a}^{b} f(x)dx \leq \int_{a}^{b} g(x)dx$$
+
+   (2) 若 $f(x)$ 在 $[a, b]$ 上连续，则$m(b-a) \leq \int_{a}^{b} f(x)dx \leq M(b-a)$（定积分的估值性）
+
+   (3)$$|\int_{a}^{b} f(x)dx| \leq \int_{a}^{b}|f(x)|dx$$（和的绝对值不超过绝对值的和）
+
+2. 积分中值定理
+
+   (1) 若 $f(x)$ 在 $[a, b]$ 上连续, 则$\int_{a}^{b} f(x)dx=f(\xi)(b-a) \quad (a<\xi<b)$
+
+   (2) 若 $f(x), g(x)$ 在 $[a, b]$ 上连续， $g(x)$不变号，则$$\int_{a}^{b} f(x) g(x)dx=f(\xi) \int_{a}^{b} g(x)dx, \quad (a \leq \xi \leq b)$$
+
+#### (三)积分上限的函数
+
+变上限的积分$\displaystyle \int ^x_a f(t)dt$是其上限x的函数，称之为**积分上限函数**
+
+若f(x)为奇函数，那么$\displaystyle \int^x_0f(t)dt$必为偶函数；若f(x)为偶函数，那么$\displaystyle \int^x_0f(t)dt$必为奇函数
+
+#### (四)定积分的计算
+
+1. 牛顿-莱布尼兹公式（$\displaystyle\int^b_af(x)dx=F(b)-F(a)$）
+2. 换元积分法
+3. 分部积分法
+4. 利用奇偶性和周期性（在对称区间上奇函数的积分为0，偶函数为2倍正区间的积分）
+5. 利用已有公式（华里士公式；$\int^\pi_0xf(\sin x)dx=\frac \pi 2\int^\pi_0f(\sin x)dx$；）
+
+### 二、常考题型与典型例题
+
+#### 题型一、定积分的概念、性质及几何意义
+
+#### 题型二、定积分计算
+
+#### 题型三、变上限定积分
+
+
+
+
+
+<center><span style='color:blue;font-size:15px'>2021/6/29</span></center>
+
+### 第二节 反常积分
+
+反常积分的本质是”变限积分的极限值”，并非积分本身。
+
+### 一、考试内容概要
+
+#### (一)无穷区间上的反常积分
+
+1. 定义：
+
+   （1）$$\displaystyle \int^{+\infty}_af(x)dx=\lim_{t\to+\infty}\int^t_af(x)dx$$；若此极限存在，称反常积分**收敛**，若不存在，称其反常积分**发散**
+
+   （2）$$\displaystyle \int^b_{-\infty}dx=\lim_{t\to-\infty}\int^b_tf(x)dx$$
+
+   （3）若$$\displaystyle \int^{+\infty}_0f(x)dx和\int^0_{-\infty}f(x)dx$$**都收敛**，则称$$\displaystyle \int^{+\infty}_{-\infty}f(x)dx$$收敛
+
+2. p积分：$$\displaystyle\int^{+\infty}_a\frac{dx}{x^p};\begin{cases}P>1\quad收敛\\P\leq1\quad 发散\end{cases}(a>0)$$
+
+#### (二)无界函数的反常积分
+
+1. 定义：
+
+   设a为f(x)的无界点，$$\displaystyle \int^b_af(x)dx=\lim_{t\to a^+}\int^b_tf(x)dx$$，其他与无穷区间的定义类似
+
+2. p积分：$$a是间断点时，\displaystyle\int^b_a\frac{dx}{(x-a)^p}=\begin{cases}p<1\quad收敛\\p\geq1\quad发散\end{cases}\\b是间断点时，\displaystyle\int^b_a\frac{dx}{(b-a)^p}=\begin{cases}p<1\quad收敛\\p\geq1\quad发散\end{cases}$$
+
+### 二、常考题型与典型例题
+
+#### 题型一、反常积分的敛散性
+
+#### 题型二、反常积分的计算
+
+
+
+
+
+<center><span style='color:blue;font-size:15px'>2021/7/1</span></center>
+
+## 第六章 定积分的应用
+
+### (一)、几何应用
+
+1. 平面图形的面积（直角坐标；极坐标（$dS=\frac 1 2r^2d\theta$））（用二重积分的思想）
+2. 旋转体体积（用二重积分的思想做）（$dv=2\pi r(x,y)d\sigma$）
+3. 曲线弧长（直角坐标；参数方程；极坐标）
+4. 旋转体侧面积
+
+### (二)、物理应用
+
+1. 压力
+2. 变力做功
+3. 引力
+
+### 常考题型
+
+平面域面积和旋转体体积的计算
+
+
+
+<center><span style='color:blue;font-size:15px'>2021/7/2</span></center>
+
+## 第七章 常微分方程
+
+不同种类的微分方程解法是完全不同的
+
+### 一、考试内容概要
+
+#### (一)常微分方程的基本概念
+
+1. 微分方程（含有未知函数的导数或微分的方程）
+2. 微分方程的阶（方程中出现的未知函数导数的最高阶数）
+3. 微分方程的解（满足微分方程的函数）
+4. 微分方程的通解（微分方程的解中含有任意常数，且**独立任意常数的个**数与**微分方程的阶数**相同）
+5. 微分方程的特解（微分方程的不含任意常数的解）
+6. 初始条件（确定特解的一组常数）
+7. 积分曲线（方程的一个解的曲线）
+
+#### (二)一阶微分方程
+
+前3种是重点
+
+1. 可分离变量的方程（$y'=f(x)g(y)$）（$\frac{dy}{dx}=f(x)g(y)$）（求解两端积分）
+
+2. 齐次方程（$\frac{dy}{dx}=\varphi(\frac y x)$）$\displaystyle\left(f(ax,ay)=\varphi(\frac{ay}{ax})=a^0\varphi(\frac{y}{x})\right)$
+
+   令$\frac y x=u\Rightarrow y'=\varphi(u)=u+xu'\Rightarrow$可分离变量
+
+3. 线性方程（线性针对y，y'，y'',···）
+
+   形如$y'+P(x)y=Q(x)$的方程称为一阶线性微分方程
+
+   $\displaystyle \frac{dy}{dx}+P(x)y=Q(x)的通解为\\\displaystyle y=\left(\int Q(x)e^{\int p(x)dx}dx+C\right)e^{-\int p(x)dx}$
+
+4. 伯努利方程
+
+   $y'+P(x)y=Q(x)y^\alpha(a\neq 1)$
+
+   两边同除$y^\alpha$，令$u=y^{1-\alpha}$，可转化为一阶线性微分方程
+
+5. 全微分方程（后面）
+
+#### (三)可降阶的高阶方程
+
+1. $y^{(n)}=f(x)$（直接积分）
+
+2. $f(x,y',y'')=0$（缺y）
+
+   令$y'=p,则y''=\frac{dp}{dx}$，代入得$f(x,p,\frac{dp}{dx})=0$，降为一阶方程
+
+3. $f(y,y',y'')=0$（缺x）
+
+   令$y'=p,则y''=\frac{dp}{dx}=\frac{dp}{dy}\frac{dy}{dx}=\frac{dp}{dy}p$，代入得$f(y,p,\frac{dp}{dy}p)$，降为一阶方程
+
+#### (四)高阶线性微分方程
+
+1. 
+
+### 二、常考题型与典型例题
+
+#### 题型一、微分方程求解
+
+#### 题型二、综合题
+
+#### 题型三、应用题

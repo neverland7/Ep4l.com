@@ -375,16 +375,16 @@ if (windowWidth > 768) {
                     
                     <div class="article-tag">
                         
+                            <a href="/tags/%E8%80%83%E7%A0%94/">
+                                <span class="chip bg-color">考研</span>
+                            </a>
+                        
                             <a href="/tags/%E6%95%B0%E5%AD%A6/">
                                 <span class="chip bg-color">数学</span>
                             </a>
                         
                             <a href="/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/">
                                 <span class="chip bg-color">微积分</span>
-                            </a>
-                        
-                            <a href="/tags/%E8%80%83%E7%A0%94/">
-                                <span class="chip bg-color">考研</span>
                             </a>
                         
                     </div>
@@ -417,7 +417,7 @@ if (windowWidth > 768) {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.1k
+                    201
                 </div>
                 
 
@@ -445,6 +445,7 @@ if (windowWidth > 768) {
 <li>$\displaystyle\log_ae=\frac{\ln e}{\ln a}(对数换底公式）$</li>
 <li>$\displaystyle(a+b)^x=a^x(1+\frac{b}{a})^x$</li>
 <li>$\displaystyle\arcsin x+\ arccos x=\frac{\pi}{2}$</li>
+<li><script type="math/tex; mode=display">\displaystyle \arctan x+\arctan\frac{1}{x}=\begin{cases}+\frac{\pi}{2}\quad,x>0\\-\frac{\pi}{2}\quad,x<0\end{cases}</script></li>
 <li>$\displaystyle \frac{1}{x^2-1}=\frac{1}{(x+1)(x-1)}=\frac{(x+1)-(x-1)}{2(x+1)(x-1)}=\frac{1}{2}[\frac{1}{x-1}-\frac{1}{x+1}]$</li>
 <li>裂项公式：$\displaystyle \frac{1}{(ax+b)(cx+d)}=\frac{1}{ad-bc}[\frac{a}{ax+b}-\frac{c}{cx+d}]$</li>
 <li>$\displaystyle\tan x=\csc 2x-\cot 2x=\frac{1-\cos 2x}{\sin 2x}=\frac{\sin 2x}{1+\cos 2x}=\frac{1}{\csc 2x+\cot 2x}$</li>
@@ -659,7 +660,144 @@ if (windowWidth > 768) {
 <h3 id="二、常考题型与典型例题-3"><a href="#二、常考题型与典型例题-3" class="headerlink" title="二、常考题型与典型例题"></a>二、常考题型与典型例题</h3><p>前两类是基本题，后三类是难题，最后一类最难</p>
 <h4 id="题型一、函数的极值和最值，曲线的凹向与拐点"><a href="#题型一、函数的极值和最值，曲线的凹向与拐点" class="headerlink" title="题型一、函数的极值和最值，曲线的凹向与拐点"></a>题型一、函数的极值和最值，曲线的凹向与拐点</h4><h4 id="题型二、曲线的渐近线"><a href="#题型二、曲线的渐近线" class="headerlink" title="题型二、曲线的渐近线"></a>题型二、曲线的渐近线</h4><h4 id="题型三、方程的根"><a href="#题型三、方程的根" class="headerlink" title="题型三、方程的根"></a>题型三、方程的根</h4><p>（1）存在性：零点定理，罗尔定理（2）个数：单调性</p>
 <h4 id="题型四、不等式的证明-（薄弱）"><a href="#题型四、不等式的证明-（薄弱）" class="headerlink" title="题型四、不等式的证明 （薄弱）"></a>题型四、不等式的证明 （薄弱）</h4><p>（1）单调性（2）拉格朗日中值定理（3）最大最小值</p>
-<h4 id="题型五、中值定理的证明题"><a href="#题型五、中值定理的证明题" class="headerlink" title="题型五、中值定理的证明题"></a>题型五、中值定理的证明题</h4>
+<h4 id="题型五、中值定理的证明题"><a href="#题型五、中值定理的证明题" class="headerlink" title="题型五、中值定理的证明题"></a>题型五、中值定理的证明题</h4><center><span style="color:blue;font-size:15px">2021/6/25</span></center>
+
+<h2 id="第四章-不定积分"><a href="#第四章-不定积分" class="headerlink" title="第四章 不定积分"></a>第四章 不定积分</h2><h3 id="一、考试内容概要-3"><a href="#一、考试内容概要-3" class="headerlink" title="一、考试内容概要"></a>一、考试内容概要</h3><h4 id="一-不定积分的概念与性质"><a href="#一-不定积分的概念与性质" class="headerlink" title="(一)不定积分的概念与性质"></a>(一)不定积分的概念与性质</h4><ol>
+<li><p>原函数（F’(x)=f(x)；F(x)是f(x)的一个原函数）</p>
+</li>
+<li><p>不定积分（原函数的全体（一个函数族））</p>
+</li>
+<li><p>不定积分的几何意义（平面上的曲线（连续且光滑，因为可导））</p>
+</li>
+<li><p>原函数存在定理 （连续函数一定有原函数；若有第一类间断点，则没有原函数；振荡可能有原函数）</p>
+<p>有第一类间断点会让其积分曲线不光滑，导致某些点不可导。</p>
+</li>
+<li><p>不定积分的性质</p>
+</li>
+</ol>
+<h4 id="二-不定积分基本公式"><a href="#二-不定积分基本公式" class="headerlink" title="(二)不定积分基本公式"></a>(二)不定积分基本公式</h4><h4 id="三-三种主要积分法"><a href="#三-三种主要积分法" class="headerlink" title="(三)三种主要积分法"></a>(三)三种主要积分法</h4><ol>
+<li>第一类换元法（凑微分法）</li>
+<li>第二类换元法（基本都是用来去根号）</li>
+<li>分部积分法</li>
+</ol>
+<h4 id="四-三类常见可积函数的积分"><a href="#四-三类常见可积函数的积分" class="headerlink" title="(四)三类常见可积函数的积分"></a>(四)三类常见可积函数的积分</h4><p>三类的基础都是有理函数积分</p>
+<ol>
+<li>有理函数积分（$\int R(x)dx$）（一般加项减项拆，凑微分降幂）</li>
+<li>三角有理式积分（$\int R(\sin x,\cos x)dx$）（一般三角变形，换元，分部）</li>
+<li>简单无理式积分（$\int R(x,\sqrt[n]{\frac{ax+b}{cx+d}})dx$）（一般直接让根式等于t换元）</li>
+</ol>
+<h4 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h4><p><strong>2+3+3</strong>（<strong>两个概念</strong>（原函数，不定积分）<strong>三种方法</strong>（两种换元，分部积分）<strong>三类积分</strong>（有理函数积分，三角有理式的积分，带有简单无理式的积分）)<br><strong>重点：</strong>三种方法<br><strong>尺度：</strong>考研不会考特殊方法的积分，把基本方法练会就可以</p>
+<h3 id="二、常考题型与典型例题-4"><a href="#二、常考题型与典型例题-4" class="headerlink" title="二、常考题型与典型例题"></a>二、常考题型与典型例题</h3><h4 id="求不定积分-换元、分部"><a href="#求不定积分-换元、分部" class="headerlink" title="求不定积分(换元、分部)"></a>求不定积分(换元、分部)</h4><center><span style="color:blue;font-size:15px">2021/6/26</span></center>
+
+<h2 id="第五章-定积分与反常积分"><a href="#第五章-定积分与反常积分" class="headerlink" title="第五章 定积分与反常积分"></a>第五章 定积分与反常积分</h2><h3 id="第一节-定积分"><a href="#第一节-定积分" class="headerlink" title="第一节 定积分"></a>第一节 定积分</h3><h3 id="一、考试内容概要-4"><a href="#一、考试内容概要-4" class="headerlink" title="一、考试内容概要"></a>一、考试内容概要</h3><h4 id="一-定积分概念"><a href="#一-定积分概念" class="headerlink" title="(一)定积分概念"></a>(一)定积分概念</h4><ol>
+<li><p>定积分的定义：（定积分是一个<strong>常数</strong>，一个和数的极限，仅与积分区间和被积函数有关，与积分变量无关）</p>
+<p>（分割、求和、取极限）<script type="math/tex">\displaystyle\lim_{\lambda\to 0}\sum^n_{i=1}f(\xi_i)\triangle x_i=\int^b_af(x)dx</script></p>
+<p>若极限存在，则与$\xi_i$的<strong>取法</strong>和区间[a,b]的<strong>分法</strong>无关</p>
+<p>因此，如果积分$\int^1_0f(x)dx$存在，可以将区间n等分，此时$\triangle x_i=\frac{1}{n}$，取右端点$\xi_i=\frac i n$，由定积分的定义得</p>
+<p>:<script type="math/tex">\displaystyle \int ^1_0f(x)dx=\lim_{\lambda\to 0}\sum^n_{i=1}f(\xi_i)\triangle x_i=\lim_{n\to\infty}\frac 1 n \sum^n_{i=1}f(\frac i n)</script></p>
+</li>
+<li><p>定积分存在的充分条件（函数连续必存在；有界且有有限个间断点必存在；有有限个第一类间断点必存在）</p>
+</li>
+<li><p>定积分的几何意义（x轴上方的面积减去下方的面积）</p>
+</li>
+</ol>
+<h4 id="二-定积分的性质"><a href="#二-定积分的性质" class="headerlink" title="(二)定积分的性质"></a>(二)定积分的性质</h4><ol>
+<li><p>不等式性质</p>
+<p>(1) 若 $f(x) \leq g(x)$，则 <script type="math/tex">\int_{a}^{b} f(x)dx \leq \int_{a}^{b} g(x)dx</script></p>
+<p>(2) 若 $f(x)$ 在 $[a, b]$ 上连续，则$m(b-a) \leq \int_{a}^{b} f(x)dx \leq M(b-a)$（定积分的估值性）</p>
+<p>(3)<script type="math/tex">|\int_{a}^{b} f(x)dx| \leq \int_{a}^{b}|f(x)|dx</script>（和的绝对值不超过绝对值的和）</p>
+</li>
+<li><p>积分中值定理</p>
+<p>(1) 若 $f(x)$ 在 $[a, b]$ 上连续, 则$\int_{a}^{b} f(x)dx=f(\xi)(b-a) \quad (a&lt;\xi&lt;b)$</p>
+<p>(2) 若 $f(x), g(x)$ 在 $[a, b]$ 上连续， $g(x)$不变号，则<script type="math/tex">\int_{a}^{b} f(x) g(x)dx=f(\xi) \int_{a}^{b} g(x)dx, \quad (a \leq \xi \leq b)</script></p>
+</li>
+</ol>
+<h4 id="三-积分上限的函数"><a href="#三-积分上限的函数" class="headerlink" title="(三)积分上限的函数"></a>(三)积分上限的函数</h4><p>变上限的积分$\displaystyle \int ^x_a f(t)dt$是其上限x的函数，称之为<strong>积分上限函数</strong></p>
+<p>若f(x)为奇函数，那么$\displaystyle \int^x_0f(t)dt$必为偶函数；若f(x)为偶函数，那么$\displaystyle \int^x_0f(t)dt$必为奇函数</p>
+<h4 id="四-定积分的计算"><a href="#四-定积分的计算" class="headerlink" title="(四)定积分的计算"></a>(四)定积分的计算</h4><ol>
+<li>牛顿-莱布尼兹公式（$\displaystyle\int^b_af(x)dx=F(b)-F(a)$）</li>
+<li>换元积分法</li>
+<li>分部积分法</li>
+<li>利用奇偶性和周期性（在对称区间上奇函数的积分为0，偶函数为2倍正区间的积分）</li>
+<li>利用已有公式（华里士公式；$\int^\pi_0xf(\sin x)dx=\frac \pi 2\int^\pi_0f(\sin x)dx$；）</li>
+</ol>
+<h3 id="二、常考题型与典型例题-5"><a href="#二、常考题型与典型例题-5" class="headerlink" title="二、常考题型与典型例题"></a>二、常考题型与典型例题</h3><h4 id="题型一、定积分的概念、性质及几何意义"><a href="#题型一、定积分的概念、性质及几何意义" class="headerlink" title="题型一、定积分的概念、性质及几何意义"></a>题型一、定积分的概念、性质及几何意义</h4><h4 id="题型二、定积分计算"><a href="#题型二、定积分计算" class="headerlink" title="题型二、定积分计算"></a>题型二、定积分计算</h4><h4 id="题型三、变上限定积分"><a href="#题型三、变上限定积分" class="headerlink" title="题型三、变上限定积分"></a>题型三、变上限定积分</h4><center><span style="color:blue;font-size:15px">2021/6/29</span></center>
+
+<h3 id="第二节-反常积分"><a href="#第二节-反常积分" class="headerlink" title="第二节 反常积分"></a>第二节 反常积分</h3><p>反常积分的本质是”变限积分的极限值”，并非积分本身。</p>
+<h3 id="一、考试内容概要-5"><a href="#一、考试内容概要-5" class="headerlink" title="一、考试内容概要"></a>一、考试内容概要</h3><h4 id="一-无穷区间上的反常积分"><a href="#一-无穷区间上的反常积分" class="headerlink" title="(一)无穷区间上的反常积分"></a>(一)无穷区间上的反常积分</h4><ol>
+<li><p>定义：</p>
+<p>（1）<script type="math/tex">\displaystyle \int^{+\infty}_af(x)dx=\lim_{t\to+\infty}\int^t_af(x)dx</script>；若此极限存在，称反常积分<strong>收敛</strong>，若不存在，称其反常积分<strong>发散</strong></p>
+<p>（2）<script type="math/tex">\displaystyle \int^b_{-\infty}dx=\lim_{t\to-\infty}\int^b_tf(x)dx</script></p>
+<p>（3）若<script type="math/tex">\displaystyle \int^{+\infty}_0f(x)dx和\int^0_{-\infty}f(x)dx</script><strong>都收敛</strong>，则称<script type="math/tex">\displaystyle \int^{+\infty}_{-\infty}f(x)dx</script>收敛</p>
+</li>
+<li><p>p积分：<script type="math/tex">\displaystyle\int^{+\infty}_a\frac{dx}{x^p};\begin{cases}P>1\quad收敛\\P\leq1\quad 发散\end{cases}(a>0)</script></p>
+</li>
+</ol>
+<h4 id="二-无界函数的反常积分"><a href="#二-无界函数的反常积分" class="headerlink" title="(二)无界函数的反常积分"></a>(二)无界函数的反常积分</h4><ol>
+<li><p>定义：</p>
+<p>设a为f(x)的无界点，<script type="math/tex">\displaystyle \int^b_af(x)dx=\lim_{t\to a^+}\int^b_tf(x)dx</script>，其他与无穷区间的定义类似</p>
+</li>
+<li><p>p积分：<script type="math/tex">a是间断点时，\displaystyle\int^b_a\frac{dx}{(x-a)^p}=\begin{cases}p<1\quad收敛\\p\geq1\quad发散\end{cases}\\b是间断点时，\displaystyle\int^b_a\frac{dx}{(b-a)^p}=\begin{cases}p<1\quad收敛\\p\geq1\quad发散\end{cases}</script></p>
+</li>
+</ol>
+<h3 id="二、常考题型与典型例题-6"><a href="#二、常考题型与典型例题-6" class="headerlink" title="二、常考题型与典型例题"></a>二、常考题型与典型例题</h3><h4 id="题型一、反常积分的敛散性"><a href="#题型一、反常积分的敛散性" class="headerlink" title="题型一、反常积分的敛散性"></a>题型一、反常积分的敛散性</h4><h4 id="题型二、反常积分的计算"><a href="#题型二、反常积分的计算" class="headerlink" title="题型二、反常积分的计算"></a>题型二、反常积分的计算</h4><center><span style="color:blue;font-size:15px">2021/7/1</span></center>
+
+<h2 id="第六章-定积分的应用"><a href="#第六章-定积分的应用" class="headerlink" title="第六章 定积分的应用"></a>第六章 定积分的应用</h2><h3 id="一-、几何应用"><a href="#一-、几何应用" class="headerlink" title="(一)、几何应用"></a>(一)、几何应用</h3><ol>
+<li>平面图形的面积（直角坐标；极坐标（$dS=\frac 1 2r^2d\theta$））（用二重积分的思想）</li>
+<li>旋转体体积（用二重积分的思想做）（$dv=2\pi r(x,y)d\sigma$）</li>
+<li>曲线弧长（直角坐标；参数方程；极坐标）</li>
+<li>旋转体侧面积</li>
+</ol>
+<h3 id="二-、物理应用"><a href="#二-、物理应用" class="headerlink" title="(二)、物理应用"></a>(二)、物理应用</h3><ol>
+<li>压力</li>
+<li>变力做功</li>
+<li>引力</li>
+</ol>
+<h3 id="常考题型"><a href="#常考题型" class="headerlink" title="常考题型"></a>常考题型</h3><p>平面域面积和旋转体体积的计算</p>
+<center><span style="color:blue;font-size:15px">2021/7/2</span></center>
+
+<h2 id="第七章-常微分方程"><a href="#第七章-常微分方程" class="headerlink" title="第七章 常微分方程"></a>第七章 常微分方程</h2><p>不同种类的微分方程解法是完全不同的</p>
+<h3 id="一、考试内容概要-6"><a href="#一、考试内容概要-6" class="headerlink" title="一、考试内容概要"></a>一、考试内容概要</h3><h4 id="一-常微分方程的基本概念"><a href="#一-常微分方程的基本概念" class="headerlink" title="(一)常微分方程的基本概念"></a>(一)常微分方程的基本概念</h4><ol>
+<li>微分方程（含有未知函数的导数或微分的方程）</li>
+<li>微分方程的阶（方程中出现的未知函数导数的最高阶数）</li>
+<li>微分方程的解（满足微分方程的函数）</li>
+<li>微分方程的通解（微分方程的解中含有任意常数，且<strong>独立任意常数的个</strong>数与<strong>微分方程的阶数</strong>相同）</li>
+<li>微分方程的特解（微分方程的不含任意常数的解）</li>
+<li>初始条件（确定特解的一组常数）</li>
+<li>积分曲线（方程的一个解的曲线）</li>
+</ol>
+<h4 id="二-一阶微分方程"><a href="#二-一阶微分方程" class="headerlink" title="(二)一阶微分方程"></a>(二)一阶微分方程</h4><p>前3种是重点</p>
+<ol>
+<li><p>可分离变量的方程（$y’=f(x)g(y)$）（$\frac{dy}{dx}=f(x)g(y)$）（求解两端积分）</p>
+</li>
+<li><p>齐次方程（$\frac{dy}{dx}=\varphi(\frac y x)$）$\displaystyle\left(f(ax,ay)=\varphi(\frac{ay}{ax})=a^0\varphi(\frac{y}{x})\right)$</p>
+<p>令$\frac y x=u\Rightarrow y’=\varphi(u)=u+xu’\Rightarrow$可分离变量</p>
+</li>
+<li><p>线性方程（线性针对y，y’，y’’,···）</p>
+<p>形如$y’+P(x)y=Q(x)$的方程称为一阶线性微分方程</p>
+<p>$\displaystyle \frac{dy}{dx}+P(x)y=Q(x)的通解为\\\displaystyle y=\left(\int Q(x)e^{\int p(x)dx}dx+C\right)e^{-\int p(x)dx}$</p>
+</li>
+<li><p>伯努利方程</p>
+<p>$y’+P(x)y=Q(x)y^\alpha(a\neq 1)$</p>
+<p>两边同除$y^\alpha$，令$u=y^{1-\alpha}$，可转化为一阶线性微分方程</p>
+</li>
+<li><p>全微分方程（后面）</p>
+</li>
+</ol>
+<h4 id="三-可降阶的高阶方程"><a href="#三-可降阶的高阶方程" class="headerlink" title="(三)可降阶的高阶方程"></a>(三)可降阶的高阶方程</h4><ol>
+<li><p>$y^{(n)}=f(x)$（直接积分）</p>
+</li>
+<li><p>$f(x,y’,y’’)=0$（缺y）</p>
+<p>令$y’=p,则y’’=\frac{dp}{dx}$，代入得$f(x,p,\frac{dp}{dx})=0$，降为一阶方程</p>
+</li>
+<li><p>$f(y,y’,y’’)=0$（缺x）</p>
+<p>令$y’=p,则y’’=\frac{dp}{dx}=\frac{dp}{dy}\frac{dy}{dx}=\frac{dp}{dy}p$，代入得$f(y,p,\frac{dp}{dy}p)$，降为一阶方程</p>
+</li>
+</ol>
+<h4 id="四-高阶线性微分方程"><a href="#四-高阶线性微分方程" class="headerlink" title="(四)高阶线性微分方程"></a>(四)高阶线性微分方程</h4><ol>
+<li><h3 id="二、常考题型与典型例题-7"><a href="#二、常考题型与典型例题-7" class="headerlink" title="二、常考题型与典型例题"></a>二、常考题型与典型例题</h3></li>
+</ol>
+<h4 id="题型一、微分方程求解"><a href="#题型一、微分方程求解" class="headerlink" title="题型一、微分方程求解"></a>题型一、微分方程求解</h4><h4 id="题型二、综合题"><a href="#题型二、综合题" class="headerlink" title="题型二、综合题"></a>题型二、综合题</h4><h4 id="题型三、应用题"><a href="#题型三、应用题" class="headerlink" title="题型三、应用题"></a>题型三、应用题</h4>
                 
             </div>
             <hr/>
@@ -723,16 +861,16 @@ if (windowWidth > 768) {
                     
                         <div class="article-tag">
                             
+                                <a href="/tags/%E8%80%83%E7%A0%94/">
+                                    <span class="chip bg-color">考研</span>
+                                </a>
+                            
                                 <a href="/tags/%E6%95%B0%E5%AD%A6/">
                                     <span class="chip bg-color">数学</span>
                                 </a>
                             
                                 <a href="/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/">
                                     <span class="chip bg-color">微积分</span>
-                                </a>
-                            
-                                <a href="/tags/%E8%80%83%E7%A0%94/">
-                                    <span class="chip bg-color">考研</span>
                                 </a>
                             
                         </div>
@@ -839,16 +977,16 @@ if (windowWidth > 768) {
                 
                 <div class="card-action article-tags">
                     
+                    <a href="/tags/%E8%80%83%E7%A0%94/">
+                        <span class="chip bg-color">考研</span>
+                    </a>
+                    
                     <a href="/tags/%E6%95%B0%E5%AD%A6/">
                         <span class="chip bg-color">数学</span>
                     </a>
                     
                     <a href="/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/">
                         <span class="chip bg-color">微积分</span>
-                    </a>
-                    
-                    <a href="/tags/%E8%80%83%E7%A0%94/">
-                        <span class="chip bg-color">考研</span>
                     </a>
                     
                 </div>
@@ -895,16 +1033,16 @@ if (windowWidth > 768) {
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E8%80%83%E7%A0%94/">
-                        <span class="chip bg-color">考研</span>
-                    </a>
-                    
                     <a href="/tags/c%E8%AF%AD%E8%A8%80/">
                         <span class="chip bg-color">c语言</span>
                     </a>
                     
                     <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
                         <span class="chip bg-color">数据结构</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%80%83%E7%A0%94/">
+                        <span class="chip bg-color">考研</span>
                     </a>
                     
                 </div>
@@ -1060,7 +1198,7 @@ if (windowWidth > 768) {
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">90.3k</span>&nbsp;字
+                class="white-color">91.3k</span>&nbsp;字
             
             
             

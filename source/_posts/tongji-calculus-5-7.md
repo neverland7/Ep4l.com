@@ -66,7 +66,7 @@ typora-root-url: ..
 
 <span style='color:sienna;font-size:20px'>性质5：</span>$设M和m分别是f(x)在区间[a,b]上的最大值和最小值，则\\m(b-a)\leq\int^b_af(x)dx\leq M(b-a)$
 
-<span style='color:sienna;font-size:20px'>性质6（积分中值定理）：</span>$设函数f(x)在[a,b]上连续，则在[a,b]上至少存在一个点\xi，使\\\int^b_af(x)dx=f(\xi)(b-a)（使用介值定理证明）\\其实\xi在(a,b)也成立,叫改进积分中值定理（使用拉格朗日中值定理证明）$
+<span style='color:sienna;font-size:20px'>性质6（积分中值定理）：</span>$设函数f(x)在[a,b]上连续，则在[a,b]上至少存在一个点\xi，使\\\int^b_af(x)dx=f(\xi)(b-a)（使用介值定理的推论证明）\\其实\xi在(a,b)也成立,叫改进积分中值定理（使用拉格朗日中值定理证明）$
 
 
 
