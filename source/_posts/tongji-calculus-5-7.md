@@ -1,7 +1,7 @@
 ---
 title: 同济高数第七版（5-7章）
 date: 2021-05-07 19:48:07
-img: images/tongji-calculus-5-7/calculus_1.png
+img: https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com@master/public/images/tongji-calculus-5-7/calculus_1.png
 mathjax: true
 summary: 同济高数
 categories: 学习笔记

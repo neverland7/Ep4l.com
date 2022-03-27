@@ -1,7 +1,7 @@
 ---
 title: 同济高数第七版（1-4章）
 date: 2021-04-15 21:01:51
-img: images/tongji-calculus-1-4/calculus_1.png
+img: https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com@master/public/images/tongji-calculus-1-4/calculus_1.png
 mathjax: true
 summary: 同济高数
 categories: 学习笔记

@@ -1,6 +1,7 @@
 ---
 title: 线性代数
 date: 2021-06-22 09:55:30
+img: https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com@master/public/images/linear-algebra/linear-algebra.png
 mathjax: true
 summary: 考研线性代数
 categories: 学习笔记
@@ -28,7 +29,7 @@ n个不同的元素排成一列， 叫做这n个元素的**全排列**，简称*
 
 **例：**12345为标准次序，t(12345)=0；32145有3个逆序数，t(32145)=3 
 
-$\displaystyle t\left(n(n-1)(n-2)····21\right)=n-1+n-2+····+2+1=\frac{n(n-1)}{2}$
+$\displaystyle t\left(n(n-1)(n-2)\cdots21\right)=n-1+n-2+\cdots+2+1=\frac{n(n-1)}{2}$
 
 #### 三、排列的奇偶性
 
@@ -550,7 +551,7 @@ C_{s 1} & \cdots & C_{s r}
 
 **（1）**$0≤R(A_{m\times n})≤\min\{m,n\}$
 
-（2）$R(A^T=R(A)=R(AA^T)=R(A^TA))$
+（2）$R(A^T)=R(A)=R(AA^T)=R(A^TA))$
 
 （3）若A~B，则R(A)=R(B)；反之，若A，B同型，且R(A)=R(B)，则A，B等价
 
@@ -614,4 +615,244 @@ C_{s 1} & \cdots & C_{s r}
 （2）$A_nx=0$有非零解⇔|A|=0
 
 **推论2：**方程的个数小于未知数个数，则一定有非零解。
+
+
+
+<center><span style='color:blue;font-size:15px'>2021/7/4</span></center>
+
+## 第四章 向量组的线性相关性
+
+### 第一节 向量组及其线性组合 
+
+#### 一、向量
+
+1. <span style='color:red;font-size:20px'>定义1</span>称$\begin{pmatrix}a_1\\a_2\\\vdots\\a_n\end{pmatrix}$为n维列向量，其中ai称为第i个分量。$(b_1,b_2,\cdots,b_n)$为n维行向量
+
+   **note：**列向量用$\alpha,\beta,\gamma,\cdots$表示，行向量用$\alpha^T,\beta^T,\gamma^T,\cdots$表示；
+
+2. 向量的线性运算（加减法、数乘）
+
+3. **向量组：**若干个**同维数**的行（列）向量所组成的集合；
+
+4. 向量组和矩阵的关系（含有有限个向量的有序向量组可以与矩阵一一对应）（第二章已经介绍）
+
+5. 方程组的向量表示（第二章已经介绍）
+
+   $$\begin{pmatrix}a_{11}&a_{12}&\cdots&a_{1n}\\a_{21}&a_{22}&\cdots&a_{2n}\\\vdots&\vdots&\ddots&\vdots\\a_{m1}&a_{m2}&\cdots&a_{mn}\end{pmatrix}\begin{pmatrix}x_1\\x_2\\\vdots\\x_n\end{pmatrix}=\begin{pmatrix}b_1\\b_2\\\vdots\\b_n\end{pmatrix}\Leftrightarrow(\alpha_1,\alpha_1,\cdots,\alpha_n)\begin{pmatrix}x_1\\x_2\\\vdots\\x_n\end{pmatrix}=\beta\Leftrightarrow x_1\alpha_1+x_2\alpha_2+\cdots+x_n\alpha_n=\beta$$
+
+#### 二、向量组的线性表示（以列向量为对象）（与非齐有关 Ax=B)
+
+1. <span style='color:red;font-size:20px'>定义2：</span>设向量组A：$α_1,α_2,\cdots,α_m$以及任意一组实数$k_1,k_2,\cdots,k_m$，称$k_1α_1+k_2α_1+\cdots+k_mα_m$为向量组A的一个线性组合
+
+   **note：**零向量可写成任意同维数向量的线性组合
+
+2. <span style='color:red;font-size:20px'>定义3：</span>给定向量组A，如果存在一组数k使得$\beta=k_1α_1+k_2α_1+\cdots+k_mα_m$，则称向量b能由向量组A线性表示
+
+   **定理1：**$$向量β能由向量组A线性表示\\⇔线性方程组x_1α_1+x_2α_1+\cdots+x_mα_m=\beta，即Ax=\beta有解\\⇔R(α_1,α_2,\cdots,α_m)=R(α_1,α_2,\cdots,α_m,\beta)，即R(A)=R(A,B)$$
+
+#### 三、向量组的等价
+
+<span style='color:red;font-size:20px'>定义4：</span>若向量组B中的每个向量都能由A中的向量线性表示，则称**向量组B能由向量组A线性表示**；若向量组A和向量组B能相互线性表示，则称这两个向量组**等价**
+
+**note：**矩阵等价与向量组等价有区别：向量组等价不能确定向量组构成的矩阵等价；矩阵等价不能确定其行(列)向量组等价
+
+![](/images/linear-algebra/image-20210704205828955.png)
+
+![](/images/linear-algebra/image-20210704210041624.png)
+
+**note2：**由上可知若AB=C，则
+
+（1）C的列向量可由A的列向量线性表示（A<span style='color:blue'>B</span>=C)（表示的系数为B的列元素）
+
+（1）C的行向量可由B的行向量线性表示（<span style='color:blue'>A</span>B=C)（表示的系数为A的行元素）
+
+**note3：**矩阵A经初等行变换变成矩阵B，则A的行向量组与B的行向量组等价。但是列向量组未必等价。同理，矩阵A经初等列变换变成矩阵B，则A的列向量组与B的列向量组等价。但是行向量组未必等价。
+
+**推论：**列向量组A与列向量组B等价$\Leftrightarrow R(A)=R(B)=R(A,B)$（三秩相等即等价）
+
+**定理1：**向量组B能由向量组A线性表示，则R(B)=R(AK)≤R(A)
+
+
+
+<center><span style='color:blue;font-size:15px'>2021/7/5</span></center>
+
+### 第二节 向量组的线性相关性（与齐次有关 Ax=0）
+
+#### 一、定义
+
+<span style='color:red;font-size:20px'>定义：</span>给定向量组A:$a_1,a_2,\cdots,a_m$，如果存在**不全为零**的数$k_1,k_2,\cdots,k_m$，使得$k_1α_1+k_2α_1+\cdots+k_mα_m=0$，则称向量组A**线性相关**，否则称它**线性无关**（齐次线性方程组只有零解）。
+
+**note：**线性相关的充分条件（1）有零向量（2）有两个向量成比例（3）有一个可以由其余向量表示（充要）
+
+**note1：**线性相关无关的**直观意义**
+
+（1）α线性相关⇔α=0；α线性无关⇔α≠0；
+
+（2）$α_1,a_2$线性相关⇔$α_1,a_2$成比例（或平行）；$α_1,a_2$线性无关⇔$α_1,a_2$不成比例（或不平行）
+
+（3）$α_1,a_2,a_3$线性相关⇔$α_1,a_2,a_3$共面；$α_1,a_2,a_3$线性无关⇔$α_1,a_2,a_3$不共面；
+
+#### 二、相关定理（相关结论）
+
+（1）向量组A线性相关⇔A中至少有一个向量可由其余向量线性表示
+
+（2）向量组中含有零向量，则该向量组线性相关
+
+**定理1：**
+
+（1）向量组A线性相关⇔线性方程组Ax=0有非零解⇔A的秩小于m（向量的个数）
+
+（2）向量组A线性无关⇔线性方程组Ax=0只有零解⇔A的秩等于m
+
+**note：**判断相关无关，只要将向量组构成矩阵A，比较R(A)与向量个数之间的关系
+
+**note1：**$$设n维向量组α_1,a_2,\cdots,α_s线性无关，且(β_1,β_2,\cdots,β_s)=(α_1,a_2,\cdots,α_s)k_{s\times s},\\则(β_1,β_2,\cdots,β_s)线性无关⇔k_{s\times s}≠0(可逆\Rightarrow A与B的秩相等)$$
+
+**定理2：**
+
+（1）$$若α_1,a_2,\cdots,α_m线性相关，则α_1,a_2,\cdots,α_m,α_{m+1}必线性相关;\\反之，若α_1,α_2,α_m,α_{m+1}线性无关，则α_1,a_2,\cdots,α_m线性无关;$$
+
+（2）$$若α_1,a_2,\cdots,α_m线性无关，而α_1,a_2,\cdots,α_m,β线性相关，\\则β能由α_1,a_2,\cdots,α_m线性表示，且表达式唯一$$
+
+（3）m个n维向量组成的向量组，当向量个数m大于维数n时，该向量组一定线性相关。
+特别地，n+1个n维向量一定线性相关。
+
+**定理3：**线性无关的向量组中每个向量分别添加分量后的新向量组一定线性无关。
+
+**定理4：**对矩阵进行初等**行**变换不改变其**列向量组**的线性相关性；
+对矩阵进行初等**列**变换不改变其**行向量组**的线性相关性。
+
+
+
+<center><span style='color:blue;font-size:15px'>2021/7/7</span></center>
+
+### 第三节 向量组的秩
+
+#### 一、定义和性质
+
+<span style='color:red;font-size:20px'>定义：</span>设有向量组A，若在A中能选出r个向量满足
+
+（1）这r个向量组成的向量组线性无关
+
+（2）向量组A中任意r+1个向量（如果有的话）都线性相关。
+
+或（2'）A中任意一个向量都可以由这r个向量线性表示
+
+满足(1)(2)的r个向量是向量组A的一个最大(线性)无关组，数r称为**向量组A的秩**，记为$r=R_A$
+
+**note1：**向量组A的最大无关组可能不唯一；如果$R_A=r$，则向量组A中的任意r个线性无关的向量所组成的向量组都是A的最大无关组。
+
+**note2：**如果向量组A线性无关，则A的唯一最大无关组就是它本身。
+
+**性质：**
+
+（1）向量组与最大无关组等价
+
+（2）同一向量组的任意两个最大无关组等价
+
+（3）两个等价向量组的最大无关组等价
+
+#### 二、相关定理
+
+**定理：**矩阵的秩等于矩阵的列向量组的秩，也等于矩阵行向量组的秩
+
+**求列向量组A的最大无关组和秩r的方法：**
+
+（1）先将列向量组A构成矩阵
+
+（2）对矩阵作初等行变换化为行阶梯型，则在行阶梯型中：非零行的行数即为向量组A的秩；每个非零行的首非零元素所在的列向量的全体即为列向量组的一个最大无关组。
+
+（3）继续将矩阵A作初等行变换化成行最简形，则利用行最简形，可将其余向量由最大无关组线性表示。
+
+原理：对矩阵就行初等行变换不改变其列向量组的线性无关性
+
+
+
+<center><span style='color:blue;font-size:15px'>2021/7/8</span></center>
+
+### 第四节 线性方程组的的解的结构
+
+#### 一、齐次线性方程组的解的结构
+
+1. 齐次线性方程组解向量的性质
+
+   **性质1：**齐次的解相加还是齐次的解
+
+   **性质2：**齐次的解乘常数还是齐次的解
+
+   <span style='color:red;font-size:20px'>定义：</span>齐次线性方程组的所有解构成的向量组的最大无关组称为该齐次线性方程组的基础解系
+
+![](/images/linear-algebra/image-20210708145621760.png)
+
+2. 齐次线性方程组的基础解系的性质
+
+   **定理：**$$设R(A_{m\times n})=r，则n元齐次线性方程组A_{m\times n}x=0$$的基础解系中有n-r个解向量，即s=n-r
+
+   R(A)：有效方程个数；n：未知量个数；n-R(A)：自由未知量个数
+
+   **推论：**$$A_{m\times n}x=0的任意n-r(A)个线性无关的解即为A_{m\times n}x=0的基础解系$$
+
+   **结论：**若$$\xi_1,\xi_2,\cdots,\xi_{n-r}为A_{m \times n} x=0$$的一个基础解系
+
+   则 $$A_{m \times n} x=0 的通解为\quad x=c_{1} \xi_{1}+c_{2} \xi_{2}+\cdots+c_{n-r} \xi_{n-r}$$
+
+#### 二、非齐次线性方程组解的结构
+
+**性质：**
+
+（1）两个非齐的解相减是齐次的解
+
+（2）齐次的解加非齐的解是非齐的解
+
+**note：**当$$R(A)=r<n时, 求 A x=b的通解只要求A x=b的一个特解\eta^{*}和 A x=0 的通解\\ x=c_{1} \xi_{1}+\cdots+c_{n-r} \xi_{n-r}，则 A x=b 的通解为 x=\eta^{*}+c_{1} \xi_{1}+\cdots+c_{n-r} \xi_{n-r}$$
+
+
+
+### 第五节 向量空间
+
+#### 一、向量空间的定义
+
+<span style='color:red;font-size:20px'>定义：</span>设V为n维向量的集合，如果集合V非空，且集合V对于向量的加法和数乘两种运算**封闭**，那么称集合V为**向量空间**
+
+**note：**向量空间必含零向量
+
+n元齐次线性方程组的解集是一个向量空间（称为齐次线性方程组的**解空间**）
+
+#### 二、生成空间
+
+设 $$\alpha_{1}, \cdots, \alpha_{m}$$ 为一n维向量组，则
+$$
+V=\left\{\lambda_{1} \alpha_{1}+\cdots+\lambda_{m} \alpha_{m} \mid \lambda_{1}, \cdots, \lambda_{m} \in R\right\}
+$$
+是一向量空间, 称V是由 $$\alpha_{1}, \cdots, \alpha_{m} 所生成的向量空间。 记为 V=L\{\alpha_{1}, \cdots, \alpha_{m}\}$$.
+
+**note：**
+
+（1）$$\alpha,\cdots,\alpha_m与=L\{\alpha_{1}, \cdots, \alpha_{m}\}$$等价
+
+（2）等价的向量组所生成的向量空间是相等的
+
+#### 三、向量空间的基，维数与坐标
+
+1. ##### 基、维数
+
+   <span style='color:red;font-size:20px'>定义：</span>设V为向量空间，$\alpha,\cdots,\alpha_r∈V$且满足:
+   （1）$\alpha,\cdots,\alpha_r$线性无关;
+   （2）任意α∈V都可由$\alpha,\cdots,\alpha_r$线性表示.
+   则称$\alpha,\cdots,\alpha_r$是V的基，r为V的维数。记为dimV =r。
+   规定零空间的维数为0，没有基
+
+   **note：**
+
+   （1）若向量空间V看成向量组，则V的基就是V的最大无关组，向量空间的维数r就是V的秩。
+   进而V中任何r个线性无关的向量都是V的基。
+
+   （2）$$若 \alpha_{1}, \cdots, \alpha_{r} 是向量空间 V的基, 则V =L\left\{\alpha_{1}, \cdots, \alpha_{r}\right\};\\
+   若V =L\left\{\alpha_{1}, \cdots, {\alpha}_{m}\right\}，则 \alpha_{1}, \cdots, \alpha_{m} 的最大无关组为 V 的基。$$
+
+2. ##### 坐标
+
+   <span style='color:red;font-size:20px'>定义：</span>$$设 \alpha_{1}, \cdots, \alpha_{r} 是向量空间V的一组基，那么对\forall \beta \in V 都可唯一表示为\\\beta=x_{1} \alpha_{1}+\cdots+x_{r} \alpha_{r}，称有序数组 \left(x_{1}, \cdots, x_{r}\right) 是向量 \beta 在基 \alpha_{1}, \cdots, \alpha_{r} 的坐标。$$
+
+   **note：**基给定后，求一个向量的坐标就是求非齐次线性方程组的解。
 

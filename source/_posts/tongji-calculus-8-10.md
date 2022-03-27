@@ -1,7 +1,7 @@
 ---
 title: 同济高数第七版（8-10章）
 date: 2021-05-16 17:18:26
-img: images/tongji-calculus-8-10/calculus_2.png
+img: https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com@master/public/images/tongji-calculus-8-10/calculus_2.png
 mathjax: true
 summary: 同济高数
 categories: 学习笔记
@@ -453,7 +453,7 @@ $\displaystyle\frac{\partial u}{\partial x}=\frac{D_1}{D}=\frac{xy-uv}{xv-yu},\q
 
 **参数方程形式：**$L:\displaystyle\begin{cases}x=\varphi(t)\\y=\psi(t)\\z=\omega(t)\end{cases}$
 
-$\vec T=\{\varphi '(t_0),\psi '(t_0),\omega '(t_0) \}$为曲线的切向量
+$\vec T=\{\varphi^{\prime}(t_0),\psi^{\prime}(t_0),\omega^{\prime}(t_0) \}$为曲线的切向量
 
 - 切线：$\displaystyle\frac{x-x_0}{\varphi '(t_0)}=\frac{y-y_0}{\psi '(t_0)}=\frac{z-z_0}{\omega '(t_0)}$
 - 法平面：$(x-x_0)\varphi '(t_0)+(y-y_0)\psi '(t_0)+(z-z_0)\omega '(t_0)=0$

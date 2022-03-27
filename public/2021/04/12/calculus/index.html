@@ -794,10 +794,287 @@ if (windowWidth > 768) {
 <p>令$y’=p,则y’’=\frac{dp}{dx}=\frac{dp}{dy}\frac{dy}{dx}=\frac{dp}{dy}p$，代入得$f(y,p,\frac{dp}{dy}p)$，降为一阶方程</p>
 </li>
 </ol>
+<center><span style="color:blue;font-size:15px">2021/7/4</span></center>
+
 <h4 id="四-高阶线性微分方程"><a href="#四-高阶线性微分方程" class="headerlink" title="(四)高阶线性微分方程"></a>(四)高阶线性微分方程</h4><ol>
-<li><h3 id="二、常考题型与典型例题-7"><a href="#二、常考题型与典型例题-7" class="headerlink" title="二、常考题型与典型例题"></a>二、常考题型与典型例题</h3></li>
+<li><p>线性微分方程的解的结构</p>
+<p>齐次方程：$y’’+p(x)y’+q(x)y=0$</p>
+<p>非齐次方程：$y’’+p(x)y’+q(x)y=f(x)$</p>
+<p>齐次通解=两个线性无关的齐次特解的线性组合（<script type="math/tex">y=C_1y_1(x)+C_2y_2(x)</script>）</p>
+<p>非齐通解=齐次通解+一个非齐特解 （<script type="math/tex">y=C_1y_1(x)+C_2y_2(x)+y^*(x)</script>）</p>
+<p>非齐特解-非齐特解=齐次的解；非齐的解对于非齐次项具有叠加性</p>
+</li>
+<li><p>常系数齐次线性微分方程</p>
+<p>常系数齐次线性微分方程：$y’’+py’+qy=0$（二阶）</p>
+<p>特征方程：$r^2+pr+q=0$</p>
+</li>
 </ol>
-<h4 id="题型一、微分方程求解"><a href="#题型一、微分方程求解" class="headerlink" title="题型一、微分方程求解"></a>题型一、微分方程求解</h4><h4 id="题型二、综合题"><a href="#题型二、综合题" class="headerlink" title="题型二、综合题"></a>题型二、综合题</h4><h4 id="题型三、应用题"><a href="#题型三、应用题" class="headerlink" title="题型三、应用题"></a>题型三、应用题</h4>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th></th>
+<th>$p^2-4q$</th>
+<th>二阶常系数线性微分方程的通解</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>不等实根</td>
+<td>$\triangle&gt;0$</td>
+<td>$y=C_1e^{\lambda_1x}+C_2e^{\lambda_2x}$</td>
+</tr>
+<tr>
+<td>相等实根</td>
+<td>$\triangle=0$</td>
+<td>$y=(C_1+xC_2)e^{\lambda_1x}$</td>
+</tr>
+<tr>
+<td>共轭复根</td>
+<td>$\triangle&lt;0$</td>
+<td><script type="math/tex">y=e^{\alpha x}(C_1\cos(\beta x)+C_2\sin(\beta x))\qquad(\lambda_{1,2}=\alpha\pm i\beta)</script></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>   高阶常系数齐次线性微分方程有几个特征根，就把他们对应的解用加法联系起来</p>
+<ol>
+<li><p>常系数非齐次线性微分方程</p>
+<p> 常系数非齐次线性微分方程：$y’’+py’+qy=f(x)$</p>
+<p>求出一个特解，再加上非齐次方程对应的齐次方程的通解，即可求出通解</p>
+</li>
+</ol>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>$f(x)=e^{\lambda x}P_m(x)$</th>
+<th>令$y^*=x^kQ_m(x)e^{\lambda x}$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$f(x)=e^{\alpha x}[P_l^{(1)}(x)\cos\beta x+P_n^{(2)}(x)\sin\beta x]$</td>
+<td>令$y^*=x^ke^{\alpha x}[R_m^{(1)}(x)\cos\beta x+R_m^{(2)}(x)\sin\beta x]\quad m=\max(l,n)$</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>   上面λ是非齐次方程对应的齐次方程的特征方程的几重根，k就等于几</p>
+<p>   下面$\alpha+i\beta$是非齐次方程对应的齐次方程的特征方程的几重根，k就等于几</p>
+<ol>
+<li><p>欧拉方程</p>
+<p>欧拉方程：<script type="math/tex">x^ny^{(n)}+a_1x^{n-1}y^{(n-1)}+...+a_{n-1}xy'+a_ny=f(x)</script></p>
+<p>令$x=e^t$，用算符D表示$\frac d{dt}$，则$x^ky^{(k)}=D(D-1)\cdots(D-k+1)y$</p>
+</li>
+</ol>
+<h3 id="二、常考题型与典型例题-7"><a href="#二、常考题型与典型例题-7" class="headerlink" title="二、常考题型与典型例题"></a>二、常考题型与典型例题</h3><h4 id="题型一、微分方程求解"><a href="#题型一、微分方程求解" class="headerlink" title="题型一、微分方程求解"></a>题型一、微分方程求解</h4><h4 id="题型二、综合题"><a href="#题型二、综合题" class="headerlink" title="题型二、综合题"></a>题型二、综合题</h4><h4 id="题型三、应用题"><a href="#题型三、应用题" class="headerlink" title="题型三、应用题"></a>题型三、应用题</h4><center><span style="color:blue;font-size:15px">2021/7/6</span></center>
+
+<h2 id="第八章-多元函数微分学"><a href="#第八章-多元函数微分学" class="headerlink" title="第八章 多元函数微分学"></a>第八章 多元函数微分学</h2><h3 id="第一节-多元函数的基本概念（重极限、连续、偏导数、全微分）"><a href="#第一节-多元函数的基本概念（重极限、连续、偏导数、全微分）" class="headerlink" title="第一节 多元函数的基本概念（重极限、连续、偏导数、全微分）"></a>第一节 多元函数的基本概念（重极限、连续、偏导数、全微分）</h3><h3 id="一、考试内容纲要"><a href="#一、考试内容纲要" class="headerlink" title="一、考试内容纲要"></a>一、考试内容纲要</h3><h4 id="一-二元函数"><a href="#一-二元函数" class="headerlink" title="(一)二元函数"></a>(一)二元函数</h4><h4 id="二-二元函数的极限"><a href="#二-二元函数的极限" class="headerlink" title="(二)二元函数的极限"></a>(二)二元函数的极限</h4><p>note：以”任意方式”趋近；</p>
+<h4 id="三-多元函数的连续性"><a href="#三-多元函数的连续性" class="headerlink" title="(三)多元函数的连续性"></a>(三)多元函数的连续性</h4><ol>
+<li>连续的概念（函数值等于极限值）</li>
+<li>连续函数的性质</li>
+</ol>
+<h4 id="四-偏导数"><a href="#四-偏导数" class="headerlink" title="(四)偏导数"></a>(四)偏导数</h4><ol>
+<li>偏导数的定义</li>
+<li>偏导数的几何意义</li>
+<li>高阶偏导数（若两个混合偏导数在某点（区域内）连续，则在该点（区域内）两个混合偏导数必相等</li>
+</ol>
+<h4 id="五-全微分"><a href="#五-全微分" class="headerlink" title="(五)全微分"></a>(五)全微分</h4><ol>
+<li><p>可微（$\triangle z=A\triangle x+B\triangle y+o(\rho)\quad(\rho=\sqrt{(\triangle x)^2+(\triangle y)^2})$）</p>
+<p>（定义法判定可微：$\displaystyle \frac{\triangle z-(f_x(x_0,y_0)\triangle x+f_y(x_0,y_0)\triangle y)}{\rho}=0?$）</p>
+</li>
+<li><p>可微$\Rightarrow$偏导数存在；一阶偏导数存在且连续$\Rightarrow$可微；</p>
+</li>
+</ol>
+<h4 id="六-连续、可导、可微的关系"><a href="#六-连续、可导、可微的关系" class="headerlink" title="(六)连续、可导、可微的关系"></a>(六)连续、可导、可微的关系</h4><h3 id="二、常考题型与典型例题-8"><a href="#二、常考题型与典型例题-8" class="headerlink" title="二、常考题型与典型例题"></a>二、常考题型与典型例题</h3><h4 id="讨论连续性、可导性、可微性"><a href="#讨论连续性、可导性、可微性" class="headerlink" title="讨论连续性、可导性、可微性"></a>讨论连续性、可导性、可微性</h4><h3 id="第二节-多元函数微分法"><a href="#第二节-多元函数微分法" class="headerlink" title="第二节 多元函数微分法"></a>第二节 多元函数微分法</h3><h3 id="一、考试内容概要-7"><a href="#一、考试内容概要-7" class="headerlink" title="一、考试内容概要"></a>一、考试内容概要</h3><h4 id="一-复合函数微分法"><a href="#一-复合函数微分法" class="headerlink" title="(一)复合函数微分法"></a>(一)复合函数微分法</h4><p>树形图；全微分形式的不变性</p>
+<h4 id="二-隐函数微分法"><a href="#二-隐函数微分法" class="headerlink" title="(二)隐函数微分法"></a>(二)隐函数微分法</h4><p>$\displaystyle\frac{\partial z}{\partial x}=-\frac{F’_x}{F’_z};\frac{\partial z}{\partial y}=-\frac{F’_y}{F’_z}$</p>
+<h3 id="二、常考题型与典型例题-9"><a href="#二、常考题型与典型例题-9" class="headerlink" title="二、常考题型与典型例题"></a>二、常考题型与典型例题</h3><h4 id="题型一、复合函数的偏导数与全微分"><a href="#题型一、复合函数的偏导数与全微分" class="headerlink" title="题型一、复合函数的偏导数与全微分"></a>题型一、复合函数的偏导数与全微分</h4><h4 id="题型二、隐函数的偏导数与全微分"><a href="#题型二、隐函数的偏导数与全微分" class="headerlink" title="题型二、隐函数的偏导数与全微分"></a>题型二、隐函数的偏导数与全微分</h4><center><span style="color:blue;font-size:15px">2021/7/7</span></center>
+
+<h3 id="第三节-多元函数的极值与最值"><a href="#第三节-多元函数的极值与最值" class="headerlink" title="第三节 多元函数的极值与最值"></a>第三节 多元函数的极值与最值</h3><h3 id="一、考试内容概要-8"><a href="#一、考试内容概要-8" class="headerlink" title="一、考试内容概要"></a>一、考试内容概要</h3><h4 id="一-无约束极值"><a href="#一-无约束极值" class="headerlink" title="(一)无约束极值"></a>(一)无约束极值</h4><ol>
+<li><p>极值的必要条件：若在某点存在偏导数，且该点为f(x,y)的极值点，则该点偏导为0</p>
+</li>
+<li><p>极值的充分条件：若在某点的领域内有二阶连续偏导数，且该点偏导为零，记对x的二阶导为A，混合偏导数为B，对y的二阶导为C，则有下列结论</p>
+<p>（1）若$AC-B^2&gt;0$，则该点为极值点（A&lt;0极大值；A&gt;0极小值）</p>
+<p>（2）若$AC-B^2&lt;0$，该点不是极值点</p>
+<p>（3）若$AC-B^2=0$，都有可能（此时一般用定义法判定）</p>
+</li>
+</ol>
+<h4 id="二-条件极值与拉格朗日乘数法"><a href="#二-条件极值与拉格朗日乘数法" class="headerlink" title="(二)条件极值与拉格朗日乘数法"></a>(二)条件极值与拉格朗日乘数法</h4><ol>
+<li><p>函数f(x,y)在条件$\varphi(x,y)=0$条件下的极值</p>
+<p>令<script type="math/tex">F(x,y,\lambda)=f(x,y)+\lambda\varphi(x,y)\\\begin{cases}F_x=f_x+\lambda\varphi_x=0\\F_y=f_y+\lambda\varphi_y=0\\F_{\lambda}=\varphi(x,y)=0\end{cases}</script></p>
+<p>即可解出若干组x，y为可能极值点</p>
+</li>
+<li><p>类似，三个自变量，两个约束条件，作辅助函数，使五个偏导等于0，解出x,y,z</p>
+</li>
+</ol>
+<h4 id="三-最大最小值"><a href="#三-最大最小值" class="headerlink" title="(三)最大最小值"></a>(三)最大最小值</h4><ol>
+<li>求连续函数在闭区域上的最大最小值（(1)求内部可能的极值点(2)求边界上的最大最小值(条件最值)(3)比较）</li>
+<li>应用题（建立目标函数，然后按1的三步曲求解）</li>
+</ol>
+<h3 id="二、常考题型方法与技巧"><a href="#二、常考题型方法与技巧" class="headerlink" title="二、常考题型方法与技巧"></a>二、常考题型方法与技巧</h3><h4 id="题型一、求极值-无条件"><a href="#题型一、求极值-无条件" class="headerlink" title="题型一、求极值(无条件)"></a>题型一、求极值(无条件)</h4><h4 id="题型二、求最大最小值"><a href="#题型二、求最大最小值" class="headerlink" title="题型二、求最大最小值"></a>题型二、求最大最小值</h4><h4 id="题型三、最大最小值应用题"><a href="#题型三、最大最小值应用题" class="headerlink" title="题型三、最大最小值应用题"></a>题型三、最大最小值应用题</h4><center><span style="color:blue;font-size:15px">2021/7/8</span></center>
+
+<h2 id="第九章-二重积分"><a href="#第九章-二重积分" class="headerlink" title="第九章 二重积分"></a>第九章 二重积分</h2><h3 id="一、考试内容概要-9"><a href="#一、考试内容概要-9" class="headerlink" title="一、考试内容概要"></a>一、考试内容概要</h3><h4 id="一-二重积分的概念与性质"><a href="#一-二重积分的概念与性质" class="headerlink" title="(一)二重积分的概念与性质"></a>(一)二重积分的概念与性质</h4><ol>
+<li>二重积分的概念</li>
+<li>二重积分的性质（不等式性质(3)；积分中值定理）</li>
+</ol>
+<h4 id="二-二重积分计算"><a href="#二-二重积分计算" class="headerlink" title="(二)二重积分计算"></a>(二)二重积分计算</h4><ol>
+<li>利用直角坐标计算</li>
+<li>利用极坐标计算</li>
+<li>利用函数的奇偶性计算</li>
+<li>利用变量的轮换对称性计算</li>
+</ol>
+<h3 id="二、常考题型方法与技巧-1"><a href="#二、常考题型方法与技巧-1" class="headerlink" title="二、常考题型方法与技巧"></a>二、常考题型方法与技巧</h3><h4 id="题型一、累次积分交换次序及计算"><a href="#题型一、累次积分交换次序及计算" class="headerlink" title="题型一、累次积分交换次序及计算"></a>题型一、累次积分交换次序及计算</h4><h4 id="题型二、二重积分计算"><a href="#题型二、二重积分计算" class="headerlink" title="题型二、二重积分计算"></a>题型二、二重积分计算</h4><center><span style="color:blue;font-size:15px">2021/7/9</span></center>
+
+<h2 id="第十章-无穷级数"><a href="#第十章-无穷级数" class="headerlink" title="第十章 无穷级数"></a>第十章 无穷级数</h2><h3 id="第一节-常数项级数"><a href="#第一节-常数项级数" class="headerlink" title="第一节 常数项级数"></a>第一节 常数项级数</h3><h3 id="一、考试内容概要-10"><a href="#一、考试内容概要-10" class="headerlink" title="一、考试内容概要"></a>一、考试内容概要</h3><h4 id="一-级数的概念与性质"><a href="#一-级数的概念与性质" class="headerlink" title="(一)级数的概念与性质"></a>(一)级数的概念与性质</h4><ol>
+<li>级数的概念（数列部分和$S_n$的极限）；等比级数</li>
+<li>级数的性质<ol>
+<li>两收敛级数相加仍收敛；</li>
+<li>收敛级数每项数乘仍收敛；</li>
+<li>在级数中添加，减少，修改有限项，不会改变级数的敛散性； </li>
+<li>在级数中添加括号收敛性不降低（有可能会提高）；</li>
+<li>（级数收敛的<strong>必要</strong>条件）<script type="math/tex">若级数\displaystyle \sum^\infty_{n=1}u_n收敛，则\lim_{n\to\infty}u_n=0</script></li>
+</ol>
+</li>
+</ol>
+<h4 id="二-级数的审敛准则"><a href="#二-级数的审敛准则" class="headerlink" title="(二)级数的审敛准则"></a>(二)级数的审敛准则</h4><ol>
+<li><p>正项级数（<script type="math/tex">\displaystyle \sum^\infty_{n=1}u_n,u_n\geq0</script>）</p>
+<p>基本定理（充要条件）：收敛⇔部分和数列上有界</p>
+<p>两个常用级数（p级数；等比级数）</p>
+<p>（1）比较判别法（大收敛小收敛；小发散大发散）</p>
+<p>（2）比较法的极限形式</p>
+<p>（3）比值法</p>
+<p>（4）根值法</p>
+</li>
+<li><p>交错级数（<script type="math/tex">\displaystyle\sum^\infty_{n=1}(-1)^{n-1}u_n,u_n>0</script>）</p>
+<p>莱布尼兹准则（<strong>充分</strong>条件）（若$u_n$单调减且极限趋于0则收敛）</p>
+</li>
+<li><p>任意项级数（<script type="math/tex">\displaystyle \sum^\infty_{n=1}u_n,u_n</script>为任意实数） </p>
+<p>绝对收敛与条件收敛（加绝对值提高发散性）</p>
+<p>绝对收敛的级数一定收敛；条件收敛的级数的所有正（或负项）构成的级数一定发散；</p>
+</li>
+</ol>
+<h3 id="二、常考题型与典型例题-10"><a href="#二、常考题型与典型例题-10" class="headerlink" title="二、常考题型与典型例题"></a>二、常考题型与典型例题</h3><h4 id="常数项级数敛散性的判定"><a href="#常数项级数敛散性的判定" class="headerlink" title="常数项级数敛散性的判定"></a>常数项级数敛散性的判定</h4><h3 id="第二节-幂级数"><a href="#第二节-幂级数" class="headerlink" title="第二节 幂级数"></a>第二节 幂级数</h3><h3 id="一、考试内容概要-11"><a href="#一、考试内容概要-11" class="headerlink" title="一、考试内容概要"></a>一、考试内容概要</h3><h4 id="一-收敛半径收敛区间收敛域"><a href="#一-收敛半径收敛区间收敛域" class="headerlink" title="(一)收敛半径收敛区间收敛域"></a>(一)收敛半径收敛区间收敛域</h4><ol>
+<li><p>定义：每一项都是x的正整数幂，并且按升幂排列的函数项级数</p>
+</li>
+<li><p>阿贝尔定理（若幂级数在x0收敛，则当|x|&lt;|x0|时，幂级数绝对收敛；若在x0发散，则当则当|x|&gt;|x0|时，幂级数发散）</p>
+<p>根据阿贝尔定理，幂级数的收敛性只有三种可能（全体区间都收敛；仅在0处收敛；|x|<r时绝对收敛，|x|>R时发散）</r时绝对收敛，|x|></p>
+<p>R称为幂级数的<strong>收敛半径</strong>；开区间(-R,R)称为它的<strong>收敛区间</strong>；加上$\pm R$点的收敛性后称为<strong>收敛域</strong></p>
+<p><strong>note：</strong>若幂级数在某点条件收敛，则该点必为一个端点</p>
+</li>
+<li><p>若<script type="math/tex">\displaystyle\lim_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|=\rho,则R=\frac{1}{\rho}</script></p>
+<p>若<script type="math/tex">\displaystyle\lim_{n\to\infty}\sqrt[n]{|a_n|}=\rho,则R=\frac{1}{\rho}</script></p>
+</li>
+</ol>
+<h4 id="二-幂级数的性质"><a href="#二-幂级数的性质" class="headerlink" title="(二)幂级数的性质"></a>(二)幂级数的性质</h4><ol>
+<li>有理运算性质 （四则）</li>
+<li>分析性质（和函数在收敛区间上连续；逐项可导性；逐项可积性）</li>
+</ol>
+<h4 id="三-函数的幂级数展开"><a href="#三-函数的幂级数展开" class="headerlink" title="(三)函数的幂级数展开"></a>(三)函数的幂级数展开</h4><ol>
+<li><p>几个常用的展开式</p>
+</li>
+<li><p>函数展开为幂级数的两种方法</p>
+<p>（1）直接展开法（求各阶导数写泰勒级数）（考试应该不会用到）</p>
+<p>（2）间接展开法（基本展开式：四则，逐项求导，逐项求积分，变量代换）（重点）</p>
+</li>
+</ol>
+<h3 id="二、常考题型与典型例题-11"><a href="#二、常考题型与典型例题-11" class="headerlink" title="二、常考题型与典型例题"></a>二、常考题型与典型例题</h3><h4 id="题型一、求收敛半径、收敛区间及收敛域（两公式；端点代）"><a href="#题型一、求收敛半径、收敛区间及收敛域（两公式；端点代）" class="headerlink" title="题型一、求收敛半径、收敛区间及收敛域（两公式；端点代）"></a>题型一、求收敛半径、收敛区间及收敛域（两公式；端点代）</h4><h4 id="题型二、将函数展开为幂级数（把函数写成基本幂级数的形式后展开；逐项可导；逐项可积）"><a href="#题型二、将函数展开为幂级数（把函数写成基本幂级数的形式后展开；逐项可导；逐项可积）" class="headerlink" title="题型二、将函数展开为幂级数（把函数写成基本幂级数的形式后展开；逐项可导；逐项可积）"></a>题型二、将函数展开为幂级数（把函数写成基本幂级数的形式后展开；逐项可导；逐项可积）</h4><h4 id="题型三、求幂级数的和函数-重点难点"><a href="#题型三、求幂级数的和函数-重点难点" class="headerlink" title="题型三、求幂级数的和函数(重点难点)"></a>题型三、求幂级数的和函数(重点难点)</h4><center><span style="color:blue;font-size:15px">2021/7/10</span></center>
+
+<h3 id="第三节-傅里叶级数"><a href="#第三节-傅里叶级数" class="headerlink" title="第三节 傅里叶级数"></a>第三节 傅里叶级数</h3><h3 id="一、考试内容概要-12"><a href="#一、考试内容概要-12" class="headerlink" title="一、考试内容概要"></a>一、考试内容概要</h3><h4 id="一-傅里叶系数与傅里叶级数"><a href="#一-傅里叶系数与傅里叶级数" class="headerlink" title="(一)傅里叶系数与傅里叶级数"></a>(一)傅里叶系数与傅里叶级数</h4><p>傅里叶系数：<script type="math/tex">\displaystyle a_n=\frac1\pi\int^\pi_{-\pi}f(x)\cos nxdx\qquad(n=0,1,2,3,···)\\
+\displaystyle b_n=\frac1\pi\int^\pi_{-\pi}f(x)\sin nxdx\qquad(n=1,2,3,···)\\</script></p>
+<p>傅里叶级数：<script type="math/tex">f(x)\sim\displaystyle \frac{a_{0}}{2}+\sum_{n=1}^{\infty}\left(a_{n} \cos n x+b_{n} \sin n x\right)</script></p>
+<h4 id="二-收敛定理-狄利克雷"><a href="#二-收敛定理-狄利克雷" class="headerlink" title="(二)收敛定理(狄利克雷)"></a>(二)收敛定理(狄利克雷)</h4><script type="math/tex; mode=display">设f(x) 是周期为2π的周期函数,如果它满足:\\
+(1)在一个周期([-π,π])内连续或只有有限个第一类间断点，\\
+(2)在一个周期([-π,π])内至多只有有限个极值点，\\
+那么f(x)的傅里叶级数在[-π,π]上处处收敛\\
+\displaystyle a_0=\frac1\pi\int^\pi_{-\pi}f(x)dx\\
+\displaystyle a_n=\frac1\pi\int^\pi_{-\pi}f(x)\cos nxdx\qquad(n=1,2,3,···)\\
+\displaystyle b_n=\frac1\pi\int^\pi_{-\pi}f(x)\sin nxdx\qquad(n=1,2,3,···)\\
+当x是f(x)的连续点时，级数S(x)收敛于f(x)；\\
+\displaystyle当x是f(x)的间断点时，级数S(x)收敛于\frac1 2[f(x^-)+f(x^+)]\\</script><center><span style="color:blue;font-size:15px">2021/7/11</span></center>
+
+<h4 id="三-函数展开为傅里叶级数"><a href="#三-函数展开为傅里叶级数" class="headerlink" title="(三)函数展开为傅里叶级数"></a>(三)函数展开为傅里叶级数</h4><ol>
+<li>[-π,π]上展开</li>
+<li>[-π,π]上奇偶函数的展开</li>
+<li>在[0,π]上展开为正弦或展开成余弦（周期延拓）</li>
+</ol>
+<h4 id="四-周期为2l的函数的展开"><a href="#四-周期为2l的函数的展开" class="headerlink" title="(四)周期为2l的函数的展开"></a>(四)周期为2l的函数的展开</h4><ol>
+<li>[-l,l]上展开</li>
+<li>[-l,l]上奇偶函数的展开</li>
+<li>在[0,l]上展开为正弦或展开成余弦</li>
+</ol>
+<h3 id="二、常考题型方法与技巧-2"><a href="#二、常考题型方法与技巧-2" class="headerlink" title="二、常考题型方法与技巧"></a>二、常考题型方法与技巧</h3><h4 id="题型一、狄利克雷收敛定理"><a href="#题型一、狄利克雷收敛定理" class="headerlink" title="题型一、狄利克雷收敛定理"></a>题型一、狄利克雷收敛定理</h4><h4 id="题型二、将函数展开为傅里叶级数"><a href="#题型二、将函数展开为傅里叶级数" class="headerlink" title="题型二、将函数展开为傅里叶级数"></a>题型二、将函数展开为傅里叶级数</h4><center><span style="color:blue;font-size:15px">2021/7/12</span></center>
+
+<h2 id="第十一章-向量代数与空间解析几何及多元微分学在几何上的应用"><a href="#第十一章-向量代数与空间解析几何及多元微分学在几何上的应用" class="headerlink" title="第十一章 向量代数与空间解析几何及多元微分学在几何上的应用"></a>第十一章 向量代数与空间解析几何及多元微分学在几何上的应用</h2><h3 id="第一节-向量代数"><a href="#第一节-向量代数" class="headerlink" title="第一节 向量代数"></a>第一节 向量代数</h3><h4 id="一、数量积（数）"><a href="#一、数量积（数）" class="headerlink" title="一、数量积（数）"></a>一、数量积（数）</h4><ol>
+<li>几何表示（$\vec a·\vec b=|\vec a||\vec b|\cos\theta$）</li>
+<li>代数表示（$\vec a·\vec b=a_xb_x+a_yb_y+a_zb_z$）</li>
+<li>运算规律（交换律、分配率）</li>
+<li>几何应用（求模、求夹角、判断两向量垂直）</li>
+</ol>
+<h4 id="二、向量积（向量）"><a href="#二、向量积（向量）" class="headerlink" title="二、向量积（向量）"></a>二、向量积（向量）</h4><ol>
+<li>几何表示（模：$|\vec a\times\vec b|=|\vec a||\vec b|\sin\theta$；方向：右手法则）</li>
+<li>代数表示（<script type="math/tex">\vec a\times\vec b=\begin{vmatrix}\vec i&\vec j&\vec k\\a_x&a_y&a_z\\b_x&b_y&b_z\end{vmatrix}</script>）</li>
+<li>运算规律（反交换律、分配率）</li>
+<li>几何应用（求同时垂直于a,b的向量、求以a,b为邻边的平行四边形的面积、判定两向量平行）</li>
+</ol>
+<h4 id="三、混合积（数）"><a href="#三、混合积（数）" class="headerlink" title="三、混合积（数）"></a>三、混合积（数）</h4><ol>
+<li>几何表示（$(\vec a\vec b\vec c)=(\vec a\times\vec b)·\vec c$）</li>
+<li>代数表示（<script type="math/tex">(\vec a\vec b\vec c)=(\vec a\times\vec b)·\vec c=\begin{vmatrix}a_x&a_y&a_z\\b_x&b_y&b_z\\c_x&c_y&c_z\end{vmatrix}</script>）</li>
+<li>运算规律（轮换对称性、交换变号）</li>
+<li>几何应用（平行六面体体积、判断三向量共面）</li>
+</ol>
+<h3 id="第二节-空间平面与直线"><a href="#第二节-空间平面与直线" class="headerlink" title="第二节 空间平面与直线"></a>第二节 空间平面与直线</h3><h4 id="一、平面方程"><a href="#一、平面方程" class="headerlink" title="一、平面方程"></a>一、平面方程</h4><p>一般式、点法式、截距式</p>
+<h4 id="二、直线方程"><a href="#二、直线方程" class="headerlink" title="二、直线方程"></a>二、直线方程</h4><p>一般式、对称式（点向式）、参数式</p>
+<h4 id="三、平面与直线的位置关系"><a href="#三、平面与直线的位置关系" class="headerlink" title="三、平面与直线的位置关系"></a>三、平面与直线的位置关系</h4><h4 id="四、点到面的距离"><a href="#四、点到面的距离" class="headerlink" title="四、点到面的距离"></a>四、点到面的距离</h4><h4 id="五、点到直线的距离"><a href="#五、点到直线的距离" class="headerlink" title="五、点到直线的距离"></a>五、点到直线的距离</h4><h3 id="第三节-曲面与空间曲线"><a href="#第三节-曲面与空间曲线" class="headerlink" title="第三节 曲面与空间曲线"></a>第三节 曲面与空间曲线</h3><h4 id="一、曲面方程"><a href="#一、曲面方程" class="headerlink" title="一、曲面方程"></a>一、曲面方程</h4><p>一般式（F(x,y,z)=0或z=f(x,y)）</p>
+<h4 id="二、空间曲线"><a href="#二、空间曲线" class="headerlink" title="二、空间曲线"></a>二、空间曲线</h4><p>参数式（螺线）、一般式</p>
+<h4 id="三、常见曲面"><a href="#三、常见曲面" class="headerlink" title="三、常见曲面"></a>三、常见曲面</h4><p>旋转面、柱面、二次曲面、空间曲线投影</p>
+<h3 id="第四节-多元微分学在几何上的应用"><a href="#第四节-多元微分学在几何上的应用" class="headerlink" title="第四节 多元微分学在几何上的应用"></a>第四节 多元微分学在几何上的应用</h3><h4 id="一、曲面的切平面和法线"><a href="#一、曲面的切平面和法线" class="headerlink" title="一、曲面的切平面和法线"></a>一、曲面的切平面和法线</h4><p>F(x,y,z)=0；z=f(x,y)</p>
+<h4 id="二、曲线的切线与法平面"><a href="#二、曲线的切线与法平面" class="headerlink" title="二、曲线的切线与法平面"></a>二、曲线的切线与法平面</h4><p>参数式；一般式</p>
+<h2 id="第十二章-多元积分学及其应用"><a href="#第十二章-多元积分学及其应用" class="headerlink" title="第十二章 多元积分学及其应用"></a>第十二章 多元积分学及其应用</h2><h3 id="第一节-三重积分"><a href="#第一节-三重积分" class="headerlink" title="第一节 三重积分"></a>第一节 三重积分</h3><ol>
+<li><p>定义（和二重类似）</p>
+</li>
+<li><p>性质（和二重类似）</p>
+</li>
+<li><p>计算</p>
+<p>直角坐标：</p>
+<p>（1）先一后二（先单后重）（铅直投影法）（有上下曲面方程时）</p>
+<p>（2）先二后一（先重后单）（切片法）（截面积好算时）</p>
+<p>柱坐标、球坐标、利用奇偶性、利用变量的轮换对称性</p>
+</li>
+</ol>
+<h3 id="第二节-曲线积分"><a href="#第二节-曲线积分" class="headerlink" title="第二节 曲线积分"></a>第二节 曲线积分</h3><h4 id="一、对弧长的线积分（第一类线积分）"><a href="#一、对弧长的线积分（第一类线积分）" class="headerlink" title="一、对弧长的线积分（第一类线积分）"></a>一、对弧长的线积分（第一类线积分）</h4><ol>
+<li><p>定义：<script type="math/tex">\displaystyle\int_Lf(x,y)ds=\lim_{\lambda\to 0}\sum^n_{i=1}f(\xi_i,\eta_i)\triangle s_i</script></p>
+</li>
+<li><p>性质：第一类线积分与积分路径方向无关</p>
+</li>
+<li><p>计算方法（平面）</p>
+<p>直接法：（参数方程， 直角坐标，弧坐标）</p>
+<p>利用奇偶性、利用对称性</p>
+</li>
+</ol>
+<h4 id="二、对坐标的线积分（第二类线积分）"><a href="#二、对坐标的线积分（第二类线积分）" class="headerlink" title="二、对坐标的线积分（第二类线积分）"></a>二、对坐标的线积分（第二类线积分）</h4><ol>
+<li><p>定义：<script type="math/tex">\displaystyle\int_LP(x,y)dx+Q(x,y)dy=\lim_{\lambda\to 0}\sum^n_{i=1}[P(\xi_i,\eta_i)\triangle x_i+Q(\xi_i.\eta_i)\triangle y_i]</script></p>
+</li>
+<li><p>性质：第一类线积分与积分路径方向有关</p>
+</li>
+<li><p>计算方法（平面）</p>
+<p>直接法、格林公式（$\displaystyle\iint\limits_D\left(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right)dxdy=\oint_LPdx+Qdy$）、补线用格林公式、</p>
+<p>利用线积分与路径无关：</p>
+<p>（1）判定：$\displaystyle \frac{\partial Q}{\partial x}=\frac{\partial P}{\partial y}$（区域D单连通）</p>
+<p>（2）计算（1）改换路径计算（2）利用原函数计算</p>
+</li>
+<li><p>两类线积分的联系</p>
+<p>$\displaystyle\int_LPdx+Qdy=\int_L(P\cos\alpha+Q\cos\beta)ds$</p>
+</li>
+<li><p>计算方法（空间）</p>
+<p>（1）直接法（参数方程）</p>
+<p>（2）斯托克斯公式（曲面方向右手法则）</p>
+<p><script type="math/tex">\displaystyle\oint_\Gamma Pdx+Qdy+Rdz==\iint\limits_\Sigma\begin{vmatrix}\cos\alpha&\cos\beta&\cos\gamma\\\frac{\partial }{\partial x}&\frac{\partial }{\partial y}&\frac{\partial }{\partial z}\\P&Q&R \end{vmatrix}dS</script>，($\Sigma$是<strong>外侧</strong>曲面)</p>
+</li>
+</ol>
+<center><span style="color:blue;font-size:15px">2021/7/21</span></center>
+
+<h3 id="第三节-曲面积分"><a href="#第三节-曲面积分" class="headerlink" title="第三节 曲面积分"></a>第三节 曲面积分</h3><h3 id="第四节-多元积分应用"><a href="#第四节-多元积分应用" class="headerlink" title="第四节 多元积分应用"></a>第四节 多元积分应用</h3><h3 id="第五节-场论初步"><a href="#第五节-场论初步" class="headerlink" title="第五节 场论初步"></a>第五节 场论初步</h3>
                 
             </div>
             <hr/>
@@ -823,7 +1100,7 @@ if (windowWidth > 768) {
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://Ep4l.com/2021/04/12/calculus/">https://Ep4l.com/2021/04/12/calculus/</a>
+                    <a href="https://Ep4l.top/2021/04/12/calculus/">https://Ep4l.top/2021/04/12/calculus/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -910,7 +1187,7 @@ if (windowWidth > 768) {
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'https://ep4l.com/2021/04/12/calculus/';
+        this.page.url = 'https://ep4l.top/2021/04/12/calculus/';
         this.page.identifier = '/2021/04/12/calculus/';
         this.page.title = '高数';
     };
@@ -947,7 +1224,7 @@ if (windowWidth > 768) {
                 <a href="/2021/04/15/tongji-calculus-1-4/">
                     <div class="card-image">
                         
-                        <img src="/images/tongji-calculus-1-4/calculus_1.png" class="responsive-img" alt="同济高数第七版（1-4章）">
+                        <img src="https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com@master/public/images/tongji-calculus-1-4/calculus_1.png" class="responsive-img" alt="同济高数第七版（1-4章）">
                         
                         <span class="card-title">同济高数第七版（1-4章）</span>
                     </div>
@@ -1003,7 +1280,7 @@ if (windowWidth > 768) {
                 <a href="/2021/04/11/data-structure/">
                     <div class="card-image">
                         
-                        <img src="/images/Data-Structure/Data_Structure.png" class="responsive-img" alt="数据结构">
+                        <img src="https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com@master/public/images/Data-Structure/Data_Structure.png" class="responsive-img" alt="数据结构">
                         
                         <span class="card-title">数据结构</span>
                     </div>
@@ -1189,7 +1466,7 @@ if (windowWidth > 768) {
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2020-2021</span>
+                <span id="year">2020-2022</span>
             
             <!--       <span id="year">2020</span>      -->
             <a href="/about" target="_blank">Ep4l</a>
@@ -1198,7 +1475,7 @@ if (windowWidth > 768) {
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">91.3k</span>&nbsp;字
+                class="white-color">91.4k</span>&nbsp;字
             
             
             

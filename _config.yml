@@ -13,7 +13,7 @@ timezone: ''
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://example.com/child' and root as '/child/'
-url: https://Ep4l.com
+url: https://Ep4l.top
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -120,7 +120,7 @@ postInfo:
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repository: root@49.233.46.187:/home/git/hexoBlog    #用户名@服务器Ip:git仓库位置
+  repository: root@152.136.18.157:/home/git/hexoBlog    #用户名@服务器Ip:git仓库位置
   branch: master
 
 live2d:

@@ -1,7 +1,7 @@
 ---
 title: 同济高数第七版（11-12章）
 date: 2021-05-27 21:08:37
-img: images/tongji-calculus-11-12/calculus_2.png
+img: https://cdn.jsdelivr.net/gh/neverland7/Ep4l.com@master/public/images/tongji-calculus-11-12/calculus_2.png
 mathjax: true
 summary: 同济高数
 categories: 学习笔记
@@ -469,7 +469,7 @@ $$\displaystyle \frac{a_{0}}{2}+\sum_{n=1}^{\infty}\left(a_{n} \cos n x+b_{n} \s
 ：$$设f(x) 是周期为2π的周期函数,如果它满足:\\
 (1)在一个周期([-π,π])内连续或只有有限个第一类间断点，\\
 (2)在一个周期([-π,π])内至多只有有限个极值点，\\
-那么f(x)的傅里叶级数\displaystyle \frac{a_{0}}{2}+\sum_{n=1}^{\infty}\left(a_{n} \cos n x+b_{n} \sin n x\right)收敛,并且\\
+那么f(x)的傅里叶级数收敛,并且\\
 \displaystyle a_0=\frac1\pi\int^\pi_{-\pi}f(x)dx\\
 \displaystyle a_n=\frac1\pi\int^\pi_{-\pi}f(x)\cos nxdx\qquad(n=1,2,3,···)\\
 \displaystyle b_n=\frac1\pi\int^\pi_{-\pi}f(x)\sin nxdx\qquad(n=1,2,3,···)\\
