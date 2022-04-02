@@ -6,7 +6,7 @@
   <link href="https://ep4l.top/atom.xml" rel="self"/>
   
   <link href="https://ep4l.top/"/>
-  <updated>2022-03-29T10:53:16.328Z</updated>
+  <updated>2022-04-02T17:09:40.057Z</updated>
   <id>https://ep4l.top/</id>
   
   <author>
@@ -21,17 +21,17 @@
     <link href="https://ep4l.top/2022/03/26/pygame/"/>
     <id>https://ep4l.top/2022/03/26/pygame/</id>
     <published>2022-03-26T14:20:31.000Z</published>
-    <updated>2022-03-29T10:53:16.328Z</updated>
+    <updated>2022-04-02T17:09:40.057Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;生命不息，折腾不止v_v&lt;/p&gt;
-&lt;center&gt;&lt;span style=&quot;color:blue;font-size:15px&quot;&gt;2022/3/26&lt;/span&gt;&lt;/center&gt;
-
-&lt;p&gt;&lt;code&gt;pip</summary>
+    <summary type="html">&lt;p&gt;生命不息，折腾不止v_v    &lt;/p&gt;
+&lt;p&gt;&lt;code&gt;pip list&lt;/code&gt;查看现有插件&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;pip install pygame&lt;/code&gt;安装pygame库（不能连接vpn，否则会报错）&lt;/p&gt;
+&lt;p&gt;&lt;a</summary>
         
       
     
